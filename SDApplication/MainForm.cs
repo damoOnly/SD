@@ -15,6 +15,7 @@ using System.Diagnostics;
 using System.Media;
 using System.Linq;
 using SDApplication.Properties;
+using System.Net;
 
 namespace SDApplication
 {
@@ -119,6 +120,115 @@ namespace SDApplication
                 seriesOne.Points.Add(sp);
             });
             //datalist.Aggregate
+        }
+
+        private void tcpserver_DataReceived(object sender, AsyncSocketEventArgs e) 
+        {
+            if (Gloabl.IsAdmin)
+            {
+                this.Invoke(new Action<string>(addText), "recv: " + e._msg);
+            }
+            EquipmentData ed = Parse.GetSocketData(e._msg);
+        }
+
+        private void GetAlertValue(ref EquipmentData ed, Equipment eq)
+        {
+            ed.Chroma = Convert.ToSingle(Math.Round(ed.Chroma * eq.Revise, eq.Point));
+
+            if (ed.Chroma > eq.Range)
+            {
+                ed.ChromaAlertStr = EM_AlertType.超量程报警.ToString();
+            }
+            else if (ed.Chroma > eq.HighAlert)
+            {
+                ed.ChromaAlertStr = EM_AlertType.高浓度报警.ToString();
+            }
+            else if (ed.Chroma > eq.LowAlert)
+            {
+                ed.ChromaAlertStr = EM_AlertType.低浓度报警.ToString();
+            }
+        }
+
+        private void refreshSocketData(EquipmentData ed)
+        {
+            Equipment eq = mainList.Find(c => c.ID == ed.EquipmentID);
+            if (eq == null || !ed.Flag)
+            {
+                return;
+            }
+
+            GetAlertValue(ref ed, eq);
+
+            eq.IsConnect = true;
+            // 添加数据库
+            EquipmentDataDal.AddOne(ed);
+
+            eq.Chroma = ed.Chroma;
+
+
+            // 绘制曲线
+            if (eq.ID == Convert.ToInt32(seriesOne.Tag))
+            {
+                this.Invoke(new Action<EquipmentData>(c => addPoint(c)), ed);
+            }
+            if (eq.AlertType == 0)
+            {
+                eq.ChromaAlertStr = Gloabl.NormalStr;
+            }
+            else
+            {
+                // 报警记录
+                if (eq.ChromaAlertStr != ed.ChromaAlertStr)
+                {
+
+                    if (eq.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase))
+                    {
+                        Alert art = new Alert();
+                        art.AlertName = ed.ChromaAlertStr;
+                        art.EquipmentID = eq.ID;
+                        eq.AlertObject = AlertDal.AddOneR(art);
+                    }
+                    else
+                    {
+                        eq.AlertObject.EndTime = DateTime.Now;
+                        AlertDal.UpdateOne(eq.AlertObject);
+                        if (!eq.ChromaAlertStr.Equals(ed.ChromaAlertStr, StringComparison.OrdinalIgnoreCase))
+                        {
+                            Alert art = new Alert();
+                            art.AlertName = ed.ChromaAlertStr;
+                            art.EquipmentID = eq.ID;
+                            eq.AlertObject = AlertDal.AddOneR(art);
+                        }
+                    }
+                    eq.ChromaAlertStr = ed.ChromaAlertStr;
+                }
+                else
+                {
+                    if (!eq.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase))
+                    {
+                        eq.AlertObject.EndTime = DateTime.Now;
+                        if (!AlertDal.UpdateOne(eq.AlertObject))
+                        {
+                            Alert art = new Alert();
+                            art.AlertName = ed.ChromaAlertStr;
+                            art.EquipmentID = eq.ID;
+                            eq.AlertObject = AlertDal.AddOneR(art);
+                        }
+                    }
+                }
+            }
+
+            Equipment eqqq = mainList.Find(c => !c.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase));
+            if (eqqq != null)
+            {
+                PlaySound(true);
+            }
+            else
+            {
+                PlaySound(false);
+            }
+            this.Invoke(new Action(gridControl_Main.RefreshDataSource));
+            this.Invoke(new Action(gridView_Main.BestFitColumns));
         }
 
         // 发命令，读数据
@@ -760,11 +870,11 @@ namespace SDApplication
 
         private void btn_Start_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (Gloabl.IsOpen == false)
-            {
-                XtraMessageBox.Show("请先打开串口");
-                return;
-            }
+            //if (Gloabl.IsOpen == false)
+            //{
+            //    XtraMessageBox.Show("请先打开串口");
+            //    return;
+            //}
             if (mainList.Count < 1)
             {
                 return;
@@ -780,28 +890,13 @@ namespace SDApplication
                 changeSeries(mainList.Find(c => c.ID == Convert.ToInt32(seriesOne.Tag)));
             }
             
-            mainThread = new Thread(new ThreadStart(ReadData));
+            IPAddress ip = IPAddress.Parse(systemConfig.CenterIP);
+            AsyncSocketTCPServer tcpserver = new AsyncSocketTCPServer(ip, 9001, 3);            
+            tcpserver.DataReceived += tcpserver_DataReceived;
             isRead = true;
-            mainThread.Start();
+            tcpserver.Start();
+            
             btn_Start.Enabled = false;
-        }
-
-        private void MainForm_SizeChanged(object sender, EventArgs e)
-        {
-            //switch (this.WindowState)
-            //{
-            //    case FormWindowState.Maximized:
-            //        gridView_Main.OptionsView.ColumnAutoWidth = true;
-            //        break;
-            //    case FormWindowState.Minimized:
-            //        break;
-            //    case FormWindowState.Normal:
-            //        gridView_Main.OptionsView.ColumnAutoWidth = true;
-            //        break;
-            //    default:
-            //        break;
-            //}
-            //gridView_Main.BestFitColumns();
         }
 
         private void MainForm_Load(object sender, EventArgs e)

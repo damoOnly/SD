@@ -14,6 +14,7 @@ namespace Entity
         {
             AddTime = DateTime.Now;
             ChromaAlertStr = "正常";
+            Flag = false;
         }
         public int ID { get; set; }
 
@@ -46,5 +47,7 @@ namespace Entity
         /// 报警状态
         /// </summary>
         public string ChromaAlertStr { get; set; }
+
+        public bool Flag { get; set; }
     }
 }
