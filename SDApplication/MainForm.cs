@@ -52,12 +52,7 @@ namespace SDApplication
         /// 所有设备列表
         /// </summary>
         private List<Equipment> mainList = new List<Equipment>();
-
-        /// <summary>
-        /// 主要线程
-        /// </summary>
-        private Thread mainThread;
-
+        
         /// <summary>
         /// 读取数据线程开关
         /// </summary>
@@ -82,6 +77,8 @@ namespace SDApplication
         /// 关闭声音播放
         /// </summary>
         private bool IsClosePlay = false;
+
+        private AsyncSocketTCPServer tcpserver;
 
         #endregion
 
@@ -396,11 +393,11 @@ namespace SDApplication
                 player = new SoundPlayer();
                 player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\" + systemConfig.SoundName;
                 player.Load();
-                if (!PLAASerialPort.GetInstance().Open(systemConfig.Port, systemConfig.BaudRate))
-                {
-                    LogLib.Log.GetLogger(this).Warn("串口打开失败");
-                    return false;
-                }
+
+                IPAddress ip = IPAddress.Parse(systemConfig.CenterIP);
+                tcpserver = new AsyncSocketTCPServer(ip, 9001, 3);
+                tcpserver.DataReceived += tcpserver_DataReceived;
+
                 Gloabl.IsOpen = true;
                 
             }
@@ -750,11 +747,8 @@ namespace SDApplication
             else
             {
                 changeSeries(mainList.Find(c => c.ID == Convert.ToInt32(seriesOne.Tag)));
-            }
+            }           
             
-            IPAddress ip = IPAddress.Parse(systemConfig.CenterIP);
-            AsyncSocketTCPServer tcpserver = new AsyncSocketTCPServer(ip, 9001, 3);            
-            tcpserver.DataReceived += tcpserver_DataReceived;
             isRead = true;
             tcpserver.Start();
             
@@ -788,11 +782,9 @@ namespace SDApplication
         {
             PlaySound(false);
             isRead = false;
-            if (mainThread != null)
-            {
-                mainThread.Abort();
-                btn_Start.Enabled = true;
-            }
+
+            tcpserver.CloseAllClient();
+            btn_Start.Enabled = true;
             // 连接状态改为 关闭
             foreach (Equipment eq in mainList)
             {
@@ -1068,12 +1060,7 @@ namespace SDApplication
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (mainThread != null)
-            {
-                mainThread.Abort();
-            }
-            PLAASerialPort.GetInstance().Abort();
-            
+            tcpserver.Dispose();            
         }
 
         private void btn_Back_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
