@@ -11,3 +11,4 @@ E:\公司项目\山盾科技\项目文件\trunk\代码\OriginalAreage\SDApplicat
 E:\公司项目\山盾科技\项目文件\trunk\代码\OriginalAreage\SDApplication\obj\x86\Debug\SDApplication.exe.licenses
 E:\公司项目\山盾科技\项目文件\trunk\代码\OriginalAreage\SDApplication\obj\x86\Debug\SDApplication.exe
 E:\公司项目\山盾科技\项目文件\trunk\代码\OriginalAreage\SDApplication\obj\x86\Debug\SDApplication.pdb
+E:\projects\sd\SD\Build\Debug\SDApplication.exe.config

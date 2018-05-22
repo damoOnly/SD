@@ -129,6 +129,7 @@ namespace SDApplication
                 this.Invoke(new Action<string>(addText), "recv: " + e._msg);
             }
             EquipmentData ed = Parse.GetSocketData(e._msg);
+            refreshSocketData(ed);
         }
 
         private void GetAlertValue(ref EquipmentData ed, Equipment eq)
@@ -177,45 +178,7 @@ namespace SDApplication
             }
             else
             {
-                // 报警记录
-                if (eq.ChromaAlertStr != ed.ChromaAlertStr)
-                {
-
-                    if (eq.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase))
-                    {
-                        Alert art = new Alert();
-                        art.AlertName = ed.ChromaAlertStr;
-                        art.EquipmentID = eq.ID;
-                        eq.AlertObject = AlertDal.AddOneR(art);
-                    }
-                    else
-                    {
-                        eq.AlertObject.EndTime = DateTime.Now;
-                        AlertDal.UpdateOne(eq.AlertObject);
-                        if (!eq.ChromaAlertStr.Equals(ed.ChromaAlertStr, StringComparison.OrdinalIgnoreCase))
-                        {
-                            Alert art = new Alert();
-                            art.AlertName = ed.ChromaAlertStr;
-                            art.EquipmentID = eq.ID;
-                            eq.AlertObject = AlertDal.AddOneR(art);
-                        }
-                    }
-                    eq.ChromaAlertStr = ed.ChromaAlertStr;
-                }
-                else
-                {
-                    if (!eq.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase))
-                    {
-                        eq.AlertObject.EndTime = DateTime.Now;
-                        if (!AlertDal.UpdateOne(eq.AlertObject))
-                        {
-                            Alert art = new Alert();
-                            art.AlertName = ed.ChromaAlertStr;
-                            art.EquipmentID = eq.ID;
-                            eq.AlertObject = AlertDal.AddOneR(art);
-                        }
-                    }
-                }
+                GetAlert(ref eq, ed);
             }
 
             Equipment eqqq = mainList.Find(c => !c.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase));
@@ -231,148 +194,47 @@ namespace SDApplication
             this.Invoke(new Action(gridView_Main.BestFitColumns));
         }
 
-        // 发命令，读数据
-        private void ReadData()
+        private void GetAlert(ref Equipment eq, EquipmentData ed) 
         {
-            while (isRead)
+            // 报警记录
+            if (eq.ChromaAlertStr != ed.ChromaAlertStr)
             {
-                // 暂停
-                if (suspend)
-                {
-                    Thread.Sleep(systemConfig.Preiod * 1000);
-                    continue;
-                }
 
-                foreach (Equipment eq in mainList)
+                if (eq.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase))
                 {
-                    // 读取主表类容
-                    readMain(eq);
-                    //Thread.Sleep(1000);
-                }
-                Equipment eqqq = mainList.Find(c => !c.ChromaAlertStr.Equals(Gloabl.NormalStr,StringComparison.OrdinalIgnoreCase));
-                if (eqqq != null)
-                {
-                    PlaySound(true);
+                    Alert art = new Alert();
+                    art.AlertName = ed.ChromaAlertStr;
+                    art.EquipmentID = eq.ID;
+                    eq.AlertObject = AlertDal.AddOneR(art);
                 }
                 else
                 {
-                    PlaySound(false);
-                }
-                this.Invoke(new Action(gridControl_Main.RefreshDataSource));
-                this.Invoke(new Action(gridView_Main.BestFitColumns));
-                int readHZ = 5;
-                switch (systemConfig.PreiodUnit)
-                {
-                    case 0:      // 秒
-                        readHZ = systemConfig.Preiod;
-                        break;
-                    case 1:      // 分
-                        readHZ = systemConfig.Preiod * 60;
-                        break;
-                    case 2:      // 时
-                        readHZ = systemConfig.Preiod * 60 * 60;
-                        break;
-                    default:
-                        break;
-                }
-                Thread.Sleep(readHZ * 1000);
-                //Thread.Sleep(2000);
-            }
-
-            this.Invoke(new Action<bool>(c => btn_Start.Enabled = c), true);
-        }
-
-        // 读取主表类容
-        private void readMain(Equipment eq)
-        {
-            Command cd = new Command(eq.Address, 0x00, 0x00, 3);
-            if (Gloabl.IsAdmin)
-            {
-                this.Invoke(new Action<string>(addText), "W: " + Parse.byteToHexStr(cd.SendByte));
-            }
-            
-            if (!CommandResult.GetResult(cd))
-            {
-                if (eq.lostNum >= 10 )
-                {
-                    eq.IsConnect = false;                    
-                }
-                else
-                {
-                    eq.lostNum++;
-                }
-                return;
-            }
-            else
-            {
-                eq.IsConnect = true;
-                eq.lostNum = 0;
-            }
-            if (Gloabl.IsAdmin)
-            {
-                this.Invoke(new Action<string>(addText), "R: " + Parse.byteToHexStr(cd.ResultByte));
-            }
-            
-            EquipmentData data = Parse.GetRealData(cd.ResultByte, eq);
-            data.EquipmentID = eq.ID;
-            
-            // 添加数据库
-            EquipmentDataDal.AddOne(data);
-
-            eq.Chroma = data.Chroma;
-            
-
-            // 绘制曲线
-            if (eq.ID == Convert.ToInt32(seriesOne.Tag))
-            {
-                this.Invoke(new Action<EquipmentData>(c => addPoint(c)), data);
-            }
-            if (eq.AlertType == 0)
-            {
-                eq.ChromaAlertStr = Gloabl.NormalStr;
-            }
-            else
-            {
-                // 报警记录
-                if (eq.ChromaAlertStr != data.ChromaAlertStr)
-                {
-
-                    if (eq.ChromaAlertStr.Equals(Gloabl.NormalStr,StringComparison.OrdinalIgnoreCase))
+                    eq.AlertObject.EndTime = DateTime.Now;
+                    AlertDal.UpdateOne(eq.AlertObject);
+                    if (!eq.ChromaAlertStr.Equals(ed.ChromaAlertStr, StringComparison.OrdinalIgnoreCase))
                     {
                         Alert art = new Alert();
-                        art.AlertName = data.ChromaAlertStr;
+                        art.AlertName = ed.ChromaAlertStr;
                         art.EquipmentID = eq.ID;
                         eq.AlertObject = AlertDal.AddOneR(art);
                     }
-                    else
-                    {
-                        eq.AlertObject.EndTime = DateTime.Now;
-                        AlertDal.UpdateOne(eq.AlertObject);
-                        if (!eq.ChromaAlertStr.Equals(data.ChromaAlertStr,StringComparison.OrdinalIgnoreCase))
-                        {
-                            Alert art = new Alert();
-                            art.AlertName = data.ChromaAlertStr;
-                            art.EquipmentID = eq.ID;
-                            eq.AlertObject = AlertDal.AddOneR(art);
-                        }
-                    }
-                    eq.ChromaAlertStr = data.ChromaAlertStr;
                 }
-                else
+                eq.ChromaAlertStr = ed.ChromaAlertStr;
+            }
+            else
+            {
+                if (!eq.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase))
                 {
-                    if (!eq.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase))
+                    eq.AlertObject.EndTime = DateTime.Now;
+                    if (!AlertDal.UpdateOne(eq.AlertObject))
                     {
-                        eq.AlertObject.EndTime = DateTime.Now;
-                        if (!AlertDal.UpdateOne(eq.AlertObject))
-                        {
-                            Alert art = new Alert();
-                            art.AlertName = data.ChromaAlertStr;
-                            art.EquipmentID = eq.ID;
-                            eq.AlertObject = AlertDal.AddOneR(art);
-                        }
+                        Alert art = new Alert();
+                        art.AlertName = ed.ChromaAlertStr;
+                        art.EquipmentID = eq.ID;
+                        eq.AlertObject = AlertDal.AddOneR(art);
                     }
                 }
-            }            
+            }
         }
 
         // 新增点
