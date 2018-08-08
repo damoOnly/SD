@@ -78,7 +78,9 @@ namespace SDApplication
         /// </summary>
         private bool IsClosePlay = false;
 
-        private AsyncSocketTCPServer tcpserver;
+        private AsyncTcpServer tcpserver;
+
+        private Thread threadForConnect;
 
         #endregion
 
@@ -119,14 +121,28 @@ namespace SDApplication
             //datalist.Aggregate
         }
 
+        private void server_PlaintextReceived(object sender, TcpDatagramReceivedEventArgs<string> e)
+        {
+            if (e.Datagram != "Received")
+            {
+                if (Gloabl.IsAdmin)
+                {
+                    this.Invoke(new Action<string>(addText), "recv: " + e.Datagram);
+                }
+                List<EquipmentData> list = Parse.GetSocketDataList(e.Datagram);
+                refreshSocketData(list);
+            }
+        }
+
         private void tcpserver_DataReceived(object sender, AsyncSocketEventArgs e) 
         {
-            if (Gloabl.IsAdmin)
-            {
-                this.Invoke(new Action<string>(addText), "recv: " + e._msg);
-            }
-            EquipmentData ed = Parse.GetSocketData(e._msg);
-            refreshSocketData(ed);
+            //string datastr = Encoding.Default.GetString(e._state.RecvDataBuffer);
+            //if (Gloabl.IsAdmin)
+            //{
+            //    this.Invoke(new Action<string>(addText), "recv: " + datastr);
+            //}
+            //EquipmentData ed = Parse.GetSocketDataList(datastr);
+            //refreshSocketData(ed);
         }
 
         private void GetAlertValue(ref EquipmentData ed, Equipment eq)
@@ -147,36 +163,51 @@ namespace SDApplication
             }
         }
 
-        private void refreshSocketData(EquipmentData ed)
+        private void refreshSocketData(List<EquipmentData> edList)
         {
-            Equipment eq = mainList.Find(c => c.ID == ed.EquipmentID);
-            if (eq == null || !ed.Flag)
+            foreach (var item in edList)
             {
-                return;
-            }
+                EquipmentData ed = item;
+                Equipment eq = mainList.Find(c => c.Address == ed.Address);
+                if (eq == null || !ed.Flag)
+                {
+                    return;
+                }
+                ed.EquipmentID = eq.ID;
 
-            GetAlertValue(ref ed, eq);
+                GetAlertValue(ref ed, eq);
 
-            eq.IsConnect = true;
-            // 添加数据库
-            EquipmentDataDal.AddOne(ed);
+                if (!string.IsNullOrWhiteSpace(ed.CRC) && !ed.CRC.Equals(eq.CRC))
+                {
+                    eq.IsConnect = true;
+                    eq.lostNum = 0;
+                    eq.CRC = ed.CRC;
+                }
+                else if (!string.IsNullOrWhiteSpace(ed.CRC))
+                {
+                    eq.CRC = ed.CRC;
+                }
+                
+                // 添加数据库
+                EquipmentDataDal.AddOne(ed);
 
-            eq.Chroma = ed.Chroma;
+                eq.Chroma = ed.Chroma;
 
 
-            // 绘制曲线
-            if (eq.ID == Convert.ToInt32(seriesOne.Tag))
-            {
-                this.Invoke(new Action<EquipmentData>(c => addPoint(c)), ed);
-            }
-            if (eq.AlertType == 0)
-            {
-                eq.ChromaAlertStr = Gloabl.NormalStr;
-            }
-            else
-            {
-                GetAlert(ref eq, ed);
-            }
+                // 绘制曲线
+                if (eq.ID == Convert.ToInt32(seriesOne.Tag))
+                {
+                    this.Invoke(new Action<EquipmentData>(c => addPoint(c)), ed);
+                }
+                if (eq.AlertType == 0)
+                {
+                    eq.ChromaAlertStr = Gloabl.NormalStr;
+                }
+                else
+                {
+                    GetAlert(ref eq, ed);
+                }
+            }            
 
             Equipment eqqq = mainList.Find(c => !c.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase));
             if (eqqq != null)
@@ -187,8 +218,17 @@ namespace SDApplication
             {
                 PlaySound(false);
             }
-            this.Invoke(new Action(gridControl_Main.RefreshDataSource));
+            gridControl_Main.RefreshDataSource();
+            //this.Invoke(new Action(gridControl_Main.RefreshDataSource));
             this.Invoke(new Action(gridView_Main.BestFitColumns));
+            
+
+
+            //gridControl_Main.BeginUpdate();
+           //  gridControl_Main.RefreshDataSource();
+            //gridControl_Main.EndUpdate();
+
+            // gridView_Main.BestFitColumns();
         }
 
         private void GetAlert(ref Equipment eq, EquipmentData ed) 
@@ -335,6 +375,7 @@ namespace SDApplication
                 {
                     return false;
                 }
+                
                 // 登录
                 //Form_Login login = new Form_Login(systemConfig);
                 //login.ShowDialog();
@@ -379,7 +420,7 @@ namespace SDApplication
                 Equipment eee = mainList.First();
                 if (eee != null)
                 {
-                    textEdit_AddressAdd.Text = eee.Address.ToString();
+                    textEdit_AddressAdd.Text = eee.Address;
                     textEdit_GasNameAdd.Text = eee.EName;
                     textEdit_RangeAdd.Text = eee.Range.ToString();
                     comboBoxEdit_UnitAdd.SelectedItem = eee.Unit;
@@ -392,11 +433,7 @@ namespace SDApplication
                 }
                 player = new SoundPlayer();
                 player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\" + systemConfig.SoundName;
-                player.Load();
-
-                IPAddress ip = IPAddress.Parse(systemConfig.CenterIP);
-                tcpserver = new AsyncSocketTCPServer(ip, 9001, 3);
-                tcpserver.DataReceived += tcpserver_DataReceived;
+                player.Load();                
 
                 Gloabl.IsOpen = true;
                 
@@ -680,7 +717,7 @@ namespace SDApplication
         private Equipment GetAddEquip()
         {
             Equipment eee = new Equipment();
-            eee.Address = byte.Parse(textEdit_AddressAdd.Text);
+            eee.Address = textEdit_AddressAdd.Text;
             eee.EName = textEdit_GasNameAdd.Text;
             eee.Range = float.Parse(textEdit_RangeAdd.Text);
             eee.Unit = comboBoxEdit_UnitAdd.Text;
@@ -727,6 +764,32 @@ namespace SDApplication
             
         }
 
+        private void StartLishConnect()
+        {
+            while (true)
+            {
+                if (suspend)
+                {
+                    return;
+                }
+
+                foreach (var item in mainList)
+                {
+                    if (item.lostNum >= 3)
+                    {
+                        item.IsConnect = false;
+                    }
+                    else
+                    {
+                        item.lostNum++;
+                    }
+                }
+                this.Invoke(new Action(gridControl_Main.RefreshDataSource));
+                Thread.Sleep(60 * 1000);
+            }
+            
+        }
+
         private void btn_Start_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //if (Gloabl.IsOpen == false)
@@ -747,16 +810,42 @@ namespace SDApplication
             else
             {
                 changeSeries(mainList.Find(c => c.ID == Convert.ToInt32(seriesOne.Tag)));
-            }           
+            }
+
+            try
+            {
+                if (tcpserver == null)
+                {
+                    IPAddress ip = IPAddress.Parse(systemConfig.CenterIP);
+                    tcpserver = new AsyncTcpServer(ip, systemConfig.CenterPort);
+                    tcpserver.PlaintextReceived += server_PlaintextReceived;
+                }
+
+                tcpserver.Start();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("打开网络连接失败");
+                return;
+            }
             
+
             isRead = true;
-            tcpserver.Start();
+
+            if (threadForConnect == null)
+            {
+                threadForConnect = new Thread(new ThreadStart(StartLishConnect));
+                threadForConnect.Start();
+            }
+
+            suspend = false;
             
             btn_Start.Enabled = false;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
-        {            
+        {
+            
             if (!InitializeForm())
             {
                 XtraMessageBox.Show("初始化失败");
@@ -782,8 +871,8 @@ namespace SDApplication
         {
             PlaySound(false);
             isRead = false;
-
-            tcpserver.CloseAllClient();
+            suspend = true;
+            tcpserver.Stop();
             btn_Start.Enabled = true;
             // 连接状态改为 关闭
             foreach (Equipment eq in mainList)
@@ -811,7 +900,7 @@ namespace SDApplication
                 XtraMessageBox.Show("截止时间必须大于起始时间");
                 return;
             }
-            Equipment eq = mainList.Find(c => c.Address == Convert.ToInt64(comboBoxEdit_ID.Text));
+            Equipment eq = mainList.Find(c => c.Address == comboBoxEdit_ID.Text);
 
             List<EquipmentData> data = EquipmentDataDal.GetListByTime(eq.ID, dateEdit_Start.DateTime, dateEdit_End.DateTime);
             if (data == null || data.Count < 1)
@@ -889,7 +978,7 @@ namespace SDApplication
             {
                 return;
             }
-            Equipment eq = mainList.Find(c => c.Address == Convert.ToInt64(comboBoxEdit_ID.Text));
+            Equipment eq = mainList.Find(c => c.Address == comboBoxEdit_ID.Text);
 
             int total = EquipmentDataDal.DeleteByTime(eq.ID, dateEdit_Start.DateTime, dateEdit_End.DateTime);
             gridControl_History.DataSource = null;
@@ -899,7 +988,7 @@ namespace SDApplication
 
         private void comboBoxEdit_ID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Equipment ee = mainList.Find(c => c.Address == Convert.ToInt64(comboBoxEdit_ID.Text));
+            Equipment ee = mainList.Find(c => c.Address == comboBoxEdit_ID.Text);
             textEdit_GasName.Text = ee.EName;
             textEdit_Place.Text = ee.Place;
         }
@@ -922,7 +1011,7 @@ namespace SDApplication
             try
             {
                 Equipment eee = gridView_Add.GetFocusedRow() as Equipment;
-                textEdit_AddressAdd.Text = eee.Address.ToString();
+                textEdit_AddressAdd.Text = eee.Address;
                 textEdit_GasNameAdd.Text = eee.EName;
                 textEdit_RangeAdd.Text = eee.Range.ToString();
                 comboBoxEdit_UnitAdd.SelectedItem = eee.Unit;
@@ -945,7 +1034,7 @@ namespace SDApplication
             try
             {
                 Equipment eee = GetAddEquip();
-                List<byte> adds = EquipmentDal.GetAddress();
+                List<string> adds = EquipmentDal.GetAddress();
                 if (adds.Contains(eee.Address))
                 {
                     XtraMessageBox.Show("ID重复，请重新输入");
@@ -966,7 +1055,7 @@ namespace SDApplication
             try
             {
                 Equipment eee = gridView_Add.GetFocusedRow() as Equipment;
-                List<byte> adds = EquipmentDal.GetAddress();
+                List<string> adds = EquipmentDal.GetAddress();
                 // 不能和自己比较
                 adds.Remove(eee.Address);
                 
@@ -1060,7 +1149,19 @@ namespace SDApplication
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            tcpserver.Dispose();            
+            if (tcpserver != null)
+            {
+                if (tcpserver.IsRunning)
+                {
+                    tcpserver.Stop();
+                }
+                tcpserver.Dispose();
+            }
+
+            if (threadForConnect != null)
+            {
+                threadForConnect.Abort();
+            }
         }
 
         private void btn_Back_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

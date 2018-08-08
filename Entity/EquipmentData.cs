@@ -49,5 +49,9 @@ namespace Entity
         public string ChromaAlertStr { get; set; }
 
         public bool Flag { get; set; }
+
+        public string Address { get; set; }
+
+        public string CRC { get; set; }
     }
 }

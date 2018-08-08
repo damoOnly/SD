@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Entity;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace CommandManager
 {
@@ -54,42 +55,33 @@ namespace CommandManager
             return returnStr;
         }
 
-        public static EquipmentData GetSocketData(string data)
+        public static List<EquipmentData> GetSocketDataList(string data)
+        {
+            List<EquipmentData> result = new List<EquipmentData>();
+            MatchCollection mc = Regex.Matches(data, @"##0096([\s\S]*?)\&\&[0-9a-fA-F]{4}");
+            foreach (Match item in mc)
+            {
+                result.Add(GetSocketData(item.Value)); 
+            }
+            
+            return result;
+        }
+
+        public static EquipmentData GetSocketData(string one)
         {
             EquipmentData result = new EquipmentData();
+            Match rtd = Regex.Match(one, @"025-Rtd=(-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0))");
+            result.Chroma = rtd.Groups.Count >= 2 ? float.Parse(rtd.Groups[1].Value) : 0;
 
-            string[] dataList = data.Split(';');
-            if (dataList != null && dataList.Length > 0)
-            {
-                for (int i = 0; i < dataList.Length; i++)
-                {
-                    string[] valueList = dataList[i].Split('=');
-                    if (valueList != null && valueList.Length == 2)
-                    {
-                        switch (valueList[0])
-                        {
-                            case "MN":
-                                result.EquipmentID = Convert.ToInt32(valueList[1]);
-                                break;
-                            case "025-Rtd":
-                                result.Chroma = float.Parse(valueList[1]);
-                                break;
-                            case "025-Flag":
-                                if (valueList[1] == "N")
-                                {
-                                    result.Flag = false;
-                                }
-                                else
-                                {
-                                    result.Flag = true;
-                                }
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                }
-            }
+            Match mn = Regex.Match(one, @"MN=([1-9]\d*)");
+            result.Address = mn.Groups.Count >= 2 ? mn.Groups[1].Value : string.Empty;
+
+            Match flag = Regex.Match(one, @"025-Flag=N");
+            result.Flag = flag.Success;
+
+            Match CRC = Regex.Match(one, @"\&\&([0-9a-fA-F]{4})");
+            result.CRC = CRC.Groups.Count >= 2 ? CRC.Groups[1].Value : string.Empty;
+
             return result;
         }
     }

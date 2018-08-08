@@ -43,6 +43,7 @@
     <Compile Include="AsyncSocketEventArgs.cs" />
     <Compile Include="AsyncSocketState.cs" />
     <Compile Include="AsyncSocketTCPServer.cs" />
+    <Compile Include="AsyncTcpServer.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="CommandManager.cs" />
     <Compile Include="CRC.cs" />

@@ -12,7 +12,7 @@ namespace Dal
     {
         public static bool AddOne(Equipment data)
         {
-            string sql = string.Format("insert into tb_Equipment (Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime) values ({0},{1},'{2}','{3}',{4},'{5}',{6},{7},{8},{9},'{10}')", data.Address, data.AlertType, data.EName, data.Place, data.Range, data.Unit, data.Point, data.Revise, data.LowAlert, data.HighAlert, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"));
+            string sql = string.Format("insert into tb_Equipment (Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime) values ('{0}',{1},'{2}','{3}',{4},'{5}',{6},{7},{8},{9},'{10}')", data.Address, data.AlertType, data.EName, data.Place, data.Range, data.Unit, data.Point, data.Revise, data.LowAlert, data.HighAlert, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"));
             if (SqliteHelper.ExecuteNonQuery(sql) == 1)
             {
                 return true;
@@ -26,10 +26,10 @@ namespace Dal
 
         public static Equipment AddOneR(Equipment data)
         {
-            string sql = string.Format("insert into tb_Equipment (Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime) values ({0},{1},'{2}','{3}',{4},'{5}',{6},{7},{8},{9},'{10}')", data.Address, data.AlertType, data.EName, data.Place, data.Range, data.Unit, data.Point, data.Revise, data.LowAlert, data.HighAlert, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"));
+            string sql = string.Format("insert into tb_Equipment (Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime) values ('{0}',{1},'{2}','{3}',{4},'{5}',{6},{7},{8},{9},'{10}')", data.Address, data.AlertType, data.EName, data.Place, data.Range, data.Unit, data.Point, data.Revise, data.LowAlert, data.HighAlert, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"));
             if (SqliteHelper.ExecuteNonQuery(sql) == 1)
             {
-                string whe = string.Format("Address = {0} AND Addtime = '{1}'", data.Address, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"));
+                string whe = string.Format("Address = '{0}' AND Addtime = '{1}'", data.Address, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"));
                 Equipment eee = EquipmentDal.GetOneByWh(whe);
                 return eee;
             }
@@ -42,7 +42,7 @@ namespace Dal
 
         public static bool UpdateOne(Equipment data)
         {
-            string sql = string.Format("UPDATE tb_Equipment SET Address={0},AlertType={1},EName='{2}',Place='{3}',Range={4},Unit='{5}',Point={6},Revise={7},LowAlert={8},HighAlert={9},Addtime='{10}' WHERE ID={11}", data.Address, data.AlertType, data.EName, data.Place, data.Range, data.Unit, data.Point, data.Revise, data.LowAlert, data.HighAlert, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"), data.ID);
+            string sql = string.Format("UPDATE tb_Equipment SET Address='{0}',AlertType={1},EName='{2}',Place='{3}',Range={4},Unit='{5}',Point={6},Revise={7},LowAlert={8},HighAlert={9},Addtime='{10}' WHERE ID={11}", data.Address, data.AlertType, data.EName, data.Place, data.Range, data.Unit, data.Point, data.Revise, data.LowAlert, data.HighAlert, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"), data.ID);
             if (SqliteHelper.ExecuteNonQuery(sql) == 1)
             {
                 return true;
@@ -68,7 +68,7 @@ namespace Dal
             {
                 Equipment eq = new Equipment();
                 eq.EName = ds.Tables[0].Rows[0]["EName"].ToString();
-                eq.Address = Convert.ToByte(ds.Tables[0].Rows[0]["Address"]);
+                eq.Address = ds.Tables[0].Rows[0]["Address"].ToString();
                 eq.AlertType = Convert.ToByte(ds.Tables[0].Rows[0]["AlertType"]);
                 eq.Place = ds.Tables[0].Rows[0]["Place"].ToString();
                 eq.Range = Convert.ToSingle(ds.Tables[0].Rows[0]["Range"]);
@@ -96,7 +96,7 @@ namespace Dal
                 Equipment eq = new Equipment();
                 eq.ID = Convert.ToInt64(ds.Tables[0].Rows[0]["ID"]);
                 eq.EName = ds.Tables[0].Rows[0]["EName"].ToString();
-                eq.Address = Convert.ToByte(ds.Tables[0].Rows[0]["Address"]);
+                eq.Address = ds.Tables[0].Rows[0]["Address"].ToString();
                 eq.AlertType = Convert.ToByte(ds.Tables[0].Rows[0]["AlertType"]);
                 eq.Place = ds.Tables[0].Rows[0]["Place"].ToString();
                 eq.Range = Convert.ToSingle(ds.Tables[0].Rows[0]["Range"]); 
@@ -125,7 +125,7 @@ namespace Dal
                     Equipment eq = new Equipment();
                     eq.ID = Convert.ToInt64(row["ID"]);
                     eq.EName = row["EName"].ToString();
-                    eq.Address = Convert.ToByte(row["Address"]);
+                    eq.Address = row["Address"].ToString();
                     eq.AlertType = Convert.ToByte(row["AlertType"]);
                     eq.Place = row["Place"].ToString();
                     eq.Range = Convert.ToSingle(row["Range"]);
@@ -183,22 +183,22 @@ namespace Dal
         /// 获取有效的设备地址
         /// </summary>
         /// <returns></returns>
-        public static List<byte> GetAddress()
+        public static List<string> GetAddress()
         {
             string sql = string.Format("select Address from tb_Equipment");
             DataSet ds = new DataSet();
             ds = SqliteHelper.Query(sql);
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
-                List<byte> list = new List<byte>();
+                List<string> list = new List<string>();
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
-                    list.Add(Convert.ToByte(row["Address"]));
+                    list.Add(row["Address"].ToString());
                 }
                 return list.Distinct().ToList();
             }
             LogLib.Log.GetLogger("EquipmentDal").Warn("获取设备传感器地址列表失败");
-            return new List<byte>();
+            return new List<string>();
         }
 
         /// <summary>

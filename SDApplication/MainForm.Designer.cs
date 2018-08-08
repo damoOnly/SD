@@ -1094,7 +1094,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(245, 31);
+            this.labelControl3.Location = new System.Drawing.Point(229, 31);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(48, 14);
             this.labelControl3.TabIndex = 5;
@@ -1118,12 +1118,12 @@
             // 
             // comboBoxEdit_ID
             // 
-            this.comboBoxEdit_ID.Location = new System.Drawing.Point(296, 28);
+            this.comboBoxEdit_ID.Location = new System.Drawing.Point(278, 28);
             this.comboBoxEdit_ID.MenuManager = this.barManager1;
             this.comboBoxEdit_ID.Name = "comboBoxEdit_ID";
             this.comboBoxEdit_ID.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit_ID.Size = new System.Drawing.Size(58, 20);
+            this.comboBoxEdit_ID.Size = new System.Drawing.Size(118, 20);
             this.comboBoxEdit_ID.TabIndex = 1;
             this.comboBoxEdit_ID.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit_ID_SelectedIndexChanged);
             // 
@@ -1924,7 +1924,7 @@
             this.textEdit_PlaceAdd.Location = new System.Drawing.Point(160, 134);
             this.textEdit_PlaceAdd.MenuManager = this.barManager1;
             this.textEdit_PlaceAdd.Name = "textEdit_PlaceAdd";
-            this.textEdit_PlaceAdd.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_PlaceAdd.Size = new System.Drawing.Size(167, 20);
             this.textEdit_PlaceAdd.TabIndex = 8;
             // 
             // btn_UpdateAdd
@@ -1966,7 +1966,7 @@
             this.textEdit_GasNameAdd.Location = new System.Drawing.Point(160, 82);
             this.textEdit_GasNameAdd.MenuManager = this.barManager1;
             this.textEdit_GasNameAdd.Name = "textEdit_GasNameAdd";
-            this.textEdit_GasNameAdd.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_GasNameAdd.Size = new System.Drawing.Size(167, 20);
             this.textEdit_GasNameAdd.TabIndex = 4;
             // 
             // textEdit_AddressAdd
@@ -1975,7 +1975,7 @@
             this.textEdit_AddressAdd.Location = new System.Drawing.Point(160, 30);
             this.textEdit_AddressAdd.MenuManager = this.barManager1;
             this.textEdit_AddressAdd.Name = "textEdit_AddressAdd";
-            this.textEdit_AddressAdd.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_AddressAdd.Size = new System.Drawing.Size(167, 20);
             this.textEdit_AddressAdd.TabIndex = 3;
             // 
             // labelControl18
@@ -2317,7 +2317,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
-            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();

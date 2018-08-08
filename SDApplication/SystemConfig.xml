@@ -23,15 +23,15 @@
   <!--备份周期-->
   <BackupPreiod>29</BackupPreiod>
   <!--中心站地址-->
-  <CenterIP>127.0.0.10</CenterIP>
+  <CenterIP>192.168.0.102</CenterIP>
   <!--中心站端口号-->
-  <CenterPort>5718</CenterPort>
+  <CenterPort>9001</CenterPort>
   <!--声音文件名称-->
   <SoundName>ALARM1.WAV</SoundName>  
   <User>user</User>
   <UserPWD>111111</UserPWD>
   <Admin>admin</Admin>
-  <AdminPWD>szsundo</AdminPWD>
+  <AdminPWD>1</AdminPWD>
   <!--皮肤名称-->
   <SkinName>Black</SkinName>
   <!--是否自动检测-->

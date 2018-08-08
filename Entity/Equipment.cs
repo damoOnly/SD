@@ -26,7 +26,7 @@ namespace Entity
         /// <summary>
         /// 仪器地址
         /// </summary>
-        public byte Address { get; set; }
+        public string Address { get; set; }
 
         /// <summary>
         /// 设备状态
@@ -127,6 +127,8 @@ namespace Entity
         /// 丢包计时
         /// </summary>
         public int lostNum { get; set; }
+
+        public string CRC { get; set; }
     }
 
     //public class EquipmentComparer : IEqualityComparer<Equipment>

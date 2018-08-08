@@ -46,6 +46,13 @@
     <Compile Include="EquipmentData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SystemConfig.cs" />
+    <Compile Include="TcpClientConnectedEventArgs.cs" />
+    <Compile Include="TcpClientDisconnectedEventArgs.cs" />
+    <Compile Include="TcpClientState.cs" />
+    <Compile Include="TcpDatagramReceivedEventArgs.cs" />
+    <Compile Include="TcpServerConnectedEventArgs.cs" />
+    <Compile Include="TcpServerDisconnectedEventArgs.cs" />
+    <Compile Include="TcpServerExceptionOccurredEventArgs.cs" />
     <Compile Include="UserInfo.cs" />
     <Compile Include="SensorInfoConfig.cs" />
   </ItemGroup>
