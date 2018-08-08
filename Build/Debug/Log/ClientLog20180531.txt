@@ -1,0 +1,3 @@
+【2018-05-31 21:03:20,191】 [9] WARN  EquipmentDataDal [(null)] - 获取浓度数据失败
+【2018-05-31 21:11:34,250】 [10] WARN  EquipmentDataDal [(null)] - 获取浓度数据失败
+【2018-05-31 21:13:16,383】 [9] WARN  EquipmentDataDal [(null)] - 获取浓度数据失败
