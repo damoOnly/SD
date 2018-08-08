@@ -329,3 +329,6 @@ ASALocalRun/
 .mfractor/
 
 Build/
+
+*.exe
+*.zip
