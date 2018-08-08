@@ -1,7 +1,0 @@
-【2018-05-23 20:10:07,146】 [9] WARN  EquipmentDataDal [(null)] - 获取浓度数据失败
-【2018-05-23 20:19:41,107】 [9] WARN  EquipmentDataDal [(null)] - 获取浓度数据失败
-【2018-05-23 20:27:34,161】 [10] WARN  EquipmentDataDal [(null)] - 获取浓度数据失败
-【2018-05-23 20:30:28,888】 [9] WARN  EquipmentDataDal [(null)] - 获取浓度数据失败
-【2018-05-23 21:42:26,672】 [9] WARN  EquipmentDataDal [(null)] - 获取浓度数据失败
-【2018-05-23 21:49:45,597】 [8] WARN  EquipmentDataDal [(null)] - 获取浓度数据失败
-【2018-05-23 21:50:51,989】 [8] WARN  EquipmentDataDal [(null)] - 获取浓度数据失败
