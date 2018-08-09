@@ -27,7 +27,7 @@ namespace SDApplication
                 DevExpress.Skins.SkinManager.EnableMdiFormSkins();
             }
             DevExpress.XtraEditors.Controls.Localizer.Active = new LocalizationCHS();
-            Application.Run(new MainForm()); 
+            Application.Run(new MainForm2()); 
             
         }
     }

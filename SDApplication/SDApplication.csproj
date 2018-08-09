@@ -92,6 +92,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoSizeFormClass.cs" />
     <Compile Include="Form_ChangeAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +115,12 @@
     <Compile Include="Form_Login.designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm2.Designer.cs">
+      <DependentUpon>MainForm2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form_ChangeAdmin.resx">
       <DependentUpon>Form_ChangeAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +140,9 @@
     </Compile>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm2.resx">
+      <DependentUpon>MainForm2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">

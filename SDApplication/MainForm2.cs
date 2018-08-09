@@ -18,7 +18,7 @@ using SDApplication.Properties;
 
 namespace SDApplication
 {
-    public partial class MainForm : DevExpress.XtraEditors.XtraForm
+    public partial class MainForm2 : DevExpress.XtraEditors.XtraForm
     {
         #region 变量
 
@@ -85,41 +85,6 @@ namespace SDApplication
         #endregion
 
         #region 方法
-        // 切换曲线
-        private void changeSeries(Equipment ep, bool isClear = true)
-        {
-            if (ep == null)
-            {
-                LogLib.Log.GetLogger(this).Warn("切换曲线时对象为空");
-                return;
-            }
-            seriesOne.Name = ep.EName;
-            seriesOne.Tag = ep.ID;
-            if (isClear)
-            {
-                seriesOne.Points.Clear();
-            }
-
-            SwiftPlotDiagram diagram_Tem = chartControl_Main.Diagram as SwiftPlotDiagram;
-            diagram_Tem.AxisY.Title.Text = string.Format("浓度({0})", ep.Unit);
-            diagram_Tem.AxisX.Range.SetMinMaxValues(minTime, maxTime);
-            if (ep.Range > 0)
-            {
-                diagram_Tem.AxisY.Range.SetMinMaxValues(0, ep.Range);
-            }
-
-            List<EquipmentData> datalist = EquipmentDataDal.GetListByTime(ep.ID, minTime, maxTime);
-            if (datalist == null)
-            {
-                return;
-            }
-            datalist.ForEach(c =>
-            {
-                SeriesPoint sp = new SeriesPoint(c.AddTime, c.Chroma);
-                seriesOne.Points.Add(sp);
-            });
-            //datalist.Aggregate
-        }
 
         // 发命令，读数据
         private void ReadData()
@@ -139,7 +104,7 @@ namespace SDApplication
                     readMain(eq);
                     //Thread.Sleep(1000);
                 }
-                Equipment eqqq = mainList.Find(c => !c.ChromaAlertStr.Equals(Gloabl.NormalStr,StringComparison.OrdinalIgnoreCase));
+                Equipment eqqq = mainList.Find(c => !c.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase));
                 if (eqqq != null)
                 {
                     PlaySound(true);
@@ -148,8 +113,6 @@ namespace SDApplication
                 {
                     PlaySound(false);
                 }
-                this.Invoke(new Action(gridControl_Main.RefreshDataSource));
-                this.Invoke(new Action(gridView_Main.BestFitColumns));
                 int readHZ = 5;
                 switch (systemConfig.PreiodUnit)
                 {
@@ -181,7 +144,7 @@ namespace SDApplication
             {
                 this.Invoke(new Action<string>(addText), "W: " + Parse.byteToHexStr(cd.SendByte));
             }
-            
+
             if (!CommandResult.GetResult(cd))
             {
                 eq.IsConnect = false;
@@ -195,21 +158,16 @@ namespace SDApplication
             {
                 this.Invoke(new Action<string>(addText), "R: " + Parse.byteToHexStr(cd.ResultByte));
             }
-            
+
             EquipmentData data = Parse.GetRealData(cd.ResultByte, eq);
             data.EquipmentID = eq.ID;
-            
+
             // 添加数据库
             EquipmentDataDal.AddOne(data);
 
             eq.Chroma = data.Chroma;
-            
 
-            // 绘制曲线
-            if (eq.ID == Convert.ToInt32(seriesOne.Tag))
-            {
-                this.Invoke(new Action<EquipmentData>(c => addPoint(c)), data);
-            }
+            this.Invoke(new Action<EquipmentData, int>((c, d) => refreshMain(c, d)), data, eq.Point);
             if (eq.AlertType == 0)
             {
                 eq.ChromaAlertStr = Gloabl.NormalStr;
@@ -220,7 +178,7 @@ namespace SDApplication
                 if (eq.ChromaAlertStr != data.ChromaAlertStr)
                 {
 
-                    if (eq.ChromaAlertStr.Equals(Gloabl.NormalStr,StringComparison.OrdinalIgnoreCase))
+                    if (eq.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase))
                     {
                         Alert art = new Alert();
                         art.AlertName = data.ChromaAlertStr;
@@ -231,7 +189,7 @@ namespace SDApplication
                     {
                         eq.AlertObject.EndTime = DateTime.Now;
                         AlertDal.UpdateOne(eq.AlertObject);
-                        if (!eq.ChromaAlertStr.Equals(data.ChromaAlertStr,StringComparison.OrdinalIgnoreCase))
+                        if (!eq.ChromaAlertStr.Equals(data.ChromaAlertStr, StringComparison.OrdinalIgnoreCase))
                         {
                             Alert art = new Alert();
                             art.AlertName = data.ChromaAlertStr;
@@ -255,60 +213,66 @@ namespace SDApplication
                         }
                     }
                 }
-            }            
+            }
         }
 
-        // 新增点
-        private void addPoint(EquipmentData ed)
+        // 刷新主界面
+        private void refreshMain(EquipmentData data, int point)
         {
-            if (ed.AddTime > maxTime)
+            string chroma = data.Chroma.ToString();
+            switch (data.EquipmentID)
             {
-                minTime = DateTime.Now;
-                maxTime = minTime.AddMinutes(systemConfig.Xrange);
-                changeSeries(mainList.Find(c => c.ID == ed.EquipmentID));
+                case 1:
+                    txt_d1.Text = chroma + " dB";
+                    break;
+                case 2:
+                    txt_d2.Text = chroma + " RH%";
+                    break;
+                case 3:
+                    txt_d3.Text = chroma + " ℃";
+                    break;
+                case 4:
+                    txt_d4.Text = chroma + " ppm";
+                    break;
+                case 5:
+                    txt_d5.Text = chroma + " ppm";
+                    break;
+                case 6:
+                    txt_d6.Text = chroma + " ppm";
+                    break;
+                case 7:
+                    txt_d7.Text = chroma + " ppm";
+                    break;
+                case 8:
+                    txt_d8.Text = chroma + " ppm";
+                    break;
+                case 9:
+                    double area;
+                    if (!double.TryParse(txt_pipeNew.Text.Trim(), out area))
+                    {
+                        area = 1.0;
+                    }
+                    txt_d9.Text = Math.Round(data.Chroma * area, point).ToString() + " m³/s";
+                    break;
+                case 10:
+                    if (!double.TryParse(txt_pipeBack.Text.Trim(), out area))
+                    {
+                        area = 1.0;
+                    }
+                    txt_d10.Text = Math.Round(data.Chroma * area, point).ToString() + " m³/s";
+                    break;
+                case 11:
+                    txt_d_airQuality.Text = chroma;
+                    break;
+                case 12:
+                    txt_d_sterilize.Text = chroma;
+                    break;
+                case 13:
+                    txt_d_pm.Text = chroma;
+                    break;
+                default:
+                    break;
             }
-            seriesOne.Points.Add(new SeriesPoint(ed.AddTime, ed.Chroma));
-            // 计算并显示面积值
-            CalcArea();
-        }
-
-        /// <summary>
-        /// 计算面积和显示面积都放在同一个方法里面
-        /// </summary>
-        private void CalcArea()
-        {
-            decimal area1 = 0m;
-            decimal area2 = 0m;
-            decimal ggg = 0m;
-            // 上一个节点,默认为第一个节点
-            SeriesPoint lastPoint = seriesOne.Points.First() as SeriesPoint;
-            if (lastPoint == null)
-            {
-                return;
-            }
-
-            // 循环计算每个梯形的面积，再求和
-            foreach (SeriesPoint point in seriesOne.Points)
-            {
-                int high = (point.DateTimeArgument - lastPoint.DateTimeArgument).Seconds;
-                //Console.WriteLine("lastPoint:" + lastPoint.DateTimeArgument);
-                //Console.WriteLine("point:    " + point.DateTimeArgument);
-                //Console.WriteLine("high :    " + high);
-                //Console.WriteLine("\r\n");
-                if (high<systemConfig.Preiod)
-                {
-                    high = systemConfig.Preiod;
-                }
-                // 梯形的面积，上底加下底乘以高除以2
-                decimal temparea = Convert.ToDecimal((point.Values[0] + lastPoint.Values[0]) * high / 2);
-                area1 += temparea;
-                lastPoint = point;
-            }
-            area2 = (decimal)(systemConfig.Molecular / ((1 + systemConfig.Temperature / 272.15) * 22.4)) * area1;
-            ggg = area2 * (decimal)systemConfig.Volume;
-            textEdit_area1.Text = area1.ToString("f3");
-            textEdit_area2.Text = area2.ToString("f3");
-            textEdit_ggg.Text = ggg.ToString("f3");
         }
 
         /// <summary>
@@ -352,9 +316,8 @@ namespace SDApplication
         {
             try
             {
+                richTextBox1.Visible = false;
                 Gloabl.IsAdmin = false;
-                richTextBox1.Dock = DockStyle.None;
-                chartControl_Main.Dock = DockStyle.Fill;
                 if (!ReadSystemConfig())
                 {
                     return false;
@@ -380,8 +343,6 @@ namespace SDApplication
                 //SqliteHelper.SetConnectionString(AppDomain.CurrentDomain.BaseDirectory + "SDData.db");
 
                 mainList = EquipmentDal.GetAllList();
-                gridControl_Main.DataSource = mainList;
-                gridView_Main.BestFitColumns();
                 gridControl_Add.DataSource = mainList;
                 gridView_Add.BestFitColumns();
 
@@ -390,14 +351,13 @@ namespace SDApplication
                 dateEdit_End.DateTime = time;
                 dateEdit_StartAlert.DateTime = time.AddDays(-7);
                 dateEdit_EndAlert.DateTime = time;
-                InitSeries();
 
                 if (mainList.Count < 1)
                 {
                     LogLib.Log.GetLogger(this).Warn("mainList为空");
                     //return true;
-                }    
-                
+                }
+
                 mainList.ForEach(c => { comboBoxEdit_ID.Properties.Items.Add(c.Address); });
 
                 Equipment eee = mainList.FirstOrDefault();
@@ -424,7 +384,7 @@ namespace SDApplication
                     return false;
                 }
                 Gloabl.IsOpen = true;
-                
+
             }
             catch (Exception ex)
             {
@@ -471,6 +431,93 @@ namespace SDApplication
                 textEdit_centerPort.Text = systemConfig.CenterPort.ToString();
                 checkEdit_autosample.Checked = systemConfig.Isauto;
 
+                #region 主界面配置
+                labelControl29.Text = systemConfig.BankName;
+                memoEdit1.Text = systemConfig.BankName;
+
+                txt_main_name_temperature.Text = systemConfig.NameTemperature;
+                txt_main_name_humidity.Text = systemConfig.NameHumidity;
+                txt_main_name_sound.Text = systemConfig.NameSound;
+                txt_main_name_new.Text = systemConfig.NameNew;
+                txt_main_name_back.Text = systemConfig.NameBack;
+                txt_main_name_TVOC.Text = systemConfig.NameTVOC;
+                txt_main_name_O2.Text = systemConfig.NameO2;
+                txt_main_name_CO.Text = systemConfig.NameCO;
+                txt_main_name_SO2.Text = systemConfig.NameSO2;
+                txt_main_name_NOX.Text = systemConfig.NameNOX;
+                txt_main_name_backarea.Text = systemConfig.NameBackarea;
+                txt_main_name_newarea.Text = systemConfig.NameNewarea;
+                txt_main_name_airQuality.Text = systemConfig.NameAirQuality;
+                txt_main_name_sterilize.Text = systemConfig.NameSterilize;
+                txt_main_name_PM.Text = systemConfig.NamePM;
+
+                txt_main_value_temperature.Text = systemConfig.ValueTemperature;
+                txt_main_value_humidity.Text = systemConfig.ValueHumidity;
+                txt_main_value_sound.Text = systemConfig.ValueSound;
+                txt_main_value_new.Text = systemConfig.ValueNew;
+                txt_main_value_back.Text = systemConfig.ValueBack;
+                txt_main_value_TVOC.Text = systemConfig.ValueTVOC;
+                txt_main_value_O2.Text = systemConfig.ValueO2;
+                txt_main_value_CO.Text = systemConfig.ValueCO;
+                txt_main_value_SO2.Text = systemConfig.ValueSO2;
+                txt_main_value_NOX.Text = systemConfig.ValueNOX;
+                txt_main_value_backarea.Text = systemConfig.ValueBackarea;
+                txt_main_value_newarea.Text = systemConfig.ValueNewarea;
+                txt_main_value_airQuality.Text = systemConfig.ValueAirQuality;
+                txt_main_value_sterilize.Text = systemConfig.ValueSterilize;
+                txt_main_value_PM.Text = systemConfig.ValuePM;
+
+                labelControl28.Text = systemConfig.NameTemperature;
+                labelControl37.Text = systemConfig.NameHumidity;
+                labelControl40.Text = systemConfig.NameSound;
+                labelControl42.Text = systemConfig.NameNew;
+                labelControl44.Text = systemConfig.NameBack;
+                labelControl30.Text = systemConfig.NameTVOC;
+                labelControl35.Text = systemConfig.NameO2;
+                labelControl39.Text = systemConfig.NameCO;
+                labelControl41.Text = systemConfig.NameSO2;
+                labelControl43.Text = systemConfig.NameNOX;
+                labelControl51.Text = systemConfig.NameNewarea;
+                labelControl52.Text = systemConfig.NameBackarea;
+                label_airQuality.Text = systemConfig.NameAirQuality;
+                label_sterilize.Text = systemConfig.NameSterilize;
+                label_PM.Text = systemConfig.NamePM;
+
+                txt_d3.Text = systemConfig.ValueTemperature;
+                txt_d2.Text = systemConfig.ValueHumidity;
+                txt_d1.Text = systemConfig.ValueSound;
+                txt_d9.Text = systemConfig.ValueNew;
+                txt_d10.Text = systemConfig.ValueBack;
+                txt_d4.Text = systemConfig.ValueTVOC;
+                txt_d5.Text = systemConfig.ValueO2;
+                txt_d6.Text = systemConfig.ValueCO;
+                txt_d7.Text = systemConfig.ValueSO2;
+                txt_d8.Text = systemConfig.ValueNOX;
+                txt_pipeNew.Text = systemConfig.ValueNewarea;
+                txt_pipeBack.Text = systemConfig.ValueBackarea;
+                txt_d_airQuality.Text = systemConfig.ValueAirQuality;
+                txt_d_sterilize.Text = systemConfig.ValueSterilize;
+                txt_d_pm.Text = systemConfig.ValuePM;
+
+                txt_d_tvoc_min.Text = systemConfig.ValueMinTVOC;
+                txt_d_tvoc_max.Text = systemConfig.ValueMaxTVOC;
+                txt_d_o2_min.Text = systemConfig.ValueMinO2;
+                txt_d_o2_max.Text = systemConfig.ValueMaxO2;
+                txt_d_co_min.Text = systemConfig.ValueMinCO;
+                txt_d_co_max.Text = systemConfig.ValueMaxCO;
+                txt_d_so2_min.Text = systemConfig.ValueMinSO2;
+                txt_d_so2_max.Text = systemConfig.ValueMaxSO2;
+                txt_d_nox_min.Text = systemConfig.ValueMinNOX;
+                txt_d_nox_max.Text = systemConfig.ValueMaxNOX;
+                txt_d_airQuality_min.Text = systemConfig.ValueMinAirQuality;
+                txt_d_airQuality_max.Text = systemConfig.ValueMaxAirQuality;
+                txt_d_sterilize_min.Text = systemConfig.ValueMinSterilize;
+                txt_d_sterilize_max.Text = systemConfig.ValueMaxSterilize;
+                txt_d_pm_min.Text = systemConfig.ValueMinPM;
+                txt_d_pm_max.Text = systemConfig.ValueMaxPM;
+
+                #endregion
+
             }
             catch (Exception ex)
             {
@@ -480,55 +527,6 @@ namespace SDApplication
             return true;
         }
 
-        // 初始化曲线
-        private void InitSeries()
-        {
-            chartControl_Main.Legend.AlignmentHorizontal = LegendAlignmentHorizontal.Right;
-            
-            chartControl_Main.Series.Clear();
-            Equipment ep = new Equipment();
-            if (mainList.Count > 0)
-            {
-                ep = mainList.First();
-            }
-            seriesOne = new Series(string.Format(ep.EName), ViewType.SwiftPlot);
-            seriesOne.Tag = ep.ID;
-            seriesOne.ArgumentScaleType = ScaleType.DateTime;
-            SwiftPlotSeriesView spsv1 = new SwiftPlotSeriesView();
-            spsv1.LineStyle.Thickness = 2;
-            seriesOne.View = spsv1;
-            chartControl_Main.Series.Add(seriesOne);
-
-            SwiftPlotDiagram diagram_Tem = chartControl_Main.Diagram as SwiftPlotDiagram;
-            diagram_Tem.Margins.Right = 15;
-            //diagram_Tem.AxisX.
-            diagram_Tem.AxisX.DateTimeGridAlignment = DateTimeMeasurementUnit.Minute;
-            diagram_Tem.AxisX.DateTimeMeasureUnit = DateTimeMeasurementUnit.Second;
-            diagram_Tem.AxisX.DateTimeOptions.Format = DateTimeFormat.Custom;
-            diagram_Tem.AxisX.DateTimeOptions.FormatString = "HH:mm:ss";
-            //diagram_Tem.AxisX.GridLines.Visible = true;
-            diagram_Tem.AxisX.Range.SideMarginsEnabled = false;
-            diagram_Tem.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
-            diagram_Tem.AxisX.Title.Text = "时间";
-            diagram_Tem.AxisX.Title.Visible = true;
-            diagram_Tem.AxisX.Title.Alignment = StringAlignment.Far;
-            diagram_Tem.AxisX.Title.Antialiasing = false;
-            diagram_Tem.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 8);
-
-            diagram_Tem.AxisY.Range.AlwaysShowZeroLevel = false;
-            //diagram_Tem.EnableAxisYZooming = true;
-            //diagram_Tem.EnableAxisYScrolling = true;
-            diagram_Tem.AxisY.Interlaced = true;
-            diagram_Tem.AxisY.Range.SideMarginsEnabled = true;
-            diagram_Tem.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
-            diagram_Tem.AxisY.Title.Text = string.Format("浓度({0})", ep.Unit);
-            diagram_Tem.AxisY.Title.Visible = true;
-            diagram_Tem.AxisY.Title.Alignment = StringAlignment.Far;
-            diagram_Tem.AxisY.Title.Antialiasing = false;
-            diagram_Tem.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 8);
-            //if (diagram_Tem != null && diagram_Tem.AxisX.DateTimeMeasureUnit == DateTimeMeasurementUnit.Millisecond)
-            //    diagram_Tem.AxisX.Range.SetMinMaxValues(minDate, argument);
-        }
 
         // 设置历史曲线
         private void setX(List<EquipmentData> list)
@@ -658,8 +656,12 @@ namespace SDApplication
         /// 获取界面系统配置参数
         /// </summary>
         /// <returns></returns>
-        private void SaveSystemConfig()
+        private void SaveSystemConfig(object sender, EventArgs e)
         {
+            if (!formIsReady)
+            {
+                return;
+            }
             try
             {
                 systemConfig.Port = comboBoxEdit_Port.Text;
@@ -676,6 +678,88 @@ namespace SDApplication
                 systemConfig.CenterIP = textEdit_CenterIP.Text;
                 systemConfig.CenterPort = int.Parse(textEdit_centerPort.Text);
                 systemConfig.Isauto = checkEdit_autosample.Checked;
+                systemConfig.BankName = memoEdit1.Text;
+
+                #region 主界面配置
+                labelControl29.Text = memoEdit1.Text;
+
+                systemConfig.NameTemperature = txt_main_name_temperature.Text;
+                systemConfig.NameHumidity = txt_main_name_humidity.Text;
+                systemConfig.NameSound = txt_main_name_sound.Text;
+                systemConfig.NameNew = txt_main_name_new.Text;
+                systemConfig.NameBack = txt_main_name_back.Text;
+                systemConfig.NameTVOC = txt_main_name_TVOC.Text;
+                systemConfig.NameO2 = txt_main_name_O2.Text;
+                systemConfig.NameCO = txt_main_name_CO.Text;
+                systemConfig.NameSO2 = txt_main_name_SO2.Text;
+                systemConfig.NameNOX = txt_main_name_NOX.Text;
+                systemConfig.NameBackarea = txt_main_name_backarea.Text;
+                systemConfig.NameNewarea = txt_main_name_newarea.Text;
+                systemConfig.NameAirQuality = txt_main_name_airQuality.Text;
+                systemConfig.NameSterilize = txt_main_name_sterilize.Text;
+                systemConfig.NamePM = txt_main_name_PM.Text;
+
+                systemConfig.ValueTemperature = txt_main_value_temperature.Text;
+                systemConfig.ValueHumidity = txt_main_value_humidity.Text;
+                systemConfig.ValueSound = txt_main_value_sound.Text;
+                systemConfig.ValueNew = txt_main_value_new.Text;
+                systemConfig.ValueBack = txt_main_value_back.Text;
+                systemConfig.ValueTVOC = txt_main_value_TVOC.Text;
+                systemConfig.ValueO2 = txt_main_value_O2.Text;
+                systemConfig.ValueCO = txt_main_value_CO.Text;
+                systemConfig.ValueSO2 = txt_main_value_SO2.Text;
+                systemConfig.ValueNOX = txt_main_value_NOX.Text;
+                systemConfig.ValueBackarea = txt_main_value_backarea.Text;
+                systemConfig.ValueNewarea = txt_main_value_newarea.Text;
+                systemConfig.ValueAirQuality = txt_main_value_airQuality.Text;
+                systemConfig.ValueSterilize = txt_main_value_sterilize.Text;
+                systemConfig.ValuePM = txt_main_value_PM.Text;
+
+                systemConfig.ValueMinTVOC = txt_d_tvoc_min.Text;
+                systemConfig.ValueMaxTVOC = txt_d_tvoc_max.Text;
+                systemConfig.ValueMinO2 = txt_d_o2_min.Text;
+                systemConfig.ValueMaxO2 = txt_d_o2_max.Text;
+                systemConfig.ValueMinCO = txt_d_co_min.Text;
+                systemConfig.ValueMaxCO = txt_d_co_max.Text;
+                systemConfig.ValueMinSO2 = txt_d_so2_min.Text;
+                systemConfig.ValueMaxSO2 = txt_d_so2_max.Text;
+                systemConfig.ValueMinNOX = txt_d_nox_min.Text;
+                systemConfig.ValueMaxNOX = txt_d_nox_max.Text;
+                systemConfig.ValueMinAirQuality = txt_d_airQuality_min.Text;
+                systemConfig.ValueMaxAirQuality = txt_d_airQuality_max.Text;
+                systemConfig.ValueMinSterilize = txt_d_sterilize_min.Text;
+                systemConfig.ValueMaxSterilize = txt_d_sterilize_max.Text;
+                systemConfig.ValueMinPM = txt_d_pm_min.Text;
+                systemConfig.ValueMaxPM = txt_d_pm_max.Text;
+                //labelControl28.Text = systemConfig.NameTemperature;
+                //labelControl37.Text = systemConfig.NameHumidity;
+                //labelControl40.Text = systemConfig.NameSound;
+                //labelControl42.Text = systemConfig.NameNew;
+                //labelControl44.Text = systemConfig.NameBack;
+                //labelControl30.Text = systemConfig.NameTVOC;
+                //labelControl35.Text = systemConfig.NameO2;
+                //labelControl39.Text = systemConfig.NameCO;
+                //labelControl41.Text = systemConfig.NameSO2;
+                //labelControl43.Text = systemConfig.NameNOX;
+                //labelControl51.Text = systemConfig.NameNewarea;
+                //labelControl52.Text = systemConfig.NameBackarea;
+                
+
+                //txt_d3.Text = systemConfig.ValueTemperature;
+                //txt_d2.Text = systemConfig.ValueHumidity;
+                //txt_d1.Text = systemConfig.ValueSound;
+                //txt_d9.Text = systemConfig.ValueNew;
+                //txt_d10.Text = systemConfig.ValueBack;
+                //txt_d4.Text = systemConfig.ValueTVOC;
+                //txt_d5.Text = systemConfig.ValueO2;
+                //txt_d6.Text = systemConfig.ValueCO;
+                //txt_d7.Text = systemConfig.ValueSO2;
+                //txt_d8.Text = systemConfig.ValueNOX;
+                //txt_pipeNew.Text = systemConfig.ValueNewarea;
+                //txt_pipeBack.Text = systemConfig.ValueBackarea;
+
+                #endregion
+
                 if (PLAASerialPort.serialport.IsOpen)
                 {
                     PLAASerialPort.GetInstance().Close();
@@ -689,7 +773,10 @@ namespace SDApplication
                 }
                 XmlSerializerProvider xml = new XmlSerializerProvider();
                 xml.Serialize<SystemConfig>(AppDomain.CurrentDomain.BaseDirectory + "\\SystemConfig.xml", systemConfig);
-                XtraMessageBox.Show("保存成功");
+                if (sender == null)
+                {
+                    XtraMessageBox.Show("保存成功");
+                }                
             }
             catch (Exception ex)
             {
@@ -726,8 +813,6 @@ namespace SDApplication
         /// </summary>
         private void RefreshenAdd()
         {
-            gridControl_Main.RefreshDataSource();
-            gridView_Main.BestFitColumns();
             gridControl_Add.RefreshDataSource();
             gridView_Add.BestFitColumns();
         }
@@ -744,14 +829,14 @@ namespace SDApplication
             // 自动滚到底部
             richTextBox1.SelectionStart = richTextBox1.Text.Length;
             richTextBox1.ScrollToCaret();
-        } 
+        }
 
         #endregion
 
-        public MainForm()
+        public MainForm2()
         {
             InitializeComponent();
-            
+
         }
 
         private void btn_Start_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -765,17 +850,7 @@ namespace SDApplication
             {
                 return;
             }
-            minTime = DateTime.Now;
-            maxTime = minTime.AddMinutes(systemConfig.Xrange);
-            if (seriesOne == null || seriesOne.Tag == null)
-            {
-                changeSeries(mainList.First());
-            }
-            else
-            {
-                changeSeries(mainList.Find(c => c.ID == Convert.ToInt32(seriesOne.Tag)));
-            }
-            
+
             mainThread = new Thread(new ThreadStart(ReadData));
             isRead = true;
             mainThread.Start();
@@ -798,14 +873,20 @@ namespace SDApplication
             //        break;
             //}
             //gridView_Main.BestFitColumns();
+            
+            asc.controlAutoSize(this.xtraTabControl1);
         }
 
+        private bool formIsReady = false;
+        AutoSizeFormClass asc = new AutoSizeFormClass();
         private void MainForm_Load(object sender, EventArgs e)
-        {            
+        {
             if (!InitializeForm())
             {
                 XtraMessageBox.Show("初始化失败");
             }
+            asc.controllInitializeSize(this.xtraTabControl1);
+            formIsReady = true;
         }
 
         private void gridView_Main_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
@@ -953,7 +1034,7 @@ namespace SDApplication
 
         private void btn_Save1_Click(object sender, EventArgs e)
         {
-            SaveSystemConfig();
+            SaveSystemConfig(null,null);
         }
 
         private void btn_ChoosesPath_Click(object sender, EventArgs e)
@@ -1017,7 +1098,7 @@ namespace SDApplication
                 List<byte> adds = EquipmentDal.GetAddress();
                 // 不能和自己比较
                 adds.Remove(eee.Address);
-                
+
                 Equipment upd = GetAddEquip();
                 if (adds.Contains(upd.Address))
                 {
@@ -1114,7 +1195,7 @@ namespace SDApplication
                 mainThread.Abort();
             }
             PLAASerialPort.GetInstance().Abort();
-            
+
         }
 
         private void btn_Back_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1139,7 +1220,7 @@ namespace SDApplication
             else
             {
                 xtraTabControl1.SelectedTabPage = xtraTabPage3;
-            }            
+            }
         }
 
         private void btn_Alert_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1157,7 +1238,7 @@ namespace SDApplication
 
         private void btnm_Start_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            btn_Start_ItemClick(null,null);
+            btn_Start_ItemClick(null, null);
         }
 
         private void btnm_Stop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1194,7 +1275,7 @@ namespace SDApplication
             catch (Exception ex)
             {
                 LogLib.Log.GetLogger(this).Warn(ex);
-            } 
+            }
         }
 
         private void btn_Help_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1209,20 +1290,6 @@ namespace SDApplication
                 XtraMessageBox.Show("请先安装PDF软件");
                 LogLib.Log.GetLogger(this).Warn(ex);
             }
-        }
-
-        private void gridView_Main_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            try
-            {
-                Equipment eee = gridView_Main.GetFocusedRow() as Equipment;
-                changeSeries(eee);
-            }
-            catch (Exception ex)
-            {
-                LogLib.Log.GetLogger(this).Warn(ex);
-            }
-            
         }
 
         private void ntn_mute_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1243,7 +1310,7 @@ namespace SDApplication
 
         private void btnm_Help_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            btn_Help_ItemClick(null,null);
+            btn_Help_ItemClick(null, null);
         }
 
         private void btn_Save2_Click(object sender, EventArgs e)
@@ -1258,67 +1325,143 @@ namespace SDApplication
                 richTextBox1.Visible = false;
                 Gloabl.IsAdmin = false;
                 btn_ModifPass.Caption = "管理员登入";
-                richTextBox1.Dock = DockStyle.None;
-                chartControl_Main.Dock = DockStyle.Fill;
             }
             else if (btn_ModifPass.Caption == "管理员登入")
             {
                 Form_ChangeAdmin fc = new Form_ChangeAdmin();
                 if (fc.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {                    
-                    if ("admin123"!= fc.ValueStr)
+                {
+                    if ("admin123" != fc.ValueStr)
                     {
                         XtraMessageBox.Show("密码不正确");
                     }
                     else
                     {
-                        chartControl_Main.Dock = DockStyle.Top;
-                        richTextBox1.Dock = DockStyle.Fill;
+                        //richTextBox1.Dock = DockStyle.Fill;
                         Gloabl.IsAdmin = true;
                         richTextBox1.Visible = true;
                         btn_ModifPass.Caption = "切换到普通用户";
-                        
+
                     }
                 }
             }
         }
-
+        Form_Login login = new Form_Login();
         private void MainForm_Shown(object sender, EventArgs e)
         {
             try
             {
+                this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
+                this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+                //modifyLocation();
                 // 自动启动检测
                 if (systemConfig.Isauto)
                 {
                     btn_Start_ItemClick(null, null);
                 }
-                //// 登录
-                //Form_Login login = new Form_Login(systemConfig);
-                //login.ShowDialog();
-                //if (login.DialogResult != System.Windows.Forms.DialogResult.OK)
-                //{
-                //    this.Close();
-                //}
-                //else if (Gloabl.IsAdmin)
-                //{
-                //    chartControl_Main.Dock = DockStyle.Top;
-                //    richTextBox1.Dock = DockStyle.Fill;
-                //    richTextBox1.Visible = true;
-                //}
+                login.config = systemConfig;
+                // 登录
+
+                login.ShowDialog();
+                if (login.DialogResult != System.Windows.Forms.DialogResult.OK)
+                {
+                    this.Close();
+                }
+                else if (Gloabl.IsAdmin)
+                {
+                    richTextBox1.Visible = true;
+                }
+
             }
             catch (Exception ex)
             {
                 LogLib.Log.GetLogger(this).Warn(ex);
             }
-            
-            
+            foreach (var item in this.panelControl_center.Controls)
+            {
+                if (item is DevExpress.XtraEditors.TextEdit)
+                {
+                    DevExpress.XtraEditors.TextEdit edit = item as DevExpress.XtraEditors.TextEdit;
+                    edit.Refresh();
+                }
+            }
+
+            foreach (var item in this.groupControl12.Controls)
+            {
+                if (item is DevExpress.XtraEditors.TextEdit)
+                {
+                    DevExpress.XtraEditors.TextEdit edit = item as DevExpress.XtraEditors.TextEdit;
+                    edit.Refresh();
+                }
+            }
+
+            foreach (var item in this.groupControl13.Controls)
+            {
+                if (item is DevExpress.XtraEditors.TextEdit)
+                {
+                    DevExpress.XtraEditors.TextEdit edit = item as DevExpress.XtraEditors.TextEdit;
+                    edit.Refresh();
+                }
+            }
+
         }
+        
+        //private void modifyLocation()
+        //{
+        //    int topX = (this.xtraTabPage1.Width - this.labelControl29.Width) / 2;
+        //    int centerX = (this.xtraTabPage1.Width - this.panelControl_center.Width) / 2;
+        //    int bottomX = (this.xtraTabPage1.Width - this.panelControl_bottom.Width) / 2;
+        //    int topY = (this.xtraTabPage1.Height - this.labelControl29.Height - this.panelControl_center.Height - this.panelControl_bottom.Height) / 6;
+        //    int centerY = topY * 3 + this.labelControl29.Height;
+        //    int bottomY = topY * 5 + this.labelControl29.Height + this.panelControl_center.Height;
+
+        //    this.labelControl29.Location = new Point(topX, topY);
+        //    this.panelControl_center.Location = new Point(centerX, centerY);
+        //    this.panelControl_bottom.Location = new Point(bottomX, bottomY);
+
+        //}
 
         private void labelControl31_Click(object sender, EventArgs e)
         {
 
         }
+        DateTime startTime = DateTime.Now;
+        string[] weekdays = { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" };
+        private void timer_now_Tick(object sender, EventArgs e)
+        {
+            txt_nowDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            txt_nowTime.Text = DateTime.Now.ToString("HH:mm:ss");
+            txt_nowWeek.Text = weekdays[Convert.ToInt32(DateTime.Now.DayOfWeek)];
+            TimeSpan ts = DateTime.Now - startTime;
+            txt_year.Text = (ts.Days / 365).ToString();
+            txt_day.Text = (ts.Days % 365).ToString();
+            txt_hour.Text = ts.Hours.ToString();
+            txt_minute.Text = ts.Minutes.ToString();
+            txt_second.Text = ts.Seconds.ToString();
+            txt_runTime.Text = Math.Round(ts.TotalHours).ToString();
+        }
 
-       
+        private void btn_returnExit_Click(object sender, EventArgs e)
+        {
+            btnm_Exit_ItemClick(null, null);
+        }
+
+        private void btn_returnAdd_Click(object sender, EventArgs e)
+        {
+            btn_Add_ItemClick(null, null);
+        }
+
+        private void btn_returnSystemSet_Click(object sender, EventArgs e)
+        {
+            btn_ParamSet_ItemClick(null, null);
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            SaveSystemConfig(null,null);
+            ReadSystemConfig();
+        }
+        
     }
 }

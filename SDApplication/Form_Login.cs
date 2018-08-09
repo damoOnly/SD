@@ -12,11 +12,10 @@ namespace SDApplication
 {
     public partial class Form_Login : DevExpress.XtraEditors.XtraForm
     {
-        private SystemConfig config = new SystemConfig();
-        public Form_Login(SystemConfig con)
+        public SystemConfig config = new SystemConfig();
+        public Form_Login()
         {
             InitializeComponent();
-            config = con;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)

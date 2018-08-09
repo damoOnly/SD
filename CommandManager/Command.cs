@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Entity;
 
 namespace CommandManager
 {
@@ -14,11 +15,11 @@ namespace CommandManager
         /// <param name="highAdr">寄存器起始地址高位</param>
         /// <param name="lowAdr">寄存器起始地址地位</param>
         /// <param name="num">寄存器个数</param>
-        public Command(byte address, byte highAdr, byte lowAdr, short num)        
+        public Command(byte address, byte highAdr, byte lowAdr, short num,EM_FunctionNumType functionNumType)        
         {
             byte[] sendb = new byte[8];
             sendb[0] = address;
-            sendb[1] = 0x03;
+            sendb[1] = (byte)(functionNumType == EM_FunctionNumType.Three ? 0x03:0x04);
             sendb[2] = highAdr;
             sendb[3] = lowAdr;
             byte[] bb2 = BitConverter.GetBytes(num);

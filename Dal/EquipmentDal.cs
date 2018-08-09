@@ -12,7 +12,7 @@ namespace Dal
     {
         public static bool AddOne(Equipment data)
         {
-            string sql = string.Format("insert into tb_Equipment (Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime) values ({0},{1},'{2}','{3}',{4},'{5}',{6},{7},{8},{9},'{10}')", data.Address, data.AlertType, data.EName, data.Place, data.Range, data.Unit, data.Point, data.Revise, data.LowAlert, data.HighAlert, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"));
+            string sql = string.Format("insert into tb_Equipment (Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime,FunctionNumType) values ({0},{1},'{2}','{3}',{4},'{5}',{6},{7},{8},{9},'{10}',{11})", data.Address, data.AlertType, data.EName, data.Place, data.Range, data.Unit, data.Point, data.Revise, data.LowAlert, data.HighAlert, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"),(byte)data.FunctionNumType);
             if (SqliteHelper.ExecuteNonQuery(sql) == 1)
             {
                 return true;
@@ -26,7 +26,7 @@ namespace Dal
 
         public static Equipment AddOneR(Equipment data)
         {
-            string sql = string.Format("insert into tb_Equipment (Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime) values ({0},{1},'{2}','{3}',{4},'{5}',{6},{7},{8},{9},'{10}')", data.Address, data.AlertType, data.EName, data.Place, data.Range, data.Unit, data.Point, data.Revise, data.LowAlert, data.HighAlert, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"));
+            string sql = string.Format("insert into tb_Equipment (Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime,FunctionNumType) values ({0},{1},'{2}','{3}',{4},'{5}',{6},{7},{8},{9},'{10}',{11})", data.Address, data.AlertType, data.EName, data.Place, data.Range, data.Unit, data.Point, data.Revise, data.LowAlert, data.HighAlert, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"),(byte)data.FunctionNumType);
             if (SqliteHelper.ExecuteNonQuery(sql) == 1)
             {
                 string whe = string.Format("Address = {0} AND Addtime = '{1}'", data.Address, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"));
@@ -42,7 +42,7 @@ namespace Dal
 
         public static bool UpdateOne(Equipment data)
         {
-            string sql = string.Format("UPDATE tb_Equipment SET Address={0},AlertType={1},EName='{2}',Place='{3}',Range={4},Unit='{5}',Point={6},Revise={7},LowAlert={8},HighAlert={9},Addtime='{10}' WHERE ID={11}", data.Address, data.AlertType, data.EName, data.Place, data.Range, data.Unit, data.Point, data.Revise, data.LowAlert, data.HighAlert, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"), data.ID);
+            string sql = string.Format("UPDATE tb_Equipment SET Address={0},AlertType={1},EName='{2}',Place='{3}',Range={4},Unit='{5}',Point={6},Revise={7},LowAlert={8},HighAlert={9},Addtime='{10}',FunctionNumType={12} WHERE ID={11}", data.Address, data.AlertType, data.EName, data.Place, data.Range, data.Unit, data.Point, data.Revise, data.LowAlert, data.HighAlert, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"), data.ID,(byte)data.FunctionNumType);
             if (SqliteHelper.ExecuteNonQuery(sql) == 1)
             {
                 return true;
@@ -61,7 +61,7 @@ namespace Dal
 
         public static Equipment GetOneByID(int id)
         {
-            string sql = string.Format("select Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime from tb_Equipment where ID={0} limit 0,1", id);
+            string sql = string.Format("select Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime,FunctionNumType from tb_Equipment where ID={0} limit 0,1", id);
             DataSet ds = new DataSet();
             ds = SqliteHelper.Query(sql);
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
@@ -78,6 +78,7 @@ namespace Dal
                 eq.LowAlert = Convert.ToSingle(ds.Tables[0].Rows[0]["LowAlert"]);
                 eq.HighAlert = Convert.ToSingle(ds.Tables[0].Rows[0]["HighAlert"]);
                 eq.Addtime = Convert.ToDateTime(ds.Tables[0].Rows[0]["Addtime"]);
+                eq.FunctionNumType = (EM_FunctionNumType)Convert.ToByte(ds.Tables[0].Rows[0]["FunctionNumType"]);
 
 
                 return eq;
@@ -88,7 +89,7 @@ namespace Dal
 
         public static Equipment GetOneByWh(string where)
         {
-            string sql = string.Format("select ID,Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime from tb_Equipment where {0}  limit 0,1", where);
+            string sql = string.Format("select ID,Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime,FunctionNumType from tb_Equipment where {0}  limit 0,1", where);
             DataSet ds = new DataSet();
             ds = SqliteHelper.Query(sql);
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
@@ -106,6 +107,7 @@ namespace Dal
                 eq.LowAlert = Convert.ToSingle(ds.Tables[0].Rows[0]["LowAlert"]);
                 eq.HighAlert = Convert.ToSingle(ds.Tables[0].Rows[0]["HighAlert"]);
                 eq.Addtime = Convert.ToDateTime(ds.Tables[0].Rows[0]["Addtime"]);
+                eq.FunctionNumType = (EM_FunctionNumType)Convert.ToByte(ds.Tables[0].Rows[0]["FunctionNumType"]);
                 return eq;
             }
             LogLib.Log.GetLogger("EquipmentDal").Warn("获取设备传感器失败");
@@ -114,7 +116,7 @@ namespace Dal
 
         public static List<Equipment> GetAllList()
         {
-            string sql = string.Format("select ID, Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime from tb_Equipment");
+            string sql = string.Format("select ID, Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime,FunctionNumType from tb_Equipment");
             DataSet ds = new DataSet();
             ds = SqliteHelper.Query(sql);
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
@@ -135,6 +137,7 @@ namespace Dal
                     eq.LowAlert = Convert.ToSingle(row["LowAlert"]);
                     eq.HighAlert = Convert.ToSingle(row["HighAlert"]);
                     eq.Addtime = Convert.ToDateTime(row["Addtime"]);
+                    eq.FunctionNumType = (EM_FunctionNumType)Convert.ToByte(row["FunctionNumType"]);
                     list.Add(eq);
                 }
                 return list;

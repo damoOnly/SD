@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <SystemConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="SystemConfig">
   <!--串口号-->
-  <Port>COM8</Port>
+  <Port>COM9</Port>
   <!--波特率-->
   <BaudRate>9600</BaudRate>
   <!--检测周期-->
@@ -27,13 +27,60 @@
   <!--中心站端口号-->
   <CenterPort>5718</CenterPort>
   <!--声音文件名称-->
-  <SoundName>ALARM1.WAV</SoundName>  
+  <SoundName>ALARM1.WAV</SoundName>
   <User>user</User>
   <UserPWD>111111</UserPWD>
   <Admin>admin</Admin>
   <AdminPWD>szsundo</AdminPWD>
   <!--皮肤名称-->
-  <SkinName>Black</SkinName>
+  <SkinName>Blueprint</SkinName>
   <!--是否自动检测-->
   <Isauto>false</Isauto>
+  <BankName>中国人民银行厂南支行库房空气质量检测表</BankName>
+  <NameTemperature>温度</NameTemperature>
+  <ValueTemperature>1</ValueTemperature>
+  <NameHumidity>湿度</NameHumidity>
+  <ValueHumidity>1</ValueHumidity>
+  <NameSound>噪音</NameSound>
+  <ValueSound>1</ValueSound>
+  <NameNew>新风量</NameNew>
+  <ValueNew>1</ValueNew>
+  <NameBack>回风量</NameBack>
+  <ValueBack>1</ValueBack>
+  <NameTVOC>TVOC</NameTVOC>
+  <ValueTVOC>1</ValueTVOC>
+  <NameO2>苯系物</NameO2>
+  <ValueO2>1</ValueO2>
+  <NameCO>CO</NameCO>
+  <ValueCO>1</ValueCO>
+  <NameSO2>SO2</NameSO2>
+  <ValueSO2>1</ValueSO2>
+  <NameNOX>NOX</NameNOX>
+  <ValueNOX>1</ValueNOX>
+  <NameNewarea>新风管</NameNewarea>
+  <ValueNewarea>1</ValueNewarea>
+  <NameBackarea>回风管</NameBackarea>
+  <ValueBackarea>2</ValueBackarea>
+  <NameAirQuality>2</NameAirQuality>
+  <ValueAirQuality>2</ValueAirQuality>
+  <NameSterilize>2</NameSterilize>
+  <ValueSterilize>2</ValueSterilize>
+  <NamePM>2</NamePM>
+  <ValuePM>2</ValuePM>
+  <ValueMinTVOC>2</ValueMinTVOC>
+  <ValueMaxTVOC>2</ValueMaxTVOC>
+  <ValueMinO2>2</ValueMinO2>
+  <ValueMaxO2>2</ValueMaxO2>
+  <ValueMinCO>2</ValueMinCO>
+  <ValueMaxCO>2</ValueMaxCO>
+  <ValueMinSO2>2</ValueMinSO2>
+  <ValueMaxSO2>2</ValueMaxSO2>
+  <ValueMinNOX>2</ValueMinNOX>
+  <ValueMaxNOX>2</ValueMaxNOX>
+  <ValueMinAirQuality>2</ValueMinAirQuality>
+  <ValueMaxAirQuality>2</ValueMaxAirQuality>
+  <ValueMinSterilize>2</ValueMinSterilize>
+  <ValueMaxSterilize>2</ValueMaxSterilize>
+  <ValueMinPM>2</ValueMinPM>
+  <ValueMaxPM>2</ValueMaxPM>
 </SystemConfig>

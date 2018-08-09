@@ -119,5 +119,80 @@ namespace Entity
         /// 是否自动检测
         /// </summary>
         public bool Isauto { get; set; }
+
+        /// <summary>
+        /// 银行名称
+        /// </summary>
+        public string BankName { get; set; }
+
+
+
+        public string NameTemperature { get; set; }
+        public string ValueTemperature { get; set; }
+
+        public string NameHumidity { get; set; }
+        public string ValueHumidity { get; set; }
+
+        public string NameSound { get; set; }
+        public string ValueSound { get; set; }
+
+        public string NameNew { get; set; }
+        public string ValueNew { get; set; }
+
+        public string NameBack { get; set; }
+        public string ValueBack { get; set; }
+
+        public string NameTVOC { get; set; }
+        public string ValueTVOC { get; set; }
+        public string ValueMinTVOC { get; set; }
+        public string ValueMaxTVOC { get; set; }
+
+        public string NameO2 { get; set; }
+        public string ValueO2 { get; set; }
+        public string ValueMinO2 { get; set; }
+        public string ValueMaxO2 { get; set; }
+
+        public string NameCO { get; set; }
+        public string ValueCO { get; set; }
+        public string ValueMinCO { get; set; }
+        public string ValueMaxCO { get; set; }
+
+        public string NameSO2 { get; set; }
+        public string ValueSO2 { get; set; }
+        public string ValueMinSO2 { get; set; }
+        public string ValueMaxSO2 { get; set; }
+
+        public string NameNOX { get; set; }
+        public string ValueNOX { get; set; }
+        public string ValueMinNOX { get; set; }
+        public string ValueMaxNOX { get; set; }
+
+        public string NameNewarea { get; set; }
+        public string ValueNewarea { get; set; }
+        //public string ValueMinNewarea { get; set; }
+        //public string ValueMaxNewarea { get; set; }
+
+        public string NameBackarea { get; set; }
+        public string ValueBackarea { get; set; }
+        //public string ValueMinBackarea { get; set; }
+        //public string ValueMaxBackarea { get; set; }
+
+        public string NameAirQuality { get; set; }
+        public string ValueAirQuality { get; set; }
+        public string ValueMinAirQuality { get; set; }
+        public string ValueMaxAirQuality { get; set; }
+
+        public string NameSterilize { get; set; }
+        public string ValueSterilize { get; set; }
+        public string ValueMinSterilize { get; set; }
+        public string ValueMaxSterilize { get; set; }
+
+        public string NamePM { get; set; }
+        public string ValuePM { get; set; }
+        public string ValueMinPM { get; set; }
+        public string ValueMaxPM { get; set; }
+
+        
+
     }
 }

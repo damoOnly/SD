@@ -140,7 +140,7 @@ namespace CommandManager
                 serialport.PortName = portName;         //串口号
                 serialport.BaudRate = baudRate;         //波特率
                 //}
-                serialport.ReceivedBytesThreshold = 11;
+                //serialport.ReceivedBytesThreshold = 11;
                 serialport.StopBits = StopBits.One;
                 serialport.DataBits = 8;
                // serialport.DiscardNull = true;
@@ -208,7 +208,7 @@ namespace CommandManager
             }
             if (serialport != null && serialport.IsOpen)
             {
-                serialport.DiscardInBuffer();
+                //serialport.DiscardInBuffer();
                 serialport.Write(wdata, 0, wdata.Length);
                 string str = "W  " + byteToHexStr(wdata);
                 Console.WriteLine(str);

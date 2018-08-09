@@ -17,9 +17,18 @@ namespace CommandManager
         public static EquipmentData GetRealData(byte[] data, Equipment eq)
         {
             EquipmentData ed = new EquipmentData();
-            Array.Reverse(data, 3, 4);
+            
             //Array.Reverse(data, 5, 2);
-            ed.Chroma = Convert.ToSingle(Math.Round(BitConverter.ToSingle(data, 3)*eq.Revise, eq.Point));
+            if (eq.FunctionNumType == EM_FunctionNumType.Three)
+            {
+                Array.Reverse(data, 3, 4);
+                ed.Chroma = Convert.ToSingle(Math.Round(BitConverter.ToSingle(data, 3) * eq.Revise, eq.Point));
+            }
+            else
+            {
+                Array.Reverse(data, 3, 2);
+                ed.Chroma = Convert.ToSingle(Math.Round(BitConverter.ToUInt16(data, 3) /10.0, eq.Point));
+            }
 
             if (ed.Chroma>eq.Range)
             {

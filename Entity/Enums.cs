@@ -376,5 +376,9 @@ namespace Entity
         Super = 2
     }
 
-    
+    public enum EM_FunctionNumType : byte
+    {
+        Three,
+        Four
+    }
 }

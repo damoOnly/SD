@@ -18,7 +18,6 @@ namespace Entity
             EName = string.Empty;
             Unit = string.Empty;
             Revise = 1;
-            lostNum = 0;
         }
 
         public long ID { get; set; }
@@ -123,10 +122,7 @@ namespace Entity
         /// </summary>
         public Alert AlertObject { get; set; }
 
-        /// <summary>
-        /// 丢包计时
-        /// </summary>
-        public int lostNum { get; set; }
+        public EM_FunctionNumType FunctionNumType { get; set; }
     }
 
     //public class EquipmentComparer : IEqualityComparer<Equipment>

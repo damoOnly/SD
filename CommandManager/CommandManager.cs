@@ -12,7 +12,7 @@ namespace CommandManager
         /// <summary>
         /// 延迟毫秒
         /// </summary>
-        public static int delay = 30;
+        public static int delay = 10;
         public static bool GetResult(Command cd)
         {
             bool result = false;
@@ -39,11 +39,15 @@ namespace CommandManager
                 //    cd.ResultByte = PLAASerialPort.GetInstance().DataBufferList.ToArray();
                 //    return true;
                 //} 
+                
                 if (PLAASerialPort.GetInstance().DataBufferList.Count == cd.ResultLength)
                 {
                     cd.ResultByte = PLAASerialPort.GetInstance().DataBufferList.ToArray();
-                    result = checkSum(cd.ResultByte);
-                    break;
+                    if (!checkSum(cd.ResultByte))
+                    {
+                        return false;
+                    }
+                    return true;
                 }  
             }
             PLAASerialPort.GetInstance().DataBufferList.Clear();

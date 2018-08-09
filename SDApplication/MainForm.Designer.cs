@@ -169,6 +169,8 @@
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl10 = new DevExpress.XtraEditors.GroupControl();
+            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl38 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEdit_UnitAdd = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comboBoxEdit_OpenAdd = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comboBoxEdit_PointAdd = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -296,6 +298,7 @@
             this.xtraTabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).BeginInit();
             this.groupControl10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_UnitAdd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_OpenAdd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_PointAdd.Properties)).BeginInit();
@@ -1735,6 +1738,8 @@
             // 
             // groupControl10
             // 
+            this.groupControl10.Controls.Add(this.comboBoxEdit1);
+            this.groupControl10.Controls.Add(this.labelControl38);
             this.groupControl10.Controls.Add(this.comboBoxEdit_UnitAdd);
             this.groupControl10.Controls.Add(this.comboBoxEdit_OpenAdd);
             this.groupControl10.Controls.Add(this.comboBoxEdit_PointAdd);
@@ -1756,6 +1761,29 @@
             this.groupControl10.TabIndex = 2;
             this.groupControl10.Text = "测量参数";
             // 
+            // comboBoxEdit1
+            // 
+            this.comboBoxEdit1.EditValue = "03";
+            this.comboBoxEdit1.Location = new System.Drawing.Point(396, 173);
+            this.comboBoxEdit1.MenuManager = this.barManager1;
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
+            "03",
+            "04"});
+            this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.comboBoxEdit1.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxEdit1.TabIndex = 16;
+            // 
+            // labelControl38
+            // 
+            this.labelControl38.Location = new System.Drawing.Point(320, 176);
+            this.labelControl38.Name = "labelControl38";
+            this.labelControl38.Size = new System.Drawing.Size(48, 14);
+            this.labelControl38.TabIndex = 15;
+            this.labelControl38.Text = "功能码：";
+            // 
             // comboBoxEdit_UnitAdd
             // 
             this.comboBoxEdit_UnitAdd.EditValue = "PPM";
@@ -1771,7 +1799,9 @@
             "mg/m3",
             "PPB",
             "m/s",
-            "m3/s"});
+            "m3/s",
+            "dB",
+            "ug/m3"});
             this.comboBoxEdit_UnitAdd.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEdit_UnitAdd.Size = new System.Drawing.Size(100, 20);
             this.comboBoxEdit_UnitAdd.TabIndex = 14;
@@ -2402,6 +2432,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).EndInit();
             this.groupControl10.ResumeLayout(false);
             this.groupControl10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_UnitAdd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_OpenAdd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_PointAdd.Properties)).EndInit();
@@ -2613,5 +2644,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl35;
         private DevExpress.XtraEditors.TextEdit textEdit_ggg;
         private DevExpress.XtraEditors.LabelControl labelControl37;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DevExpress.XtraEditors.LabelControl labelControl38;
     }
 }
