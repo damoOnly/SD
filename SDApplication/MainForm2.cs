@@ -217,6 +217,11 @@ namespace SDApplication
         }
 
         // 刷新主界面
+        /// <summary>
+        /// 主界面的每个text 控件与设备id是固定好的
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="point"></param>
         private void refreshMain(EquipmentData data, int point)
         {
             string chroma = data.Chroma.ToString();
@@ -467,6 +472,7 @@ namespace SDApplication
                 txt_main_value_sterilize.Text = systemConfig.ValueSterilize;
                 txt_main_value_PM.Text = systemConfig.ValuePM;
 
+                // 更新主界面
                 labelControl28.Text = systemConfig.NameTemperature;
                 labelControl37.Text = systemConfig.NameHumidity;
                 labelControl40.Text = systemConfig.NameSound;

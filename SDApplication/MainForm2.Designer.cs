@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraCharts.SwiftPlotDiagram swiftPlotDiagram2 = new DevExpress.XtraCharts.SwiftPlotDiagram();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView3 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
+            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView4 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm2));
-            DevExpress.XtraCharts.SwiftPlotDiagram swiftPlotDiagram1 = new DevExpress.XtraCharts.SwiftPlotDiagram();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView1 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
-            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView2 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btn_Back = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -313,6 +313,8 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.timer_now = new System.Windows.Forms.Timer(this.components);
+            this.groupControl16 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl73 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -384,10 +386,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl_History)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -481,6 +483,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl16)).BeginInit();
+            this.groupControl16.SuspendLayout();
             this.SuspendLayout();
             // 
             // barManager1
@@ -832,6 +836,7 @@
             this.panelControl_center.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.panelControl_center.Appearance.Options.UseBackColor = true;
             this.panelControl_center.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl_center.Controls.Add(this.groupControl16);
             this.panelControl_center.Controls.Add(this.labelControl71);
             this.panelControl_center.Controls.Add(this.txt_d_pm_max);
             this.panelControl_center.Controls.Add(this.txt_d_pm_min);
@@ -871,18 +876,10 @@
             this.panelControl_center.Controls.Add(this.label_sterilize);
             this.panelControl_center.Controls.Add(this.txt_d_airQuality);
             this.panelControl_center.Controls.Add(this.label_airQuality);
-            this.panelControl_center.Controls.Add(this.txt_nowWeek);
-            this.panelControl_center.Controls.Add(this.labelControl55);
             this.panelControl_center.Controls.Add(this.labelControl28);
             this.panelControl_center.Controls.Add(this.labelControl30);
-            this.panelControl_center.Controls.Add(this.txt_nowTime);
-            this.panelControl_center.Controls.Add(this.labelControl54);
             this.panelControl_center.Controls.Add(this.labelControl37);
             this.panelControl_center.Controls.Add(this.labelControl40);
-            this.panelControl_center.Controls.Add(this.txt_nowDate);
-            this.panelControl_center.Controls.Add(this.labelControl53);
-            this.panelControl_center.Controls.Add(this.labelControl42);
-            this.panelControl_center.Controls.Add(this.labelControl44);
             this.panelControl_center.Controls.Add(this.labelControl35);
             this.panelControl_center.Controls.Add(this.labelControl39);
             this.panelControl_center.Controls.Add(this.labelControl41);
@@ -890,8 +887,6 @@
             this.panelControl_center.Controls.Add(this.txt_d3);
             this.panelControl_center.Controls.Add(this.txt_d2);
             this.panelControl_center.Controls.Add(this.txt_d1);
-            this.panelControl_center.Controls.Add(this.txt_d9);
-            this.panelControl_center.Controls.Add(this.txt_d10);
             this.panelControl_center.Controls.Add(this.txt_d4);
             this.panelControl_center.Controls.Add(this.txt_d5);
             this.panelControl_center.Controls.Add(this.txt_d6);
@@ -906,47 +901,47 @@
             // 
             // labelControl71
             // 
-            this.labelControl71.Appearance.Font = new System.Drawing.Font("黑体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl71.Location = new System.Drawing.Point(856, 515);
+            this.labelControl71.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl71.Location = new System.Drawing.Point(420, 517);
             this.labelControl71.Name = "labelControl71";
-            this.labelControl71.Size = new System.Drawing.Size(46, 21);
+            this.labelControl71.Size = new System.Drawing.Size(42, 19);
             this.labelControl71.TabIndex = 72;
             this.labelControl71.Text = "——";
             this.labelControl71.Visible = false;
             // 
             // txt_d_pm_max
             // 
-            this.txt_d_pm_max.Location = new System.Drawing.Point(904, 512);
+            this.txt_d_pm_max.Location = new System.Drawing.Point(468, 514);
             this.txt_d_pm_max.MenuManager = this.barManager1;
             this.txt_d_pm_max.Name = "txt_d_pm_max";
             this.txt_d_pm_max.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_pm_max.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_pm_max.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_pm_max.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_pm_max.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_pm_max.Properties.Appearance.Options.UseFont = true;
             this.txt_d_pm_max.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_pm_max.Size = new System.Drawing.Size(83, 28);
+            this.txt_d_pm_max.Size = new System.Drawing.Size(83, 26);
             this.txt_d_pm_max.TabIndex = 71;
             this.txt_d_pm_max.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_pm_min
             // 
-            this.txt_d_pm_min.Location = new System.Drawing.Point(772, 512);
+            this.txt_d_pm_min.Location = new System.Drawing.Point(336, 514);
             this.txt_d_pm_min.MenuManager = this.barManager1;
             this.txt_d_pm_min.Name = "txt_d_pm_min";
             this.txt_d_pm_min.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_pm_min.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_pm_min.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_pm_min.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_pm_min.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_pm_min.Properties.Appearance.Options.UseFont = true;
             this.txt_d_pm_min.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_pm_min.Size = new System.Drawing.Size(83, 28);
+            this.txt_d_pm_min.Size = new System.Drawing.Size(83, 26);
             this.txt_d_pm_min.TabIndex = 70;
             this.txt_d_pm_min.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // groupControl12
             // 
-            this.groupControl12.AppearanceCaption.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupControl12.AppearanceCaption.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupControl12.AppearanceCaption.Options.UseFont = true;
             this.groupControl12.Controls.Add(this.txt_runTime);
             this.groupControl12.Controls.Add(this.labelControl50);
@@ -960,964 +955,970 @@
             this.groupControl12.Controls.Add(this.labelControl47);
             this.groupControl12.Controls.Add(this.labelControl46);
             this.groupControl12.Controls.Add(this.labelControl45);
-            this.groupControl12.Location = new System.Drawing.Point(1039, 16);
+            this.groupControl12.Location = new System.Drawing.Point(572, 16);
             this.groupControl12.Name = "groupControl12";
-            this.groupControl12.Size = new System.Drawing.Size(315, 176);
+            this.groupControl12.Size = new System.Drawing.Size(194, 125);
             this.groupControl12.TabIndex = 21;
             this.groupControl12.Text = "运行计时";
             // 
             // txt_runTime
             // 
-            this.txt_runTime.Location = new System.Drawing.Point(187, 126);
+            this.txt_runTime.Location = new System.Drawing.Point(103, 88);
             this.txt_runTime.MenuManager = this.barManager1;
             this.txt_runTime.Name = "txt_runTime";
             this.txt_runTime.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_runTime.Properties.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_runTime.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_runTime.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_runTime.Properties.Appearance.Options.UseBackColor = true;
             this.txt_runTime.Properties.Appearance.Options.UseFont = true;
             this.txt_runTime.Properties.Appearance.Options.UseForeColor = true;
             this.txt_runTime.Properties.ReadOnly = true;
-            this.txt_runTime.Size = new System.Drawing.Size(123, 36);
+            this.txt_runTime.Size = new System.Drawing.Size(77, 26);
             this.txt_runTime.TabIndex = 15;
             // 
             // labelControl50
             // 
-            this.labelControl50.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl50.Location = new System.Drawing.Point(6, 129);
+            this.labelControl50.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl50.Location = new System.Drawing.Point(5, 91);
             this.labelControl50.Name = "labelControl50";
-            this.labelControl50.Size = new System.Drawing.Size(174, 29);
+            this.labelControl50.Size = new System.Drawing.Size(95, 19);
             this.labelControl50.TabIndex = 14;
-            this.labelControl50.Text = "统计运行时数";
+            this.labelControl50.Text = "小时（总）";
             // 
             // txt_second
             // 
-            this.txt_second.Location = new System.Drawing.Point(260, 80);
+            this.txt_second.Location = new System.Drawing.Point(151, 59);
             this.txt_second.MenuManager = this.barManager1;
             this.txt_second.Name = "txt_second";
             this.txt_second.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_second.Properties.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_second.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_second.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_second.Properties.Appearance.Options.UseBackColor = true;
             this.txt_second.Properties.Appearance.Options.UseFont = true;
             this.txt_second.Properties.Appearance.Options.UseForeColor = true;
             this.txt_second.Properties.ReadOnly = true;
-            this.txt_second.Size = new System.Drawing.Size(43, 36);
+            this.txt_second.Size = new System.Drawing.Size(30, 26);
             this.txt_second.TabIndex = 13;
             // 
             // txt_minute
             // 
-            this.txt_minute.Location = new System.Drawing.Point(199, 80);
+            this.txt_minute.Location = new System.Drawing.Point(115, 59);
             this.txt_minute.MenuManager = this.barManager1;
             this.txt_minute.Name = "txt_minute";
             this.txt_minute.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_minute.Properties.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_minute.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_minute.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_minute.Properties.Appearance.Options.UseBackColor = true;
             this.txt_minute.Properties.Appearance.Options.UseFont = true;
             this.txt_minute.Properties.Appearance.Options.UseForeColor = true;
             this.txt_minute.Properties.ReadOnly = true;
-            this.txt_minute.Size = new System.Drawing.Size(43, 36);
+            this.txt_minute.Size = new System.Drawing.Size(30, 26);
             this.txt_minute.TabIndex = 12;
             // 
             // txt_hour
             // 
-            this.txt_hour.Location = new System.Drawing.Point(138, 80);
+            this.txt_hour.Location = new System.Drawing.Point(79, 59);
             this.txt_hour.MenuManager = this.barManager1;
             this.txt_hour.Name = "txt_hour";
             this.txt_hour.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_hour.Properties.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_hour.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_hour.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_hour.Properties.Appearance.Options.UseBackColor = true;
             this.txt_hour.Properties.Appearance.Options.UseFont = true;
             this.txt_hour.Properties.Appearance.Options.UseForeColor = true;
             this.txt_hour.Properties.ReadOnly = true;
-            this.txt_hour.Size = new System.Drawing.Size(43, 36);
+            this.txt_hour.Size = new System.Drawing.Size(30, 26);
             this.txt_hour.TabIndex = 11;
             // 
             // txt_day
             // 
-            this.txt_day.Location = new System.Drawing.Point(77, 80);
+            this.txt_day.Location = new System.Drawing.Point(43, 59);
             this.txt_day.MenuManager = this.barManager1;
             this.txt_day.Name = "txt_day";
             this.txt_day.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_day.Properties.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_day.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_day.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_day.Properties.Appearance.Options.UseBackColor = true;
             this.txt_day.Properties.Appearance.Options.UseFont = true;
             this.txt_day.Properties.Appearance.Options.UseForeColor = true;
             this.txt_day.Properties.ReadOnly = true;
-            this.txt_day.Size = new System.Drawing.Size(43, 36);
+            this.txt_day.Size = new System.Drawing.Size(30, 26);
             this.txt_day.TabIndex = 10;
             // 
             // txt_year
             // 
-            this.txt_year.Location = new System.Drawing.Point(16, 80);
+            this.txt_year.Location = new System.Drawing.Point(7, 59);
             this.txt_year.MenuManager = this.barManager1;
             this.txt_year.Name = "txt_year";
             this.txt_year.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_year.Properties.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_year.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_year.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_year.Properties.Appearance.Options.UseBackColor = true;
             this.txt_year.Properties.Appearance.Options.UseFont = true;
             this.txt_year.Properties.Appearance.Options.UseForeColor = true;
             this.txt_year.Properties.ReadOnly = true;
-            this.txt_year.Size = new System.Drawing.Size(43, 36);
+            this.txt_year.Size = new System.Drawing.Size(30, 26);
             this.txt_year.TabIndex = 9;
             // 
             // labelControl49
             // 
-            this.labelControl49.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl49.Location = new System.Drawing.Point(267, 49);
+            this.labelControl49.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl49.Location = new System.Drawing.Point(159, 32);
             this.labelControl49.Name = "labelControl49";
-            this.labelControl49.Size = new System.Drawing.Size(29, 29);
+            this.labelControl49.Size = new System.Drawing.Size(21, 21);
             this.labelControl49.TabIndex = 8;
             this.labelControl49.Text = "秒";
             // 
             // labelControl48
             // 
-            this.labelControl48.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl48.Location = new System.Drawing.Point(206, 49);
+            this.labelControl48.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl48.Location = new System.Drawing.Point(121, 32);
             this.labelControl48.Name = "labelControl48";
-            this.labelControl48.Size = new System.Drawing.Size(29, 29);
+            this.labelControl48.Size = new System.Drawing.Size(21, 21);
             this.labelControl48.TabIndex = 7;
             this.labelControl48.Text = "分";
             // 
             // labelControl47
             // 
-            this.labelControl47.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl47.Location = new System.Drawing.Point(145, 49);
+            this.labelControl47.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl47.Location = new System.Drawing.Point(83, 32);
             this.labelControl47.Name = "labelControl47";
-            this.labelControl47.Size = new System.Drawing.Size(29, 29);
+            this.labelControl47.Size = new System.Drawing.Size(21, 21);
             this.labelControl47.TabIndex = 6;
             this.labelControl47.Text = "时";
             // 
             // labelControl46
             // 
-            this.labelControl46.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl46.Location = new System.Drawing.Point(84, 49);
+            this.labelControl46.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl46.Location = new System.Drawing.Point(45, 32);
             this.labelControl46.Name = "labelControl46";
-            this.labelControl46.Size = new System.Drawing.Size(29, 29);
+            this.labelControl46.Size = new System.Drawing.Size(21, 21);
             this.labelControl46.TabIndex = 5;
             this.labelControl46.Text = "天";
             // 
             // labelControl45
             // 
-            this.labelControl45.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl45.Location = new System.Drawing.Point(23, 49);
+            this.labelControl45.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl45.Location = new System.Drawing.Point(7, 32);
             this.labelControl45.Name = "labelControl45";
-            this.labelControl45.Size = new System.Drawing.Size(29, 29);
+            this.labelControl45.Size = new System.Drawing.Size(21, 21);
             this.labelControl45.TabIndex = 4;
             this.labelControl45.Text = "年";
             // 
             // labelControl72
             // 
-            this.labelControl72.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl72.Location = new System.Drawing.Point(522, 518);
+            this.labelControl72.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl72.Location = new System.Drawing.Point(234, 520);
             this.labelControl72.Name = "labelControl72";
-            this.labelControl72.Size = new System.Drawing.Size(84, 21);
+            this.labelControl72.Size = new System.Drawing.Size(76, 19);
             this.labelControl72.TabIndex = 69;
             this.labelControl72.Text = "标准范围";
             // 
             // labelControl69
             // 
-            this.labelControl69.Appearance.Font = new System.Drawing.Font("黑体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl69.Location = new System.Drawing.Point(856, 451);
+            this.labelControl69.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl69.Location = new System.Drawing.Point(420, 453);
             this.labelControl69.Name = "labelControl69";
-            this.labelControl69.Size = new System.Drawing.Size(46, 21);
+            this.labelControl69.Size = new System.Drawing.Size(42, 19);
             this.labelControl69.TabIndex = 68;
             this.labelControl69.Text = "——";
             // 
             // txt_d_sterilize_max
             // 
-            this.txt_d_sterilize_max.Location = new System.Drawing.Point(904, 448);
+            this.txt_d_sterilize_max.Location = new System.Drawing.Point(468, 450);
             this.txt_d_sterilize_max.MenuManager = this.barManager1;
             this.txt_d_sterilize_max.Name = "txt_d_sterilize_max";
             this.txt_d_sterilize_max.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_sterilize_max.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_sterilize_max.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_sterilize_max.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_sterilize_max.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_sterilize_max.Properties.Appearance.Options.UseFont = true;
             this.txt_d_sterilize_max.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_sterilize_max.Size = new System.Drawing.Size(83, 28);
+            this.txt_d_sterilize_max.Size = new System.Drawing.Size(83, 26);
             this.txt_d_sterilize_max.TabIndex = 67;
             this.txt_d_sterilize_max.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_sterilize_min
             // 
-            this.txt_d_sterilize_min.Location = new System.Drawing.Point(772, 448);
+            this.txt_d_sterilize_min.Location = new System.Drawing.Point(336, 450);
             this.txt_d_sterilize_min.MenuManager = this.barManager1;
             this.txt_d_sterilize_min.Name = "txt_d_sterilize_min";
             this.txt_d_sterilize_min.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_sterilize_min.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_sterilize_min.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_sterilize_min.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_sterilize_min.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_sterilize_min.Properties.Appearance.Options.UseFont = true;
             this.txt_d_sterilize_min.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_sterilize_min.Size = new System.Drawing.Size(83, 28);
+            this.txt_d_sterilize_min.Size = new System.Drawing.Size(83, 26);
             this.txt_d_sterilize_min.TabIndex = 66;
             this.txt_d_sterilize_min.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl70
             // 
-            this.labelControl70.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl70.Location = new System.Drawing.Point(522, 453);
+            this.labelControl70.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl70.Location = new System.Drawing.Point(234, 455);
             this.labelControl70.Name = "labelControl70";
-            this.labelControl70.Size = new System.Drawing.Size(84, 21);
+            this.labelControl70.Size = new System.Drawing.Size(76, 19);
             this.labelControl70.TabIndex = 65;
             this.labelControl70.Text = "标准范围";
             // 
             // labelControl67
             // 
-            this.labelControl67.Appearance.Font = new System.Drawing.Font("黑体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl67.Location = new System.Drawing.Point(856, 384);
+            this.labelControl67.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl67.Location = new System.Drawing.Point(420, 386);
             this.labelControl67.Name = "labelControl67";
-            this.labelControl67.Size = new System.Drawing.Size(46, 21);
+            this.labelControl67.Size = new System.Drawing.Size(42, 19);
             this.labelControl67.TabIndex = 64;
             this.labelControl67.Text = "——";
             // 
             // txt_d_airQuality_max
             // 
-            this.txt_d_airQuality_max.Location = new System.Drawing.Point(904, 381);
+            this.txt_d_airQuality_max.Location = new System.Drawing.Point(468, 383);
             this.txt_d_airQuality_max.MenuManager = this.barManager1;
             this.txt_d_airQuality_max.Name = "txt_d_airQuality_max";
             this.txt_d_airQuality_max.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_airQuality_max.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_airQuality_max.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_airQuality_max.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_airQuality_max.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_airQuality_max.Properties.Appearance.Options.UseFont = true;
             this.txt_d_airQuality_max.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_airQuality_max.Size = new System.Drawing.Size(83, 28);
+            this.txt_d_airQuality_max.Size = new System.Drawing.Size(83, 26);
             this.txt_d_airQuality_max.TabIndex = 63;
             this.txt_d_airQuality_max.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_airQuality_min
             // 
-            this.txt_d_airQuality_min.Location = new System.Drawing.Point(772, 381);
+            this.txt_d_airQuality_min.Location = new System.Drawing.Point(336, 383);
             this.txt_d_airQuality_min.MenuManager = this.barManager1;
             this.txt_d_airQuality_min.Name = "txt_d_airQuality_min";
             this.txt_d_airQuality_min.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_airQuality_min.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_airQuality_min.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_airQuality_min.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_airQuality_min.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_airQuality_min.Properties.Appearance.Options.UseFont = true;
             this.txt_d_airQuality_min.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_airQuality_min.Size = new System.Drawing.Size(83, 28);
+            this.txt_d_airQuality_min.Size = new System.Drawing.Size(83, 26);
             this.txt_d_airQuality_min.TabIndex = 62;
             this.txt_d_airQuality_min.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl68
             // 
-            this.labelControl68.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl68.Location = new System.Drawing.Point(522, 384);
+            this.labelControl68.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl68.Location = new System.Drawing.Point(234, 386);
             this.labelControl68.Name = "labelControl68";
-            this.labelControl68.Size = new System.Drawing.Size(84, 21);
+            this.labelControl68.Size = new System.Drawing.Size(76, 19);
             this.labelControl68.TabIndex = 61;
             this.labelControl68.Text = "标准范围";
             // 
             // labelControl65
             // 
-            this.labelControl65.Appearance.Font = new System.Drawing.Font("黑体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl65.Location = new System.Drawing.Point(856, 317);
+            this.labelControl65.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl65.Location = new System.Drawing.Point(420, 319);
             this.labelControl65.Name = "labelControl65";
-            this.labelControl65.Size = new System.Drawing.Size(46, 21);
+            this.labelControl65.Size = new System.Drawing.Size(42, 19);
             this.labelControl65.TabIndex = 60;
             this.labelControl65.Text = "——";
             // 
             // txt_d_nox_max
             // 
-            this.txt_d_nox_max.Location = new System.Drawing.Point(904, 314);
+            this.txt_d_nox_max.Location = new System.Drawing.Point(468, 316);
             this.txt_d_nox_max.MenuManager = this.barManager1;
             this.txt_d_nox_max.Name = "txt_d_nox_max";
             this.txt_d_nox_max.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_nox_max.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_nox_max.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_nox_max.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_nox_max.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_nox_max.Properties.Appearance.Options.UseFont = true;
             this.txt_d_nox_max.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_nox_max.Size = new System.Drawing.Size(83, 28);
+            this.txt_d_nox_max.Size = new System.Drawing.Size(83, 26);
             this.txt_d_nox_max.TabIndex = 59;
             this.txt_d_nox_max.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_nox_min
             // 
-            this.txt_d_nox_min.Location = new System.Drawing.Point(772, 314);
+            this.txt_d_nox_min.Location = new System.Drawing.Point(336, 316);
             this.txt_d_nox_min.MenuManager = this.barManager1;
             this.txt_d_nox_min.Name = "txt_d_nox_min";
             this.txt_d_nox_min.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_nox_min.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_nox_min.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_nox_min.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_nox_min.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_nox_min.Properties.Appearance.Options.UseFont = true;
             this.txt_d_nox_min.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_nox_min.Size = new System.Drawing.Size(83, 28);
+            this.txt_d_nox_min.Size = new System.Drawing.Size(83, 26);
             this.txt_d_nox_min.TabIndex = 58;
             this.txt_d_nox_min.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl66
             // 
-            this.labelControl66.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl66.Location = new System.Drawing.Point(522, 317);
+            this.labelControl66.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl66.Location = new System.Drawing.Point(234, 319);
             this.labelControl66.Name = "labelControl66";
-            this.labelControl66.Size = new System.Drawing.Size(84, 21);
+            this.labelControl66.Size = new System.Drawing.Size(76, 19);
             this.labelControl66.TabIndex = 57;
             this.labelControl66.Text = "标准范围";
             // 
             // labelControl63
             // 
-            this.labelControl63.Appearance.Font = new System.Drawing.Font("黑体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl63.Location = new System.Drawing.Point(856, 250);
+            this.labelControl63.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl63.Location = new System.Drawing.Point(420, 252);
             this.labelControl63.Name = "labelControl63";
-            this.labelControl63.Size = new System.Drawing.Size(46, 21);
+            this.labelControl63.Size = new System.Drawing.Size(42, 19);
             this.labelControl63.TabIndex = 56;
             this.labelControl63.Text = "——";
             // 
             // txt_d_so2_max
             // 
-            this.txt_d_so2_max.Location = new System.Drawing.Point(904, 247);
+            this.txt_d_so2_max.Location = new System.Drawing.Point(468, 249);
             this.txt_d_so2_max.MenuManager = this.barManager1;
             this.txt_d_so2_max.Name = "txt_d_so2_max";
             this.txt_d_so2_max.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_so2_max.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_so2_max.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_so2_max.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_so2_max.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_so2_max.Properties.Appearance.Options.UseFont = true;
             this.txt_d_so2_max.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_so2_max.Size = new System.Drawing.Size(83, 28);
+            this.txt_d_so2_max.Size = new System.Drawing.Size(83, 26);
             this.txt_d_so2_max.TabIndex = 55;
             this.txt_d_so2_max.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_so2_min
             // 
-            this.txt_d_so2_min.Location = new System.Drawing.Point(772, 247);
+            this.txt_d_so2_min.Location = new System.Drawing.Point(336, 249);
             this.txt_d_so2_min.MenuManager = this.barManager1;
             this.txt_d_so2_min.Name = "txt_d_so2_min";
             this.txt_d_so2_min.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_so2_min.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_so2_min.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_so2_min.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_so2_min.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_so2_min.Properties.Appearance.Options.UseFont = true;
             this.txt_d_so2_min.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_so2_min.Size = new System.Drawing.Size(83, 28);
+            this.txt_d_so2_min.Size = new System.Drawing.Size(83, 26);
             this.txt_d_so2_min.TabIndex = 54;
             this.txt_d_so2_min.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl64
             // 
-            this.labelControl64.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl64.Location = new System.Drawing.Point(522, 250);
+            this.labelControl64.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl64.Location = new System.Drawing.Point(234, 252);
             this.labelControl64.Name = "labelControl64";
-            this.labelControl64.Size = new System.Drawing.Size(84, 21);
+            this.labelControl64.Size = new System.Drawing.Size(76, 19);
             this.labelControl64.TabIndex = 53;
             this.labelControl64.Text = "标准范围";
             // 
             // labelControl61
             // 
-            this.labelControl61.Appearance.Font = new System.Drawing.Font("黑体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl61.Location = new System.Drawing.Point(856, 183);
+            this.labelControl61.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl61.Location = new System.Drawing.Point(420, 185);
             this.labelControl61.Name = "labelControl61";
-            this.labelControl61.Size = new System.Drawing.Size(46, 21);
+            this.labelControl61.Size = new System.Drawing.Size(42, 19);
             this.labelControl61.TabIndex = 52;
             this.labelControl61.Text = "——";
             // 
             // txt_d_co_max
             // 
-            this.txt_d_co_max.Location = new System.Drawing.Point(904, 180);
+            this.txt_d_co_max.Location = new System.Drawing.Point(468, 182);
             this.txt_d_co_max.MenuManager = this.barManager1;
             this.txt_d_co_max.Name = "txt_d_co_max";
             this.txt_d_co_max.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_co_max.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_co_max.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_co_max.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_co_max.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_co_max.Properties.Appearance.Options.UseFont = true;
             this.txt_d_co_max.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_co_max.Size = new System.Drawing.Size(83, 28);
+            this.txt_d_co_max.Size = new System.Drawing.Size(83, 26);
             this.txt_d_co_max.TabIndex = 51;
             this.txt_d_co_max.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_co_min
             // 
-            this.txt_d_co_min.Location = new System.Drawing.Point(772, 180);
+            this.txt_d_co_min.Location = new System.Drawing.Point(336, 182);
             this.txt_d_co_min.MenuManager = this.barManager1;
             this.txt_d_co_min.Name = "txt_d_co_min";
             this.txt_d_co_min.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_co_min.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_co_min.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_co_min.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_co_min.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_co_min.Properties.Appearance.Options.UseFont = true;
             this.txt_d_co_min.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_co_min.Size = new System.Drawing.Size(83, 28);
+            this.txt_d_co_min.Size = new System.Drawing.Size(83, 26);
             this.txt_d_co_min.TabIndex = 50;
             this.txt_d_co_min.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl62
             // 
-            this.labelControl62.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl62.Location = new System.Drawing.Point(522, 183);
+            this.labelControl62.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl62.Location = new System.Drawing.Point(234, 185);
             this.labelControl62.Name = "labelControl62";
-            this.labelControl62.Size = new System.Drawing.Size(84, 21);
+            this.labelControl62.Size = new System.Drawing.Size(76, 19);
             this.labelControl62.TabIndex = 49;
             this.labelControl62.Text = "标准范围";
             // 
             // labelControl59
             // 
-            this.labelControl59.Appearance.Font = new System.Drawing.Font("黑体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl59.Location = new System.Drawing.Point(856, 116);
+            this.labelControl59.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl59.Location = new System.Drawing.Point(420, 118);
             this.labelControl59.Name = "labelControl59";
-            this.labelControl59.Size = new System.Drawing.Size(46, 21);
+            this.labelControl59.Size = new System.Drawing.Size(42, 19);
             this.labelControl59.TabIndex = 48;
             this.labelControl59.Text = "——";
             // 
             // txt_d_o2_max
             // 
-            this.txt_d_o2_max.Location = new System.Drawing.Point(904, 113);
+            this.txt_d_o2_max.Location = new System.Drawing.Point(468, 115);
             this.txt_d_o2_max.MenuManager = this.barManager1;
             this.txt_d_o2_max.Name = "txt_d_o2_max";
             this.txt_d_o2_max.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_o2_max.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_o2_max.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_o2_max.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_o2_max.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_o2_max.Properties.Appearance.Options.UseFont = true;
             this.txt_d_o2_max.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_o2_max.Size = new System.Drawing.Size(83, 28);
+            this.txt_d_o2_max.Size = new System.Drawing.Size(83, 26);
             this.txt_d_o2_max.TabIndex = 47;
             this.txt_d_o2_max.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_o2_min
             // 
-            this.txt_d_o2_min.Location = new System.Drawing.Point(772, 113);
+            this.txt_d_o2_min.Location = new System.Drawing.Point(336, 115);
             this.txt_d_o2_min.MenuManager = this.barManager1;
             this.txt_d_o2_min.Name = "txt_d_o2_min";
             this.txt_d_o2_min.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_o2_min.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_o2_min.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_o2_min.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_o2_min.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_o2_min.Properties.Appearance.Options.UseFont = true;
             this.txt_d_o2_min.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_o2_min.Size = new System.Drawing.Size(83, 28);
+            this.txt_d_o2_min.Size = new System.Drawing.Size(83, 26);
             this.txt_d_o2_min.TabIndex = 46;
             this.txt_d_o2_min.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl60
             // 
-            this.labelControl60.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl60.Location = new System.Drawing.Point(522, 116);
+            this.labelControl60.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl60.Location = new System.Drawing.Point(234, 118);
             this.labelControl60.Name = "labelControl60";
-            this.labelControl60.Size = new System.Drawing.Size(84, 21);
+            this.labelControl60.Size = new System.Drawing.Size(76, 19);
             this.labelControl60.TabIndex = 45;
             this.labelControl60.Text = "标准范围";
             // 
             // labelControl58
             // 
-            this.labelControl58.Appearance.Font = new System.Drawing.Font("黑体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl58.Location = new System.Drawing.Point(856, 51);
+            this.labelControl58.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl58.Location = new System.Drawing.Point(420, 53);
             this.labelControl58.Name = "labelControl58";
-            this.labelControl58.Size = new System.Drawing.Size(46, 21);
+            this.labelControl58.Size = new System.Drawing.Size(42, 19);
             this.labelControl58.TabIndex = 44;
             this.labelControl58.Text = "——";
             // 
             // txt_d_tvoc_max
             // 
-            this.txt_d_tvoc_max.Location = new System.Drawing.Point(904, 48);
+            this.txt_d_tvoc_max.Location = new System.Drawing.Point(468, 50);
             this.txt_d_tvoc_max.MenuManager = this.barManager1;
             this.txt_d_tvoc_max.Name = "txt_d_tvoc_max";
             this.txt_d_tvoc_max.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_tvoc_max.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_tvoc_max.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_tvoc_max.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_tvoc_max.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_tvoc_max.Properties.Appearance.Options.UseFont = true;
             this.txt_d_tvoc_max.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_tvoc_max.Size = new System.Drawing.Size(83, 28);
+            this.txt_d_tvoc_max.Size = new System.Drawing.Size(83, 26);
             this.txt_d_tvoc_max.TabIndex = 43;
             this.txt_d_tvoc_max.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_tvoc_min
             // 
-            this.txt_d_tvoc_min.Location = new System.Drawing.Point(772, 48);
+            this.txt_d_tvoc_min.Location = new System.Drawing.Point(336, 50);
             this.txt_d_tvoc_min.MenuManager = this.barManager1;
             this.txt_d_tvoc_min.Name = "txt_d_tvoc_min";
             this.txt_d_tvoc_min.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_tvoc_min.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_tvoc_min.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_tvoc_min.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_tvoc_min.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_tvoc_min.Properties.Appearance.Options.UseFont = true;
             this.txt_d_tvoc_min.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_tvoc_min.Size = new System.Drawing.Size(83, 28);
+            this.txt_d_tvoc_min.Size = new System.Drawing.Size(83, 26);
             this.txt_d_tvoc_min.TabIndex = 42;
             this.txt_d_tvoc_min.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl57
             // 
-            this.labelControl57.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl57.Location = new System.Drawing.Point(522, 51);
+            this.labelControl57.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl57.Location = new System.Drawing.Point(234, 53);
             this.labelControl57.Name = "labelControl57";
-            this.labelControl57.Size = new System.Drawing.Size(84, 21);
+            this.labelControl57.Size = new System.Drawing.Size(76, 19);
             this.labelControl57.TabIndex = 41;
             this.labelControl57.Text = "标准范围";
             // 
             // txt_d_pm
             // 
-            this.txt_d_pm.Location = new System.Drawing.Point(772, 482);
+            this.txt_d_pm.Location = new System.Drawing.Point(336, 484);
             this.txt_d_pm.MenuManager = this.barManager1;
             this.txt_d_pm.Name = "txt_d_pm";
             this.txt_d_pm.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_pm.Properties.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_pm.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_pm.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_pm.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_pm.Properties.Appearance.Options.UseFont = true;
             this.txt_d_pm.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_pm.Properties.ReadOnly = true;
-            this.txt_d_pm.Size = new System.Drawing.Size(215, 36);
+            this.txt_d_pm.Size = new System.Drawing.Size(215, 28);
             this.txt_d_pm.TabIndex = 40;
             // 
             // label_PM
             // 
-            this.label_PM.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_PM.Location = new System.Drawing.Point(522, 485);
+            this.label_PM.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_PM.Location = new System.Drawing.Point(234, 487);
             this.label_PM.Name = "label_PM";
-            this.label_PM.Size = new System.Drawing.Size(71, 35);
+            this.label_PM.Size = new System.Drawing.Size(43, 21);
             this.label_PM.TabIndex = 39;
             this.label_PM.Text = "PM值";
             // 
             // txt_d_sterilize
             // 
-            this.txt_d_sterilize.Location = new System.Drawing.Point(772, 415);
+            this.txt_d_sterilize.Location = new System.Drawing.Point(336, 417);
             this.txt_d_sterilize.MenuManager = this.barManager1;
             this.txt_d_sterilize.Name = "txt_d_sterilize";
             this.txt_d_sterilize.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_sterilize.Properties.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_sterilize.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_sterilize.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_sterilize.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_sterilize.Properties.Appearance.Options.UseFont = true;
             this.txt_d_sterilize.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_sterilize.Properties.ReadOnly = true;
-            this.txt_d_sterilize.Size = new System.Drawing.Size(215, 36);
+            this.txt_d_sterilize.Size = new System.Drawing.Size(215, 28);
             this.txt_d_sterilize.TabIndex = 38;
             // 
             // label_sterilize
             // 
-            this.label_sterilize.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_sterilize.Location = new System.Drawing.Point(522, 418);
+            this.label_sterilize.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_sterilize.Location = new System.Drawing.Point(234, 420);
             this.label_sterilize.Name = "label_sterilize";
-            this.label_sterilize.Size = new System.Drawing.Size(140, 35);
+            this.label_sterilize.Size = new System.Drawing.Size(84, 21);
             this.label_sterilize.TabIndex = 37;
             this.label_sterilize.Text = "消毒杀菌";
             // 
             // txt_d_airQuality
             // 
-            this.txt_d_airQuality.Location = new System.Drawing.Point(772, 348);
+            this.txt_d_airQuality.Location = new System.Drawing.Point(336, 350);
             this.txt_d_airQuality.MenuManager = this.barManager1;
             this.txt_d_airQuality.Name = "txt_d_airQuality";
             this.txt_d_airQuality.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_airQuality.Properties.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_airQuality.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d_airQuality.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d_airQuality.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_airQuality.Properties.Appearance.Options.UseFont = true;
             this.txt_d_airQuality.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_airQuality.Properties.ReadOnly = true;
-            this.txt_d_airQuality.Size = new System.Drawing.Size(215, 36);
+            this.txt_d_airQuality.Size = new System.Drawing.Size(215, 28);
             this.txt_d_airQuality.TabIndex = 36;
             // 
             // label_airQuality
             // 
-            this.label_airQuality.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_airQuality.Location = new System.Drawing.Point(522, 351);
+            this.label_airQuality.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_airQuality.Location = new System.Drawing.Point(234, 353);
             this.label_airQuality.Name = "label_airQuality";
-            this.label_airQuality.Size = new System.Drawing.Size(140, 35);
+            this.label_airQuality.Size = new System.Drawing.Size(84, 21);
             this.label_airQuality.TabIndex = 35;
             this.label_airQuality.Text = "空气质量";
             // 
             // txt_nowWeek
             // 
-            this.txt_nowWeek.Location = new System.Drawing.Point(209, 482);
+            this.txt_nowWeek.Location = new System.Drawing.Point(64, 67);
             this.txt_nowWeek.MenuManager = this.barManager1;
             this.txt_nowWeek.Name = "txt_nowWeek";
             this.txt_nowWeek.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_nowWeek.Properties.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_nowWeek.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_nowWeek.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_nowWeek.Properties.Appearance.Options.UseBackColor = true;
             this.txt_nowWeek.Properties.Appearance.Options.UseFont = true;
             this.txt_nowWeek.Properties.Appearance.Options.UseForeColor = true;
             this.txt_nowWeek.Properties.ReadOnly = true;
-            this.txt_nowWeek.Size = new System.Drawing.Size(215, 42);
+            this.txt_nowWeek.Size = new System.Drawing.Size(102, 26);
             this.txt_nowWeek.TabIndex = 34;
             // 
             // labelControl55
             // 
-            this.labelControl55.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl55.Location = new System.Drawing.Point(8, 485);
+            this.labelControl55.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl55.Location = new System.Drawing.Point(7, 67);
             this.labelControl55.Name = "labelControl55";
-            this.labelControl55.Size = new System.Drawing.Size(70, 35);
+            this.labelControl55.Size = new System.Drawing.Size(42, 21);
             this.labelControl55.TabIndex = 33;
             this.labelControl55.Text = "星期";
             // 
             // labelControl28
             // 
-            this.labelControl28.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl28.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelControl28.Location = new System.Drawing.Point(8, 16);
             this.labelControl28.Name = "labelControl28";
-            this.labelControl28.Size = new System.Drawing.Size(70, 35);
+            this.labelControl28.Size = new System.Drawing.Size(42, 21);
             this.labelControl28.TabIndex = 0;
             this.labelControl28.Text = "温度";
             // 
             // labelControl30
             // 
-            this.labelControl30.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl30.Location = new System.Drawing.Point(522, 16);
+            this.labelControl30.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl30.Location = new System.Drawing.Point(234, 18);
             this.labelControl30.Name = "labelControl30";
-            this.labelControl30.Size = new System.Drawing.Size(72, 35);
+            this.labelControl30.Size = new System.Drawing.Size(44, 21);
             this.labelControl30.TabIndex = 3;
             this.labelControl30.Text = "TVOC";
             // 
             // txt_nowTime
             // 
-            this.txt_nowTime.Location = new System.Drawing.Point(209, 415);
+            this.txt_nowTime.Location = new System.Drawing.Point(64, 35);
             this.txt_nowTime.MenuManager = this.barManager1;
             this.txt_nowTime.Name = "txt_nowTime";
             this.txt_nowTime.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_nowTime.Properties.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_nowTime.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_nowTime.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_nowTime.Properties.Appearance.Options.UseBackColor = true;
             this.txt_nowTime.Properties.Appearance.Options.UseFont = true;
             this.txt_nowTime.Properties.Appearance.Options.UseForeColor = true;
             this.txt_nowTime.Properties.ReadOnly = true;
-            this.txt_nowTime.Size = new System.Drawing.Size(215, 42);
+            this.txt_nowTime.Size = new System.Drawing.Size(102, 26);
             this.txt_nowTime.TabIndex = 32;
             // 
             // labelControl54
             // 
-            this.labelControl54.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl54.Location = new System.Drawing.Point(8, 418);
+            this.labelControl54.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl54.Location = new System.Drawing.Point(7, 36);
             this.labelControl54.Name = "labelControl54";
-            this.labelControl54.Size = new System.Drawing.Size(70, 35);
+            this.labelControl54.Size = new System.Drawing.Size(42, 21);
             this.labelControl54.TabIndex = 31;
             this.labelControl54.Text = "时间";
             // 
             // labelControl37
             // 
-            this.labelControl37.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl37.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelControl37.Location = new System.Drawing.Point(8, 83);
             this.labelControl37.Name = "labelControl37";
-            this.labelControl37.Size = new System.Drawing.Size(70, 35);
+            this.labelControl37.Size = new System.Drawing.Size(42, 21);
             this.labelControl37.TabIndex = 5;
             this.labelControl37.Text = "湿度";
             // 
             // labelControl40
             // 
-            this.labelControl40.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl40.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelControl40.Location = new System.Drawing.Point(8, 150);
             this.labelControl40.Name = "labelControl40";
-            this.labelControl40.Size = new System.Drawing.Size(70, 35);
+            this.labelControl40.Size = new System.Drawing.Size(42, 21);
             this.labelControl40.TabIndex = 9;
             this.labelControl40.Text = "噪音";
             // 
             // txt_nowDate
             // 
-            this.txt_nowDate.Location = new System.Drawing.Point(209, 348);
+            this.txt_nowDate.Location = new System.Drawing.Point(64, 5);
             this.txt_nowDate.MenuManager = this.barManager1;
             this.txt_nowDate.Name = "txt_nowDate";
             this.txt_nowDate.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_nowDate.Properties.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_nowDate.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_nowDate.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_nowDate.Properties.Appearance.Options.UseBackColor = true;
             this.txt_nowDate.Properties.Appearance.Options.UseFont = true;
             this.txt_nowDate.Properties.Appearance.Options.UseForeColor = true;
             this.txt_nowDate.Properties.ReadOnly = true;
-            this.txt_nowDate.Size = new System.Drawing.Size(215, 42);
+            this.txt_nowDate.Size = new System.Drawing.Size(102, 26);
             this.txt_nowDate.TabIndex = 30;
             // 
             // labelControl53
             // 
-            this.labelControl53.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl53.Location = new System.Drawing.Point(8, 351);
+            this.labelControl53.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl53.Location = new System.Drawing.Point(7, 5);
             this.labelControl53.Name = "labelControl53";
-            this.labelControl53.Size = new System.Drawing.Size(70, 35);
+            this.labelControl53.Size = new System.Drawing.Size(42, 21);
             this.labelControl53.TabIndex = 29;
             this.labelControl53.Text = "日期";
             // 
             // labelControl42
             // 
-            this.labelControl42.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl42.Location = new System.Drawing.Point(8, 217);
+            this.labelControl42.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl42.Location = new System.Drawing.Point(0, 9);
             this.labelControl42.Name = "labelControl42";
-            this.labelControl42.Size = new System.Drawing.Size(105, 35);
+            this.labelControl42.Size = new System.Drawing.Size(63, 21);
             this.labelControl42.TabIndex = 13;
             this.labelControl42.Text = "新风量";
             // 
             // labelControl44
             // 
-            this.labelControl44.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl44.Location = new System.Drawing.Point(8, 284);
+            this.labelControl44.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl44.Location = new System.Drawing.Point(0, 70);
             this.labelControl44.Name = "labelControl44";
-            this.labelControl44.Size = new System.Drawing.Size(105, 35);
+            this.labelControl44.Size = new System.Drawing.Size(63, 21);
             this.labelControl44.TabIndex = 17;
             this.labelControl44.Text = "回风量";
             // 
             // labelControl35
             // 
-            this.labelControl35.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl35.Location = new System.Drawing.Point(522, 83);
+            this.labelControl35.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl35.Location = new System.Drawing.Point(234, 85);
             this.labelControl35.Name = "labelControl35";
-            this.labelControl35.Size = new System.Drawing.Size(105, 35);
+            this.labelControl35.Size = new System.Drawing.Size(63, 21);
             this.labelControl35.TabIndex = 7;
             this.labelControl35.Text = "苯系物";
             // 
             // labelControl39
             // 
-            this.labelControl39.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl39.Location = new System.Drawing.Point(522, 150);
+            this.labelControl39.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl39.Location = new System.Drawing.Point(234, 152);
             this.labelControl39.Name = "labelControl39";
-            this.labelControl39.Size = new System.Drawing.Size(36, 35);
+            this.labelControl39.Size = new System.Drawing.Size(22, 21);
             this.labelControl39.TabIndex = 11;
             this.labelControl39.Text = "CO";
             // 
             // labelControl41
             // 
-            this.labelControl41.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl41.Location = new System.Drawing.Point(522, 217);
+            this.labelControl41.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl41.Location = new System.Drawing.Point(234, 219);
             this.labelControl41.Name = "labelControl41";
-            this.labelControl41.Size = new System.Drawing.Size(54, 35);
+            this.labelControl41.Size = new System.Drawing.Size(33, 21);
             this.labelControl41.TabIndex = 15;
             this.labelControl41.Text = "SO2";
             // 
             // labelControl43
             // 
-            this.labelControl43.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl43.Location = new System.Drawing.Point(522, 284);
+            this.labelControl43.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl43.Location = new System.Drawing.Point(234, 286);
             this.labelControl43.Name = "labelControl43";
-            this.labelControl43.Size = new System.Drawing.Size(54, 35);
+            this.labelControl43.Size = new System.Drawing.Size(33, 21);
             this.labelControl43.TabIndex = 19;
             this.labelControl43.Text = "NOX";
             // 
             // txt_d3
             // 
-            this.txt_d3.Location = new System.Drawing.Point(209, 13);
+            this.txt_d3.Location = new System.Drawing.Point(82, 13);
             this.txt_d3.MenuManager = this.barManager1;
             this.txt_d3.Name = "txt_d3";
             this.txt_d3.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d3.Properties.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d3.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d3.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d3.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d3.Properties.Appearance.Options.UseFont = true;
             this.txt_d3.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d3.Properties.ReadOnly = true;
-            this.txt_d3.Size = new System.Drawing.Size(215, 42);
+            this.txt_d3.Size = new System.Drawing.Size(102, 28);
             this.txt_d3.TabIndex = 1;
             // 
             // txt_d2
             // 
-            this.txt_d2.Location = new System.Drawing.Point(209, 80);
+            this.txt_d2.Location = new System.Drawing.Point(82, 80);
             this.txt_d2.MenuManager = this.barManager1;
             this.txt_d2.Name = "txt_d2";
             this.txt_d2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d2.Properties.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d2.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d2.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d2.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d2.Properties.Appearance.Options.UseFont = true;
             this.txt_d2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d2.Properties.ReadOnly = true;
-            this.txt_d2.Size = new System.Drawing.Size(215, 42);
+            this.txt_d2.Size = new System.Drawing.Size(102, 28);
             this.txt_d2.TabIndex = 6;
             // 
             // txt_d1
             // 
-            this.txt_d1.Location = new System.Drawing.Point(209, 147);
+            this.txt_d1.Location = new System.Drawing.Point(82, 147);
             this.txt_d1.MenuManager = this.barManager1;
             this.txt_d1.Name = "txt_d1";
             this.txt_d1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d1.Properties.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d1.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d1.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d1.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d1.Properties.Appearance.Options.UseFont = true;
             this.txt_d1.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d1.Properties.ReadOnly = true;
-            this.txt_d1.Size = new System.Drawing.Size(215, 42);
+            this.txt_d1.Size = new System.Drawing.Size(102, 28);
             this.txt_d1.TabIndex = 10;
             // 
             // txt_d9
             // 
-            this.txt_d9.Location = new System.Drawing.Point(209, 214);
+            this.txt_d9.Location = new System.Drawing.Point(74, 7);
             this.txt_d9.MenuManager = this.barManager1;
             this.txt_d9.Name = "txt_d9";
             this.txt_d9.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d9.Properties.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d9.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d9.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d9.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d9.Properties.Appearance.Options.UseFont = true;
             this.txt_d9.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d9.Properties.ReadOnly = true;
-            this.txt_d9.Size = new System.Drawing.Size(215, 42);
+            this.txt_d9.Size = new System.Drawing.Size(102, 28);
             this.txt_d9.TabIndex = 14;
             // 
             // txt_d10
             // 
-            this.txt_d10.Location = new System.Drawing.Point(209, 281);
+            this.txt_d10.Location = new System.Drawing.Point(74, 67);
             this.txt_d10.MenuManager = this.barManager1;
             this.txt_d10.Name = "txt_d10";
             this.txt_d10.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d10.Properties.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d10.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d10.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d10.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d10.Properties.Appearance.Options.UseFont = true;
             this.txt_d10.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d10.Properties.ReadOnly = true;
-            this.txt_d10.Size = new System.Drawing.Size(215, 42);
+            this.txt_d10.Size = new System.Drawing.Size(102, 28);
             this.txt_d10.TabIndex = 18;
             // 
             // txt_d4
             // 
-            this.txt_d4.Location = new System.Drawing.Point(772, 13);
+            this.txt_d4.Location = new System.Drawing.Point(336, 15);
             this.txt_d4.MenuManager = this.barManager1;
             this.txt_d4.Name = "txt_d4";
             this.txt_d4.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d4.Properties.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d4.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d4.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d4.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d4.Properties.Appearance.Options.UseFont = true;
             this.txt_d4.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d4.Properties.ReadOnly = true;
-            this.txt_d4.Size = new System.Drawing.Size(215, 36);
+            this.txt_d4.Size = new System.Drawing.Size(215, 28);
             this.txt_d4.TabIndex = 4;
             // 
             // txt_d5
             // 
-            this.txt_d5.Location = new System.Drawing.Point(772, 80);
+            this.txt_d5.Location = new System.Drawing.Point(336, 82);
             this.txt_d5.MenuManager = this.barManager1;
             this.txt_d5.Name = "txt_d5";
             this.txt_d5.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d5.Properties.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d5.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d5.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d5.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d5.Properties.Appearance.Options.UseFont = true;
             this.txt_d5.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d5.Properties.ReadOnly = true;
-            this.txt_d5.Size = new System.Drawing.Size(215, 36);
+            this.txt_d5.Size = new System.Drawing.Size(215, 28);
             this.txt_d5.TabIndex = 8;
             // 
             // txt_d6
             // 
-            this.txt_d6.Location = new System.Drawing.Point(772, 147);
+            this.txt_d6.Location = new System.Drawing.Point(336, 149);
             this.txt_d6.MenuManager = this.barManager1;
             this.txt_d6.Name = "txt_d6";
             this.txt_d6.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d6.Properties.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d6.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d6.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d6.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d6.Properties.Appearance.Options.UseFont = true;
             this.txt_d6.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d6.Properties.ReadOnly = true;
-            this.txt_d6.Size = new System.Drawing.Size(215, 36);
+            this.txt_d6.Size = new System.Drawing.Size(215, 28);
             this.txt_d6.TabIndex = 12;
             // 
             // txt_d7
             // 
-            this.txt_d7.Location = new System.Drawing.Point(772, 214);
+            this.txt_d7.Location = new System.Drawing.Point(336, 216);
             this.txt_d7.MenuManager = this.barManager1;
             this.txt_d7.Name = "txt_d7";
             this.txt_d7.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d7.Properties.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d7.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d7.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d7.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d7.Properties.Appearance.Options.UseFont = true;
             this.txt_d7.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d7.Properties.ReadOnly = true;
-            this.txt_d7.Size = new System.Drawing.Size(215, 36);
+            this.txt_d7.Size = new System.Drawing.Size(215, 28);
             this.txt_d7.TabIndex = 16;
             // 
             // txt_d8
             // 
-            this.txt_d8.Location = new System.Drawing.Point(772, 281);
+            this.txt_d8.Location = new System.Drawing.Point(336, 283);
             this.txt_d8.MenuManager = this.barManager1;
             this.txt_d8.Name = "txt_d8";
             this.txt_d8.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d8.Properties.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d8.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_d8.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_d8.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d8.Properties.Appearance.Options.UseFont = true;
             this.txt_d8.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d8.Properties.ReadOnly = true;
-            this.txt_d8.Size = new System.Drawing.Size(215, 36);
+            this.txt_d8.Size = new System.Drawing.Size(215, 28);
             this.txt_d8.TabIndex = 20;
             // 
             // groupControl13
             // 
-            this.groupControl13.AppearanceCaption.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupControl13.AppearanceCaption.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupControl13.AppearanceCaption.Options.UseFont = true;
+            this.groupControl13.Controls.Add(this.labelControl73);
             this.groupControl13.Controls.Add(this.txt_pipeBack);
             this.groupControl13.Controls.Add(this.labelControl52);
             this.groupControl13.Controls.Add(this.txt_pipeNew);
             this.groupControl13.Controls.Add(this.labelControl51);
-            this.groupControl13.Location = new System.Drawing.Point(1041, 207);
+            this.groupControl13.Controls.Add(this.txt_d9);
+            this.groupControl13.Controls.Add(this.txt_d10);
+            this.groupControl13.Controls.Add(this.labelControl44);
+            this.groupControl13.Controls.Add(this.labelControl42);
+            this.groupControl13.Location = new System.Drawing.Point(8, 206);
             this.groupControl13.Name = "groupControl13";
-            this.groupControl13.Size = new System.Drawing.Size(313, 135);
+            this.groupControl13.ShowCaption = false;
+            this.groupControl13.Size = new System.Drawing.Size(196, 330);
             this.groupControl13.TabIndex = 22;
             this.groupControl13.Text = "风管截面积";
             // 
             // txt_pipeBack
             // 
-            this.txt_pipeBack.Location = new System.Drawing.Point(136, 85);
+            this.txt_pipeBack.Location = new System.Drawing.Point(74, 242);
             this.txt_pipeBack.MenuManager = this.barManager1;
             this.txt_pipeBack.Name = "txt_pipeBack";
             this.txt_pipeBack.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_pipeBack.Properties.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_pipeBack.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_pipeBack.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_pipeBack.Properties.Appearance.Options.UseBackColor = true;
             this.txt_pipeBack.Properties.Appearance.Options.UseFont = true;
             this.txt_pipeBack.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_pipeBack.Size = new System.Drawing.Size(130, 36);
+            this.txt_pipeBack.Size = new System.Drawing.Size(102, 28);
             this.txt_pipeBack.TabIndex = 8;
             // 
             // labelControl52
             // 
-            this.labelControl52.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl52.Location = new System.Drawing.Point(31, 96);
+            this.labelControl52.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl52.Location = new System.Drawing.Point(0, 245);
             this.labelControl52.Name = "labelControl52";
-            this.labelControl52.Size = new System.Drawing.Size(87, 29);
+            this.labelControl52.Size = new System.Drawing.Size(63, 21);
             this.labelControl52.TabIndex = 7;
             this.labelControl52.Text = "回风管";
             // 
             // txt_pipeNew
             // 
-            this.txt_pipeNew.Location = new System.Drawing.Point(136, 40);
+            this.txt_pipeNew.Location = new System.Drawing.Point(74, 175);
             this.txt_pipeNew.MenuManager = this.barManager1;
             this.txt_pipeNew.Name = "txt_pipeNew";
             this.txt_pipeNew.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_pipeNew.Properties.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_pipeNew.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.txt_pipeNew.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.txt_pipeNew.Properties.Appearance.Options.UseBackColor = true;
             this.txt_pipeNew.Properties.Appearance.Options.UseFont = true;
             this.txt_pipeNew.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_pipeNew.Size = new System.Drawing.Size(130, 36);
+            this.txt_pipeNew.Size = new System.Drawing.Size(102, 28);
             this.txt_pipeNew.TabIndex = 6;
             // 
             // labelControl51
             // 
-            this.labelControl51.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl51.Location = new System.Drawing.Point(31, 47);
+            this.labelControl51.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl51.Location = new System.Drawing.Point(0, 178);
             this.labelControl51.Name = "labelControl51";
-            this.labelControl51.Size = new System.Drawing.Size(87, 29);
+            this.labelControl51.Size = new System.Drawing.Size(63, 21);
             this.labelControl51.TabIndex = 5;
             this.labelControl51.Text = "新风管";
             // 
             // groupControl14
             // 
-            this.groupControl14.AppearanceCaption.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupControl14.AppearanceCaption.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupControl14.AppearanceCaption.Options.UseFont = true;
             this.groupControl14.Controls.Add(this.btn_returnExit);
             this.groupControl14.Controls.Add(this.btn_manualWrite);
             this.groupControl14.Controls.Add(this.btn_returnSystemSet);
             this.groupControl14.Controls.Add(this.btn_returnAdd);
-            this.groupControl14.Location = new System.Drawing.Point(1039, 357);
+            this.groupControl14.Location = new System.Drawing.Point(572, 264);
             this.groupControl14.Name = "groupControl14";
-            this.groupControl14.Size = new System.Drawing.Size(313, 135);
+            this.groupControl14.Size = new System.Drawing.Size(194, 248);
             this.groupControl14.TabIndex = 22;
             this.groupControl14.Text = "功能按钮";
             // 
             // btn_returnExit
             // 
-            this.btn_returnExit.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_returnExit.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_returnExit.Appearance.Options.UseFont = true;
-            this.btn_returnExit.Location = new System.Drawing.Point(172, 91);
+            this.btn_returnExit.Location = new System.Drawing.Point(33, 191);
             this.btn_returnExit.Name = "btn_returnExit";
             this.btn_returnExit.Size = new System.Drawing.Size(129, 33);
             this.btn_returnExit.TabIndex = 3;
@@ -1926,9 +1927,9 @@
             // 
             // btn_manualWrite
             // 
-            this.btn_manualWrite.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_manualWrite.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_manualWrite.Appearance.Options.UseFont = true;
-            this.btn_manualWrite.Location = new System.Drawing.Point(20, 91);
+            this.btn_manualWrite.Location = new System.Drawing.Point(33, 95);
             this.btn_manualWrite.Name = "btn_manualWrite";
             this.btn_manualWrite.Size = new System.Drawing.Size(129, 33);
             this.btn_manualWrite.TabIndex = 2;
@@ -1936,9 +1937,9 @@
             // 
             // btn_returnSystemSet
             // 
-            this.btn_returnSystemSet.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_returnSystemSet.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_returnSystemSet.Appearance.Options.UseFont = true;
-            this.btn_returnSystemSet.Location = new System.Drawing.Point(172, 47);
+            this.btn_returnSystemSet.Location = new System.Drawing.Point(33, 143);
             this.btn_returnSystemSet.Name = "btn_returnSystemSet";
             this.btn_returnSystemSet.Size = new System.Drawing.Size(129, 33);
             this.btn_returnSystemSet.TabIndex = 1;
@@ -1947,9 +1948,9 @@
             // 
             // btn_returnAdd
             // 
-            this.btn_returnAdd.Appearance.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_returnAdd.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_returnAdd.Appearance.Options.UseFont = true;
-            this.btn_returnAdd.Location = new System.Drawing.Point(20, 47);
+            this.btn_returnAdd.Location = new System.Drawing.Point(33, 47);
             this.btn_returnAdd.Name = "btn_returnAdd";
             this.btn_returnAdd.Size = new System.Drawing.Size(129, 33);
             this.btn_returnAdd.TabIndex = 0;
@@ -2162,36 +2163,36 @@
             // chartControl_History
             // 
             this.chartControl_History.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            swiftPlotDiagram1.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
-            swiftPlotDiagram1.AxisX.Range.SideMarginsEnabled = true;
-            swiftPlotDiagram1.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
-            swiftPlotDiagram1.AxisX.Title.Antialiasing = false;
-            swiftPlotDiagram1.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            swiftPlotDiagram1.AxisX.Title.Text = "时间";
-            swiftPlotDiagram1.AxisX.Title.Visible = true;
-            swiftPlotDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram1.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
-            swiftPlotDiagram1.AxisY.Range.SideMarginsEnabled = true;
-            swiftPlotDiagram1.AxisY.Title.Alignment = System.Drawing.StringAlignment.Far;
-            swiftPlotDiagram1.AxisY.Title.Antialiasing = false;
-            swiftPlotDiagram1.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            swiftPlotDiagram1.AxisY.Title.Text = "浓度";
-            swiftPlotDiagram1.AxisY.Title.Visible = true;
-            swiftPlotDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram1.DefaultPane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            swiftPlotDiagram1.EnableAxisXScrolling = true;
-            this.chartControl_History.Diagram = swiftPlotDiagram1;
+            swiftPlotDiagram2.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
+            swiftPlotDiagram2.AxisX.Range.SideMarginsEnabled = true;
+            swiftPlotDiagram2.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
+            swiftPlotDiagram2.AxisX.Title.Antialiasing = false;
+            swiftPlotDiagram2.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            swiftPlotDiagram2.AxisX.Title.Text = "时间";
+            swiftPlotDiagram2.AxisX.Title.Visible = true;
+            swiftPlotDiagram2.AxisX.VisibleInPanesSerializable = "-1";
+            swiftPlotDiagram2.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
+            swiftPlotDiagram2.AxisY.Range.SideMarginsEnabled = true;
+            swiftPlotDiagram2.AxisY.Title.Alignment = System.Drawing.StringAlignment.Far;
+            swiftPlotDiagram2.AxisY.Title.Antialiasing = false;
+            swiftPlotDiagram2.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            swiftPlotDiagram2.AxisY.Title.Text = "浓度";
+            swiftPlotDiagram2.AxisY.Title.Visible = true;
+            swiftPlotDiagram2.AxisY.VisibleInPanesSerializable = "-1";
+            swiftPlotDiagram2.DefaultPane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
+            swiftPlotDiagram2.EnableAxisXScrolling = true;
+            this.chartControl_History.Diagram = swiftPlotDiagram2;
             this.chartControl_History.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControl_History.Legend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
             this.chartControl_History.Legend.Visible = false;
             this.chartControl_History.Location = new System.Drawing.Point(2, 22);
             this.chartControl_History.Name = "chartControl_History";
-            series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series1.Name = "Series 1";
-            series1.View = swiftPlotSeriesView1;
+            series2.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            series2.Name = "Series 1";
+            series2.View = swiftPlotSeriesView3;
             this.chartControl_History.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            this.chartControl_History.SeriesTemplate.View = swiftPlotSeriesView2;
+        series2};
+            this.chartControl_History.SeriesTemplate.View = swiftPlotSeriesView4;
             this.chartControl_History.Size = new System.Drawing.Size(1018, 532);
             this.chartControl_History.TabIndex = 0;
             // 
@@ -2402,9 +2403,9 @@
             this.groupControl15.Controls.Add(this.txt_main_name_TVOC);
             this.groupControl15.Controls.Add(this.txt_main_value_temperature);
             this.groupControl15.Controls.Add(this.txt_main_name_temperature);
-            this.groupControl15.Location = new System.Drawing.Point(484, 5);
+            this.groupControl15.Location = new System.Drawing.Point(550, 5);
             this.groupControl15.Name = "groupControl15";
-            this.groupControl15.Size = new System.Drawing.Size(725, 424);
+            this.groupControl15.Size = new System.Drawing.Size(713, 444);
             this.groupControl15.TabIndex = 6;
             this.groupControl15.Text = "主界面设置";
             // 
@@ -2490,7 +2491,7 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(483, 369);
+            this.simpleButton1.Location = new System.Drawing.Point(380, 401);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
             this.simpleButton1.TabIndex = 20;
@@ -2664,9 +2665,9 @@
             this.groupControl7.Controls.Add(this.btn_Save3);
             this.groupControl7.Controls.Add(this.labelControl15);
             this.groupControl7.Controls.Add(this.labelControl14);
-            this.groupControl7.Location = new System.Drawing.Point(484, 435);
+            this.groupControl7.Location = new System.Drawing.Point(408, 539);
             this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(406, 189);
+            this.groupControl7.Size = new System.Drawing.Size(217, 106);
             this.groupControl7.TabIndex = 5;
             this.groupControl7.Text = "中心站网络通讯参数";
             this.groupControl7.Visible = false;
@@ -2674,7 +2675,7 @@
             // textEdit_centerPort
             // 
             this.textEdit_centerPort.EditValue = "5718";
-            this.textEdit_centerPort.Location = new System.Drawing.Point(262, 96);
+            this.textEdit_centerPort.Location = new System.Drawing.Point(106, 51);
             this.textEdit_centerPort.MenuManager = this.barManager1;
             this.textEdit_centerPort.Name = "textEdit_centerPort";
             this.textEdit_centerPort.Size = new System.Drawing.Size(100, 20);
@@ -2683,7 +2684,7 @@
             // textEdit_CenterIP
             // 
             this.textEdit_CenterIP.EditValue = "127.0.0.1";
-            this.textEdit_CenterIP.Location = new System.Drawing.Point(262, 54);
+            this.textEdit_CenterIP.Location = new System.Drawing.Point(106, 25);
             this.textEdit_CenterIP.MenuManager = this.barManager1;
             this.textEdit_CenterIP.Name = "textEdit_CenterIP";
             this.textEdit_CenterIP.Size = new System.Drawing.Size(100, 20);
@@ -2691,7 +2692,7 @@
             // 
             // btn_Save3
             // 
-            this.btn_Save3.Location = new System.Drawing.Point(217, 154);
+            this.btn_Save3.Location = new System.Drawing.Point(18, 79);
             this.btn_Save3.Name = "btn_Save3";
             this.btn_Save3.Size = new System.Drawing.Size(75, 23);
             this.btn_Save3.TabIndex = 7;
@@ -2699,7 +2700,7 @@
             // 
             // labelControl15
             // 
-            this.labelControl15.Location = new System.Drawing.Point(140, 102);
+            this.labelControl15.Location = new System.Drawing.Point(18, 57);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(84, 14);
             this.labelControl15.TabIndex = 6;
@@ -2707,7 +2708,7 @@
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(140, 60);
+            this.labelControl14.Location = new System.Drawing.Point(18, 31);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(59, 14);
             this.labelControl14.TabIndex = 5;
@@ -3647,6 +3648,32 @@
             this.timer_now.Interval = 1000;
             this.timer_now.Tick += new System.EventHandler(this.timer_now_Tick);
             // 
+            // groupControl16
+            // 
+            this.groupControl16.AppearanceCaption.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupControl16.AppearanceCaption.Options.UseFont = true;
+            this.groupControl16.Controls.Add(this.txt_nowTime);
+            this.groupControl16.Controls.Add(this.labelControl53);
+            this.groupControl16.Controls.Add(this.txt_nowDate);
+            this.groupControl16.Controls.Add(this.labelControl54);
+            this.groupControl16.Controls.Add(this.labelControl55);
+            this.groupControl16.Controls.Add(this.txt_nowWeek);
+            this.groupControl16.Location = new System.Drawing.Point(572, 147);
+            this.groupControl16.Name = "groupControl16";
+            this.groupControl16.ShowCaption = false;
+            this.groupControl16.Size = new System.Drawing.Size(194, 111);
+            this.groupControl16.TabIndex = 73;
+            this.groupControl16.Text = "风管截面积";
+            // 
+            // labelControl73
+            // 
+            this.labelControl73.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl73.Location = new System.Drawing.Point(0, 140);
+            this.labelControl73.Name = "labelControl73";
+            this.labelControl73.Size = new System.Drawing.Size(105, 21);
+            this.labelControl73.TabIndex = 19;
+            this.labelControl73.Text = "风管截面积";
+            // 
             // MainForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -3740,10 +3767,10 @@
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl_History)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);
@@ -3844,6 +3871,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl16)).EndInit();
+            this.groupControl16.ResumeLayout(false);
+            this.groupControl16.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -4129,5 +4159,7 @@
         private DevExpress.XtraEditors.TextEdit txt_d_tvoc_max;
         private DevExpress.XtraEditors.TextEdit txt_d_tvoc_min;
         private DevExpress.XtraEditors.LabelControl labelControl57;
+        private DevExpress.XtraEditors.GroupControl groupControl16;
+        private DevExpress.XtraEditors.LabelControl labelControl73;
     }
 }
