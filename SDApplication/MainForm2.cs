@@ -228,52 +228,78 @@ namespace SDApplication
             switch (data.EquipmentID)
             {
                 case 1:
-                    txt_d1.Text = chroma + " dB";
+                    txt__nr_d1.Text = chroma + " dB";
                     break;
                 case 2:
-                    txt_d2.Text = chroma + " RH%";
+                    //txt_nr_d2.Text = chroma + " RH%";
+                    txt_nr_d2.Text = chroma + " dB";
                     break;
                 case 3:
-                    txt_d3.Text = chroma + " ℃";
+                    txt_t_d3.Text = chroma + " ℃";
                     break;
                 case 4:
-                    txt_d4.Text = chroma + " ppm";
+                    txt_n_d4.Text = chroma + " RH";
                     break;
                 case 5:
-                    txt_d5.Text = chroma + " ppm";
+                    txt_pm_d5.Text = chroma;
                     break;
                 case 6:
-                    txt_d6.Text = chroma + " ppm";
+                    txt_t_d6_1.Text = chroma + " ℃";
+                    txt_t_d6_2.Text = chroma + " ℃";
                     break;
                 case 7:
-                    txt_d7.Text = chroma + " ppm";
+                    txt_n_d7_1.Text = chroma + " RH";
+                    txt_n_d7_2.Text = chroma + " RH";
                     break;
                 case 8:
-                    txt_d8.Text = chroma + " ppm";
+                    txt_tvoc_d8.Text = chroma + " ppm";
                     break;
                 case 9:
-                    double area;
-                    if (!double.TryParse(txt_pipeNew.Text.Trim(), out area))
-                    {
-                        area = 1.0;
-                    }
-                    txt_d9.Text = Math.Round(data.Chroma * area, point).ToString() + " m³/s";
+                    txt_o2_d9.Text = chroma + " ppm";
+                    //double area;
+                    //if (!double.TryParse(txt_pipeNew.Text.Trim(), out area))
+                    //{
+                    //    area = 1.0;
+                    //}
+                    //txt_d9.Text = Math.Round(data.Chroma * area, point).ToString() + " m³/s";
                     break;
                 case 10:
-                    if (!double.TryParse(txt_pipeBack.Text.Trim(), out area))
-                    {
-                        area = 1.0;
-                    }
-                    txt_d10.Text = Math.Round(data.Chroma * area, point).ToString() + " m³/s";
+                    txt_co_d10.Text = chroma + " ppm";
+                    //if (!double.TryParse(txt_pipeBack.Text.Trim(), out area))
+                    //{
+                    //    area = 1.0;
+                    //}
+                    //txt_d10.Text = Math.Round(data.Chroma * area, point).ToString() + " m³/s";
                     break;
                 case 11:
-                    txt_d_airQuality.Text = chroma;
+                    txt_so2_d11.Text = chroma + " ppm";
                     break;
                 case 12:
-                    txt_d_sterilize.Text = chroma;
+                    txt_nox_d12.Text = chroma + " ppm";
                     break;
                 case 13:
-                    txt_d_pm.Text = chroma;
+                    txt_tvoc_d13.Text = chroma + " ppm";
+                    break;
+                case 14:
+                    txt_o2_d14.Text = chroma + " ppm";
+                    break;
+                case 15:
+                    txt_co_d15.Text = chroma + " ppm";
+                    break;
+                case 16:
+                    txt_so2_d16.Text = chroma + " ppm";
+                    break;
+                case 17:
+                    txt_nox_d17.Text = chroma + " ppm";
+                    break;
+                case 18:
+                    txt_t_d18.Text = chroma + " ppm";
+                    break;
+                case 19:
+                    txt_n_d19.Text = chroma + " ppm";
+                    break;
+                case 20:
+                    txt_pm_d20.Text = chroma + " ppm";
                     break;
                 default:
                     break;
@@ -440,7 +466,7 @@ namespace SDApplication
                 labelControl29.Text = systemConfig.BankName;
                 memoEdit1.Text = systemConfig.BankName;
 
-                txt_main_name_temperature.Text = systemConfig.NameTemperature;
+                txt_main_name_temperature.Text = systemConfig.NameTemperatureIn;
                 txt_main_name_humidity.Text = systemConfig.NameHumidity;
                 txt_main_name_sound.Text = systemConfig.NameSound;
                 txt_main_name_new.Text = systemConfig.NameNew;
@@ -473,54 +499,54 @@ namespace SDApplication
                 txt_main_value_PM.Text = systemConfig.ValuePM;
 
                 // 更新主界面
-                labelControl28.Text = systemConfig.NameTemperature;
-                labelControl37.Text = systemConfig.NameHumidity;
-                labelControl40.Text = systemConfig.NameSound;
+                label_t_out_1.Text = systemConfig.NameTemperatureIn;
+                label_h_out_1.Text = systemConfig.NameHumidity;
+                label_nr_1.Text = systemConfig.NameSound;
                 labelControl42.Text = systemConfig.NameNew;
                 labelControl44.Text = systemConfig.NameBack;
-                labelControl30.Text = systemConfig.NameTVOC;
-                labelControl35.Text = systemConfig.NameO2;
-                labelControl39.Text = systemConfig.NameCO;
-                labelControl41.Text = systemConfig.NameSO2;
-                labelControl43.Text = systemConfig.NameNOX;
+                label_tvoc_1.Text = systemConfig.NameTVOC;
+                label_O2_1.Text = systemConfig.NameO2;
+                label_co_1.Text = systemConfig.NameCO;
+                label_so2_1.Text = systemConfig.NameSO2;
+                label_nox_1.Text = systemConfig.NameNOX;
                 labelControl51.Text = systemConfig.NameNewarea;
                 labelControl52.Text = systemConfig.NameBackarea;
-                label_airQuality.Text = systemConfig.NameAirQuality;
-                label_sterilize.Text = systemConfig.NameSterilize;
-                label_PM.Text = systemConfig.NamePM;
+                label_airQuality_1.Text = systemConfig.NameAirQuality;
+                label_sterilize_1.Text = systemConfig.NameSterilize;
+                label_pm_1.Text = systemConfig.NamePM;
 
-                txt_d3.Text = systemConfig.ValueTemperature;
-                txt_d2.Text = systemConfig.ValueHumidity;
-                txt_d1.Text = systemConfig.ValueSound;
+                txt_t_d3.Text = systemConfig.ValueTemperature;
+                txt_n_d4.Text = systemConfig.ValueHumidity;
+                txt__nr_d1.Text = systemConfig.ValueSound;
                 txt_d9.Text = systemConfig.ValueNew;
                 txt_d10.Text = systemConfig.ValueBack;
-                txt_d4.Text = systemConfig.ValueTVOC;
-                txt_d5.Text = systemConfig.ValueO2;
-                txt_d6.Text = systemConfig.ValueCO;
-                txt_d7.Text = systemConfig.ValueSO2;
-                txt_d8.Text = systemConfig.ValueNOX;
+                txt_tvoc_d8.Text = systemConfig.ValueTVOC;
+                txt_o2_d9.Text = systemConfig.ValueO2;
+                txt_co_d10.Text = systemConfig.ValueCO;
+                txt_so2_d11.Text = systemConfig.ValueSO2;
+                txt_nox_d12.Text = systemConfig.ValueNOX;
                 txt_pipeNew.Text = systemConfig.ValueNewarea;
                 txt_pipeBack.Text = systemConfig.ValueBackarea;
-                txt_d_airQuality.Text = systemConfig.ValueAirQuality;
-                txt_d_sterilize.Text = systemConfig.ValueSterilize;
-                txt_d_pm.Text = systemConfig.ValuePM;
+                txt_airQuality_d_1.Text = systemConfig.ValueAirQuality;
+                txt_sterilize_d_1.Text = systemConfig.ValueSterilize;
+                txt_pm_d5.Text = systemConfig.ValuePM;
 
-                txt_d_tvoc_min.Text = systemConfig.ValueMinTVOC;
-                txt_d_tvoc_max.Text = systemConfig.ValueMaxTVOC;
-                txt_d_o2_min.Text = systemConfig.ValueMinO2;
-                txt_d_o2_max.Text = systemConfig.ValueMaxO2;
-                txt_d_co_min.Text = systemConfig.ValueMinCO;
-                txt_d_co_max.Text = systemConfig.ValueMaxCO;
-                txt_d_so2_min.Text = systemConfig.ValueMinSO2;
-                txt_d_so2_max.Text = systemConfig.ValueMaxSO2;
-                txt_d_nox_min.Text = systemConfig.ValueMinNOX;
-                txt_d_nox_max.Text = systemConfig.ValueMaxNOX;
-                txt_d_airQuality_min.Text = systemConfig.ValueMinAirQuality;
-                txt_d_airQuality_max.Text = systemConfig.ValueMaxAirQuality;
-                txt_d_sterilize_min.Text = systemConfig.ValueMinSterilize;
-                txt_d_sterilize_max.Text = systemConfig.ValueMaxSterilize;
-                txt_d_pm_min.Text = systemConfig.ValueMinPM;
-                txt_d_pm_max.Text = systemConfig.ValueMaxPM;
+                txt_d_tvoc_min_1.Text = systemConfig.ValueMinTVOC;
+                txt_d_tvoc_max_1.Text = systemConfig.ValueMaxTVOC;
+                txt_d_o2_min_1.Text = systemConfig.ValueMinO2;
+                txt_d_o2_max_1.Text = systemConfig.ValueMaxO2;
+                txt_d_co_min_1.Text = systemConfig.ValueMinCO;
+                txt_d_co_max_1.Text = systemConfig.ValueMaxCO;
+                txt_d_so2_min_1.Text = systemConfig.ValueMinSO2;
+                txt_d_so2_max_1.Text = systemConfig.ValueMaxSO2;
+                txt_d_nox_min_1.Text = systemConfig.ValueMinNOX;
+                txt_d_nox_max_1.Text = systemConfig.ValueMaxNOX;
+                txt_d_airQuality_min_1.Text = systemConfig.ValueMinAirQuality;
+                txt_d_airQuality_max_1.Text = systemConfig.ValueMaxAirQuality;
+                txt_d_sterilize_min_1.Text = systemConfig.ValueMinSterilize;
+                txt_d_sterilize_max_1.Text = systemConfig.ValueMaxSterilize;
+                txt_d_pm_min_1.Text = systemConfig.ValueMinPM;
+                txt_d_pm_max_1.Text = systemConfig.ValueMaxPM;
 
                 #endregion
 
@@ -689,7 +715,7 @@ namespace SDApplication
                 #region 主界面配置
                 labelControl29.Text = memoEdit1.Text;
 
-                systemConfig.NameTemperature = txt_main_name_temperature.Text;
+                systemConfig.NameTemperatureIn = txt_main_name_temperature.Text;
                 systemConfig.NameHumidity = txt_main_name_humidity.Text;
                 systemConfig.NameSound = txt_main_name_sound.Text;
                 systemConfig.NameNew = txt_main_name_new.Text;
@@ -721,22 +747,22 @@ namespace SDApplication
                 systemConfig.ValueSterilize = txt_main_value_sterilize.Text;
                 systemConfig.ValuePM = txt_main_value_PM.Text;
 
-                systemConfig.ValueMinTVOC = txt_d_tvoc_min.Text;
-                systemConfig.ValueMaxTVOC = txt_d_tvoc_max.Text;
-                systemConfig.ValueMinO2 = txt_d_o2_min.Text;
-                systemConfig.ValueMaxO2 = txt_d_o2_max.Text;
-                systemConfig.ValueMinCO = txt_d_co_min.Text;
-                systemConfig.ValueMaxCO = txt_d_co_max.Text;
-                systemConfig.ValueMinSO2 = txt_d_so2_min.Text;
-                systemConfig.ValueMaxSO2 = txt_d_so2_max.Text;
-                systemConfig.ValueMinNOX = txt_d_nox_min.Text;
-                systemConfig.ValueMaxNOX = txt_d_nox_max.Text;
-                systemConfig.ValueMinAirQuality = txt_d_airQuality_min.Text;
-                systemConfig.ValueMaxAirQuality = txt_d_airQuality_max.Text;
-                systemConfig.ValueMinSterilize = txt_d_sterilize_min.Text;
-                systemConfig.ValueMaxSterilize = txt_d_sterilize_max.Text;
-                systemConfig.ValueMinPM = txt_d_pm_min.Text;
-                systemConfig.ValueMaxPM = txt_d_pm_max.Text;
+                systemConfig.ValueMinTVOC = txt_d_tvoc_min_1.Text;
+                systemConfig.ValueMaxTVOC = txt_d_tvoc_max_1.Text;
+                systemConfig.ValueMinO2 = txt_d_o2_min_1.Text;
+                systemConfig.ValueMaxO2 = txt_d_o2_max_1.Text;
+                systemConfig.ValueMinCO = txt_d_co_min_1.Text;
+                systemConfig.ValueMaxCO = txt_d_co_max_1.Text;
+                systemConfig.ValueMinSO2 = txt_d_so2_min_1.Text;
+                systemConfig.ValueMaxSO2 = txt_d_so2_max_1.Text;
+                systemConfig.ValueMinNOX = txt_d_nox_min_1.Text;
+                systemConfig.ValueMaxNOX = txt_d_nox_max_1.Text;
+                systemConfig.ValueMinAirQuality = txt_d_airQuality_min_1.Text;
+                systemConfig.ValueMaxAirQuality = txt_d_airQuality_max_1.Text;
+                systemConfig.ValueMinSterilize = txt_d_sterilize_min_1.Text;
+                systemConfig.ValueMaxSterilize = txt_d_sterilize_max_1.Text;
+                systemConfig.ValueMinPM = txt_d_pm_min_1.Text;
+                systemConfig.ValueMaxPM = txt_d_pm_max_1.Text;
                 //labelControl28.Text = systemConfig.NameTemperature;
                 //labelControl37.Text = systemConfig.NameHumidity;
                 //labelControl40.Text = systemConfig.NameSound;

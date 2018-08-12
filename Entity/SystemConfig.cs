@@ -127,7 +127,7 @@ namespace Entity
 
 
 
-        public string NameTemperature { get; set; }
+        public string NameTemperatureIn { get; set; }
         public string ValueTemperature { get; set; }
 
         public string NameHumidity { get; set; }

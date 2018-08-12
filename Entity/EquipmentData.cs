@@ -46,5 +46,6 @@ namespace Entity
         /// 报警状态
         /// </summary>
         public string ChromaAlertStr { get; set; }
+
     }
 }
