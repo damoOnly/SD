@@ -19,6 +19,12 @@ namespace Entity
             Xrange = 30;
             BackupPreiod = 30;
             CenterPort = 5718;
+            ValueYear = 0;
+            ValueHour = 0;
+            ValueDay = 0;
+            ValueMinute = 0;
+            ValueSecond = 0;
+            ValueTotalHour = 0;
         }
         /// <summary>
         /// 串口号
@@ -126,13 +132,33 @@ namespace Entity
         public string BankName { get; set; }
 
 
-
+        /// <summary>
+        /// 室内温度
+        /// </summary>
         public string NameTemperatureIn { get; set; }
-        public string ValueTemperature { get; set; }
+        public string ValueTemperatureIn { get; set; }
 
-        public string NameHumidity { get; set; }
-        public string ValueHumidity { get; set; }
+        /// <summary>
+        /// 室外温度
+        /// </summary>
+        public string NameTemperatureOut { get; set; }
+        public string ValueTemperatureOut { get; set; }
 
+        /// <summary>
+        /// 室内湿度
+        /// </summary>
+        public string NameHumidityIn { get; set; }
+        public string ValueHumidityIn { get; set; }
+
+        /// <summary>
+        /// 室外湿度
+        /// </summary>
+        public string NameHumidityOut { get; set; }
+        public string ValueHumidityOut { get; set; }
+
+        /// <summary>
+        /// 噪音
+        /// </summary>
         public string NameSound { get; set; }
         public string ValueSound { get; set; }
 
@@ -192,7 +218,11 @@ namespace Entity
         public string ValueMinPM { get; set; }
         public string ValueMaxPM { get; set; }
 
-        
-
+        public int ValueYear { get; set; }
+        public int ValueDay { get; set; }
+        public int ValueHour { get; set; }
+        public int ValueMinute { get; set; }
+        public int ValueSecond { get; set; }
+        public double ValueTotalHour { get; set; }
     }
 }

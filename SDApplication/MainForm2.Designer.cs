@@ -85,7 +85,7 @@
             this.txt_t_d6_1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl74 = new DevExpress.XtraEditors.LabelControl();
             this.txt_d_pm_max_2 = new DevExpress.XtraEditors.TextEdit();
-            this.txt_d_pm_min__2 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_d_pm_min_2 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl75 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl76 = new DevExpress.XtraEditors.LabelControl();
             this.txt_d_sterilize_max_2 = new DevExpress.XtraEditors.TextEdit();
@@ -193,13 +193,13 @@
             this.label_tvoc_1 = new DevExpress.XtraEditors.LabelControl();
             this.label_h_out_1 = new DevExpress.XtraEditors.LabelControl();
             this.label_nr_1 = new DevExpress.XtraEditors.LabelControl();
-            this.label_O2_1 = new DevExpress.XtraEditors.LabelControl();
+            this.label_o2_1 = new DevExpress.XtraEditors.LabelControl();
             this.label_co_1 = new DevExpress.XtraEditors.LabelControl();
             this.label_so2_1 = new DevExpress.XtraEditors.LabelControl();
             this.label_nox_1 = new DevExpress.XtraEditors.LabelControl();
             this.txt_t_d3 = new DevExpress.XtraEditors.TextEdit();
             this.txt_n_d4 = new DevExpress.XtraEditors.TextEdit();
-            this.txt__nr_d1 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_nr_d1 = new DevExpress.XtraEditors.TextEdit();
             this.txt_tvoc_d8 = new DevExpress.XtraEditors.TextEdit();
             this.txt_o2_d9 = new DevExpress.XtraEditors.TextEdit();
             this.txt_co_d10 = new DevExpress.XtraEditors.TextEdit();
@@ -254,6 +254,10 @@
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl15 = new DevExpress.XtraEditors.GroupControl();
+            this.txt_main_value_humidity_out = new DevExpress.XtraEditors.TextEdit();
+            this.txt_main_name_humidity_out = new DevExpress.XtraEditors.TextEdit();
+            this.txt_main_value_temperature_out = new DevExpress.XtraEditors.TextEdit();
+            this.txt_main_name_temperature_out = new DevExpress.XtraEditors.TextEdit();
             this.txt_main_value_PM = new DevExpress.XtraEditors.TextEdit();
             this.txt_main_name_PM = new DevExpress.XtraEditors.TextEdit();
             this.txt_main_value_sterilize = new DevExpress.XtraEditors.TextEdit();
@@ -279,12 +283,12 @@
             this.txt_main_name_sound = new DevExpress.XtraEditors.TextEdit();
             this.txt_main_value_O2 = new DevExpress.XtraEditors.TextEdit();
             this.txt_main_name_O2 = new DevExpress.XtraEditors.TextEdit();
-            this.txt_main_value_humidity = new DevExpress.XtraEditors.TextEdit();
-            this.txt_main_name_humidity = new DevExpress.XtraEditors.TextEdit();
+            this.txt_main_value_humidity_in = new DevExpress.XtraEditors.TextEdit();
+            this.txt_main_name_humidity_in = new DevExpress.XtraEditors.TextEdit();
             this.txt_main_value_TVOC = new DevExpress.XtraEditors.TextEdit();
             this.txt_main_name_TVOC = new DevExpress.XtraEditors.TextEdit();
-            this.txt_main_value_temperature = new DevExpress.XtraEditors.TextEdit();
-            this.txt_main_name_temperature = new DevExpress.XtraEditors.TextEdit();
+            this.txt_main_value_temperature_in = new DevExpress.XtraEditors.TextEdit();
+            this.txt_main_name_temperature_in = new DevExpress.XtraEditors.TextEdit();
             this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
             this.textEdit_centerPort = new DevExpress.XtraEditors.TextEdit();
             this.textEdit_CenterIP = new DevExpress.XtraEditors.TextEdit();
@@ -393,7 +397,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_n_d7_1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_t_d6_1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_d_pm_max_2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_d_pm_min__2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_d_pm_min_2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_d_sterilize_max_2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_d_sterilize_min_2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_d_airQuality_max_2.Properties)).BeginInit();
@@ -450,7 +454,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_airQuality_d_1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_t_d3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_n_d4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt__nr_d1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_nr_d1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tvoc_d8.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_o2_d9.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_co_d10.Properties)).BeginInit();
@@ -498,6 +502,10 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl15)).BeginInit();
             this.groupControl15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_humidity_out.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_humidity_out.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_temperature_out.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_temperature_out.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_PM.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_PM.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_sterilize.Properties)).BeginInit();
@@ -522,12 +530,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_sound.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_O2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_O2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_humidity.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_humidity.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_humidity_in.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_humidity_in.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_TVOC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_TVOC.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_temperature.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_temperature.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_temperature_in.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_temperature_in.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
             this.groupControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_centerPort.Properties)).BeginInit();
@@ -945,7 +953,7 @@
             this.panelControl_center.Controls.Add(this.txt_t_d6_1);
             this.panelControl_center.Controls.Add(this.labelControl74);
             this.panelControl_center.Controls.Add(this.txt_d_pm_max_2);
-            this.panelControl_center.Controls.Add(this.txt_d_pm_min__2);
+            this.panelControl_center.Controls.Add(this.txt_d_pm_min_2);
             this.panelControl_center.Controls.Add(this.labelControl75);
             this.panelControl_center.Controls.Add(this.labelControl76);
             this.panelControl_center.Controls.Add(this.txt_d_sterilize_max_2);
@@ -1035,13 +1043,13 @@
             this.panelControl_center.Controls.Add(this.label_tvoc_1);
             this.panelControl_center.Controls.Add(this.label_h_out_1);
             this.panelControl_center.Controls.Add(this.label_nr_1);
-            this.panelControl_center.Controls.Add(this.label_O2_1);
+            this.panelControl_center.Controls.Add(this.label_o2_1);
             this.panelControl_center.Controls.Add(this.label_co_1);
             this.panelControl_center.Controls.Add(this.label_so2_1);
             this.panelControl_center.Controls.Add(this.label_nox_1);
             this.panelControl_center.Controls.Add(this.txt_t_d3);
             this.panelControl_center.Controls.Add(this.txt_n_d4);
-            this.panelControl_center.Controls.Add(this.txt__nr_d1);
+            this.panelControl_center.Controls.Add(this.txt_nr_d1);
             this.panelControl_center.Controls.Add(this.txt_tvoc_d8);
             this.panelControl_center.Controls.Add(this.txt_o2_d9);
             this.panelControl_center.Controls.Add(this.txt_co_d10);
@@ -1246,19 +1254,19 @@
             this.txt_d_pm_max_2.Size = new System.Drawing.Size(66, 26);
             this.txt_d_pm_max_2.TabIndex = 127;
             // 
-            // txt_d_pm_min__2
+            // txt_d_pm_min_2
             // 
-            this.txt_d_pm_min__2.Location = new System.Drawing.Point(943, 516);
-            this.txt_d_pm_min__2.MenuManager = this.barManager1;
-            this.txt_d_pm_min__2.Name = "txt_d_pm_min__2";
-            this.txt_d_pm_min__2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_d_pm_min__2.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_d_pm_min__2.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
-            this.txt_d_pm_min__2.Properties.Appearance.Options.UseBackColor = true;
-            this.txt_d_pm_min__2.Properties.Appearance.Options.UseFont = true;
-            this.txt_d_pm_min__2.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_pm_min__2.Size = new System.Drawing.Size(66, 26);
-            this.txt_d_pm_min__2.TabIndex = 126;
+            this.txt_d_pm_min_2.Location = new System.Drawing.Point(943, 516);
+            this.txt_d_pm_min_2.MenuManager = this.barManager1;
+            this.txt_d_pm_min_2.Name = "txt_d_pm_min_2";
+            this.txt_d_pm_min_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txt_d_pm_min_2.Properties.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_d_pm_min_2.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
+            this.txt_d_pm_min_2.Properties.Appearance.Options.UseBackColor = true;
+            this.txt_d_pm_min_2.Properties.Appearance.Options.UseFont = true;
+            this.txt_d_pm_min_2.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_d_pm_min_2.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_pm_min_2.TabIndex = 126;
             // 
             // labelControl75
             // 
@@ -1812,7 +1820,7 @@
             this.txt_nowTime.Properties.Appearance.Options.UseFont = true;
             this.txt_nowTime.Properties.Appearance.Options.UseForeColor = true;
             this.txt_nowTime.Properties.ReadOnly = true;
-            this.txt_nowTime.Size = new System.Drawing.Size(102, 26);
+            this.txt_nowTime.Size = new System.Drawing.Size(116, 26);
             this.txt_nowTime.TabIndex = 32;
             // 
             // labelControl53
@@ -1836,7 +1844,7 @@
             this.txt_nowDate.Properties.Appearance.Options.UseFont = true;
             this.txt_nowDate.Properties.Appearance.Options.UseForeColor = true;
             this.txt_nowDate.Properties.ReadOnly = true;
-            this.txt_nowDate.Size = new System.Drawing.Size(102, 26);
+            this.txt_nowDate.Size = new System.Drawing.Size(116, 26);
             this.txt_nowDate.TabIndex = 30;
             // 
             // labelControl54
@@ -1869,7 +1877,7 @@
             this.txt_nowWeek.Properties.Appearance.Options.UseFont = true;
             this.txt_nowWeek.Properties.Appearance.Options.UseForeColor = true;
             this.txt_nowWeek.Properties.ReadOnly = true;
-            this.txt_nowWeek.Size = new System.Drawing.Size(102, 26);
+            this.txt_nowWeek.Size = new System.Drawing.Size(116, 26);
             this.txt_nowWeek.TabIndex = 34;
             // 
             // labelControl71
@@ -2531,14 +2539,14 @@
             this.label_nr_1.TabIndex = 9;
             this.label_nr_1.Text = "噪音";
             // 
-            // label_O2_1
+            // label_o2_1
             // 
-            this.label_O2_1.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_O2_1.Location = new System.Drawing.Point(234, 85);
-            this.label_O2_1.Name = "label_O2_1";
-            this.label_O2_1.Size = new System.Drawing.Size(107, 21);
-            this.label_O2_1.TabIndex = 7;
-            this.label_O2_1.Text = "C6H6苯系物";
+            this.label_o2_1.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_o2_1.Location = new System.Drawing.Point(234, 85);
+            this.label_o2_1.Name = "label_o2_1";
+            this.label_o2_1.Size = new System.Drawing.Size(107, 21);
+            this.label_o2_1.TabIndex = 7;
+            this.label_o2_1.Text = "C6H6苯系物";
             // 
             // label_co_1
             // 
@@ -2597,20 +2605,20 @@
             this.txt_n_d4.Size = new System.Drawing.Size(102, 28);
             this.txt_n_d4.TabIndex = 6;
             // 
-            // txt__nr_d1
+            // txt_nr_d1
             // 
-            this.txt__nr_d1.Location = new System.Drawing.Point(101, 237);
-            this.txt__nr_d1.MenuManager = this.barManager1;
-            this.txt__nr_d1.Name = "txt__nr_d1";
-            this.txt__nr_d1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt__nr_d1.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt__nr_d1.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
-            this.txt__nr_d1.Properties.Appearance.Options.UseBackColor = true;
-            this.txt__nr_d1.Properties.Appearance.Options.UseFont = true;
-            this.txt__nr_d1.Properties.Appearance.Options.UseForeColor = true;
-            this.txt__nr_d1.Properties.ReadOnly = true;
-            this.txt__nr_d1.Size = new System.Drawing.Size(102, 28);
-            this.txt__nr_d1.TabIndex = 10;
+            this.txt_nr_d1.Location = new System.Drawing.Point(101, 237);
+            this.txt_nr_d1.MenuManager = this.barManager1;
+            this.txt_nr_d1.Name = "txt_nr_d1";
+            this.txt_nr_d1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txt_nr_d1.Properties.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_nr_d1.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
+            this.txt_nr_d1.Properties.Appearance.Options.UseBackColor = true;
+            this.txt_nr_d1.Properties.Appearance.Options.UseFont = true;
+            this.txt_nr_d1.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_nr_d1.Properties.ReadOnly = true;
+            this.txt_nr_d1.Size = new System.Drawing.Size(102, 28);
+            this.txt_nr_d1.TabIndex = 10;
             // 
             // txt_tvoc_d8
             // 
@@ -3282,6 +3290,10 @@
             // 
             // groupControl15
             // 
+            this.groupControl15.Controls.Add(this.txt_main_value_humidity_out);
+            this.groupControl15.Controls.Add(this.txt_main_name_humidity_out);
+            this.groupControl15.Controls.Add(this.txt_main_value_temperature_out);
+            this.groupControl15.Controls.Add(this.txt_main_name_temperature_out);
             this.groupControl15.Controls.Add(this.txt_main_value_PM);
             this.groupControl15.Controls.Add(this.txt_main_name_PM);
             this.groupControl15.Controls.Add(this.txt_main_value_sterilize);
@@ -3307,21 +3319,53 @@
             this.groupControl15.Controls.Add(this.txt_main_name_sound);
             this.groupControl15.Controls.Add(this.txt_main_value_O2);
             this.groupControl15.Controls.Add(this.txt_main_name_O2);
-            this.groupControl15.Controls.Add(this.txt_main_value_humidity);
-            this.groupControl15.Controls.Add(this.txt_main_name_humidity);
+            this.groupControl15.Controls.Add(this.txt_main_value_humidity_in);
+            this.groupControl15.Controls.Add(this.txt_main_name_humidity_in);
             this.groupControl15.Controls.Add(this.txt_main_value_TVOC);
             this.groupControl15.Controls.Add(this.txt_main_name_TVOC);
-            this.groupControl15.Controls.Add(this.txt_main_value_temperature);
-            this.groupControl15.Controls.Add(this.txt_main_name_temperature);
+            this.groupControl15.Controls.Add(this.txt_main_value_temperature_in);
+            this.groupControl15.Controls.Add(this.txt_main_name_temperature_in);
             this.groupControl15.Location = new System.Drawing.Point(550, 5);
             this.groupControl15.Name = "groupControl15";
-            this.groupControl15.Size = new System.Drawing.Size(713, 444);
+            this.groupControl15.Size = new System.Drawing.Size(713, 453);
             this.groupControl15.TabIndex = 6;
             this.groupControl15.Text = "主界面设置";
             // 
+            // txt_main_value_humidity_out
+            // 
+            this.txt_main_value_humidity_out.Location = new System.Drawing.Point(217, 196);
+            this.txt_main_value_humidity_out.MenuManager = this.barManager1;
+            this.txt_main_value_humidity_out.Name = "txt_main_value_humidity_out";
+            this.txt_main_value_humidity_out.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_humidity_out.TabIndex = 34;
+            // 
+            // txt_main_name_humidity_out
+            // 
+            this.txt_main_name_humidity_out.Location = new System.Drawing.Point(83, 196);
+            this.txt_main_name_humidity_out.MenuManager = this.barManager1;
+            this.txt_main_name_humidity_out.Name = "txt_main_name_humidity_out";
+            this.txt_main_name_humidity_out.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_humidity_out.TabIndex = 33;
+            // 
+            // txt_main_value_temperature_out
+            // 
+            this.txt_main_value_temperature_out.Location = new System.Drawing.Point(217, 96);
+            this.txt_main_value_temperature_out.MenuManager = this.barManager1;
+            this.txt_main_value_temperature_out.Name = "txt_main_value_temperature_out";
+            this.txt_main_value_temperature_out.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_temperature_out.TabIndex = 32;
+            // 
+            // txt_main_name_temperature_out
+            // 
+            this.txt_main_name_temperature_out.Location = new System.Drawing.Point(83, 96);
+            this.txt_main_name_temperature_out.MenuManager = this.barManager1;
+            this.txt_main_name_temperature_out.Name = "txt_main_name_temperature_out";
+            this.txt_main_name_temperature_out.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_temperature_out.TabIndex = 31;
+            // 
             // txt_main_value_PM
             // 
-            this.txt_main_value_PM.Location = new System.Drawing.Point(217, 366);
+            this.txt_main_value_PM.Location = new System.Drawing.Point(548, 365);
             this.txt_main_value_PM.MenuManager = this.barManager1;
             this.txt_main_value_PM.Name = "txt_main_value_PM";
             this.txt_main_value_PM.Size = new System.Drawing.Size(100, 20);
@@ -3329,7 +3373,7 @@
             // 
             // txt_main_name_PM
             // 
-            this.txt_main_name_PM.Location = new System.Drawing.Point(83, 366);
+            this.txt_main_name_PM.Location = new System.Drawing.Point(414, 365);
             this.txt_main_name_PM.MenuManager = this.barManager1;
             this.txt_main_name_PM.Name = "txt_main_name_PM";
             this.txt_main_name_PM.Size = new System.Drawing.Size(100, 20);
@@ -3353,7 +3397,7 @@
             // 
             // txt_main_value_airQuality
             // 
-            this.txt_main_value_airQuality.Location = new System.Drawing.Point(217, 329);
+            this.txt_main_value_airQuality.Location = new System.Drawing.Point(548, 291);
             this.txt_main_value_airQuality.MenuManager = this.barManager1;
             this.txt_main_value_airQuality.Name = "txt_main_value_airQuality";
             this.txt_main_value_airQuality.Size = new System.Drawing.Size(100, 20);
@@ -3361,7 +3405,7 @@
             // 
             // txt_main_name_airQuality
             // 
-            this.txt_main_name_airQuality.Location = new System.Drawing.Point(83, 329);
+            this.txt_main_name_airQuality.Location = new System.Drawing.Point(414, 291);
             this.txt_main_name_airQuality.MenuManager = this.barManager1;
             this.txt_main_name_airQuality.Name = "txt_main_name_airQuality";
             this.txt_main_name_airQuality.Size = new System.Drawing.Size(100, 20);
@@ -3369,7 +3413,7 @@
             // 
             // txt_main_value_backarea
             // 
-            this.txt_main_value_backarea.Location = new System.Drawing.Point(548, 291);
+            this.txt_main_value_backarea.Location = new System.Drawing.Point(217, 424);
             this.txt_main_value_backarea.MenuManager = this.barManager1;
             this.txt_main_value_backarea.Name = "txt_main_value_backarea";
             this.txt_main_value_backarea.Size = new System.Drawing.Size(100, 20);
@@ -3377,7 +3421,7 @@
             // 
             // txt_main_name_backarea
             // 
-            this.txt_main_name_backarea.Location = new System.Drawing.Point(414, 291);
+            this.txt_main_name_backarea.Location = new System.Drawing.Point(83, 424);
             this.txt_main_name_backarea.MenuManager = this.barManager1;
             this.txt_main_name_backarea.Name = "txt_main_name_backarea";
             this.txt_main_name_backarea.Size = new System.Drawing.Size(100, 20);
@@ -3385,7 +3429,7 @@
             // 
             // txt_main_value_newarea
             // 
-            this.txt_main_value_newarea.Location = new System.Drawing.Point(217, 291);
+            this.txt_main_value_newarea.Location = new System.Drawing.Point(217, 386);
             this.txt_main_value_newarea.MenuManager = this.barManager1;
             this.txt_main_value_newarea.Name = "txt_main_value_newarea";
             this.txt_main_value_newarea.Size = new System.Drawing.Size(100, 20);
@@ -3393,7 +3437,7 @@
             // 
             // txt_main_name_newarea
             // 
-            this.txt_main_name_newarea.Location = new System.Drawing.Point(83, 291);
+            this.txt_main_name_newarea.Location = new System.Drawing.Point(83, 386);
             this.txt_main_name_newarea.MenuManager = this.barManager1;
             this.txt_main_name_newarea.Name = "txt_main_name_newarea";
             this.txt_main_name_newarea.Size = new System.Drawing.Size(100, 20);
@@ -3401,7 +3445,7 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(380, 401);
+            this.simpleButton1.Location = new System.Drawing.Point(507, 412);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
             this.simpleButton1.TabIndex = 20;
@@ -3426,7 +3470,7 @@
             // 
             // txt_main_value_back
             // 
-            this.txt_main_value_back.Location = new System.Drawing.Point(217, 246);
+            this.txt_main_value_back.Location = new System.Drawing.Point(217, 341);
             this.txt_main_value_back.MenuManager = this.barManager1;
             this.txt_main_value_back.Name = "txt_main_value_back";
             this.txt_main_value_back.Size = new System.Drawing.Size(100, 20);
@@ -3434,7 +3478,7 @@
             // 
             // txt_main_name_back
             // 
-            this.txt_main_name_back.Location = new System.Drawing.Point(83, 246);
+            this.txt_main_name_back.Location = new System.Drawing.Point(83, 341);
             this.txt_main_name_back.MenuManager = this.barManager1;
             this.txt_main_name_back.Name = "txt_main_name_back";
             this.txt_main_name_back.Size = new System.Drawing.Size(100, 20);
@@ -3458,7 +3502,7 @@
             // 
             // txt_main_value_new
             // 
-            this.txt_main_value_new.Location = new System.Drawing.Point(217, 196);
+            this.txt_main_value_new.Location = new System.Drawing.Point(217, 291);
             this.txt_main_value_new.MenuManager = this.barManager1;
             this.txt_main_value_new.Name = "txt_main_value_new";
             this.txt_main_value_new.Size = new System.Drawing.Size(100, 20);
@@ -3466,7 +3510,7 @@
             // 
             // txt_main_name_new
             // 
-            this.txt_main_name_new.Location = new System.Drawing.Point(83, 196);
+            this.txt_main_name_new.Location = new System.Drawing.Point(83, 291);
             this.txt_main_name_new.MenuManager = this.barManager1;
             this.txt_main_name_new.Name = "txt_main_name_new";
             this.txt_main_name_new.Size = new System.Drawing.Size(100, 20);
@@ -3490,7 +3534,7 @@
             // 
             // txt_main_value_sound
             // 
-            this.txt_main_value_sound.Location = new System.Drawing.Point(217, 146);
+            this.txt_main_value_sound.Location = new System.Drawing.Point(217, 241);
             this.txt_main_value_sound.MenuManager = this.barManager1;
             this.txt_main_value_sound.Name = "txt_main_value_sound";
             this.txt_main_value_sound.Size = new System.Drawing.Size(100, 20);
@@ -3498,7 +3542,7 @@
             // 
             // txt_main_name_sound
             // 
-            this.txt_main_name_sound.Location = new System.Drawing.Point(83, 146);
+            this.txt_main_name_sound.Location = new System.Drawing.Point(83, 241);
             this.txt_main_name_sound.MenuManager = this.barManager1;
             this.txt_main_name_sound.Name = "txt_main_name_sound";
             this.txt_main_name_sound.Size = new System.Drawing.Size(100, 20);
@@ -3520,21 +3564,21 @@
             this.txt_main_name_O2.Size = new System.Drawing.Size(100, 20);
             this.txt_main_name_O2.TabIndex = 6;
             // 
-            // txt_main_value_humidity
+            // txt_main_value_humidity_in
             // 
-            this.txt_main_value_humidity.Location = new System.Drawing.Point(217, 96);
-            this.txt_main_value_humidity.MenuManager = this.barManager1;
-            this.txt_main_value_humidity.Name = "txt_main_value_humidity";
-            this.txt_main_value_humidity.Size = new System.Drawing.Size(100, 20);
-            this.txt_main_value_humidity.TabIndex = 5;
+            this.txt_main_value_humidity_in.Location = new System.Drawing.Point(217, 146);
+            this.txt_main_value_humidity_in.MenuManager = this.barManager1;
+            this.txt_main_value_humidity_in.Name = "txt_main_value_humidity_in";
+            this.txt_main_value_humidity_in.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_humidity_in.TabIndex = 5;
             // 
-            // txt_main_name_humidity
+            // txt_main_name_humidity_in
             // 
-            this.txt_main_name_humidity.Location = new System.Drawing.Point(83, 96);
-            this.txt_main_name_humidity.MenuManager = this.barManager1;
-            this.txt_main_name_humidity.Name = "txt_main_name_humidity";
-            this.txt_main_name_humidity.Size = new System.Drawing.Size(100, 20);
-            this.txt_main_name_humidity.TabIndex = 4;
+            this.txt_main_name_humidity_in.Location = new System.Drawing.Point(83, 146);
+            this.txt_main_name_humidity_in.MenuManager = this.barManager1;
+            this.txt_main_name_humidity_in.Name = "txt_main_name_humidity_in";
+            this.txt_main_name_humidity_in.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_humidity_in.TabIndex = 4;
             // 
             // txt_main_value_TVOC
             // 
@@ -3552,21 +3596,21 @@
             this.txt_main_name_TVOC.Size = new System.Drawing.Size(100, 20);
             this.txt_main_name_TVOC.TabIndex = 2;
             // 
-            // txt_main_value_temperature
+            // txt_main_value_temperature_in
             // 
-            this.txt_main_value_temperature.Location = new System.Drawing.Point(217, 46);
-            this.txt_main_value_temperature.MenuManager = this.barManager1;
-            this.txt_main_value_temperature.Name = "txt_main_value_temperature";
-            this.txt_main_value_temperature.Size = new System.Drawing.Size(100, 20);
-            this.txt_main_value_temperature.TabIndex = 1;
+            this.txt_main_value_temperature_in.Location = new System.Drawing.Point(217, 46);
+            this.txt_main_value_temperature_in.MenuManager = this.barManager1;
+            this.txt_main_value_temperature_in.Name = "txt_main_value_temperature_in";
+            this.txt_main_value_temperature_in.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_temperature_in.TabIndex = 1;
             // 
-            // txt_main_name_temperature
+            // txt_main_name_temperature_in
             // 
-            this.txt_main_name_temperature.Location = new System.Drawing.Point(83, 46);
-            this.txt_main_name_temperature.MenuManager = this.barManager1;
-            this.txt_main_name_temperature.Name = "txt_main_name_temperature";
-            this.txt_main_name_temperature.Size = new System.Drawing.Size(100, 20);
-            this.txt_main_name_temperature.TabIndex = 0;
+            this.txt_main_name_temperature_in.Location = new System.Drawing.Point(83, 46);
+            this.txt_main_name_temperature_in.MenuManager = this.barManager1;
+            this.txt_main_name_temperature_in.Name = "txt_main_name_temperature_in";
+            this.txt_main_name_temperature_in.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_temperature_in.TabIndex = 0;
             // 
             // groupControl7
             // 
@@ -4594,7 +4638,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_n_d7_1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_t_d6_1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_d_pm_max_2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_d_pm_min__2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_d_pm_min_2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_d_sterilize_max_2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_d_sterilize_min_2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_d_airQuality_max_2.Properties)).EndInit();
@@ -4653,7 +4697,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_airQuality_d_1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_t_d3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_n_d4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt__nr_d1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_nr_d1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tvoc_d8.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_o2_d9.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_co_d10.Properties)).EndInit();
@@ -4703,6 +4747,10 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl15)).EndInit();
             this.groupControl15.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_humidity_out.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_humidity_out.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_temperature_out.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_temperature_out.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_PM.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_PM.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_sterilize.Properties)).EndInit();
@@ -4727,12 +4775,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_sound.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_O2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_O2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_humidity.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_humidity.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_humidity_in.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_humidity_in.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_TVOC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_TVOC.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_temperature.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_temperature.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_temperature_in.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_temperature_in.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
             this.groupControl7.ResumeLayout(false);
             this.groupControl7.PerformLayout();
@@ -4982,10 +5030,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl42;
         private DevExpress.XtraEditors.TextEdit txt_co_d10;
         private DevExpress.XtraEditors.LabelControl label_co_1;
-        private DevExpress.XtraEditors.TextEdit txt__nr_d1;
+        private DevExpress.XtraEditors.TextEdit txt_nr_d1;
         private DevExpress.XtraEditors.LabelControl label_nr_1;
         private DevExpress.XtraEditors.TextEdit txt_o2_d9;
-        private DevExpress.XtraEditors.LabelControl label_O2_1;
+        private DevExpress.XtraEditors.LabelControl label_o2_1;
         private DevExpress.XtraEditors.TextEdit txt_n_d4;
         private DevExpress.XtraEditors.LabelControl label_h_out_1;
         private DevExpress.XtraEditors.TextEdit txt_tvoc_d8;
@@ -5019,12 +5067,12 @@
         private DevExpress.XtraEditors.TextEdit txt_main_name_sound;
         private DevExpress.XtraEditors.TextEdit txt_main_value_O2;
         private DevExpress.XtraEditors.TextEdit txt_main_name_O2;
-        private DevExpress.XtraEditors.TextEdit txt_main_value_humidity;
-        private DevExpress.XtraEditors.TextEdit txt_main_name_humidity;
+        private DevExpress.XtraEditors.TextEdit txt_main_value_humidity_in;
+        private DevExpress.XtraEditors.TextEdit txt_main_name_humidity_in;
         private DevExpress.XtraEditors.TextEdit txt_main_value_TVOC;
         private DevExpress.XtraEditors.TextEdit txt_main_name_TVOC;
-        private DevExpress.XtraEditors.TextEdit txt_main_value_temperature;
-        private DevExpress.XtraEditors.TextEdit txt_main_name_temperature;
+        private DevExpress.XtraEditors.TextEdit txt_main_value_temperature_in;
+        private DevExpress.XtraEditors.TextEdit txt_main_name_temperature_in;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.TextEdit txt_main_value_backarea;
         private DevExpress.XtraEditors.TextEdit txt_main_name_backarea;
@@ -5078,7 +5126,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl73;
         private DevExpress.XtraEditors.LabelControl labelControl74;
         private DevExpress.XtraEditors.TextEdit txt_d_pm_max_2;
-        private DevExpress.XtraEditors.TextEdit txt_d_pm_min__2;
+        private DevExpress.XtraEditors.TextEdit txt_d_pm_min_2;
         private DevExpress.XtraEditors.LabelControl labelControl75;
         private DevExpress.XtraEditors.LabelControl labelControl76;
         private DevExpress.XtraEditors.TextEdit txt_d_sterilize_max_2;
@@ -5138,5 +5186,9 @@
         private DevExpress.XtraEditors.TextEdit txt_nr_d2;
         private DevExpress.XtraEditors.LabelControl label_h_in_1;
         private DevExpress.XtraEditors.TextEdit txt_n_d7_1;
+        private DevExpress.XtraEditors.TextEdit txt_main_value_temperature_out;
+        private DevExpress.XtraEditors.TextEdit txt_main_name_temperature_out;
+        private DevExpress.XtraEditors.TextEdit txt_main_value_humidity_out;
+        private DevExpress.XtraEditors.TextEdit txt_main_name_humidity_out;
     }
 }

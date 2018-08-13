@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <SystemConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="SystemConfig">
   <!--串口号-->
-  <Port>COM9</Port>
+  <Port>COM8</Port>
   <!--波特率-->
   <BaudRate>9600</BaudRate>
   <!--检测周期-->
@@ -37,35 +37,39 @@
   <!--是否自动检测-->
   <Isauto>false</Isauto>
   <BankName>中国人民银行厂南支行库房空气质量检测表</BankName>
-  <NameTemperature>温度</NameTemperature>
-  <ValueTemperature>1</ValueTemperature>
-  <NameHumidity>湿度</NameHumidity>
-  <ValueHumidity>1</ValueHumidity>
+  <NameTemperatureIn>室内温度</NameTemperatureIn>
+  <ValueTemperatureIn>1</ValueTemperatureIn>
+  <NameTemperatureOut>室外温度</NameTemperatureOut>
+  <ValueTemperatureOut>1</ValueTemperatureOut>
+  <NameHumidityIn>室内湿度</NameHumidityIn>
+  <ValueHumidityIn>1</ValueHumidityIn>
+  <NameHumidityOut>室内湿度</NameHumidityOut>
+  <ValueHumidityOut>1</ValueHumidityOut>
   <NameSound>噪音</NameSound>
   <ValueSound>1</ValueSound>
   <NameNew>新风量</NameNew>
   <ValueNew>1</ValueNew>
   <NameBack>回风量</NameBack>
   <ValueBack>1</ValueBack>
-  <NameTVOC>TVOC</NameTVOC>
+  <NameTVOC>TVOC有机气体</NameTVOC>
   <ValueTVOC>1</ValueTVOC>
-  <NameO2>苯系物</NameO2>
+  <NameO2>C6H6苯系物</NameO2>
   <ValueO2>1</ValueO2>
-  <NameCO>CO</NameCO>
+  <NameCO>CO一氧化碳</NameCO>
   <ValueCO>1</ValueCO>
-  <NameSO2>SO2</NameSO2>
+  <NameSO2>SO2二氧化硫</NameSO2>
   <ValueSO2>1</ValueSO2>
-  <NameNOX>NOX</NameNOX>
+  <NameNOX>NOX氮氧化物</NameNOX>
   <ValueNOX>1</ValueNOX>
   <NameNewarea>新风管</NameNewarea>
   <ValueNewarea>1</ValueNewarea>
   <NameBackarea>回风管</NameBackarea>
   <ValueBackarea>2</ValueBackarea>
-  <NameAirQuality>2</NameAirQuality>
+  <NameAirQuality>空气质量</NameAirQuality>
   <ValueAirQuality>2</ValueAirQuality>
-  <NameSterilize>2</NameSterilize>
+  <NameSterilize>消毒杀菌</NameSterilize>
   <ValueSterilize>2</ValueSterilize>
-  <NamePM>2</NamePM>
+  <NamePM>PM2.5值</NamePM>
   <ValuePM>2</ValuePM>
   <ValueMinTVOC>2</ValueMinTVOC>
   <ValueMaxTVOC>2</ValueMaxTVOC>
@@ -83,4 +87,11 @@
   <ValueMaxSterilize>2</ValueMaxSterilize>
   <ValueMinPM>2</ValueMinPM>
   <ValueMaxPM>2</ValueMaxPM>
+
+  <ValueYear>0</ValueYear>
+  <ValueDay>0</ValueDay>
+  <ValueHour>0</ValueHour>
+  <ValueMinute>0</ValueMinute>
+  <ValueSecond>0</ValueSecond>
+  <ValueTotalHour>0</ValueTotalHour>
 </SystemConfig>
