@@ -20,8 +20,8 @@ namespace Entity
             BackupPreiod = 30;
             CenterPort = 5718;
             ValueYear = 0;
-            ValueHour = 0;
             ValueDay = 0;
+            ValueHour = 0;
             ValueMinute = 0;
             ValueSecond = 0;
             ValueTotalHour = 0;
@@ -132,33 +132,19 @@ namespace Entity
         public string BankName { get; set; }
 
 
-        /// <summary>
-        /// 室内温度
-        /// </summary>
+
         public string NameTemperatureIn { get; set; }
         public string ValueTemperatureIn { get; set; }
 
-        /// <summary>
-        /// 室外温度
-        /// </summary>
         public string NameTemperatureOut { get; set; }
         public string ValueTemperatureOut { get; set; }
 
-        /// <summary>
-        /// 室内湿度
-        /// </summary>
         public string NameHumidityIn { get; set; }
         public string ValueHumidityIn { get; set; }
 
-        /// <summary>
-        /// 室外湿度
-        /// </summary>
         public string NameHumidityOut { get; set; }
         public string ValueHumidityOut { get; set; }
 
-        /// <summary>
-        /// 噪音
-        /// </summary>
         public string NameSound { get; set; }
         public string ValueSound { get; set; }
 
