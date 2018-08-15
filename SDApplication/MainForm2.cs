@@ -229,7 +229,7 @@ namespace SDApplication
                     txt_t_d2.Text = chroma + " ℃";
                     break;
                 case 3:
-                    txt_n_d3.Text = chroma + " RH%";
+                    txt_h_d3.Text = chroma + " RH%";
                     break;
                 case 4:
                     txt_pm_d4.Text = chroma + " ppm";
@@ -238,7 +238,7 @@ namespace SDApplication
                     txt_t_d5.Text = chroma + " ℃";
                     break;
                 case 6:
-                    txt_n_d6.Text = chroma + " RH%";
+                    txt_h_d6.Text = chroma + " RH%";
                     break;
                 case 7:
                     txt_tvoc_d7.Text = chroma + " ppm";
@@ -427,7 +427,9 @@ namespace SDApplication
                 memoEdit1.Text = systemConfig.BankName;
 
                 txt_main_name_t_in.Text = systemConfig.NameTemperatureIn;
+                txt_main_name_t_out.Text = systemConfig.NameTemperatureOut;
                 txt_main_name_h_in.Text = systemConfig.NameHumidityIn;
+                txt_main_name_h_out.Text = systemConfig.NameTemperatureOut;
                 txt_main_name_sound.Text = systemConfig.NameSound;
                 txt_main_name_new.Text = systemConfig.NameNew;
                 txt_main_name_back.Text = systemConfig.NameBack;
@@ -443,7 +445,9 @@ namespace SDApplication
                 txt_main_name_PM.Text = systemConfig.NamePM;
 
                 txt_main_value_t_in.Text = systemConfig.ValueTemperatureIn;
+                txt_main_value_t_out.Text = systemConfig.ValueTemperatureOut;
                 txt_main_value_h_in.Text = systemConfig.ValueHumidityIn;
+                txt_main_value_h_out.Text = systemConfig.ValueHumidityOut;
                 txt_main_value_sound.Text = systemConfig.ValueSound;
                 txt_main_value_new.Text = systemConfig.ValueNew;
                 txt_main_value_back.Text = systemConfig.ValueBack;
@@ -459,7 +463,9 @@ namespace SDApplication
                 txt_main_value_PM.Text = systemConfig.ValuePM;
 
                 label_t_in.Text = systemConfig.NameTemperatureIn;
-                label_n_in.Text = systemConfig.NameHumidityIn;
+                label_t_out.Text = systemConfig.NameTemperatureOut;
+                label_h_in.Text = systemConfig.NameHumidityIn;
+                label_h_out.Text = systemConfig.NameHumidityOut;
                 label_nr.Text = systemConfig.NameSound;
                 label_new.Text = systemConfig.NameNew;
                 label_back.Text = systemConfig.NameBack;
@@ -475,7 +481,9 @@ namespace SDApplication
                 label_pm.Text = systemConfig.NamePM;
 
                 txt_t_d2.Text = systemConfig.ValueTemperatureIn;
-                txt_n_d3.Text = systemConfig.ValueHumidityIn;
+                txt_t_d5.Text = systemConfig.ValueTemperatureOut;
+                txt_h_d3.Text = systemConfig.ValueHumidityIn;
+                txt_h_d6.Text = systemConfig.ValueHumidityOut;
                 txt_nr_d1.Text = systemConfig.ValueSound;
                 txt_new_d.Text = systemConfig.ValueNew;
                 txt_back_d.Text = systemConfig.ValueBack;

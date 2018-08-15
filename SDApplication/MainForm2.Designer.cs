@@ -126,7 +126,7 @@
             this.label_tvoc = new DevExpress.XtraEditors.LabelControl();
             this.txt_nowTime = new DevExpress.XtraEditors.TextEdit();
             this.labelControl54 = new DevExpress.XtraEditors.LabelControl();
-            this.label_n_in = new DevExpress.XtraEditors.LabelControl();
+            this.label_h_in = new DevExpress.XtraEditors.LabelControl();
             this.label_nr = new DevExpress.XtraEditors.LabelControl();
             this.txt_nowDate = new DevExpress.XtraEditors.TextEdit();
             this.labelControl53 = new DevExpress.XtraEditors.LabelControl();
@@ -137,7 +137,7 @@
             this.label_so2 = new DevExpress.XtraEditors.LabelControl();
             this.label_nox = new DevExpress.XtraEditors.LabelControl();
             this.txt_t_d2 = new DevExpress.XtraEditors.TextEdit();
-            this.txt_n_d3 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_h_d3 = new DevExpress.XtraEditors.TextEdit();
             this.txt_nr_d1 = new DevExpress.XtraEditors.TextEdit();
             this.txt_new_d = new DevExpress.XtraEditors.TextEdit();
             this.txt_back_d = new DevExpress.XtraEditors.TextEdit();
@@ -315,8 +315,8 @@
             this.timer_now = new System.Windows.Forms.Timer(this.components);
             this.label_t_out = new DevExpress.XtraEditors.LabelControl();
             this.txt_t_d5 = new DevExpress.XtraEditors.TextEdit();
-            this.label_n_out = new DevExpress.XtraEditors.LabelControl();
-            this.txt_n_d6 = new DevExpress.XtraEditors.TextEdit();
+            this.label_h_out = new DevExpress.XtraEditors.LabelControl();
+            this.txt_h_d6 = new DevExpress.XtraEditors.TextEdit();
             this.txt_main_value_t_out = new DevExpress.XtraEditors.TextEdit();
             this.txt_main_name_t_out = new DevExpress.XtraEditors.TextEdit();
             this.txt_main_value_h_out = new DevExpress.XtraEditors.TextEdit();
@@ -360,7 +360,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_nowTime.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_nowDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_t_d2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_n_d3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_h_d3.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_nr_d1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_new_d.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_back_d.Properties)).BeginInit();
@@ -490,7 +490,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_t_d5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_n_d6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_h_d6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_t_out.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_t_out.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_h_out.Properties)).BeginInit();
@@ -846,8 +846,8 @@
             this.panelControl_center.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.panelControl_center.Appearance.Options.UseBackColor = true;
             this.panelControl_center.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl_center.Controls.Add(this.label_n_out);
-            this.panelControl_center.Controls.Add(this.txt_n_d6);
+            this.panelControl_center.Controls.Add(this.label_h_out);
+            this.panelControl_center.Controls.Add(this.txt_h_d6);
             this.panelControl_center.Controls.Add(this.label_t_out);
             this.panelControl_center.Controls.Add(this.txt_t_d5);
             this.panelControl_center.Controls.Add(this.labelControl71);
@@ -895,7 +895,7 @@
             this.panelControl_center.Controls.Add(this.label_tvoc);
             this.panelControl_center.Controls.Add(this.txt_nowTime);
             this.panelControl_center.Controls.Add(this.labelControl54);
-            this.panelControl_center.Controls.Add(this.label_n_in);
+            this.panelControl_center.Controls.Add(this.label_h_in);
             this.panelControl_center.Controls.Add(this.label_nr);
             this.panelControl_center.Controls.Add(this.txt_nowDate);
             this.panelControl_center.Controls.Add(this.labelControl53);
@@ -906,7 +906,7 @@
             this.panelControl_center.Controls.Add(this.label_so2);
             this.panelControl_center.Controls.Add(this.label_nox);
             this.panelControl_center.Controls.Add(this.txt_t_d2);
-            this.panelControl_center.Controls.Add(this.txt_n_d3);
+            this.panelControl_center.Controls.Add(this.txt_h_d3);
             this.panelControl_center.Controls.Add(this.txt_nr_d1);
             this.panelControl_center.Controls.Add(this.txt_new_d);
             this.panelControl_center.Controls.Add(this.txt_back_d);
@@ -1613,12 +1613,12 @@
             // 
             // label_n_in
             // 
-            this.label_n_in.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_n_in.Location = new System.Drawing.Point(8, 120);
-            this.label_n_in.Name = "label_n_in";
-            this.label_n_in.Size = new System.Drawing.Size(140, 35);
-            this.label_n_in.TabIndex = 5;
-            this.label_n_in.Text = "室内湿度";
+            this.label_h_in.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_h_in.Location = new System.Drawing.Point(8, 120);
+            this.label_h_in.Name = "label_n_in";
+            this.label_h_in.Size = new System.Drawing.Size(140, 35);
+            this.label_h_in.TabIndex = 5;
+            this.label_h_in.Text = "室内湿度";
             // 
             // label_nr
             // 
@@ -1724,18 +1724,18 @@
             // 
             // txt_n_d3
             // 
-            this.txt_n_d3.Location = new System.Drawing.Point(209, 117);
-            this.txt_n_d3.MenuManager = this.barManager1;
-            this.txt_n_d3.Name = "txt_n_d3";
-            this.txt_n_d3.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_n_d3.Properties.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_n_d3.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
-            this.txt_n_d3.Properties.Appearance.Options.UseBackColor = true;
-            this.txt_n_d3.Properties.Appearance.Options.UseFont = true;
-            this.txt_n_d3.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_n_d3.Properties.ReadOnly = true;
-            this.txt_n_d3.Size = new System.Drawing.Size(215, 42);
-            this.txt_n_d3.TabIndex = 6;
+            this.txt_h_d3.Location = new System.Drawing.Point(209, 117);
+            this.txt_h_d3.MenuManager = this.barManager1;
+            this.txt_h_d3.Name = "txt_n_d3";
+            this.txt_h_d3.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txt_h_d3.Properties.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_h_d3.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
+            this.txt_h_d3.Properties.Appearance.Options.UseBackColor = true;
+            this.txt_h_d3.Properties.Appearance.Options.UseFont = true;
+            this.txt_h_d3.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_h_d3.Properties.ReadOnly = true;
+            this.txt_h_d3.Size = new System.Drawing.Size(215, 42);
+            this.txt_h_d3.TabIndex = 6;
             // 
             // txt_nr_d1
             // 
@@ -3695,27 +3695,27 @@
             // 
             // label_n_out
             // 
-            this.label_n_out.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_n_out.Location = new System.Drawing.Point(8, 172);
-            this.label_n_out.Name = "label_n_out";
-            this.label_n_out.Size = new System.Drawing.Size(140, 35);
-            this.label_n_out.TabIndex = 75;
-            this.label_n_out.Text = "室外湿度";
+            this.label_h_out.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_h_out.Location = new System.Drawing.Point(8, 172);
+            this.label_h_out.Name = "label_n_out";
+            this.label_h_out.Size = new System.Drawing.Size(140, 35);
+            this.label_h_out.TabIndex = 75;
+            this.label_h_out.Text = "室外湿度";
             // 
             // txt_n_d6
             // 
-            this.txt_n_d6.Location = new System.Drawing.Point(209, 169);
-            this.txt_n_d6.MenuManager = this.barManager1;
-            this.txt_n_d6.Name = "txt_n_d6";
-            this.txt_n_d6.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_n_d6.Properties.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_n_d6.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
-            this.txt_n_d6.Properties.Appearance.Options.UseBackColor = true;
-            this.txt_n_d6.Properties.Appearance.Options.UseFont = true;
-            this.txt_n_d6.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_n_d6.Properties.ReadOnly = true;
-            this.txt_n_d6.Size = new System.Drawing.Size(215, 42);
-            this.txt_n_d6.TabIndex = 76;
+            this.txt_h_d6.Location = new System.Drawing.Point(209, 169);
+            this.txt_h_d6.MenuManager = this.barManager1;
+            this.txt_h_d6.Name = "txt_n_d6";
+            this.txt_h_d6.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txt_h_d6.Properties.Appearance.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txt_h_d6.Properties.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
+            this.txt_h_d6.Properties.Appearance.Options.UseBackColor = true;
+            this.txt_h_d6.Properties.Appearance.Options.UseFont = true;
+            this.txt_h_d6.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_h_d6.Properties.ReadOnly = true;
+            this.txt_h_d6.Size = new System.Drawing.Size(215, 42);
+            this.txt_h_d6.TabIndex = 76;
             // 
             // txt_main_value_t_out
             // 
@@ -3809,7 +3809,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_nowTime.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_nowDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_t_d2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_n_d3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_h_d3.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_nr_d1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_new_d.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_back_d.Properties)).EndInit();
@@ -3947,7 +3947,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_t_d5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_n_d6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_h_d6.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_t_out.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_name_t_out.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_h_out.Properties)).EndInit();
@@ -4149,8 +4149,8 @@
         private DevExpress.XtraEditors.LabelControl label_nr;
         private DevExpress.XtraEditors.TextEdit txt_o2_d8;
         private DevExpress.XtraEditors.LabelControl label_o2;
-        private DevExpress.XtraEditors.TextEdit txt_n_d3;
-        private DevExpress.XtraEditors.LabelControl label_n_in;
+        private DevExpress.XtraEditors.TextEdit txt_h_d3;
+        private DevExpress.XtraEditors.LabelControl label_h_in;
         private DevExpress.XtraEditors.TextEdit txt_tvoc_d7;
         private DevExpress.XtraEditors.LabelControl label_tvoc;
         private DevExpress.XtraEditors.LabelControl labelControl29;
@@ -4237,8 +4237,8 @@
         private DevExpress.XtraEditors.TextEdit txt_d_tvoc_max;
         private DevExpress.XtraEditors.TextEdit txt_d_tvoc_min;
         private DevExpress.XtraEditors.LabelControl labelControl57;
-        private DevExpress.XtraEditors.LabelControl label_n_out;
-        private DevExpress.XtraEditors.TextEdit txt_n_d6;
+        private DevExpress.XtraEditors.LabelControl label_h_out;
+        private DevExpress.XtraEditors.TextEdit txt_h_d6;
         private DevExpress.XtraEditors.LabelControl label_t_out;
         private DevExpress.XtraEditors.TextEdit txt_t_d5;
         private DevExpress.XtraEditors.TextEdit txt_main_value_h_out;
