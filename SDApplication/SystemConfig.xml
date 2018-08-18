@@ -43,7 +43,7 @@
   <ValueTemperatureOut>1</ValueTemperatureOut>
   <NameHumidityIn>室内湿度</NameHumidityIn>
   <ValueHumidityIn>1</ValueHumidityIn>
-  <NameHumidityOut>室内湿度</NameHumidityOut>
+  <NameHumidityOut>室外湿度</NameHumidityOut>
   <ValueHumidityOut>1</ValueHumidityOut>
   <NameSound>噪音</NameSound>
   <ValueSound>1</ValueSound>
@@ -87,11 +87,5 @@
   <ValueMaxSterilize>2</ValueMaxSterilize>
   <ValueMinPM>2</ValueMinPM>
   <ValueMaxPM>2</ValueMaxPM>
-
-  <ValueYear>0</ValueYear>
-  <ValueDay>0</ValueDay>
-  <ValueHour>0</ValueHour>
-  <ValueMinute>0</ValueMinute>
-  <ValueSecond>0</ValueSecond>
-  <ValueTotalHour>0</ValueTotalHour>
+  <RunTimeSpan>00:00:00</RunTimeSpan>
 </SystemConfig>

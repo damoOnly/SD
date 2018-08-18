@@ -160,7 +160,7 @@ namespace SDApplication
             }
 
             EquipmentData data = Parse.GetRealData(cd.ResultByte, eq);
-            data.EquipmentID = eq.ID;
+            data.EquipmentID = eq.Address;
 
             // 添加数据库
             EquipmentDataDal.AddOne(data);
@@ -429,7 +429,7 @@ namespace SDApplication
                 txt_main_name_t_in.Text = systemConfig.NameTemperatureIn;
                 txt_main_name_t_out.Text = systemConfig.NameTemperatureOut;
                 txt_main_name_h_in.Text = systemConfig.NameHumidityIn;
-                txt_main_name_h_out.Text = systemConfig.NameTemperatureOut;
+                txt_main_name_h_out.Text = systemConfig.NameHumidityOut;
                 txt_main_name_sound.Text = systemConfig.NameSound;
                 txt_main_name_new.Text = systemConfig.NameNew;
                 txt_main_name_back.Text = systemConfig.NameBack;
@@ -734,40 +734,9 @@ namespace SDApplication
                 systemConfig.ValueMaxSterilize = txt_d_sterilize_max.Text;
                 systemConfig.ValueMinPM = txt_d_pm_min.Text;
                 systemConfig.ValueMaxPM = txt_d_pm_max.Text;
-                //labelControl28.Text = systemConfig.NameTemperature;
-                //labelControl37.Text = systemConfig.NameHumidity;
-                //labelControl40.Text = systemConfig.NameSound;
-                //labelControl42.Text = systemConfig.NameNew;
-                //labelControl44.Text = systemConfig.NameBack;
-                //labelControl30.Text = systemConfig.NameTVOC;
-                //labelControl35.Text = systemConfig.NameO2;
-                //labelControl39.Text = systemConfig.NameCO;
-                //labelControl41.Text = systemConfig.NameSO2;
-                //labelControl43.Text = systemConfig.NameNOX;
-                //labelControl51.Text = systemConfig.NameNewarea;
-                //labelControl52.Text = systemConfig.NameBackarea;
+
+                systemConfig.RunTimeSpan = ts.ToString();
                 
-
-                //txt_d3.Text = systemConfig.ValueTemperature;
-                //txt_d2.Text = systemConfig.ValueHumidity;
-                //txt_d1.Text = systemConfig.ValueSound;
-                //txt_d9.Text = systemConfig.ValueNew;
-                //txt_d10.Text = systemConfig.ValueBack;
-                //txt_d4.Text = systemConfig.ValueTVOC;
-                //txt_d5.Text = systemConfig.ValueO2;
-                //txt_d6.Text = systemConfig.ValueCO;
-                //txt_d7.Text = systemConfig.ValueSO2;
-                //txt_d8.Text = systemConfig.ValueNOX;
-                //txt_pipeNew.Text = systemConfig.ValueNewarea;
-                //txt_pipeBack.Text = systemConfig.ValueBackarea;
-
-                systemConfig.ValueYear = int.Parse(txt_year.Text);
-                systemConfig.ValueDay = int.Parse(txt_day.Text);
-                systemConfig.ValueHour = int.Parse(txt_hour.Text);
-                systemConfig.ValueMinute = int.Parse(txt_minute.Text);
-                systemConfig.ValueSecond = int.Parse(txt_second.Text);
-                systemConfig.ValueTotalHour = double.Parse(txt_runTime.Text);
-
                 #endregion
 
                 if (PLAASerialPort.serialport.IsOpen)
@@ -1439,19 +1408,20 @@ namespace SDApplication
 
         }
         DateTime startTime = DateTime.Now;
+        TimeSpan ts = new TimeSpan();
         string[] weekdays = { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" };
         private void timer_now_Tick(object sender, EventArgs e)
         {
             txt_nowDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             txt_nowTime.Text = DateTime.Now.ToString("HH:mm:ss");
             txt_nowWeek.Text = weekdays[Convert.ToInt32(DateTime.Now.DayOfWeek)];
-            TimeSpan ts = DateTime.Now - startTime;
-            txt_year.Text = ((ts.Days / 365)+systemConfig.ValueYear).ToString();
-            txt_day.Text = ((ts.Days % 365)+systemConfig.ValueDay).ToString();
-            txt_hour.Text = (ts.Hours+systemConfig.ValueHour).ToString();
-            txt_minute.Text = (ts.Minutes+systemConfig.ValueMinute).ToString();
-            txt_second.Text = (ts.Seconds+systemConfig.ValueSecond).ToString();
-            txt_runTime.Text = Math.Round((ts.TotalHours+systemConfig.ValueTotalHour)).ToString();
+            ts = DateTime.Now - startTime + TimeSpan.Parse(systemConfig.RunTimeSpan);
+            txt_year.Text = ((ts.Days / 365)).ToString();
+            txt_day.Text = ((ts.Days % 365)).ToString();
+            txt_hour.Text = (ts.Hours).ToString();
+            txt_minute.Text = (ts.Minutes).ToString();
+            txt_second.Text = (ts.Seconds).ToString();
+            txt_runTime.Text = Math.Round((ts.TotalHours)).ToString();
         }
 
         private void btn_returnExit_Click(object sender, EventArgs e)
@@ -1473,6 +1443,19 @@ namespace SDApplication
         {
             SaveSystemConfig(null,null);
             ReadSystemConfig();
+        }
+
+        private void btn_clearRunTime_Click(object sender, EventArgs e)
+        {
+            timer_now.Stop();
+            txt_year.Text = string.Empty;
+            txt_day.Text = string.Empty;
+            txt_hour.Text = string.Empty;
+            txt_minute.Text = string.Empty;
+            txt_second.Text = string.Empty;
+            txt_runTime.Text = string.Empty;
+            startTime = DateTime.Now;
+            ts = new TimeSpan();
         }
         
     }
