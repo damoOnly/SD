@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraCharts.SwiftPlotDiagram swiftPlotDiagram2 = new DevExpress.XtraCharts.SwiftPlotDiagram();
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView3 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
-            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView4 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm2));
+            DevExpress.XtraCharts.SwiftPlotDiagram swiftPlotDiagram1 = new DevExpress.XtraCharts.SwiftPlotDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView1 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
+            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView2 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btn_Back = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -485,10 +485,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl_History)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -874,28 +874,32 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1370, 71);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1566, 82);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 727);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1370, 23);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 941);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1566, 23);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 71);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 656);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 82);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 859);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1370, 71);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 656);
+            this.barDockControlRight.Location = new System.Drawing.Point(1566, 82);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 859);
             // 
             // applicationMenu1
             // 
@@ -910,11 +914,12 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 71);
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 82);
+            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
             this.xtraTabControl1.ShowTabHeader = DevExpress.Utils.DefaultBoolean.False;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1370, 656);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1566, 859);
             this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -928,8 +933,9 @@
             this.xtraTabPage1.Controls.Add(this.panelControl_center);
             this.xtraTabPage1.Controls.Add(this.richTextBox1);
             this.xtraTabPage1.Controls.Add(this.labelControl29);
+            this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1364, 650);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1560, 853);
             this.xtraTabPage1.Text = "xtraTabPage1";
             // 
             // panelControl_center
@@ -1057,23 +1063,26 @@
             this.panelControl_center.Controls.Add(this.txt_nox_d12);
             this.panelControl_center.Controls.Add(this.groupControl13);
             this.panelControl_center.Controls.Add(this.groupControl14);
-            this.panelControl_center.Location = new System.Drawing.Point(3, 86);
+            this.panelControl_center.Location = new System.Drawing.Point(3, 111);
+            this.panelControl_center.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl_center.Name = "panelControl_center";
-            this.panelControl_center.Size = new System.Drawing.Size(1500, 540);
+            this.panelControl_center.Size = new System.Drawing.Size(1714, 694);
             this.panelControl_center.TabIndex = 36;
             // 
             // label_h_out_2
             // 
             this.label_h_out_2.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_h_out_2.Location = new System.Drawing.Point(1142, 186);
+            this.label_h_out_2.Location = new System.Drawing.Point(1305, 239);
+            this.label_h_out_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_h_out_2.Name = "label_h_out_2";
-            this.label_h_out_2.Size = new System.Drawing.Size(84, 21);
+            this.label_h_out_2.Size = new System.Drawing.Size(108, 27);
             this.label_h_out_2.TabIndex = 141;
             this.label_h_out_2.Text = "室外湿度";
             // 
             // txt_n_d7_2
             // 
-            this.txt_n_d7_2.Location = new System.Drawing.Point(1235, 183);
+            this.txt_n_d7_2.Location = new System.Drawing.Point(1411, 235);
+            this.txt_n_d7_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_n_d7_2.MenuManager = this.barManager1;
             this.txt_n_d7_2.Name = "txt_n_d7_2";
             this.txt_n_d7_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1083,21 +1092,23 @@
             this.txt_n_d7_2.Properties.Appearance.Options.UseFont = true;
             this.txt_n_d7_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_n_d7_2.Properties.ReadOnly = true;
-            this.txt_n_d7_2.Size = new System.Drawing.Size(102, 28);
+            this.txt_n_d7_2.Size = new System.Drawing.Size(117, 32);
             this.txt_n_d7_2.TabIndex = 142;
             // 
             // label_t_out_2
             // 
             this.label_t_out_2.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_t_out_2.Location = new System.Drawing.Point(1142, 74);
+            this.label_t_out_2.Location = new System.Drawing.Point(1305, 95);
+            this.label_t_out_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_t_out_2.Name = "label_t_out_2";
-            this.label_t_out_2.Size = new System.Drawing.Size(84, 21);
+            this.label_t_out_2.Size = new System.Drawing.Size(108, 27);
             this.label_t_out_2.TabIndex = 139;
             this.label_t_out_2.Text = "室外温度";
             // 
             // txt_t_d6_2
             // 
-            this.txt_t_d6_2.Location = new System.Drawing.Point(1235, 71);
+            this.txt_t_d6_2.Location = new System.Drawing.Point(1411, 91);
+            this.txt_t_d6_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_t_d6_2.MenuManager = this.barManager1;
             this.txt_t_d6_2.Name = "txt_t_d6_2";
             this.txt_t_d6_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1107,39 +1118,43 @@
             this.txt_t_d6_2.Properties.Appearance.Options.UseFont = true;
             this.txt_t_d6_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_t_d6_2.Properties.ReadOnly = true;
-            this.txt_t_d6_2.Size = new System.Drawing.Size(102, 28);
+            this.txt_t_d6_2.Size = new System.Drawing.Size(117, 32);
             this.txt_t_d6_2.TabIndex = 140;
             // 
             // label_t_in_2
             // 
             this.label_t_in_2.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_t_in_2.Location = new System.Drawing.Point(1142, 18);
+            this.label_t_in_2.Location = new System.Drawing.Point(1305, 23);
+            this.label_t_in_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_t_in_2.Name = "label_t_in_2";
-            this.label_t_in_2.Size = new System.Drawing.Size(84, 21);
+            this.label_t_in_2.Size = new System.Drawing.Size(108, 27);
             this.label_t_in_2.TabIndex = 133;
             this.label_t_in_2.Text = "室内温度";
             // 
             // label_h_in_2
             // 
             this.label_h_in_2.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_h_in_2.Location = new System.Drawing.Point(1142, 130);
+            this.label_h_in_2.Location = new System.Drawing.Point(1305, 167);
+            this.label_h_in_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_h_in_2.Name = "label_h_in_2";
-            this.label_h_in_2.Size = new System.Drawing.Size(84, 21);
+            this.label_h_in_2.Size = new System.Drawing.Size(108, 27);
             this.label_h_in_2.TabIndex = 135;
             this.label_h_in_2.Text = "室内湿度";
             // 
             // label_nr_2
             // 
             this.label_nr_2.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_nr_2.Location = new System.Drawing.Point(1143, 242);
+            this.label_nr_2.Location = new System.Drawing.Point(1306, 311);
+            this.label_nr_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_nr_2.Name = "label_nr_2";
-            this.label_nr_2.Size = new System.Drawing.Size(42, 21);
+            this.label_nr_2.Size = new System.Drawing.Size(54, 27);
             this.label_nr_2.TabIndex = 137;
             this.label_nr_2.Text = "噪音";
             // 
             // txt_t_d18
             // 
-            this.txt_t_d18.Location = new System.Drawing.Point(1235, 15);
+            this.txt_t_d18.Location = new System.Drawing.Point(1411, 19);
+            this.txt_t_d18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_t_d18.MenuManager = this.barManager1;
             this.txt_t_d18.Name = "txt_t_d18";
             this.txt_t_d18.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1149,12 +1164,13 @@
             this.txt_t_d18.Properties.Appearance.Options.UseFont = true;
             this.txt_t_d18.Properties.Appearance.Options.UseForeColor = true;
             this.txt_t_d18.Properties.ReadOnly = true;
-            this.txt_t_d18.Size = new System.Drawing.Size(102, 28);
+            this.txt_t_d18.Size = new System.Drawing.Size(117, 32);
             this.txt_t_d18.TabIndex = 134;
             // 
             // txt_n_d19
             // 
-            this.txt_n_d19.Location = new System.Drawing.Point(1235, 127);
+            this.txt_n_d19.Location = new System.Drawing.Point(1411, 163);
+            this.txt_n_d19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_n_d19.MenuManager = this.barManager1;
             this.txt_n_d19.Name = "txt_n_d19";
             this.txt_n_d19.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1164,12 +1180,13 @@
             this.txt_n_d19.Properties.Appearance.Options.UseFont = true;
             this.txt_n_d19.Properties.Appearance.Options.UseForeColor = true;
             this.txt_n_d19.Properties.ReadOnly = true;
-            this.txt_n_d19.Size = new System.Drawing.Size(102, 28);
+            this.txt_n_d19.Size = new System.Drawing.Size(117, 32);
             this.txt_n_d19.TabIndex = 136;
             // 
             // txt_nr_d2
             // 
-            this.txt_nr_d2.Location = new System.Drawing.Point(1235, 239);
+            this.txt_nr_d2.Location = new System.Drawing.Point(1411, 307);
+            this.txt_nr_d2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_nr_d2.MenuManager = this.barManager1;
             this.txt_nr_d2.Name = "txt_nr_d2";
             this.txt_nr_d2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1179,21 +1196,23 @@
             this.txt_nr_d2.Properties.Appearance.Options.UseFont = true;
             this.txt_nr_d2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_nr_d2.Properties.ReadOnly = true;
-            this.txt_nr_d2.Size = new System.Drawing.Size(102, 28);
+            this.txt_nr_d2.Size = new System.Drawing.Size(117, 32);
             this.txt_nr_d2.TabIndex = 138;
             // 
             // label_h_in_1
             // 
             this.label_h_in_1.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_h_in_1.Location = new System.Drawing.Point(8, 184);
+            this.label_h_in_1.Location = new System.Drawing.Point(10, 164);
+            this.label_h_in_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_h_in_1.Name = "label_h_in_1";
-            this.label_h_in_1.Size = new System.Drawing.Size(84, 21);
+            this.label_h_in_1.Size = new System.Drawing.Size(108, 27);
             this.label_h_in_1.TabIndex = 131;
             this.label_h_in_1.Text = "室外湿度";
             // 
             // txt_n_d7_1
             // 
-            this.txt_n_d7_1.Location = new System.Drawing.Point(101, 181);
+            this.txt_n_d7_1.Location = new System.Drawing.Point(115, 233);
+            this.txt_n_d7_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_n_d7_1.MenuManager = this.barManager1;
             this.txt_n_d7_1.Name = "txt_n_d7_1";
             this.txt_n_d7_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1203,21 +1222,23 @@
             this.txt_n_d7_1.Properties.Appearance.Options.UseFont = true;
             this.txt_n_d7_1.Properties.Appearance.Options.UseForeColor = true;
             this.txt_n_d7_1.Properties.ReadOnly = true;
-            this.txt_n_d7_1.Size = new System.Drawing.Size(102, 28);
+            this.txt_n_d7_1.Size = new System.Drawing.Size(117, 32);
             this.txt_n_d7_1.TabIndex = 132;
             // 
             // label_t_in_1
             // 
             this.label_t_in_1.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_t_in_1.Location = new System.Drawing.Point(8, 72);
+            this.label_t_in_1.Location = new System.Drawing.Point(3, 20);
+            this.label_t_in_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_t_in_1.Name = "label_t_in_1";
-            this.label_t_in_1.Size = new System.Drawing.Size(84, 21);
+            this.label_t_in_1.Size = new System.Drawing.Size(108, 27);
             this.label_t_in_1.TabIndex = 129;
-            this.label_t_in_1.Text = "室外温度";
+            this.label_t_in_1.Text = "室内温度";
             // 
             // txt_t_d6_1
             // 
-            this.txt_t_d6_1.Location = new System.Drawing.Point(101, 69);
+            this.txt_t_d6_1.Location = new System.Drawing.Point(115, 89);
+            this.txt_t_d6_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_t_d6_1.MenuManager = this.barManager1;
             this.txt_t_d6_1.Name = "txt_t_d6_1";
             this.txt_t_d6_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1227,22 +1248,24 @@
             this.txt_t_d6_1.Properties.Appearance.Options.UseFont = true;
             this.txt_t_d6_1.Properties.Appearance.Options.UseForeColor = true;
             this.txt_t_d6_1.Properties.ReadOnly = true;
-            this.txt_t_d6_1.Size = new System.Drawing.Size(102, 28);
+            this.txt_t_d6_1.Size = new System.Drawing.Size(117, 32);
             this.txt_t_d6_1.TabIndex = 130;
             // 
             // labelControl74
             // 
             this.labelControl74.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl74.Location = new System.Drawing.Point(1015, 519);
+            this.labelControl74.Location = new System.Drawing.Point(1160, 667);
+            this.labelControl74.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl74.Name = "labelControl74";
-            this.labelControl74.Size = new System.Drawing.Size(42, 19);
+            this.labelControl74.Size = new System.Drawing.Size(50, 24);
             this.labelControl74.TabIndex = 128;
             this.labelControl74.Text = "——";
             this.labelControl74.Visible = false;
             // 
             // txt_d_pm_max_2
             // 
-            this.txt_d_pm_max_2.Location = new System.Drawing.Point(1060, 516);
+            this.txt_d_pm_max_2.Location = new System.Drawing.Point(1211, 663);
+            this.txt_d_pm_max_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_pm_max_2.MenuManager = this.barManager1;
             this.txt_d_pm_max_2.Name = "txt_d_pm_max_2";
             this.txt_d_pm_max_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1251,12 +1274,13 @@
             this.txt_d_pm_max_2.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_pm_max_2.Properties.Appearance.Options.UseFont = true;
             this.txt_d_pm_max_2.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_pm_max_2.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_pm_max_2.Size = new System.Drawing.Size(75, 30);
             this.txt_d_pm_max_2.TabIndex = 127;
             // 
             // txt_d_pm_min_2
             // 
-            this.txt_d_pm_min_2.Location = new System.Drawing.Point(943, 516);
+            this.txt_d_pm_min_2.Location = new System.Drawing.Point(1078, 663);
+            this.txt_d_pm_min_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_pm_min_2.MenuManager = this.barManager1;
             this.txt_d_pm_min_2.Name = "txt_d_pm_min_2";
             this.txt_d_pm_min_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1265,30 +1289,33 @@
             this.txt_d_pm_min_2.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_pm_min_2.Properties.Appearance.Options.UseFont = true;
             this.txt_d_pm_min_2.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_pm_min_2.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_pm_min_2.Size = new System.Drawing.Size(75, 30);
             this.txt_d_pm_min_2.TabIndex = 126;
             // 
             // labelControl75
             // 
             this.labelControl75.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl75.Location = new System.Drawing.Point(791, 520);
+            this.labelControl75.Location = new System.Drawing.Point(904, 669);
+            this.labelControl75.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl75.Name = "labelControl75";
-            this.labelControl75.Size = new System.Drawing.Size(76, 19);
+            this.labelControl75.Size = new System.Drawing.Size(96, 24);
             this.labelControl75.TabIndex = 125;
             this.labelControl75.Text = "标准范围";
             // 
             // labelControl76
             // 
             this.labelControl76.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl76.Location = new System.Drawing.Point(1015, 455);
+            this.labelControl76.Location = new System.Drawing.Point(1160, 585);
+            this.labelControl76.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl76.Name = "labelControl76";
-            this.labelControl76.Size = new System.Drawing.Size(42, 19);
+            this.labelControl76.Size = new System.Drawing.Size(50, 24);
             this.labelControl76.TabIndex = 124;
             this.labelControl76.Text = "——";
             // 
             // txt_d_sterilize_max_2
             // 
-            this.txt_d_sterilize_max_2.Location = new System.Drawing.Point(1060, 452);
+            this.txt_d_sterilize_max_2.Location = new System.Drawing.Point(1211, 581);
+            this.txt_d_sterilize_max_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_sterilize_max_2.MenuManager = this.barManager1;
             this.txt_d_sterilize_max_2.Name = "txt_d_sterilize_max_2";
             this.txt_d_sterilize_max_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1297,12 +1324,13 @@
             this.txt_d_sterilize_max_2.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_sterilize_max_2.Properties.Appearance.Options.UseFont = true;
             this.txt_d_sterilize_max_2.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_sterilize_max_2.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_sterilize_max_2.Size = new System.Drawing.Size(75, 30);
             this.txt_d_sterilize_max_2.TabIndex = 123;
             // 
             // txt_d_sterilize_min_2
             // 
-            this.txt_d_sterilize_min_2.Location = new System.Drawing.Point(943, 452);
+            this.txt_d_sterilize_min_2.Location = new System.Drawing.Point(1078, 581);
+            this.txt_d_sterilize_min_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_sterilize_min_2.MenuManager = this.barManager1;
             this.txt_d_sterilize_min_2.Name = "txt_d_sterilize_min_2";
             this.txt_d_sterilize_min_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1311,30 +1339,33 @@
             this.txt_d_sterilize_min_2.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_sterilize_min_2.Properties.Appearance.Options.UseFont = true;
             this.txt_d_sterilize_min_2.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_sterilize_min_2.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_sterilize_min_2.Size = new System.Drawing.Size(75, 30);
             this.txt_d_sterilize_min_2.TabIndex = 122;
             // 
             // labelControl77
             // 
             this.labelControl77.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl77.Location = new System.Drawing.Point(791, 455);
+            this.labelControl77.Location = new System.Drawing.Point(904, 585);
+            this.labelControl77.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl77.Name = "labelControl77";
-            this.labelControl77.Size = new System.Drawing.Size(76, 19);
+            this.labelControl77.Size = new System.Drawing.Size(96, 24);
             this.labelControl77.TabIndex = 121;
             this.labelControl77.Text = "标准范围";
             // 
             // labelControl78
             // 
             this.labelControl78.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl78.Location = new System.Drawing.Point(1015, 388);
+            this.labelControl78.Location = new System.Drawing.Point(1160, 499);
+            this.labelControl78.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl78.Name = "labelControl78";
-            this.labelControl78.Size = new System.Drawing.Size(42, 19);
+            this.labelControl78.Size = new System.Drawing.Size(50, 24);
             this.labelControl78.TabIndex = 120;
             this.labelControl78.Text = "——";
             // 
             // txt_d_airQuality_max_2
             // 
-            this.txt_d_airQuality_max_2.Location = new System.Drawing.Point(1060, 385);
+            this.txt_d_airQuality_max_2.Location = new System.Drawing.Point(1211, 495);
+            this.txt_d_airQuality_max_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_airQuality_max_2.MenuManager = this.barManager1;
             this.txt_d_airQuality_max_2.Name = "txt_d_airQuality_max_2";
             this.txt_d_airQuality_max_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1343,12 +1374,13 @@
             this.txt_d_airQuality_max_2.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_airQuality_max_2.Properties.Appearance.Options.UseFont = true;
             this.txt_d_airQuality_max_2.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_airQuality_max_2.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_airQuality_max_2.Size = new System.Drawing.Size(75, 30);
             this.txt_d_airQuality_max_2.TabIndex = 119;
             // 
             // txt_d_airQuality_min_2
             // 
-            this.txt_d_airQuality_min_2.Location = new System.Drawing.Point(943, 385);
+            this.txt_d_airQuality_min_2.Location = new System.Drawing.Point(1078, 495);
+            this.txt_d_airQuality_min_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_airQuality_min_2.MenuManager = this.barManager1;
             this.txt_d_airQuality_min_2.Name = "txt_d_airQuality_min_2";
             this.txt_d_airQuality_min_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1357,30 +1389,33 @@
             this.txt_d_airQuality_min_2.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_airQuality_min_2.Properties.Appearance.Options.UseFont = true;
             this.txt_d_airQuality_min_2.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_airQuality_min_2.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_airQuality_min_2.Size = new System.Drawing.Size(75, 30);
             this.txt_d_airQuality_min_2.TabIndex = 118;
             // 
             // labelControl79
             // 
             this.labelControl79.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl79.Location = new System.Drawing.Point(791, 386);
+            this.labelControl79.Location = new System.Drawing.Point(904, 496);
+            this.labelControl79.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl79.Name = "labelControl79";
-            this.labelControl79.Size = new System.Drawing.Size(76, 19);
+            this.labelControl79.Size = new System.Drawing.Size(96, 24);
             this.labelControl79.TabIndex = 117;
             this.labelControl79.Text = "标准范围";
             // 
             // labelControl80
             // 
             this.labelControl80.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl80.Location = new System.Drawing.Point(1015, 319);
+            this.labelControl80.Location = new System.Drawing.Point(1160, 410);
+            this.labelControl80.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl80.Name = "labelControl80";
-            this.labelControl80.Size = new System.Drawing.Size(42, 19);
+            this.labelControl80.Size = new System.Drawing.Size(50, 24);
             this.labelControl80.TabIndex = 116;
             this.labelControl80.Text = "——";
             // 
             // txt_d_nox_max_2
             // 
-            this.txt_d_nox_max_2.Location = new System.Drawing.Point(1060, 318);
+            this.txt_d_nox_max_2.Location = new System.Drawing.Point(1211, 409);
+            this.txt_d_nox_max_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_nox_max_2.MenuManager = this.barManager1;
             this.txt_d_nox_max_2.Name = "txt_d_nox_max_2";
             this.txt_d_nox_max_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1389,12 +1424,13 @@
             this.txt_d_nox_max_2.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_nox_max_2.Properties.Appearance.Options.UseFont = true;
             this.txt_d_nox_max_2.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_nox_max_2.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_nox_max_2.Size = new System.Drawing.Size(75, 30);
             this.txt_d_nox_max_2.TabIndex = 115;
             // 
             // txt_d_nox_min_2
             // 
-            this.txt_d_nox_min_2.Location = new System.Drawing.Point(943, 318);
+            this.txt_d_nox_min_2.Location = new System.Drawing.Point(1078, 409);
+            this.txt_d_nox_min_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_nox_min_2.MenuManager = this.barManager1;
             this.txt_d_nox_min_2.Name = "txt_d_nox_min_2";
             this.txt_d_nox_min_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1403,30 +1439,33 @@
             this.txt_d_nox_min_2.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_nox_min_2.Properties.Appearance.Options.UseFont = true;
             this.txt_d_nox_min_2.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_nox_min_2.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_nox_min_2.Size = new System.Drawing.Size(75, 30);
             this.txt_d_nox_min_2.TabIndex = 114;
             // 
             // labelControl81
             // 
             this.labelControl81.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl81.Location = new System.Drawing.Point(791, 319);
+            this.labelControl81.Location = new System.Drawing.Point(904, 410);
+            this.labelControl81.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl81.Name = "labelControl81";
-            this.labelControl81.Size = new System.Drawing.Size(76, 19);
+            this.labelControl81.Size = new System.Drawing.Size(96, 24);
             this.labelControl81.TabIndex = 113;
             this.labelControl81.Text = "标准范围";
             // 
             // labelControl82
             // 
             this.labelControl82.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl82.Location = new System.Drawing.Point(1015, 254);
+            this.labelControl82.Location = new System.Drawing.Point(1160, 327);
+            this.labelControl82.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl82.Name = "labelControl82";
-            this.labelControl82.Size = new System.Drawing.Size(42, 19);
+            this.labelControl82.Size = new System.Drawing.Size(50, 24);
             this.labelControl82.TabIndex = 112;
             this.labelControl82.Text = "——";
             // 
             // txt_d_so2_max_2
             // 
-            this.txt_d_so2_max_2.Location = new System.Drawing.Point(1060, 251);
+            this.txt_d_so2_max_2.Location = new System.Drawing.Point(1211, 323);
+            this.txt_d_so2_max_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_so2_max_2.MenuManager = this.barManager1;
             this.txt_d_so2_max_2.Name = "txt_d_so2_max_2";
             this.txt_d_so2_max_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1435,12 +1474,13 @@
             this.txt_d_so2_max_2.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_so2_max_2.Properties.Appearance.Options.UseFont = true;
             this.txt_d_so2_max_2.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_so2_max_2.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_so2_max_2.Size = new System.Drawing.Size(75, 30);
             this.txt_d_so2_max_2.TabIndex = 111;
             // 
             // txt_d_so2_min_2
             // 
-            this.txt_d_so2_min_2.Location = new System.Drawing.Point(943, 251);
+            this.txt_d_so2_min_2.Location = new System.Drawing.Point(1078, 323);
+            this.txt_d_so2_min_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_so2_min_2.MenuManager = this.barManager1;
             this.txt_d_so2_min_2.Name = "txt_d_so2_min_2";
             this.txt_d_so2_min_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1449,30 +1489,33 @@
             this.txt_d_so2_min_2.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_so2_min_2.Properties.Appearance.Options.UseFont = true;
             this.txt_d_so2_min_2.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_so2_min_2.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_so2_min_2.Size = new System.Drawing.Size(75, 30);
             this.txt_d_so2_min_2.TabIndex = 110;
             // 
             // labelControl83
             // 
             this.labelControl83.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl83.Location = new System.Drawing.Point(791, 252);
+            this.labelControl83.Location = new System.Drawing.Point(904, 324);
+            this.labelControl83.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl83.Name = "labelControl83";
-            this.labelControl83.Size = new System.Drawing.Size(76, 19);
+            this.labelControl83.Size = new System.Drawing.Size(96, 24);
             this.labelControl83.TabIndex = 109;
             this.labelControl83.Text = "标准范围";
             // 
             // labelControl84
             // 
             this.labelControl84.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl84.Location = new System.Drawing.Point(1015, 187);
+            this.labelControl84.Location = new System.Drawing.Point(1160, 240);
+            this.labelControl84.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl84.Name = "labelControl84";
-            this.labelControl84.Size = new System.Drawing.Size(42, 19);
+            this.labelControl84.Size = new System.Drawing.Size(50, 24);
             this.labelControl84.TabIndex = 108;
             this.labelControl84.Text = "——";
             // 
             // txt_d_co_max_2
             // 
-            this.txt_d_co_max_2.Location = new System.Drawing.Point(1060, 184);
+            this.txt_d_co_max_2.Location = new System.Drawing.Point(1211, 237);
+            this.txt_d_co_max_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_co_max_2.MenuManager = this.barManager1;
             this.txt_d_co_max_2.Name = "txt_d_co_max_2";
             this.txt_d_co_max_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1481,12 +1524,13 @@
             this.txt_d_co_max_2.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_co_max_2.Properties.Appearance.Options.UseFont = true;
             this.txt_d_co_max_2.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_co_max_2.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_co_max_2.Size = new System.Drawing.Size(75, 30);
             this.txt_d_co_max_2.TabIndex = 107;
             // 
             // txt_d_co_min_2
             // 
-            this.txt_d_co_min_2.Location = new System.Drawing.Point(943, 184);
+            this.txt_d_co_min_2.Location = new System.Drawing.Point(1078, 237);
+            this.txt_d_co_min_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_co_min_2.MenuManager = this.barManager1;
             this.txt_d_co_min_2.Name = "txt_d_co_min_2";
             this.txt_d_co_min_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1495,30 +1539,33 @@
             this.txt_d_co_min_2.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_co_min_2.Properties.Appearance.Options.UseFont = true;
             this.txt_d_co_min_2.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_co_min_2.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_co_min_2.Size = new System.Drawing.Size(75, 30);
             this.txt_d_co_min_2.TabIndex = 106;
             // 
             // labelControl85
             // 
             this.labelControl85.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl85.Location = new System.Drawing.Point(791, 185);
+            this.labelControl85.Location = new System.Drawing.Point(904, 238);
+            this.labelControl85.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl85.Name = "labelControl85";
-            this.labelControl85.Size = new System.Drawing.Size(76, 19);
+            this.labelControl85.Size = new System.Drawing.Size(96, 24);
             this.labelControl85.TabIndex = 105;
             this.labelControl85.Text = "标准范围";
             // 
             // labelControl86
             // 
             this.labelControl86.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl86.Location = new System.Drawing.Point(1015, 120);
+            this.labelControl86.Location = new System.Drawing.Point(1160, 154);
+            this.labelControl86.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl86.Name = "labelControl86";
-            this.labelControl86.Size = new System.Drawing.Size(42, 19);
+            this.labelControl86.Size = new System.Drawing.Size(50, 24);
             this.labelControl86.TabIndex = 104;
             this.labelControl86.Text = "——";
             // 
             // txt_d_o2_max_2
             // 
-            this.txt_d_o2_max_2.Location = new System.Drawing.Point(1060, 117);
+            this.txt_d_o2_max_2.Location = new System.Drawing.Point(1211, 150);
+            this.txt_d_o2_max_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_o2_max_2.MenuManager = this.barManager1;
             this.txt_d_o2_max_2.Name = "txt_d_o2_max_2";
             this.txt_d_o2_max_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1527,12 +1574,13 @@
             this.txt_d_o2_max_2.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_o2_max_2.Properties.Appearance.Options.UseFont = true;
             this.txt_d_o2_max_2.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_o2_max_2.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_o2_max_2.Size = new System.Drawing.Size(75, 30);
             this.txt_d_o2_max_2.TabIndex = 103;
             // 
             // txt_d_o2_min_2
             // 
-            this.txt_d_o2_min_2.Location = new System.Drawing.Point(943, 117);
+            this.txt_d_o2_min_2.Location = new System.Drawing.Point(1078, 150);
+            this.txt_d_o2_min_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_o2_min_2.MenuManager = this.barManager1;
             this.txt_d_o2_min_2.Name = "txt_d_o2_min_2";
             this.txt_d_o2_min_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1541,30 +1589,33 @@
             this.txt_d_o2_min_2.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_o2_min_2.Properties.Appearance.Options.UseFont = true;
             this.txt_d_o2_min_2.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_o2_min_2.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_o2_min_2.Size = new System.Drawing.Size(75, 30);
             this.txt_d_o2_min_2.TabIndex = 102;
             // 
             // labelControl87
             // 
             this.labelControl87.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl87.Location = new System.Drawing.Point(791, 118);
+            this.labelControl87.Location = new System.Drawing.Point(904, 152);
+            this.labelControl87.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl87.Name = "labelControl87";
-            this.labelControl87.Size = new System.Drawing.Size(76, 19);
+            this.labelControl87.Size = new System.Drawing.Size(96, 24);
             this.labelControl87.TabIndex = 101;
             this.labelControl87.Text = "标准范围";
             // 
             // labelControl88
             // 
             this.labelControl88.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl88.Location = new System.Drawing.Point(1015, 55);
+            this.labelControl88.Location = new System.Drawing.Point(1160, 71);
+            this.labelControl88.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl88.Name = "labelControl88";
-            this.labelControl88.Size = new System.Drawing.Size(42, 19);
+            this.labelControl88.Size = new System.Drawing.Size(50, 24);
             this.labelControl88.TabIndex = 100;
             this.labelControl88.Text = "——";
             // 
             // txt_d_tvoc_max_2
             // 
-            this.txt_d_tvoc_max_2.Location = new System.Drawing.Point(1060, 52);
+            this.txt_d_tvoc_max_2.Location = new System.Drawing.Point(1211, 67);
+            this.txt_d_tvoc_max_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_tvoc_max_2.MenuManager = this.barManager1;
             this.txt_d_tvoc_max_2.Name = "txt_d_tvoc_max_2";
             this.txt_d_tvoc_max_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1573,12 +1624,13 @@
             this.txt_d_tvoc_max_2.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_tvoc_max_2.Properties.Appearance.Options.UseFont = true;
             this.txt_d_tvoc_max_2.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_tvoc_max_2.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_tvoc_max_2.Size = new System.Drawing.Size(75, 30);
             this.txt_d_tvoc_max_2.TabIndex = 99;
             // 
             // txt_d_tvoc_min_2
             // 
-            this.txt_d_tvoc_min_2.Location = new System.Drawing.Point(943, 49);
+            this.txt_d_tvoc_min_2.Location = new System.Drawing.Point(1078, 63);
+            this.txt_d_tvoc_min_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_tvoc_min_2.MenuManager = this.barManager1;
             this.txt_d_tvoc_min_2.Name = "txt_d_tvoc_min_2";
             this.txt_d_tvoc_min_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1587,21 +1639,23 @@
             this.txt_d_tvoc_min_2.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_tvoc_min_2.Properties.Appearance.Options.UseFont = true;
             this.txt_d_tvoc_min_2.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_tvoc_min_2.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_tvoc_min_2.Size = new System.Drawing.Size(75, 30);
             this.txt_d_tvoc_min_2.TabIndex = 98;
             // 
             // labelControl89
             // 
             this.labelControl89.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl89.Location = new System.Drawing.Point(791, 53);
+            this.labelControl89.Location = new System.Drawing.Point(904, 68);
+            this.labelControl89.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl89.Name = "labelControl89";
-            this.labelControl89.Size = new System.Drawing.Size(76, 19);
+            this.labelControl89.Size = new System.Drawing.Size(96, 24);
             this.labelControl89.TabIndex = 97;
             this.labelControl89.Text = "标准范围";
             // 
             // txt_pm_d20
             // 
-            this.txt_pm_d20.Location = new System.Drawing.Point(943, 486);
+            this.txt_pm_d20.Location = new System.Drawing.Point(1078, 625);
+            this.txt_pm_d20.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_pm_d20.MenuManager = this.barManager1;
             this.txt_pm_d20.Name = "txt_pm_d20";
             this.txt_pm_d20.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1611,21 +1665,23 @@
             this.txt_pm_d20.Properties.Appearance.Options.UseFont = true;
             this.txt_pm_d20.Properties.Appearance.Options.UseForeColor = true;
             this.txt_pm_d20.Properties.ReadOnly = true;
-            this.txt_pm_d20.Size = new System.Drawing.Size(183, 28);
+            this.txt_pm_d20.Size = new System.Drawing.Size(209, 32);
             this.txt_pm_d20.TabIndex = 96;
             // 
             // label_pm_2
             // 
             this.label_pm_2.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_pm_2.Location = new System.Drawing.Point(791, 487);
+            this.label_pm_2.Location = new System.Drawing.Point(904, 626);
+            this.label_pm_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_pm_2.Name = "label_pm_2";
-            this.label_pm_2.Size = new System.Drawing.Size(76, 21);
+            this.label_pm_2.Size = new System.Drawing.Size(97, 27);
             this.label_pm_2.TabIndex = 95;
             this.label_pm_2.Text = "PM2.5值";
             // 
             // txt_sterilize_d_2
             // 
-            this.txt_sterilize_d_2.Location = new System.Drawing.Point(943, 419);
+            this.txt_sterilize_d_2.Location = new System.Drawing.Point(1078, 539);
+            this.txt_sterilize_d_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_sterilize_d_2.MenuManager = this.barManager1;
             this.txt_sterilize_d_2.Name = "txt_sterilize_d_2";
             this.txt_sterilize_d_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1635,21 +1691,23 @@
             this.txt_sterilize_d_2.Properties.Appearance.Options.UseFont = true;
             this.txt_sterilize_d_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_sterilize_d_2.Properties.ReadOnly = true;
-            this.txt_sterilize_d_2.Size = new System.Drawing.Size(183, 28);
+            this.txt_sterilize_d_2.Size = new System.Drawing.Size(209, 32);
             this.txt_sterilize_d_2.TabIndex = 94;
             // 
             // label_sterilize_2
             // 
             this.label_sterilize_2.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_sterilize_2.Location = new System.Drawing.Point(791, 420);
+            this.label_sterilize_2.Location = new System.Drawing.Point(904, 540);
+            this.label_sterilize_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_sterilize_2.Name = "label_sterilize_2";
-            this.label_sterilize_2.Size = new System.Drawing.Size(84, 21);
+            this.label_sterilize_2.Size = new System.Drawing.Size(108, 27);
             this.label_sterilize_2.TabIndex = 93;
             this.label_sterilize_2.Text = "消毒杀菌";
             // 
             // txt_airQuality_d_2
             // 
-            this.txt_airQuality_d_2.Location = new System.Drawing.Point(943, 352);
+            this.txt_airQuality_d_2.Location = new System.Drawing.Point(1078, 453);
+            this.txt_airQuality_d_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_airQuality_d_2.MenuManager = this.barManager1;
             this.txt_airQuality_d_2.Name = "txt_airQuality_d_2";
             this.txt_airQuality_d_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1659,66 +1717,73 @@
             this.txt_airQuality_d_2.Properties.Appearance.Options.UseFont = true;
             this.txt_airQuality_d_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_airQuality_d_2.Properties.ReadOnly = true;
-            this.txt_airQuality_d_2.Size = new System.Drawing.Size(183, 28);
+            this.txt_airQuality_d_2.Size = new System.Drawing.Size(209, 32);
             this.txt_airQuality_d_2.TabIndex = 92;
             // 
             // label_airQuality_2
             // 
             this.label_airQuality_2.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_airQuality_2.Location = new System.Drawing.Point(791, 353);
+            this.label_airQuality_2.Location = new System.Drawing.Point(904, 454);
+            this.label_airQuality_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_airQuality_2.Name = "label_airQuality_2";
-            this.label_airQuality_2.Size = new System.Drawing.Size(84, 21);
+            this.label_airQuality_2.Size = new System.Drawing.Size(108, 27);
             this.label_airQuality_2.TabIndex = 91;
             this.label_airQuality_2.Text = "空气质量";
             // 
             // label_tvoc_2
             // 
             this.label_tvoc_2.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_tvoc_2.Location = new System.Drawing.Point(791, 18);
+            this.label_tvoc_2.Location = new System.Drawing.Point(904, 23);
+            this.label_tvoc_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_tvoc_2.Name = "label_tvoc_2";
-            this.label_tvoc_2.Size = new System.Drawing.Size(128, 21);
+            this.label_tvoc_2.Size = new System.Drawing.Size(164, 27);
             this.label_tvoc_2.TabIndex = 76;
             this.label_tvoc_2.Text = "TVOC有机气体";
             // 
             // label_o2_2
             // 
             this.label_o2_2.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_o2_2.Location = new System.Drawing.Point(791, 85);
+            this.label_o2_2.Location = new System.Drawing.Point(904, 109);
+            this.label_o2_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_o2_2.Name = "label_o2_2";
-            this.label_o2_2.Size = new System.Drawing.Size(107, 21);
+            this.label_o2_2.Size = new System.Drawing.Size(137, 27);
             this.label_o2_2.TabIndex = 80;
             this.label_o2_2.Text = "C6H6苯系物";
             // 
             // label_co_2
             // 
             this.label_co_2.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_co_2.Location = new System.Drawing.Point(791, 152);
+            this.label_co_2.Location = new System.Drawing.Point(904, 195);
+            this.label_co_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_co_2.Name = "label_co_2";
-            this.label_co_2.Size = new System.Drawing.Size(106, 21);
+            this.label_co_2.Size = new System.Drawing.Size(136, 27);
             this.label_co_2.TabIndex = 84;
             this.label_co_2.Text = "CO一氧化碳";
             // 
             // label_so2_2
             // 
             this.label_so2_2.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_so2_2.Location = new System.Drawing.Point(791, 219);
+            this.label_so2_2.Location = new System.Drawing.Point(904, 282);
+            this.label_so2_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_so2_2.Name = "label_so2_2";
-            this.label_so2_2.Size = new System.Drawing.Size(117, 21);
+            this.label_so2_2.Size = new System.Drawing.Size(150, 27);
             this.label_so2_2.TabIndex = 86;
             this.label_so2_2.Text = "SO2二氧化硫";
             // 
             // label_nox_2
             // 
             this.label_nox_2.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_nox_2.Location = new System.Drawing.Point(791, 286);
+            this.label_nox_2.Location = new System.Drawing.Point(904, 368);
+            this.label_nox_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_nox_2.Name = "label_nox_2";
-            this.label_nox_2.Size = new System.Drawing.Size(117, 21);
+            this.label_nox_2.Size = new System.Drawing.Size(150, 27);
             this.label_nox_2.TabIndex = 88;
             this.label_nox_2.Text = "NOX氮氧化物";
             // 
             // txt_tvoc_d13
             // 
-            this.txt_tvoc_d13.Location = new System.Drawing.Point(943, 15);
+            this.txt_tvoc_d13.Location = new System.Drawing.Point(1078, 19);
+            this.txt_tvoc_d13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_tvoc_d13.MenuManager = this.barManager1;
             this.txt_tvoc_d13.Name = "txt_tvoc_d13";
             this.txt_tvoc_d13.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1728,12 +1793,13 @@
             this.txt_tvoc_d13.Properties.Appearance.Options.UseFont = true;
             this.txt_tvoc_d13.Properties.Appearance.Options.UseForeColor = true;
             this.txt_tvoc_d13.Properties.ReadOnly = true;
-            this.txt_tvoc_d13.Size = new System.Drawing.Size(183, 28);
+            this.txt_tvoc_d13.Size = new System.Drawing.Size(209, 32);
             this.txt_tvoc_d13.TabIndex = 77;
             // 
             // txt_o2_d14
             // 
-            this.txt_o2_d14.Location = new System.Drawing.Point(943, 84);
+            this.txt_o2_d14.Location = new System.Drawing.Point(1078, 108);
+            this.txt_o2_d14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_o2_d14.MenuManager = this.barManager1;
             this.txt_o2_d14.Name = "txt_o2_d14";
             this.txt_o2_d14.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1743,12 +1809,13 @@
             this.txt_o2_d14.Properties.Appearance.Options.UseFont = true;
             this.txt_o2_d14.Properties.Appearance.Options.UseForeColor = true;
             this.txt_o2_d14.Properties.ReadOnly = true;
-            this.txt_o2_d14.Size = new System.Drawing.Size(183, 28);
+            this.txt_o2_d14.Size = new System.Drawing.Size(209, 32);
             this.txt_o2_d14.TabIndex = 81;
             // 
             // txt_co_d15
             // 
-            this.txt_co_d15.Location = new System.Drawing.Point(943, 151);
+            this.txt_co_d15.Location = new System.Drawing.Point(1078, 194);
+            this.txt_co_d15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_co_d15.MenuManager = this.barManager1;
             this.txt_co_d15.Name = "txt_co_d15";
             this.txt_co_d15.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1758,12 +1825,13 @@
             this.txt_co_d15.Properties.Appearance.Options.UseFont = true;
             this.txt_co_d15.Properties.Appearance.Options.UseForeColor = true;
             this.txt_co_d15.Properties.ReadOnly = true;
-            this.txt_co_d15.Size = new System.Drawing.Size(183, 28);
+            this.txt_co_d15.Size = new System.Drawing.Size(209, 32);
             this.txt_co_d15.TabIndex = 85;
             // 
             // txt_so2_d16
             // 
-            this.txt_so2_d16.Location = new System.Drawing.Point(943, 218);
+            this.txt_so2_d16.Location = new System.Drawing.Point(1078, 280);
+            this.txt_so2_d16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_so2_d16.MenuManager = this.barManager1;
             this.txt_so2_d16.Name = "txt_so2_d16";
             this.txt_so2_d16.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1773,12 +1841,13 @@
             this.txt_so2_d16.Properties.Appearance.Options.UseFont = true;
             this.txt_so2_d16.Properties.Appearance.Options.UseForeColor = true;
             this.txt_so2_d16.Properties.ReadOnly = true;
-            this.txt_so2_d16.Size = new System.Drawing.Size(183, 28);
+            this.txt_so2_d16.Size = new System.Drawing.Size(209, 32);
             this.txt_so2_d16.TabIndex = 87;
             // 
             // txt_nox_d17
             // 
-            this.txt_nox_d17.Location = new System.Drawing.Point(943, 285);
+            this.txt_nox_d17.Location = new System.Drawing.Point(1078, 366);
+            this.txt_nox_d17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_nox_d17.MenuManager = this.barManager1;
             this.txt_nox_d17.Name = "txt_nox_d17";
             this.txt_nox_d17.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1788,7 +1857,7 @@
             this.txt_nox_d17.Properties.Appearance.Options.UseFont = true;
             this.txt_nox_d17.Properties.Appearance.Options.UseForeColor = true;
             this.txt_nox_d17.Properties.ReadOnly = true;
-            this.txt_nox_d17.Size = new System.Drawing.Size(183, 28);
+            this.txt_nox_d17.Size = new System.Drawing.Size(209, 32);
             this.txt_nox_d17.TabIndex = 89;
             // 
             // groupControl16
@@ -1801,16 +1870,18 @@
             this.groupControl16.Controls.Add(this.labelControl54);
             this.groupControl16.Controls.Add(this.labelControl55);
             this.groupControl16.Controls.Add(this.txt_nowWeek);
-            this.groupControl16.Location = new System.Drawing.Point(572, 240);
+            this.groupControl16.Location = new System.Drawing.Point(654, 309);
+            this.groupControl16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl16.Name = "groupControl16";
             this.groupControl16.ShowCaption = false;
-            this.groupControl16.Size = new System.Drawing.Size(194, 222);
+            this.groupControl16.Size = new System.Drawing.Size(222, 285);
             this.groupControl16.TabIndex = 73;
             this.groupControl16.Text = "风管截面积";
             // 
             // txt_nowTime
             // 
-            this.txt_nowTime.Location = new System.Drawing.Point(64, 91);
+            this.txt_nowTime.Location = new System.Drawing.Point(73, 117);
+            this.txt_nowTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_nowTime.MenuManager = this.barManager1;
             this.txt_nowTime.Name = "txt_nowTime";
             this.txt_nowTime.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1820,21 +1891,23 @@
             this.txt_nowTime.Properties.Appearance.Options.UseFont = true;
             this.txt_nowTime.Properties.Appearance.Options.UseForeColor = true;
             this.txt_nowTime.Properties.ReadOnly = true;
-            this.txt_nowTime.Size = new System.Drawing.Size(116, 26);
+            this.txt_nowTime.Size = new System.Drawing.Size(133, 30);
             this.txt_nowTime.TabIndex = 32;
             // 
             // labelControl53
             // 
             this.labelControl53.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl53.Location = new System.Drawing.Point(7, 21);
+            this.labelControl53.Location = new System.Drawing.Point(8, 27);
+            this.labelControl53.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl53.Name = "labelControl53";
-            this.labelControl53.Size = new System.Drawing.Size(42, 21);
+            this.labelControl53.Size = new System.Drawing.Size(54, 27);
             this.labelControl53.TabIndex = 29;
             this.labelControl53.Text = "日期";
             // 
             // txt_nowDate
             // 
-            this.txt_nowDate.Location = new System.Drawing.Point(64, 21);
+            this.txt_nowDate.Location = new System.Drawing.Point(73, 27);
+            this.txt_nowDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_nowDate.MenuManager = this.barManager1;
             this.txt_nowDate.Name = "txt_nowDate";
             this.txt_nowDate.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1844,30 +1917,33 @@
             this.txt_nowDate.Properties.Appearance.Options.UseFont = true;
             this.txt_nowDate.Properties.Appearance.Options.UseForeColor = true;
             this.txt_nowDate.Properties.ReadOnly = true;
-            this.txt_nowDate.Size = new System.Drawing.Size(116, 26);
+            this.txt_nowDate.Size = new System.Drawing.Size(133, 30);
             this.txt_nowDate.TabIndex = 30;
             // 
             // labelControl54
             // 
             this.labelControl54.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl54.Location = new System.Drawing.Point(7, 91);
+            this.labelControl54.Location = new System.Drawing.Point(8, 117);
+            this.labelControl54.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl54.Name = "labelControl54";
-            this.labelControl54.Size = new System.Drawing.Size(42, 21);
+            this.labelControl54.Size = new System.Drawing.Size(54, 27);
             this.labelControl54.TabIndex = 31;
             this.labelControl54.Text = "时间";
             // 
             // labelControl55
             // 
             this.labelControl55.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl55.Location = new System.Drawing.Point(7, 161);
+            this.labelControl55.Location = new System.Drawing.Point(8, 207);
+            this.labelControl55.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl55.Name = "labelControl55";
-            this.labelControl55.Size = new System.Drawing.Size(42, 21);
+            this.labelControl55.Size = new System.Drawing.Size(54, 27);
             this.labelControl55.TabIndex = 33;
             this.labelControl55.Text = "星期";
             // 
             // txt_nowWeek
             // 
-            this.txt_nowWeek.Location = new System.Drawing.Point(64, 161);
+            this.txt_nowWeek.Location = new System.Drawing.Point(73, 207);
+            this.txt_nowWeek.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_nowWeek.MenuManager = this.barManager1;
             this.txt_nowWeek.Name = "txt_nowWeek";
             this.txt_nowWeek.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1877,22 +1953,24 @@
             this.txt_nowWeek.Properties.Appearance.Options.UseFont = true;
             this.txt_nowWeek.Properties.Appearance.Options.UseForeColor = true;
             this.txt_nowWeek.Properties.ReadOnly = true;
-            this.txt_nowWeek.Size = new System.Drawing.Size(116, 26);
+            this.txt_nowWeek.Size = new System.Drawing.Size(133, 30);
             this.txt_nowWeek.TabIndex = 34;
             // 
             // labelControl71
             // 
             this.labelControl71.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl71.Location = new System.Drawing.Point(440, 517);
+            this.labelControl71.Location = new System.Drawing.Point(503, 665);
+            this.labelControl71.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl71.Name = "labelControl71";
-            this.labelControl71.Size = new System.Drawing.Size(42, 19);
+            this.labelControl71.Size = new System.Drawing.Size(50, 24);
             this.labelControl71.TabIndex = 72;
             this.labelControl71.Text = "——";
             this.labelControl71.Visible = false;
             // 
             // txt_d_pm_max_1
             // 
-            this.txt_d_pm_max_1.Location = new System.Drawing.Point(485, 514);
+            this.txt_d_pm_max_1.Location = new System.Drawing.Point(554, 661);
+            this.txt_d_pm_max_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_pm_max_1.MenuManager = this.barManager1;
             this.txt_d_pm_max_1.Name = "txt_d_pm_max_1";
             this.txt_d_pm_max_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1901,13 +1979,14 @@
             this.txt_d_pm_max_1.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_pm_max_1.Properties.Appearance.Options.UseFont = true;
             this.txt_d_pm_max_1.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_pm_max_1.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_pm_max_1.Size = new System.Drawing.Size(75, 30);
             this.txt_d_pm_max_1.TabIndex = 71;
             this.txt_d_pm_max_1.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_pm_min_1
             // 
-            this.txt_d_pm_min_1.Location = new System.Drawing.Point(368, 514);
+            this.txt_d_pm_min_1.Location = new System.Drawing.Point(421, 661);
+            this.txt_d_pm_min_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_pm_min_1.MenuManager = this.barManager1;
             this.txt_d_pm_min_1.Name = "txt_d_pm_min_1";
             this.txt_d_pm_min_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1916,7 +1995,7 @@
             this.txt_d_pm_min_1.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_pm_min_1.Properties.Appearance.Options.UseFont = true;
             this.txt_d_pm_min_1.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_pm_min_1.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_pm_min_1.Size = new System.Drawing.Size(75, 30);
             this.txt_d_pm_min_1.TabIndex = 70;
             this.txt_d_pm_min_1.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
@@ -1936,15 +2015,17 @@
             this.groupControl12.Controls.Add(this.labelControl47);
             this.groupControl12.Controls.Add(this.labelControl46);
             this.groupControl12.Controls.Add(this.labelControl45);
-            this.groupControl12.Location = new System.Drawing.Point(572, 16);
+            this.groupControl12.Location = new System.Drawing.Point(654, 21);
+            this.groupControl12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl12.Name = "groupControl12";
-            this.groupControl12.Size = new System.Drawing.Size(194, 195);
+            this.groupControl12.Size = new System.Drawing.Size(222, 251);
             this.groupControl12.TabIndex = 21;
             this.groupControl12.Text = "运行计时";
             // 
             // txt_runTime
             // 
-            this.txt_runTime.Location = new System.Drawing.Point(104, 137);
+            this.txt_runTime.Location = new System.Drawing.Point(119, 176);
+            this.txt_runTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_runTime.MenuManager = this.barManager1;
             this.txt_runTime.Name = "txt_runTime";
             this.txt_runTime.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1954,21 +2035,23 @@
             this.txt_runTime.Properties.Appearance.Options.UseFont = true;
             this.txt_runTime.Properties.Appearance.Options.UseForeColor = true;
             this.txt_runTime.Properties.ReadOnly = true;
-            this.txt_runTime.Size = new System.Drawing.Size(77, 26);
+            this.txt_runTime.Size = new System.Drawing.Size(88, 30);
             this.txt_runTime.TabIndex = 15;
             // 
             // labelControl50
             // 
             this.labelControl50.Appearance.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl50.Location = new System.Drawing.Point(6, 140);
+            this.labelControl50.Location = new System.Drawing.Point(7, 180);
+            this.labelControl50.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl50.Name = "labelControl50";
-            this.labelControl50.Size = new System.Drawing.Size(95, 19);
+            this.labelControl50.Size = new System.Drawing.Size(120, 24);
             this.labelControl50.TabIndex = 14;
             this.labelControl50.Text = "小时（总）";
             // 
             // txt_second
             // 
-            this.txt_second.Location = new System.Drawing.Point(151, 77);
+            this.txt_second.Location = new System.Drawing.Point(173, 99);
+            this.txt_second.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_second.MenuManager = this.barManager1;
             this.txt_second.Name = "txt_second";
             this.txt_second.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1978,12 +2061,13 @@
             this.txt_second.Properties.Appearance.Options.UseFont = true;
             this.txt_second.Properties.Appearance.Options.UseForeColor = true;
             this.txt_second.Properties.ReadOnly = true;
-            this.txt_second.Size = new System.Drawing.Size(30, 26);
+            this.txt_second.Size = new System.Drawing.Size(34, 30);
             this.txt_second.TabIndex = 13;
             // 
             // txt_minute
             // 
-            this.txt_minute.Location = new System.Drawing.Point(115, 77);
+            this.txt_minute.Location = new System.Drawing.Point(131, 99);
+            this.txt_minute.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_minute.MenuManager = this.barManager1;
             this.txt_minute.Name = "txt_minute";
             this.txt_minute.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -1993,12 +2077,13 @@
             this.txt_minute.Properties.Appearance.Options.UseFont = true;
             this.txt_minute.Properties.Appearance.Options.UseForeColor = true;
             this.txt_minute.Properties.ReadOnly = true;
-            this.txt_minute.Size = new System.Drawing.Size(30, 26);
+            this.txt_minute.Size = new System.Drawing.Size(34, 30);
             this.txt_minute.TabIndex = 12;
             // 
             // txt_hour
             // 
-            this.txt_hour.Location = new System.Drawing.Point(79, 77);
+            this.txt_hour.Location = new System.Drawing.Point(90, 99);
+            this.txt_hour.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_hour.MenuManager = this.barManager1;
             this.txt_hour.Name = "txt_hour";
             this.txt_hour.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2008,12 +2093,13 @@
             this.txt_hour.Properties.Appearance.Options.UseFont = true;
             this.txt_hour.Properties.Appearance.Options.UseForeColor = true;
             this.txt_hour.Properties.ReadOnly = true;
-            this.txt_hour.Size = new System.Drawing.Size(30, 26);
+            this.txt_hour.Size = new System.Drawing.Size(34, 30);
             this.txt_hour.TabIndex = 11;
             // 
             // txt_day
             // 
-            this.txt_day.Location = new System.Drawing.Point(43, 77);
+            this.txt_day.Location = new System.Drawing.Point(49, 99);
+            this.txt_day.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_day.MenuManager = this.barManager1;
             this.txt_day.Name = "txt_day";
             this.txt_day.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2023,12 +2109,13 @@
             this.txt_day.Properties.Appearance.Options.UseFont = true;
             this.txt_day.Properties.Appearance.Options.UseForeColor = true;
             this.txt_day.Properties.ReadOnly = true;
-            this.txt_day.Size = new System.Drawing.Size(30, 26);
+            this.txt_day.Size = new System.Drawing.Size(34, 30);
             this.txt_day.TabIndex = 10;
             // 
             // txt_year
             // 
-            this.txt_year.Location = new System.Drawing.Point(7, 77);
+            this.txt_year.Location = new System.Drawing.Point(8, 99);
+            this.txt_year.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_year.MenuManager = this.barManager1;
             this.txt_year.Name = "txt_year";
             this.txt_year.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2038,75 +2125,83 @@
             this.txt_year.Properties.Appearance.Options.UseFont = true;
             this.txt_year.Properties.Appearance.Options.UseForeColor = true;
             this.txt_year.Properties.ReadOnly = true;
-            this.txt_year.Size = new System.Drawing.Size(30, 26);
+            this.txt_year.Size = new System.Drawing.Size(34, 30);
             this.txt_year.TabIndex = 9;
             // 
             // labelControl49
             // 
             this.labelControl49.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl49.Location = new System.Drawing.Point(159, 40);
+            this.labelControl49.Location = new System.Drawing.Point(182, 51);
+            this.labelControl49.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl49.Name = "labelControl49";
-            this.labelControl49.Size = new System.Drawing.Size(21, 21);
+            this.labelControl49.Size = new System.Drawing.Size(27, 27);
             this.labelControl49.TabIndex = 8;
             this.labelControl49.Text = "秒";
             // 
             // labelControl48
             // 
             this.labelControl48.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl48.Location = new System.Drawing.Point(121, 40);
+            this.labelControl48.Location = new System.Drawing.Point(138, 51);
+            this.labelControl48.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl48.Name = "labelControl48";
-            this.labelControl48.Size = new System.Drawing.Size(21, 21);
+            this.labelControl48.Size = new System.Drawing.Size(27, 27);
             this.labelControl48.TabIndex = 7;
             this.labelControl48.Text = "分";
             // 
             // labelControl47
             // 
             this.labelControl47.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl47.Location = new System.Drawing.Point(83, 40);
+            this.labelControl47.Location = new System.Drawing.Point(95, 51);
+            this.labelControl47.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl47.Name = "labelControl47";
-            this.labelControl47.Size = new System.Drawing.Size(21, 21);
+            this.labelControl47.Size = new System.Drawing.Size(27, 27);
             this.labelControl47.TabIndex = 6;
             this.labelControl47.Text = "时";
             // 
             // labelControl46
             // 
             this.labelControl46.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl46.Location = new System.Drawing.Point(45, 40);
+            this.labelControl46.Location = new System.Drawing.Point(51, 51);
+            this.labelControl46.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl46.Name = "labelControl46";
-            this.labelControl46.Size = new System.Drawing.Size(21, 21);
+            this.labelControl46.Size = new System.Drawing.Size(27, 27);
             this.labelControl46.TabIndex = 5;
             this.labelControl46.Text = "天";
             // 
             // labelControl45
             // 
             this.labelControl45.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl45.Location = new System.Drawing.Point(7, 40);
+            this.labelControl45.Location = new System.Drawing.Point(8, 51);
+            this.labelControl45.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl45.Name = "labelControl45";
-            this.labelControl45.Size = new System.Drawing.Size(21, 21);
+            this.labelControl45.Size = new System.Drawing.Size(27, 27);
             this.labelControl45.TabIndex = 4;
             this.labelControl45.Text = "年";
             // 
             // labelControl72
             // 
             this.labelControl72.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl72.Location = new System.Drawing.Point(234, 520);
+            this.labelControl72.Location = new System.Drawing.Point(267, 669);
+            this.labelControl72.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl72.Name = "labelControl72";
-            this.labelControl72.Size = new System.Drawing.Size(64, 16);
+            this.labelControl72.Size = new System.Drawing.Size(80, 20);
             this.labelControl72.TabIndex = 69;
             this.labelControl72.Text = "标准范围";
             // 
             // labelControl69
             // 
             this.labelControl69.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl69.Location = new System.Drawing.Point(440, 453);
+            this.labelControl69.Location = new System.Drawing.Point(503, 582);
+            this.labelControl69.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl69.Name = "labelControl69";
-            this.labelControl69.Size = new System.Drawing.Size(42, 19);
+            this.labelControl69.Size = new System.Drawing.Size(50, 24);
             this.labelControl69.TabIndex = 68;
             this.labelControl69.Text = "——";
             // 
             // txt_d_sterilize_max_1
             // 
-            this.txt_d_sterilize_max_1.Location = new System.Drawing.Point(485, 450);
+            this.txt_d_sterilize_max_1.Location = new System.Drawing.Point(554, 579);
+            this.txt_d_sterilize_max_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_sterilize_max_1.MenuManager = this.barManager1;
             this.txt_d_sterilize_max_1.Name = "txt_d_sterilize_max_1";
             this.txt_d_sterilize_max_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2115,13 +2210,14 @@
             this.txt_d_sterilize_max_1.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_sterilize_max_1.Properties.Appearance.Options.UseFont = true;
             this.txt_d_sterilize_max_1.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_sterilize_max_1.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_sterilize_max_1.Size = new System.Drawing.Size(75, 30);
             this.txt_d_sterilize_max_1.TabIndex = 67;
             this.txt_d_sterilize_max_1.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_sterilize_min_1
             // 
-            this.txt_d_sterilize_min_1.Location = new System.Drawing.Point(368, 450);
+            this.txt_d_sterilize_min_1.Location = new System.Drawing.Point(421, 579);
+            this.txt_d_sterilize_min_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_sterilize_min_1.MenuManager = this.barManager1;
             this.txt_d_sterilize_min_1.Name = "txt_d_sterilize_min_1";
             this.txt_d_sterilize_min_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2130,31 +2226,34 @@
             this.txt_d_sterilize_min_1.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_sterilize_min_1.Properties.Appearance.Options.UseFont = true;
             this.txt_d_sterilize_min_1.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_sterilize_min_1.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_sterilize_min_1.Size = new System.Drawing.Size(75, 30);
             this.txt_d_sterilize_min_1.TabIndex = 66;
             this.txt_d_sterilize_min_1.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl70
             // 
             this.labelControl70.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl70.Location = new System.Drawing.Point(234, 455);
+            this.labelControl70.Location = new System.Drawing.Point(267, 585);
+            this.labelControl70.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl70.Name = "labelControl70";
-            this.labelControl70.Size = new System.Drawing.Size(64, 16);
+            this.labelControl70.Size = new System.Drawing.Size(80, 20);
             this.labelControl70.TabIndex = 65;
             this.labelControl70.Text = "标准范围";
             // 
             // labelControl67
             // 
             this.labelControl67.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl67.Location = new System.Drawing.Point(440, 386);
+            this.labelControl67.Location = new System.Drawing.Point(503, 496);
+            this.labelControl67.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl67.Name = "labelControl67";
-            this.labelControl67.Size = new System.Drawing.Size(42, 19);
+            this.labelControl67.Size = new System.Drawing.Size(50, 24);
             this.labelControl67.TabIndex = 64;
             this.labelControl67.Text = "——";
             // 
             // txt_d_airQuality_max_1
             // 
-            this.txt_d_airQuality_max_1.Location = new System.Drawing.Point(485, 383);
+            this.txt_d_airQuality_max_1.Location = new System.Drawing.Point(554, 492);
+            this.txt_d_airQuality_max_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_airQuality_max_1.MenuManager = this.barManager1;
             this.txt_d_airQuality_max_1.Name = "txt_d_airQuality_max_1";
             this.txt_d_airQuality_max_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2163,13 +2262,14 @@
             this.txt_d_airQuality_max_1.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_airQuality_max_1.Properties.Appearance.Options.UseFont = true;
             this.txt_d_airQuality_max_1.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_airQuality_max_1.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_airQuality_max_1.Size = new System.Drawing.Size(75, 30);
             this.txt_d_airQuality_max_1.TabIndex = 63;
             this.txt_d_airQuality_max_1.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_airQuality_min_1
             // 
-            this.txt_d_airQuality_min_1.Location = new System.Drawing.Point(368, 383);
+            this.txt_d_airQuality_min_1.Location = new System.Drawing.Point(421, 492);
+            this.txt_d_airQuality_min_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_airQuality_min_1.MenuManager = this.barManager1;
             this.txt_d_airQuality_min_1.Name = "txt_d_airQuality_min_1";
             this.txt_d_airQuality_min_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2178,31 +2278,34 @@
             this.txt_d_airQuality_min_1.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_airQuality_min_1.Properties.Appearance.Options.UseFont = true;
             this.txt_d_airQuality_min_1.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_airQuality_min_1.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_airQuality_min_1.Size = new System.Drawing.Size(75, 30);
             this.txt_d_airQuality_min_1.TabIndex = 62;
             this.txt_d_airQuality_min_1.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl68
             // 
             this.labelControl68.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl68.Location = new System.Drawing.Point(234, 386);
+            this.labelControl68.Location = new System.Drawing.Point(267, 496);
+            this.labelControl68.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl68.Name = "labelControl68";
-            this.labelControl68.Size = new System.Drawing.Size(64, 16);
+            this.labelControl68.Size = new System.Drawing.Size(80, 20);
             this.labelControl68.TabIndex = 61;
             this.labelControl68.Text = "标准范围";
             // 
             // labelControl65
             // 
             this.labelControl65.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl65.Location = new System.Drawing.Point(440, 319);
+            this.labelControl65.Location = new System.Drawing.Point(503, 410);
+            this.labelControl65.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl65.Name = "labelControl65";
-            this.labelControl65.Size = new System.Drawing.Size(42, 19);
+            this.labelControl65.Size = new System.Drawing.Size(50, 24);
             this.labelControl65.TabIndex = 60;
             this.labelControl65.Text = "——";
             // 
             // txt_d_nox_max_1
             // 
-            this.txt_d_nox_max_1.Location = new System.Drawing.Point(485, 316);
+            this.txt_d_nox_max_1.Location = new System.Drawing.Point(554, 406);
+            this.txt_d_nox_max_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_nox_max_1.MenuManager = this.barManager1;
             this.txt_d_nox_max_1.Name = "txt_d_nox_max_1";
             this.txt_d_nox_max_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2211,13 +2314,14 @@
             this.txt_d_nox_max_1.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_nox_max_1.Properties.Appearance.Options.UseFont = true;
             this.txt_d_nox_max_1.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_nox_max_1.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_nox_max_1.Size = new System.Drawing.Size(75, 30);
             this.txt_d_nox_max_1.TabIndex = 59;
             this.txt_d_nox_max_1.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_nox_min_1
             // 
-            this.txt_d_nox_min_1.Location = new System.Drawing.Point(368, 316);
+            this.txt_d_nox_min_1.Location = new System.Drawing.Point(421, 406);
+            this.txt_d_nox_min_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_nox_min_1.MenuManager = this.barManager1;
             this.txt_d_nox_min_1.Name = "txt_d_nox_min_1";
             this.txt_d_nox_min_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2226,31 +2330,34 @@
             this.txt_d_nox_min_1.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_nox_min_1.Properties.Appearance.Options.UseFont = true;
             this.txt_d_nox_min_1.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_nox_min_1.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_nox_min_1.Size = new System.Drawing.Size(75, 30);
             this.txt_d_nox_min_1.TabIndex = 58;
             this.txt_d_nox_min_1.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl66
             // 
             this.labelControl66.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl66.Location = new System.Drawing.Point(234, 319);
+            this.labelControl66.Location = new System.Drawing.Point(267, 410);
+            this.labelControl66.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl66.Name = "labelControl66";
-            this.labelControl66.Size = new System.Drawing.Size(64, 16);
+            this.labelControl66.Size = new System.Drawing.Size(80, 20);
             this.labelControl66.TabIndex = 57;
             this.labelControl66.Text = "标准范围";
             // 
             // labelControl63
             // 
             this.labelControl63.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl63.Location = new System.Drawing.Point(440, 252);
+            this.labelControl63.Location = new System.Drawing.Point(503, 324);
+            this.labelControl63.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl63.Name = "labelControl63";
-            this.labelControl63.Size = new System.Drawing.Size(42, 19);
+            this.labelControl63.Size = new System.Drawing.Size(50, 24);
             this.labelControl63.TabIndex = 56;
             this.labelControl63.Text = "——";
             // 
             // txt_d_so2_max_1
             // 
-            this.txt_d_so2_max_1.Location = new System.Drawing.Point(485, 249);
+            this.txt_d_so2_max_1.Location = new System.Drawing.Point(554, 320);
+            this.txt_d_so2_max_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_so2_max_1.MenuManager = this.barManager1;
             this.txt_d_so2_max_1.Name = "txt_d_so2_max_1";
             this.txt_d_so2_max_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2259,13 +2366,14 @@
             this.txt_d_so2_max_1.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_so2_max_1.Properties.Appearance.Options.UseFont = true;
             this.txt_d_so2_max_1.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_so2_max_1.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_so2_max_1.Size = new System.Drawing.Size(75, 30);
             this.txt_d_so2_max_1.TabIndex = 55;
             this.txt_d_so2_max_1.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_so2_min_1
             // 
-            this.txt_d_so2_min_1.Location = new System.Drawing.Point(368, 249);
+            this.txt_d_so2_min_1.Location = new System.Drawing.Point(421, 320);
+            this.txt_d_so2_min_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_so2_min_1.MenuManager = this.barManager1;
             this.txt_d_so2_min_1.Name = "txt_d_so2_min_1";
             this.txt_d_so2_min_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2274,31 +2382,34 @@
             this.txt_d_so2_min_1.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_so2_min_1.Properties.Appearance.Options.UseFont = true;
             this.txt_d_so2_min_1.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_so2_min_1.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_so2_min_1.Size = new System.Drawing.Size(75, 30);
             this.txt_d_so2_min_1.TabIndex = 54;
             this.txt_d_so2_min_1.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl64
             // 
             this.labelControl64.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl64.Location = new System.Drawing.Point(234, 252);
+            this.labelControl64.Location = new System.Drawing.Point(267, 324);
+            this.labelControl64.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl64.Name = "labelControl64";
-            this.labelControl64.Size = new System.Drawing.Size(64, 16);
+            this.labelControl64.Size = new System.Drawing.Size(80, 20);
             this.labelControl64.TabIndex = 53;
             this.labelControl64.Text = "标准范围";
             // 
             // labelControl61
             // 
             this.labelControl61.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl61.Location = new System.Drawing.Point(440, 185);
+            this.labelControl61.Location = new System.Drawing.Point(503, 238);
+            this.labelControl61.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl61.Name = "labelControl61";
-            this.labelControl61.Size = new System.Drawing.Size(42, 19);
+            this.labelControl61.Size = new System.Drawing.Size(50, 24);
             this.labelControl61.TabIndex = 52;
             this.labelControl61.Text = "——";
             // 
             // txt_d_co_max_1
             // 
-            this.txt_d_co_max_1.Location = new System.Drawing.Point(485, 182);
+            this.txt_d_co_max_1.Location = new System.Drawing.Point(554, 234);
+            this.txt_d_co_max_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_co_max_1.MenuManager = this.barManager1;
             this.txt_d_co_max_1.Name = "txt_d_co_max_1";
             this.txt_d_co_max_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2307,13 +2418,14 @@
             this.txt_d_co_max_1.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_co_max_1.Properties.Appearance.Options.UseFont = true;
             this.txt_d_co_max_1.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_co_max_1.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_co_max_1.Size = new System.Drawing.Size(75, 30);
             this.txt_d_co_max_1.TabIndex = 51;
             this.txt_d_co_max_1.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_co_min_1
             // 
-            this.txt_d_co_min_1.Location = new System.Drawing.Point(368, 182);
+            this.txt_d_co_min_1.Location = new System.Drawing.Point(421, 234);
+            this.txt_d_co_min_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_co_min_1.MenuManager = this.barManager1;
             this.txt_d_co_min_1.Name = "txt_d_co_min_1";
             this.txt_d_co_min_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2322,31 +2434,34 @@
             this.txt_d_co_min_1.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_co_min_1.Properties.Appearance.Options.UseFont = true;
             this.txt_d_co_min_1.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_co_min_1.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_co_min_1.Size = new System.Drawing.Size(75, 30);
             this.txt_d_co_min_1.TabIndex = 50;
             this.txt_d_co_min_1.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl62
             // 
             this.labelControl62.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl62.Location = new System.Drawing.Point(234, 185);
+            this.labelControl62.Location = new System.Drawing.Point(267, 238);
+            this.labelControl62.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl62.Name = "labelControl62";
-            this.labelControl62.Size = new System.Drawing.Size(64, 16);
+            this.labelControl62.Size = new System.Drawing.Size(80, 20);
             this.labelControl62.TabIndex = 49;
             this.labelControl62.Text = "标准范围";
             // 
             // labelControl59
             // 
             this.labelControl59.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl59.Location = new System.Drawing.Point(440, 118);
+            this.labelControl59.Location = new System.Drawing.Point(503, 152);
+            this.labelControl59.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl59.Name = "labelControl59";
-            this.labelControl59.Size = new System.Drawing.Size(42, 19);
+            this.labelControl59.Size = new System.Drawing.Size(50, 24);
             this.labelControl59.TabIndex = 48;
             this.labelControl59.Text = "——";
             // 
             // txt_d_o2_max_1
             // 
-            this.txt_d_o2_max_1.Location = new System.Drawing.Point(485, 115);
+            this.txt_d_o2_max_1.Location = new System.Drawing.Point(554, 148);
+            this.txt_d_o2_max_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_o2_max_1.MenuManager = this.barManager1;
             this.txt_d_o2_max_1.Name = "txt_d_o2_max_1";
             this.txt_d_o2_max_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2355,13 +2470,14 @@
             this.txt_d_o2_max_1.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_o2_max_1.Properties.Appearance.Options.UseFont = true;
             this.txt_d_o2_max_1.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_o2_max_1.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_o2_max_1.Size = new System.Drawing.Size(75, 30);
             this.txt_d_o2_max_1.TabIndex = 47;
             this.txt_d_o2_max_1.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_o2_min_1
             // 
-            this.txt_d_o2_min_1.Location = new System.Drawing.Point(368, 115);
+            this.txt_d_o2_min_1.Location = new System.Drawing.Point(421, 148);
+            this.txt_d_o2_min_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_o2_min_1.MenuManager = this.barManager1;
             this.txt_d_o2_min_1.Name = "txt_d_o2_min_1";
             this.txt_d_o2_min_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2370,31 +2486,34 @@
             this.txt_d_o2_min_1.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_o2_min_1.Properties.Appearance.Options.UseFont = true;
             this.txt_d_o2_min_1.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_o2_min_1.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_o2_min_1.Size = new System.Drawing.Size(75, 30);
             this.txt_d_o2_min_1.TabIndex = 46;
             this.txt_d_o2_min_1.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl60
             // 
             this.labelControl60.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl60.Location = new System.Drawing.Point(234, 118);
+            this.labelControl60.Location = new System.Drawing.Point(267, 152);
+            this.labelControl60.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl60.Name = "labelControl60";
-            this.labelControl60.Size = new System.Drawing.Size(64, 16);
+            this.labelControl60.Size = new System.Drawing.Size(80, 20);
             this.labelControl60.TabIndex = 45;
             this.labelControl60.Text = "标准范围";
             // 
             // labelControl58
             // 
             this.labelControl58.Appearance.Font = new System.Drawing.Font("黑体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl58.Location = new System.Drawing.Point(440, 53);
+            this.labelControl58.Location = new System.Drawing.Point(503, 68);
+            this.labelControl58.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl58.Name = "labelControl58";
-            this.labelControl58.Size = new System.Drawing.Size(42, 19);
+            this.labelControl58.Size = new System.Drawing.Size(50, 24);
             this.labelControl58.TabIndex = 44;
             this.labelControl58.Text = "——";
             // 
             // txt_d_tvoc_max_1
             // 
-            this.txt_d_tvoc_max_1.Location = new System.Drawing.Point(485, 50);
+            this.txt_d_tvoc_max_1.Location = new System.Drawing.Point(554, 64);
+            this.txt_d_tvoc_max_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_tvoc_max_1.MenuManager = this.barManager1;
             this.txt_d_tvoc_max_1.Name = "txt_d_tvoc_max_1";
             this.txt_d_tvoc_max_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2403,13 +2522,14 @@
             this.txt_d_tvoc_max_1.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_tvoc_max_1.Properties.Appearance.Options.UseFont = true;
             this.txt_d_tvoc_max_1.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_tvoc_max_1.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_tvoc_max_1.Size = new System.Drawing.Size(75, 30);
             this.txt_d_tvoc_max_1.TabIndex = 43;
             this.txt_d_tvoc_max_1.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_tvoc_min_1
             // 
-            this.txt_d_tvoc_min_1.Location = new System.Drawing.Point(368, 50);
+            this.txt_d_tvoc_min_1.Location = new System.Drawing.Point(421, 64);
+            this.txt_d_tvoc_min_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d_tvoc_min_1.MenuManager = this.barManager1;
             this.txt_d_tvoc_min_1.Name = "txt_d_tvoc_min_1";
             this.txt_d_tvoc_min_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2418,22 +2538,24 @@
             this.txt_d_tvoc_min_1.Properties.Appearance.Options.UseBackColor = true;
             this.txt_d_tvoc_min_1.Properties.Appearance.Options.UseFont = true;
             this.txt_d_tvoc_min_1.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_d_tvoc_min_1.Size = new System.Drawing.Size(66, 26);
+            this.txt_d_tvoc_min_1.Size = new System.Drawing.Size(75, 30);
             this.txt_d_tvoc_min_1.TabIndex = 42;
             this.txt_d_tvoc_min_1.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl57
             // 
             this.labelControl57.Appearance.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl57.Location = new System.Drawing.Point(234, 53);
+            this.labelControl57.Location = new System.Drawing.Point(267, 68);
+            this.labelControl57.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl57.Name = "labelControl57";
-            this.labelControl57.Size = new System.Drawing.Size(64, 16);
+            this.labelControl57.Size = new System.Drawing.Size(80, 20);
             this.labelControl57.TabIndex = 41;
             this.labelControl57.Text = "标准范围";
             // 
             // txt_pm_d5
             // 
-            this.txt_pm_d5.Location = new System.Drawing.Point(368, 484);
+            this.txt_pm_d5.Location = new System.Drawing.Point(421, 622);
+            this.txt_pm_d5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_pm_d5.MenuManager = this.barManager1;
             this.txt_pm_d5.Name = "txt_pm_d5";
             this.txt_pm_d5.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2443,21 +2565,23 @@
             this.txt_pm_d5.Properties.Appearance.Options.UseFont = true;
             this.txt_pm_d5.Properties.Appearance.Options.UseForeColor = true;
             this.txt_pm_d5.Properties.ReadOnly = true;
-            this.txt_pm_d5.Size = new System.Drawing.Size(183, 28);
+            this.txt_pm_d5.Size = new System.Drawing.Size(209, 32);
             this.txt_pm_d5.TabIndex = 40;
             // 
             // label_pm_1
             // 
             this.label_pm_1.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_pm_1.Location = new System.Drawing.Point(234, 487);
+            this.label_pm_1.Location = new System.Drawing.Point(267, 626);
+            this.label_pm_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_pm_1.Name = "label_pm_1";
-            this.label_pm_1.Size = new System.Drawing.Size(76, 21);
+            this.label_pm_1.Size = new System.Drawing.Size(97, 27);
             this.label_pm_1.TabIndex = 39;
             this.label_pm_1.Text = "PM2.5值";
             // 
             // txt_sterilize_d_1
             // 
-            this.txt_sterilize_d_1.Location = new System.Drawing.Point(368, 417);
+            this.txt_sterilize_d_1.Location = new System.Drawing.Point(421, 536);
+            this.txt_sterilize_d_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_sterilize_d_1.MenuManager = this.barManager1;
             this.txt_sterilize_d_1.Name = "txt_sterilize_d_1";
             this.txt_sterilize_d_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2467,21 +2591,23 @@
             this.txt_sterilize_d_1.Properties.Appearance.Options.UseFont = true;
             this.txt_sterilize_d_1.Properties.Appearance.Options.UseForeColor = true;
             this.txt_sterilize_d_1.Properties.ReadOnly = true;
-            this.txt_sterilize_d_1.Size = new System.Drawing.Size(183, 28);
+            this.txt_sterilize_d_1.Size = new System.Drawing.Size(209, 32);
             this.txt_sterilize_d_1.TabIndex = 38;
             // 
             // label_sterilize_1
             // 
             this.label_sterilize_1.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_sterilize_1.Location = new System.Drawing.Point(234, 420);
+            this.label_sterilize_1.Location = new System.Drawing.Point(267, 540);
+            this.label_sterilize_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_sterilize_1.Name = "label_sterilize_1";
-            this.label_sterilize_1.Size = new System.Drawing.Size(84, 21);
+            this.label_sterilize_1.Size = new System.Drawing.Size(108, 27);
             this.label_sterilize_1.TabIndex = 37;
             this.label_sterilize_1.Text = "消毒杀菌";
             // 
             // txt_airQuality_d_1
             // 
-            this.txt_airQuality_d_1.Location = new System.Drawing.Point(368, 350);
+            this.txt_airQuality_d_1.Location = new System.Drawing.Point(421, 450);
+            this.txt_airQuality_d_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_airQuality_d_1.MenuManager = this.barManager1;
             this.txt_airQuality_d_1.Name = "txt_airQuality_d_1";
             this.txt_airQuality_d_1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2491,93 +2617,103 @@
             this.txt_airQuality_d_1.Properties.Appearance.Options.UseFont = true;
             this.txt_airQuality_d_1.Properties.Appearance.Options.UseForeColor = true;
             this.txt_airQuality_d_1.Properties.ReadOnly = true;
-            this.txt_airQuality_d_1.Size = new System.Drawing.Size(183, 28);
+            this.txt_airQuality_d_1.Size = new System.Drawing.Size(209, 32);
             this.txt_airQuality_d_1.TabIndex = 36;
             // 
             // label_airQuality_1
             // 
             this.label_airQuality_1.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_airQuality_1.Location = new System.Drawing.Point(234, 353);
+            this.label_airQuality_1.Location = new System.Drawing.Point(267, 454);
+            this.label_airQuality_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_airQuality_1.Name = "label_airQuality_1";
-            this.label_airQuality_1.Size = new System.Drawing.Size(84, 21);
+            this.label_airQuality_1.Size = new System.Drawing.Size(108, 27);
             this.label_airQuality_1.TabIndex = 35;
             this.label_airQuality_1.Text = "空气质量";
             // 
             // label_t_out_1
             // 
             this.label_t_out_1.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_t_out_1.Location = new System.Drawing.Point(8, 16);
+            this.label_t_out_1.Location = new System.Drawing.Point(3, 92);
+            this.label_t_out_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_t_out_1.Name = "label_t_out_1";
-            this.label_t_out_1.Size = new System.Drawing.Size(84, 21);
+            this.label_t_out_1.Size = new System.Drawing.Size(108, 27);
             this.label_t_out_1.TabIndex = 0;
-            this.label_t_out_1.Text = "室内温度";
+            this.label_t_out_1.Text = "室外温度";
             // 
             // label_tvoc_1
             // 
             this.label_tvoc_1.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_tvoc_1.Location = new System.Drawing.Point(234, 18);
+            this.label_tvoc_1.Location = new System.Drawing.Point(267, 23);
+            this.label_tvoc_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_tvoc_1.Name = "label_tvoc_1";
-            this.label_tvoc_1.Size = new System.Drawing.Size(128, 21);
+            this.label_tvoc_1.Size = new System.Drawing.Size(164, 27);
             this.label_tvoc_1.TabIndex = 3;
             this.label_tvoc_1.Text = "TVOC有机气体";
             // 
             // label_h_out_1
             // 
             this.label_h_out_1.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_h_out_1.Location = new System.Drawing.Point(8, 128);
+            this.label_h_out_1.Location = new System.Drawing.Point(3, 233);
+            this.label_h_out_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_h_out_1.Name = "label_h_out_1";
-            this.label_h_out_1.Size = new System.Drawing.Size(84, 21);
+            this.label_h_out_1.Size = new System.Drawing.Size(108, 27);
             this.label_h_out_1.TabIndex = 5;
             this.label_h_out_1.Text = "室内湿度";
             // 
             // label_nr_1
             // 
             this.label_nr_1.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_nr_1.Location = new System.Drawing.Point(9, 240);
+            this.label_nr_1.Location = new System.Drawing.Point(10, 309);
+            this.label_nr_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_nr_1.Name = "label_nr_1";
-            this.label_nr_1.Size = new System.Drawing.Size(42, 21);
+            this.label_nr_1.Size = new System.Drawing.Size(54, 27);
             this.label_nr_1.TabIndex = 9;
             this.label_nr_1.Text = "噪音";
             // 
             // label_o2_1
             // 
             this.label_o2_1.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_o2_1.Location = new System.Drawing.Point(234, 85);
+            this.label_o2_1.Location = new System.Drawing.Point(267, 109);
+            this.label_o2_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_o2_1.Name = "label_o2_1";
-            this.label_o2_1.Size = new System.Drawing.Size(107, 21);
+            this.label_o2_1.Size = new System.Drawing.Size(137, 27);
             this.label_o2_1.TabIndex = 7;
             this.label_o2_1.Text = "C6H6苯系物";
             // 
             // label_co_1
             // 
             this.label_co_1.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_co_1.Location = new System.Drawing.Point(234, 152);
+            this.label_co_1.Location = new System.Drawing.Point(267, 195);
+            this.label_co_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_co_1.Name = "label_co_1";
-            this.label_co_1.Size = new System.Drawing.Size(106, 21);
+            this.label_co_1.Size = new System.Drawing.Size(136, 27);
             this.label_co_1.TabIndex = 11;
             this.label_co_1.Text = "CO一氧化碳";
             // 
             // label_so2_1
             // 
             this.label_so2_1.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_so2_1.Location = new System.Drawing.Point(234, 219);
+            this.label_so2_1.Location = new System.Drawing.Point(267, 282);
+            this.label_so2_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_so2_1.Name = "label_so2_1";
-            this.label_so2_1.Size = new System.Drawing.Size(117, 21);
+            this.label_so2_1.Size = new System.Drawing.Size(150, 27);
             this.label_so2_1.TabIndex = 15;
             this.label_so2_1.Text = "SO2二氧化硫";
             // 
             // label_nox_1
             // 
             this.label_nox_1.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_nox_1.Location = new System.Drawing.Point(234, 286);
+            this.label_nox_1.Location = new System.Drawing.Point(267, 368);
+            this.label_nox_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_nox_1.Name = "label_nox_1";
-            this.label_nox_1.Size = new System.Drawing.Size(117, 21);
+            this.label_nox_1.Size = new System.Drawing.Size(150, 27);
             this.label_nox_1.TabIndex = 19;
             this.label_nox_1.Text = "NOX氮氧化物";
             // 
             // txt_t_d3
             // 
-            this.txt_t_d3.Location = new System.Drawing.Point(101, 13);
+            this.txt_t_d3.Location = new System.Drawing.Point(115, 17);
+            this.txt_t_d3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_t_d3.MenuManager = this.barManager1;
             this.txt_t_d3.Name = "txt_t_d3";
             this.txt_t_d3.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2587,12 +2723,13 @@
             this.txt_t_d3.Properties.Appearance.Options.UseFont = true;
             this.txt_t_d3.Properties.Appearance.Options.UseForeColor = true;
             this.txt_t_d3.Properties.ReadOnly = true;
-            this.txt_t_d3.Size = new System.Drawing.Size(102, 28);
+            this.txt_t_d3.Size = new System.Drawing.Size(117, 32);
             this.txt_t_d3.TabIndex = 1;
             // 
             // txt_n_d4
             // 
-            this.txt_n_d4.Location = new System.Drawing.Point(101, 125);
+            this.txt_n_d4.Location = new System.Drawing.Point(115, 161);
+            this.txt_n_d4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_n_d4.MenuManager = this.barManager1;
             this.txt_n_d4.Name = "txt_n_d4";
             this.txt_n_d4.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2602,12 +2739,13 @@
             this.txt_n_d4.Properties.Appearance.Options.UseFont = true;
             this.txt_n_d4.Properties.Appearance.Options.UseForeColor = true;
             this.txt_n_d4.Properties.ReadOnly = true;
-            this.txt_n_d4.Size = new System.Drawing.Size(102, 28);
+            this.txt_n_d4.Size = new System.Drawing.Size(117, 32);
             this.txt_n_d4.TabIndex = 6;
             // 
             // txt_nr_d1
             // 
-            this.txt_nr_d1.Location = new System.Drawing.Point(101, 237);
+            this.txt_nr_d1.Location = new System.Drawing.Point(115, 305);
+            this.txt_nr_d1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_nr_d1.MenuManager = this.barManager1;
             this.txt_nr_d1.Name = "txt_nr_d1";
             this.txt_nr_d1.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2617,12 +2755,13 @@
             this.txt_nr_d1.Properties.Appearance.Options.UseFont = true;
             this.txt_nr_d1.Properties.Appearance.Options.UseForeColor = true;
             this.txt_nr_d1.Properties.ReadOnly = true;
-            this.txt_nr_d1.Size = new System.Drawing.Size(102, 28);
+            this.txt_nr_d1.Size = new System.Drawing.Size(117, 32);
             this.txt_nr_d1.TabIndex = 10;
             // 
             // txt_tvoc_d8
             // 
-            this.txt_tvoc_d8.Location = new System.Drawing.Point(368, 15);
+            this.txt_tvoc_d8.Location = new System.Drawing.Point(421, 19);
+            this.txt_tvoc_d8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_tvoc_d8.MenuManager = this.barManager1;
             this.txt_tvoc_d8.Name = "txt_tvoc_d8";
             this.txt_tvoc_d8.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2632,12 +2771,13 @@
             this.txt_tvoc_d8.Properties.Appearance.Options.UseFont = true;
             this.txt_tvoc_d8.Properties.Appearance.Options.UseForeColor = true;
             this.txt_tvoc_d8.Properties.ReadOnly = true;
-            this.txt_tvoc_d8.Size = new System.Drawing.Size(183, 28);
+            this.txt_tvoc_d8.Size = new System.Drawing.Size(209, 32);
             this.txt_tvoc_d8.TabIndex = 4;
             // 
             // txt_o2_d9
             // 
-            this.txt_o2_d9.Location = new System.Drawing.Point(368, 82);
+            this.txt_o2_d9.Location = new System.Drawing.Point(421, 105);
+            this.txt_o2_d9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_o2_d9.MenuManager = this.barManager1;
             this.txt_o2_d9.Name = "txt_o2_d9";
             this.txt_o2_d9.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2647,12 +2787,13 @@
             this.txt_o2_d9.Properties.Appearance.Options.UseFont = true;
             this.txt_o2_d9.Properties.Appearance.Options.UseForeColor = true;
             this.txt_o2_d9.Properties.ReadOnly = true;
-            this.txt_o2_d9.Size = new System.Drawing.Size(183, 28);
+            this.txt_o2_d9.Size = new System.Drawing.Size(209, 32);
             this.txt_o2_d9.TabIndex = 8;
             // 
             // txt_co_d10
             // 
-            this.txt_co_d10.Location = new System.Drawing.Point(368, 149);
+            this.txt_co_d10.Location = new System.Drawing.Point(421, 192);
+            this.txt_co_d10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_co_d10.MenuManager = this.barManager1;
             this.txt_co_d10.Name = "txt_co_d10";
             this.txt_co_d10.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2662,12 +2803,13 @@
             this.txt_co_d10.Properties.Appearance.Options.UseFont = true;
             this.txt_co_d10.Properties.Appearance.Options.UseForeColor = true;
             this.txt_co_d10.Properties.ReadOnly = true;
-            this.txt_co_d10.Size = new System.Drawing.Size(183, 28);
+            this.txt_co_d10.Size = new System.Drawing.Size(209, 32);
             this.txt_co_d10.TabIndex = 12;
             // 
             // txt_so2_d11
             // 
-            this.txt_so2_d11.Location = new System.Drawing.Point(368, 216);
+            this.txt_so2_d11.Location = new System.Drawing.Point(421, 278);
+            this.txt_so2_d11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_so2_d11.MenuManager = this.barManager1;
             this.txt_so2_d11.Name = "txt_so2_d11";
             this.txt_so2_d11.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2677,12 +2819,13 @@
             this.txt_so2_d11.Properties.Appearance.Options.UseFont = true;
             this.txt_so2_d11.Properties.Appearance.Options.UseForeColor = true;
             this.txt_so2_d11.Properties.ReadOnly = true;
-            this.txt_so2_d11.Size = new System.Drawing.Size(183, 28);
+            this.txt_so2_d11.Size = new System.Drawing.Size(209, 32);
             this.txt_so2_d11.TabIndex = 16;
             // 
             // txt_nox_d12
             // 
-            this.txt_nox_d12.Location = new System.Drawing.Point(368, 283);
+            this.txt_nox_d12.Location = new System.Drawing.Point(421, 364);
+            this.txt_nox_d12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_nox_d12.MenuManager = this.barManager1;
             this.txt_nox_d12.Name = "txt_nox_d12";
             this.txt_nox_d12.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2692,7 +2835,7 @@
             this.txt_nox_d12.Properties.Appearance.Options.UseFont = true;
             this.txt_nox_d12.Properties.Appearance.Options.UseForeColor = true;
             this.txt_nox_d12.Properties.ReadOnly = true;
-            this.txt_nox_d12.Size = new System.Drawing.Size(183, 28);
+            this.txt_nox_d12.Size = new System.Drawing.Size(209, 32);
             this.txt_nox_d12.TabIndex = 20;
             // 
             // groupControl13
@@ -2708,25 +2851,28 @@
             this.groupControl13.Controls.Add(this.txt_d10);
             this.groupControl13.Controls.Add(this.labelControl44);
             this.groupControl13.Controls.Add(this.labelControl42);
-            this.groupControl13.Location = new System.Drawing.Point(8, 302);
+            this.groupControl13.Location = new System.Drawing.Point(9, 388);
+            this.groupControl13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl13.Name = "groupControl13";
             this.groupControl13.ShowCaption = false;
-            this.groupControl13.Size = new System.Drawing.Size(196, 234);
+            this.groupControl13.Size = new System.Drawing.Size(224, 301);
             this.groupControl13.TabIndex = 22;
             this.groupControl13.Text = "风管截面积";
             // 
             // labelControl73
             // 
             this.labelControl73.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl73.Location = new System.Drawing.Point(1, 101);
+            this.labelControl73.Location = new System.Drawing.Point(1, 130);
+            this.labelControl73.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl73.Name = "labelControl73";
-            this.labelControl73.Size = new System.Drawing.Size(105, 21);
+            this.labelControl73.Size = new System.Drawing.Size(135, 27);
             this.labelControl73.TabIndex = 19;
             this.labelControl73.Text = "风管截面积";
             // 
             // txt_pipeBack
             // 
-            this.txt_pipeBack.Location = new System.Drawing.Point(75, 187);
+            this.txt_pipeBack.Location = new System.Drawing.Point(86, 240);
+            this.txt_pipeBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_pipeBack.MenuManager = this.barManager1;
             this.txt_pipeBack.Name = "txt_pipeBack";
             this.txt_pipeBack.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2735,21 +2881,23 @@
             this.txt_pipeBack.Properties.Appearance.Options.UseBackColor = true;
             this.txt_pipeBack.Properties.Appearance.Options.UseFont = true;
             this.txt_pipeBack.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_pipeBack.Size = new System.Drawing.Size(102, 28);
+            this.txt_pipeBack.Size = new System.Drawing.Size(117, 32);
             this.txt_pipeBack.TabIndex = 8;
             // 
             // labelControl52
             // 
             this.labelControl52.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl52.Location = new System.Drawing.Point(1, 190);
+            this.labelControl52.Location = new System.Drawing.Point(1, 244);
+            this.labelControl52.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl52.Name = "labelControl52";
-            this.labelControl52.Size = new System.Drawing.Size(63, 21);
+            this.labelControl52.Size = new System.Drawing.Size(81, 27);
             this.labelControl52.TabIndex = 7;
             this.labelControl52.Text = "回风管";
             // 
             // txt_pipeNew
             // 
-            this.txt_pipeNew.Location = new System.Drawing.Point(75, 137);
+            this.txt_pipeNew.Location = new System.Drawing.Point(86, 176);
+            this.txt_pipeNew.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_pipeNew.MenuManager = this.barManager1;
             this.txt_pipeNew.Name = "txt_pipeNew";
             this.txt_pipeNew.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2758,21 +2906,23 @@
             this.txt_pipeNew.Properties.Appearance.Options.UseBackColor = true;
             this.txt_pipeNew.Properties.Appearance.Options.UseFont = true;
             this.txt_pipeNew.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_pipeNew.Size = new System.Drawing.Size(102, 28);
+            this.txt_pipeNew.Size = new System.Drawing.Size(117, 32);
             this.txt_pipeNew.TabIndex = 6;
             // 
             // labelControl51
             // 
             this.labelControl51.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl51.Location = new System.Drawing.Point(1, 140);
+            this.labelControl51.Location = new System.Drawing.Point(1, 180);
+            this.labelControl51.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl51.Name = "labelControl51";
-            this.labelControl51.Size = new System.Drawing.Size(63, 21);
+            this.labelControl51.Size = new System.Drawing.Size(81, 27);
             this.labelControl51.TabIndex = 5;
             this.labelControl51.Text = "新风管";
             // 
             // txt_d9
             // 
-            this.txt_d9.Location = new System.Drawing.Point(75, 8);
+            this.txt_d9.Location = new System.Drawing.Point(86, 10);
+            this.txt_d9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d9.MenuManager = this.barManager1;
             this.txt_d9.Name = "txt_d9";
             this.txt_d9.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2782,12 +2932,13 @@
             this.txt_d9.Properties.Appearance.Options.UseFont = true;
             this.txt_d9.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d9.Properties.ReadOnly = true;
-            this.txt_d9.Size = new System.Drawing.Size(102, 28);
+            this.txt_d9.Size = new System.Drawing.Size(117, 32);
             this.txt_d9.TabIndex = 14;
             // 
             // txt_d10
             // 
-            this.txt_d10.Location = new System.Drawing.Point(75, 58);
+            this.txt_d10.Location = new System.Drawing.Point(86, 75);
+            this.txt_d10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d10.MenuManager = this.barManager1;
             this.txt_d10.Name = "txt_d10";
             this.txt_d10.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -2797,24 +2948,26 @@
             this.txt_d10.Properties.Appearance.Options.UseFont = true;
             this.txt_d10.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d10.Properties.ReadOnly = true;
-            this.txt_d10.Size = new System.Drawing.Size(102, 28);
+            this.txt_d10.Size = new System.Drawing.Size(117, 32);
             this.txt_d10.TabIndex = 18;
             // 
             // labelControl44
             // 
             this.labelControl44.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl44.Location = new System.Drawing.Point(1, 61);
+            this.labelControl44.Location = new System.Drawing.Point(1, 78);
+            this.labelControl44.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl44.Name = "labelControl44";
-            this.labelControl44.Size = new System.Drawing.Size(63, 21);
+            this.labelControl44.Size = new System.Drawing.Size(81, 27);
             this.labelControl44.TabIndex = 17;
             this.labelControl44.Text = "回风量";
             // 
             // labelControl42
             // 
             this.labelControl42.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl42.Location = new System.Drawing.Point(1, 10);
+            this.labelControl42.Location = new System.Drawing.Point(1, 13);
+            this.labelControl42.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl42.Name = "labelControl42";
-            this.labelControl42.Size = new System.Drawing.Size(63, 21);
+            this.labelControl42.Size = new System.Drawing.Size(81, 27);
             this.labelControl42.TabIndex = 13;
             this.labelControl42.Text = "新风量";
             // 
@@ -2826,9 +2979,10 @@
             this.groupControl14.Controls.Add(this.btn_manualWrite);
             this.groupControl14.Controls.Add(this.btn_returnSystemSet);
             this.groupControl14.Controls.Add(this.btn_returnAdd);
-            this.groupControl14.Location = new System.Drawing.Point(1143, 286);
+            this.groupControl14.Location = new System.Drawing.Point(1306, 368);
+            this.groupControl14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl14.Name = "groupControl14";
-            this.groupControl14.Size = new System.Drawing.Size(194, 248);
+            this.groupControl14.Size = new System.Drawing.Size(222, 319);
             this.groupControl14.TabIndex = 22;
             this.groupControl14.Text = "功能按钮";
             // 
@@ -2836,9 +2990,10 @@
             // 
             this.btn_returnExit.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_returnExit.Appearance.Options.UseFont = true;
-            this.btn_returnExit.Location = new System.Drawing.Point(33, 191);
+            this.btn_returnExit.Location = new System.Drawing.Point(38, 246);
+            this.btn_returnExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_returnExit.Name = "btn_returnExit";
-            this.btn_returnExit.Size = new System.Drawing.Size(129, 33);
+            this.btn_returnExit.Size = new System.Drawing.Size(147, 42);
             this.btn_returnExit.TabIndex = 3;
             this.btn_returnExit.Text = "退出系统";
             this.btn_returnExit.Click += new System.EventHandler(this.btn_returnExit_Click);
@@ -2847,9 +3002,10 @@
             // 
             this.btn_manualWrite.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_manualWrite.Appearance.Options.UseFont = true;
-            this.btn_manualWrite.Location = new System.Drawing.Point(33, 95);
+            this.btn_manualWrite.Location = new System.Drawing.Point(38, 122);
+            this.btn_manualWrite.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_manualWrite.Name = "btn_manualWrite";
-            this.btn_manualWrite.Size = new System.Drawing.Size(129, 33);
+            this.btn_manualWrite.Size = new System.Drawing.Size(147, 42);
             this.btn_manualWrite.TabIndex = 2;
             this.btn_manualWrite.Text = "数据写入";
             // 
@@ -2857,9 +3013,10 @@
             // 
             this.btn_returnSystemSet.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_returnSystemSet.Appearance.Options.UseFont = true;
-            this.btn_returnSystemSet.Location = new System.Drawing.Point(33, 143);
+            this.btn_returnSystemSet.Location = new System.Drawing.Point(38, 184);
+            this.btn_returnSystemSet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_returnSystemSet.Name = "btn_returnSystemSet";
-            this.btn_returnSystemSet.Size = new System.Drawing.Size(129, 33);
+            this.btn_returnSystemSet.Size = new System.Drawing.Size(147, 42);
             this.btn_returnSystemSet.TabIndex = 1;
             this.btn_returnSystemSet.Text = "系统参数";
             this.btn_returnSystemSet.Click += new System.EventHandler(this.btn_returnSystemSet_Click);
@@ -2868,9 +3025,10 @@
             // 
             this.btn_returnAdd.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn_returnAdd.Appearance.Options.UseFont = true;
-            this.btn_returnAdd.Location = new System.Drawing.Point(33, 47);
+            this.btn_returnAdd.Location = new System.Drawing.Point(38, 60);
+            this.btn_returnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_returnAdd.Name = "btn_returnAdd";
-            this.btn_returnAdd.Size = new System.Drawing.Size(129, 33);
+            this.btn_returnAdd.Size = new System.Drawing.Size(147, 42);
             this.btn_returnAdd.TabIndex = 0;
             this.btn_returnAdd.Text = "添加设备";
             this.btn_returnAdd.Click += new System.EventHandler(this.btn_returnAdd_Click);
@@ -2878,26 +3036,29 @@
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 640);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 841);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1364, 10);
+            this.richTextBox1.Size = new System.Drawing.Size(1560, 12);
             this.richTextBox1.TabIndex = 35;
             this.richTextBox1.Text = "";
             // 
             // labelControl29
             // 
             this.labelControl29.Appearance.Font = new System.Drawing.Font("宋体", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl29.Location = new System.Drawing.Point(141, 24);
+            this.labelControl29.Location = new System.Drawing.Point(161, 31);
+            this.labelControl29.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl29.Name = "labelControl29";
-            this.labelControl29.Size = new System.Drawing.Size(1083, 56);
+            this.labelControl29.Size = new System.Drawing.Size(1349, 70);
             this.labelControl29.TabIndex = 2;
             this.labelControl29.Text = "中国人民银行厂南支行库房空气质量检测表";
             // 
             // xtraTabPage2
             // 
             this.xtraTabPage2.Controls.Add(this.splitContainerControl_His);
+            this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1364, 650);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1560, 837);
             this.xtraTabPage2.Text = "历史记录";
             // 
             // splitContainerControl_His
@@ -2905,12 +3066,13 @@
             this.splitContainerControl_His.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl_His.Horizontal = false;
             this.splitContainerControl_His.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl_His.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.splitContainerControl_His.Name = "splitContainerControl_His";
             this.splitContainerControl_His.Panel1.Controls.Add(this.groupControl1);
             this.splitContainerControl_His.Panel1.Text = "Panel1";
             this.splitContainerControl_His.Panel2.Controls.Add(this.splitContainerControl1);
             this.splitContainerControl_His.Panel2.Text = "Panel2";
-            this.splitContainerControl_His.Size = new System.Drawing.Size(1364, 650);
+            this.splitContainerControl_His.Size = new System.Drawing.Size(1560, 837);
             this.splitContainerControl_His.SplitterPosition = 89;
             this.splitContainerControl_His.TabIndex = 0;
             this.splitContainerControl_His.Text = "splitContainerControl1";
@@ -2930,34 +3092,38 @@
             this.groupControl1.Controls.Add(this.comboBoxEdit_ID);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1364, 89);
+            this.groupControl1.Size = new System.Drawing.Size(1560, 89);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "数据查询条件";
             // 
             // textEdit_Place
             // 
-            this.textEdit_Place.Location = new System.Drawing.Point(114, 61);
+            this.textEdit_Place.Location = new System.Drawing.Point(130, 78);
+            this.textEdit_Place.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_Place.MenuManager = this.barManager1;
             this.textEdit_Place.Name = "textEdit_Place";
             this.textEdit_Place.Properties.ReadOnly = true;
-            this.textEdit_Place.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_Place.Size = new System.Drawing.Size(114, 24);
             this.textEdit_Place.TabIndex = 12;
             // 
             // textEdit_GasName
             // 
-            this.textEdit_GasName.Location = new System.Drawing.Point(114, 28);
+            this.textEdit_GasName.Location = new System.Drawing.Point(130, 36);
+            this.textEdit_GasName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_GasName.MenuManager = this.barManager1;
             this.textEdit_GasName.Name = "textEdit_GasName";
             this.textEdit_GasName.Properties.ReadOnly = true;
-            this.textEdit_GasName.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_GasName.Size = new System.Drawing.Size(114, 24);
             this.textEdit_GasName.TabIndex = 11;
             // 
             // btn_SearchHistory
             // 
-            this.btn_SearchHistory.Location = new System.Drawing.Point(765, 44);
+            this.btn_SearchHistory.Location = new System.Drawing.Point(874, 57);
+            this.btn_SearchHistory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_SearchHistory.Name = "btn_SearchHistory";
-            this.btn_SearchHistory.Size = new System.Drawing.Size(75, 23);
+            this.btn_SearchHistory.Size = new System.Drawing.Size(86, 30);
             this.btn_SearchHistory.TabIndex = 10;
             this.btn_SearchHistory.Text = "搜索";
             this.btn_SearchHistory.Click += new System.EventHandler(this.btn_SearchHistory_Click);
@@ -2965,7 +3131,8 @@
             // dateEdit_End
             // 
             this.dateEdit_End.EditValue = null;
-            this.dateEdit_End.Location = new System.Drawing.Point(494, 61);
+            this.dateEdit_End.Location = new System.Drawing.Point(565, 78);
+            this.dateEdit_End.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateEdit_End.MenuManager = this.barManager1;
             this.dateEdit_End.Name = "dateEdit_End";
             this.dateEdit_End.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -2979,13 +3146,14 @@
             this.dateEdit_End.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
             this.dateEdit_End.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit_End.Size = new System.Drawing.Size(179, 20);
+            this.dateEdit_End.Size = new System.Drawing.Size(205, 24);
             this.dateEdit_End.TabIndex = 9;
             // 
             // dateEdit_Start
             // 
             this.dateEdit_Start.EditValue = null;
-            this.dateEdit_Start.Location = new System.Drawing.Point(495, 28);
+            this.dateEdit_Start.Location = new System.Drawing.Point(566, 36);
+            this.dateEdit_Start.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateEdit_Start.MenuManager = this.barManager1;
             this.dateEdit_Start.Name = "dateEdit_Start";
             this.dateEdit_Start.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -2999,57 +3167,63 @@
             this.dateEdit_Start.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
             this.dateEdit_Start.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit_Start.Size = new System.Drawing.Size(178, 20);
+            this.dateEdit_Start.Size = new System.Drawing.Size(203, 24);
             this.dateEdit_Start.TabIndex = 8;
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(402, 64);
+            this.labelControl5.Location = new System.Drawing.Point(459, 82);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(60, 14);
+            this.labelControl5.Size = new System.Drawing.Size(75, 18);
             this.labelControl5.TabIndex = 7;
             this.labelControl5.Text = "结束时间：";
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(402, 31);
+            this.labelControl4.Location = new System.Drawing.Point(459, 40);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(60, 14);
+            this.labelControl4.Size = new System.Drawing.Size(75, 18);
             this.labelControl4.TabIndex = 6;
             this.labelControl4.Text = "开始时间：";
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(245, 31);
+            this.labelControl3.Location = new System.Drawing.Point(280, 40);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(48, 14);
+            this.labelControl3.Size = new System.Drawing.Size(61, 18);
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "仪器ID：";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(24, 64);
+            this.labelControl2.Location = new System.Drawing.Point(27, 82);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(84, 14);
+            this.labelControl2.Size = new System.Drawing.Size(105, 18);
             this.labelControl2.TabIndex = 4;
             this.labelControl2.Text = "气体安装位置：";
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(24, 31);
+            this.labelControl1.Location = new System.Drawing.Point(27, 40);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(60, 14);
+            this.labelControl1.Size = new System.Drawing.Size(75, 18);
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "气体名称：";
             // 
             // comboBoxEdit_ID
             // 
-            this.comboBoxEdit_ID.Location = new System.Drawing.Point(296, 28);
+            this.comboBoxEdit_ID.Location = new System.Drawing.Point(338, 36);
+            this.comboBoxEdit_ID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxEdit_ID.MenuManager = this.barManager1;
             this.comboBoxEdit_ID.Name = "comboBoxEdit_ID";
             this.comboBoxEdit_ID.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit_ID.Size = new System.Drawing.Size(58, 20);
+            this.comboBoxEdit_ID.Size = new System.Drawing.Size(66, 24);
             this.comboBoxEdit_ID.TabIndex = 1;
             this.comboBoxEdit_ID.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit_ID_SelectedIndexChanged);
             // 
@@ -3058,12 +3232,13 @@
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.groupControl2);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1364, 556);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1560, 743);
             this.splitContainerControl1.SplitterPosition = 337;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -3073,45 +3248,47 @@
             this.groupControl2.Controls.Add(this.chartControl_History);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
+            this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1022, 556);
+            this.groupControl2.Size = new System.Drawing.Size(1218, 743);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "历史数据曲线";
             // 
             // chartControl_History
             // 
             this.chartControl_History.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            swiftPlotDiagram2.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
-            swiftPlotDiagram2.AxisX.Range.SideMarginsEnabled = true;
-            swiftPlotDiagram2.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
-            swiftPlotDiagram2.AxisX.Title.Antialiasing = false;
-            swiftPlotDiagram2.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            swiftPlotDiagram2.AxisX.Title.Text = "时间";
-            swiftPlotDiagram2.AxisX.Title.Visible = true;
-            swiftPlotDiagram2.AxisX.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram2.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
-            swiftPlotDiagram2.AxisY.Range.SideMarginsEnabled = true;
-            swiftPlotDiagram2.AxisY.Title.Alignment = System.Drawing.StringAlignment.Far;
-            swiftPlotDiagram2.AxisY.Title.Antialiasing = false;
-            swiftPlotDiagram2.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            swiftPlotDiagram2.AxisY.Title.Text = "浓度";
-            swiftPlotDiagram2.AxisY.Title.Visible = true;
-            swiftPlotDiagram2.AxisY.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram2.DefaultPane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            swiftPlotDiagram2.EnableAxisXScrolling = true;
-            this.chartControl_History.Diagram = swiftPlotDiagram2;
+            swiftPlotDiagram1.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
+            swiftPlotDiagram1.AxisX.Range.SideMarginsEnabled = true;
+            swiftPlotDiagram1.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
+            swiftPlotDiagram1.AxisX.Title.Antialiasing = false;
+            swiftPlotDiagram1.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            swiftPlotDiagram1.AxisX.Title.Text = "时间";
+            swiftPlotDiagram1.AxisX.Title.Visible = true;
+            swiftPlotDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            swiftPlotDiagram1.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
+            swiftPlotDiagram1.AxisY.Range.SideMarginsEnabled = true;
+            swiftPlotDiagram1.AxisY.Title.Alignment = System.Drawing.StringAlignment.Far;
+            swiftPlotDiagram1.AxisY.Title.Antialiasing = false;
+            swiftPlotDiagram1.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            swiftPlotDiagram1.AxisY.Title.Text = "浓度";
+            swiftPlotDiagram1.AxisY.Title.Visible = true;
+            swiftPlotDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            swiftPlotDiagram1.DefaultPane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
+            swiftPlotDiagram1.EnableAxisXScrolling = true;
+            this.chartControl_History.Diagram = swiftPlotDiagram1;
             this.chartControl_History.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControl_History.Legend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
             this.chartControl_History.Legend.Visible = false;
-            this.chartControl_History.Location = new System.Drawing.Point(2, 22);
+            this.chartControl_History.Location = new System.Drawing.Point(2, 26);
+            this.chartControl_History.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chartControl_History.Name = "chartControl_History";
-            series2.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series2.Name = "Series 1";
-            series2.View = swiftPlotSeriesView3;
+            series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            series1.Name = "Series 1";
+            series1.View = swiftPlotSeriesView1;
             this.chartControl_History.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series2};
-            this.chartControl_History.SeriesTemplate.View = swiftPlotSeriesView4;
-            this.chartControl_History.Size = new System.Drawing.Size(1018, 532);
+        series1};
+            this.chartControl_History.SeriesTemplate.View = swiftPlotSeriesView2;
+            this.chartControl_History.Size = new System.Drawing.Size(1214, 715);
             this.chartControl_History.TabIndex = 0;
             // 
             // splitContainerControl2
@@ -3120,12 +3297,13 @@
             this.splitContainerControl2.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
             this.splitContainerControl2.Horizontal = false;
             this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.splitContainerControl2.Name = "splitContainerControl2";
             this.splitContainerControl2.Panel1.Controls.Add(this.groupControl3);
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl4);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(337, 556);
+            this.splitContainerControl2.Size = new System.Drawing.Size(337, 743);
             this.splitContainerControl2.SplitterPosition = 59;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -3135,19 +3313,22 @@
             this.groupControl3.Controls.Add(this.gridControl_History);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
+            this.groupControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(337, 492);
+            this.groupControl3.Size = new System.Drawing.Size(337, 679);
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "历史数据列表";
             // 
             // gridControl_History
             // 
             this.gridControl_History.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl_History.Location = new System.Drawing.Point(2, 22);
+            this.gridControl_History.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridControl_History.Location = new System.Drawing.Point(2, 26);
             this.gridControl_History.MainView = this.gridView_History;
+            this.gridControl_History.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl_History.MenuManager = this.barManager1;
             this.gridControl_History.Name = "gridControl_History";
-            this.gridControl_History.Size = new System.Drawing.Size(333, 468);
+            this.gridControl_History.Size = new System.Drawing.Size(333, 651);
             this.gridControl_History.TabIndex = 0;
             this.gridControl_History.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_History});
@@ -3232,6 +3413,7 @@
             this.groupControl4.Controls.Add(this.btn_Export);
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.Location = new System.Drawing.Point(0, 0);
+            this.groupControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(337, 59);
             this.groupControl4.TabIndex = 0;
@@ -3241,9 +3423,10 @@
             // 
             this.btn_DeleteData.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btn_DeleteData.Appearance.Options.UseBackColor = true;
-            this.btn_DeleteData.Location = new System.Drawing.Point(246, 28);
+            this.btn_DeleteData.Location = new System.Drawing.Point(281, 36);
+            this.btn_DeleteData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_DeleteData.Name = "btn_DeleteData";
-            this.btn_DeleteData.Size = new System.Drawing.Size(80, 23);
+            this.btn_DeleteData.Size = new System.Drawing.Size(91, 30);
             this.btn_DeleteData.TabIndex = 2;
             this.btn_DeleteData.Text = "删除查询数据";
             this.btn_DeleteData.Click += new System.EventHandler(this.btn_DeleteData_Click);
@@ -3252,9 +3435,10 @@
             // 
             this.btn_BackData.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btn_BackData.Appearance.Options.UseBackColor = true;
-            this.btn_BackData.Location = new System.Drawing.Point(138, 28);
+            this.btn_BackData.Location = new System.Drawing.Point(158, 36);
+            this.btn_BackData.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_BackData.Name = "btn_BackData";
-            this.btn_BackData.Size = new System.Drawing.Size(75, 23);
+            this.btn_BackData.Size = new System.Drawing.Size(86, 30);
             this.btn_BackData.TabIndex = 1;
             this.btn_BackData.Text = "数据库备份";
             // 
@@ -3262,9 +3446,10 @@
             // 
             this.btn_Export.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btn_Export.Appearance.Options.UseBackColor = true;
-            this.btn_Export.Location = new System.Drawing.Point(28, 28);
+            this.btn_Export.Location = new System.Drawing.Point(32, 36);
+            this.btn_Export.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Export.Name = "btn_Export";
-            this.btn_Export.Size = new System.Drawing.Size(75, 23);
+            this.btn_Export.Size = new System.Drawing.Size(86, 30);
             this.btn_Export.TabIndex = 0;
             this.btn_Export.Text = "导出数据";
             this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
@@ -3272,8 +3457,9 @@
             // xtraTabPage3
             // 
             this.xtraTabPage3.Controls.Add(this.panelControl1);
+            this.xtraTabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1364, 650);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1560, 837);
             this.xtraTabPage3.Text = "系统参数设置";
             // 
             // panelControl1
@@ -3284,8 +3470,9 @@
             this.panelControl1.Controls.Add(this.groupControl6);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1364, 650);
+            this.panelControl1.Size = new System.Drawing.Size(1560, 837);
             this.panelControl1.TabIndex = 6;
             // 
             // groupControl15
@@ -3325,291 +3512,327 @@
             this.groupControl15.Controls.Add(this.txt_main_name_TVOC);
             this.groupControl15.Controls.Add(this.txt_main_value_temperature_in);
             this.groupControl15.Controls.Add(this.txt_main_name_temperature_in);
-            this.groupControl15.Location = new System.Drawing.Point(550, 5);
+            this.groupControl15.Location = new System.Drawing.Point(629, 6);
+            this.groupControl15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl15.Name = "groupControl15";
-            this.groupControl15.Size = new System.Drawing.Size(713, 453);
+            this.groupControl15.Size = new System.Drawing.Size(815, 582);
             this.groupControl15.TabIndex = 6;
             this.groupControl15.Text = "主界面设置";
             // 
             // txt_main_value_humidity_out
             // 
-            this.txt_main_value_humidity_out.Location = new System.Drawing.Point(217, 196);
+            this.txt_main_value_humidity_out.Location = new System.Drawing.Point(248, 252);
+            this.txt_main_value_humidity_out.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_value_humidity_out.MenuManager = this.barManager1;
             this.txt_main_value_humidity_out.Name = "txt_main_value_humidity_out";
-            this.txt_main_value_humidity_out.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_humidity_out.Size = new System.Drawing.Size(114, 24);
             this.txt_main_value_humidity_out.TabIndex = 34;
             // 
             // txt_main_name_humidity_out
             // 
-            this.txt_main_name_humidity_out.Location = new System.Drawing.Point(83, 196);
+            this.txt_main_name_humidity_out.Location = new System.Drawing.Point(95, 252);
+            this.txt_main_name_humidity_out.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_name_humidity_out.MenuManager = this.barManager1;
             this.txt_main_name_humidity_out.Name = "txt_main_name_humidity_out";
-            this.txt_main_name_humidity_out.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_humidity_out.Size = new System.Drawing.Size(114, 24);
             this.txt_main_name_humidity_out.TabIndex = 33;
             // 
             // txt_main_value_temperature_out
             // 
-            this.txt_main_value_temperature_out.Location = new System.Drawing.Point(217, 96);
+            this.txt_main_value_temperature_out.Location = new System.Drawing.Point(248, 123);
+            this.txt_main_value_temperature_out.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_value_temperature_out.MenuManager = this.barManager1;
             this.txt_main_value_temperature_out.Name = "txt_main_value_temperature_out";
-            this.txt_main_value_temperature_out.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_temperature_out.Size = new System.Drawing.Size(114, 24);
             this.txt_main_value_temperature_out.TabIndex = 32;
             // 
             // txt_main_name_temperature_out
             // 
-            this.txt_main_name_temperature_out.Location = new System.Drawing.Point(83, 96);
+            this.txt_main_name_temperature_out.Location = new System.Drawing.Point(95, 123);
+            this.txt_main_name_temperature_out.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_name_temperature_out.MenuManager = this.barManager1;
             this.txt_main_name_temperature_out.Name = "txt_main_name_temperature_out";
-            this.txt_main_name_temperature_out.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_temperature_out.Size = new System.Drawing.Size(114, 24);
             this.txt_main_name_temperature_out.TabIndex = 31;
             // 
             // txt_main_value_PM
             // 
-            this.txt_main_value_PM.Location = new System.Drawing.Point(548, 365);
+            this.txt_main_value_PM.Location = new System.Drawing.Point(626, 469);
+            this.txt_main_value_PM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_value_PM.MenuManager = this.barManager1;
             this.txt_main_value_PM.Name = "txt_main_value_PM";
-            this.txt_main_value_PM.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_PM.Size = new System.Drawing.Size(114, 24);
             this.txt_main_value_PM.TabIndex = 30;
             // 
             // txt_main_name_PM
             // 
-            this.txt_main_name_PM.Location = new System.Drawing.Point(414, 365);
+            this.txt_main_name_PM.Location = new System.Drawing.Point(473, 469);
+            this.txt_main_name_PM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_name_PM.MenuManager = this.barManager1;
             this.txt_main_name_PM.Name = "txt_main_name_PM";
-            this.txt_main_name_PM.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_PM.Size = new System.Drawing.Size(114, 24);
             this.txt_main_name_PM.TabIndex = 29;
             // 
             // txt_main_value_sterilize
             // 
-            this.txt_main_value_sterilize.Location = new System.Drawing.Point(548, 329);
+            this.txt_main_value_sterilize.Location = new System.Drawing.Point(626, 423);
+            this.txt_main_value_sterilize.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_value_sterilize.MenuManager = this.barManager1;
             this.txt_main_value_sterilize.Name = "txt_main_value_sterilize";
-            this.txt_main_value_sterilize.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_sterilize.Size = new System.Drawing.Size(114, 24);
             this.txt_main_value_sterilize.TabIndex = 28;
             // 
             // txt_main_name_sterilize
             // 
-            this.txt_main_name_sterilize.Location = new System.Drawing.Point(414, 329);
+            this.txt_main_name_sterilize.Location = new System.Drawing.Point(473, 423);
+            this.txt_main_name_sterilize.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_name_sterilize.MenuManager = this.barManager1;
             this.txt_main_name_sterilize.Name = "txt_main_name_sterilize";
-            this.txt_main_name_sterilize.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_sterilize.Size = new System.Drawing.Size(114, 24);
             this.txt_main_name_sterilize.TabIndex = 27;
             // 
             // txt_main_value_airQuality
             // 
-            this.txt_main_value_airQuality.Location = new System.Drawing.Point(548, 291);
+            this.txt_main_value_airQuality.Location = new System.Drawing.Point(626, 374);
+            this.txt_main_value_airQuality.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_value_airQuality.MenuManager = this.barManager1;
             this.txt_main_value_airQuality.Name = "txt_main_value_airQuality";
-            this.txt_main_value_airQuality.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_airQuality.Size = new System.Drawing.Size(114, 24);
             this.txt_main_value_airQuality.TabIndex = 26;
             // 
             // txt_main_name_airQuality
             // 
-            this.txt_main_name_airQuality.Location = new System.Drawing.Point(414, 291);
+            this.txt_main_name_airQuality.Location = new System.Drawing.Point(473, 374);
+            this.txt_main_name_airQuality.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_name_airQuality.MenuManager = this.barManager1;
             this.txt_main_name_airQuality.Name = "txt_main_name_airQuality";
-            this.txt_main_name_airQuality.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_airQuality.Size = new System.Drawing.Size(114, 24);
             this.txt_main_name_airQuality.TabIndex = 25;
             // 
             // txt_main_value_backarea
             // 
-            this.txt_main_value_backarea.Location = new System.Drawing.Point(217, 424);
+            this.txt_main_value_backarea.Location = new System.Drawing.Point(248, 545);
+            this.txt_main_value_backarea.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_value_backarea.MenuManager = this.barManager1;
             this.txt_main_value_backarea.Name = "txt_main_value_backarea";
-            this.txt_main_value_backarea.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_backarea.Size = new System.Drawing.Size(114, 24);
             this.txt_main_value_backarea.TabIndex = 24;
             // 
             // txt_main_name_backarea
             // 
-            this.txt_main_name_backarea.Location = new System.Drawing.Point(83, 424);
+            this.txt_main_name_backarea.Location = new System.Drawing.Point(95, 545);
+            this.txt_main_name_backarea.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_name_backarea.MenuManager = this.barManager1;
             this.txt_main_name_backarea.Name = "txt_main_name_backarea";
-            this.txt_main_name_backarea.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_backarea.Size = new System.Drawing.Size(114, 24);
             this.txt_main_name_backarea.TabIndex = 23;
             // 
             // txt_main_value_newarea
             // 
-            this.txt_main_value_newarea.Location = new System.Drawing.Point(217, 386);
+            this.txt_main_value_newarea.Location = new System.Drawing.Point(248, 496);
+            this.txt_main_value_newarea.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_value_newarea.MenuManager = this.barManager1;
             this.txt_main_value_newarea.Name = "txt_main_value_newarea";
-            this.txt_main_value_newarea.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_newarea.Size = new System.Drawing.Size(114, 24);
             this.txt_main_value_newarea.TabIndex = 22;
             // 
             // txt_main_name_newarea
             // 
-            this.txt_main_name_newarea.Location = new System.Drawing.Point(83, 386);
+            this.txt_main_name_newarea.Location = new System.Drawing.Point(95, 496);
+            this.txt_main_name_newarea.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_name_newarea.MenuManager = this.barManager1;
             this.txt_main_name_newarea.Name = "txt_main_name_newarea";
-            this.txt_main_name_newarea.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_newarea.Size = new System.Drawing.Size(114, 24);
             this.txt_main_name_newarea.TabIndex = 21;
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(507, 412);
+            this.simpleButton1.Location = new System.Drawing.Point(579, 530);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.Size = new System.Drawing.Size(86, 30);
             this.simpleButton1.TabIndex = 20;
             this.simpleButton1.Text = "保存";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // txt_main_value_NOX
             // 
-            this.txt_main_value_NOX.Location = new System.Drawing.Point(548, 246);
+            this.txt_main_value_NOX.Location = new System.Drawing.Point(626, 316);
+            this.txt_main_value_NOX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_value_NOX.MenuManager = this.barManager1;
             this.txt_main_value_NOX.Name = "txt_main_value_NOX";
-            this.txt_main_value_NOX.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_NOX.Size = new System.Drawing.Size(114, 24);
             this.txt_main_value_NOX.TabIndex = 19;
             // 
             // txt_main_name_NOX
             // 
-            this.txt_main_name_NOX.Location = new System.Drawing.Point(414, 246);
+            this.txt_main_name_NOX.Location = new System.Drawing.Point(473, 316);
+            this.txt_main_name_NOX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_name_NOX.MenuManager = this.barManager1;
             this.txt_main_name_NOX.Name = "txt_main_name_NOX";
-            this.txt_main_name_NOX.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_NOX.Size = new System.Drawing.Size(114, 24);
             this.txt_main_name_NOX.TabIndex = 18;
             // 
             // txt_main_value_back
             // 
-            this.txt_main_value_back.Location = new System.Drawing.Point(217, 341);
+            this.txt_main_value_back.Location = new System.Drawing.Point(248, 438);
+            this.txt_main_value_back.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_value_back.MenuManager = this.barManager1;
             this.txt_main_value_back.Name = "txt_main_value_back";
-            this.txt_main_value_back.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_back.Size = new System.Drawing.Size(114, 24);
             this.txt_main_value_back.TabIndex = 17;
             // 
             // txt_main_name_back
             // 
-            this.txt_main_name_back.Location = new System.Drawing.Point(83, 341);
+            this.txt_main_name_back.Location = new System.Drawing.Point(95, 438);
+            this.txt_main_name_back.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_name_back.MenuManager = this.barManager1;
             this.txt_main_name_back.Name = "txt_main_name_back";
-            this.txt_main_name_back.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_back.Size = new System.Drawing.Size(114, 24);
             this.txt_main_name_back.TabIndex = 16;
             // 
             // txt_main_value_SO2
             // 
-            this.txt_main_value_SO2.Location = new System.Drawing.Point(548, 196);
+            this.txt_main_value_SO2.Location = new System.Drawing.Point(626, 252);
+            this.txt_main_value_SO2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_value_SO2.MenuManager = this.barManager1;
             this.txt_main_value_SO2.Name = "txt_main_value_SO2";
-            this.txt_main_value_SO2.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_SO2.Size = new System.Drawing.Size(114, 24);
             this.txt_main_value_SO2.TabIndex = 15;
             // 
             // txt_main_name_SO2
             // 
-            this.txt_main_name_SO2.Location = new System.Drawing.Point(414, 196);
+            this.txt_main_name_SO2.Location = new System.Drawing.Point(473, 252);
+            this.txt_main_name_SO2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_name_SO2.MenuManager = this.barManager1;
             this.txt_main_name_SO2.Name = "txt_main_name_SO2";
-            this.txt_main_name_SO2.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_SO2.Size = new System.Drawing.Size(114, 24);
             this.txt_main_name_SO2.TabIndex = 14;
             // 
             // txt_main_value_new
             // 
-            this.txt_main_value_new.Location = new System.Drawing.Point(217, 291);
+            this.txt_main_value_new.Location = new System.Drawing.Point(248, 374);
+            this.txt_main_value_new.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_value_new.MenuManager = this.barManager1;
             this.txt_main_value_new.Name = "txt_main_value_new";
-            this.txt_main_value_new.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_new.Size = new System.Drawing.Size(114, 24);
             this.txt_main_value_new.TabIndex = 13;
             // 
             // txt_main_name_new
             // 
-            this.txt_main_name_new.Location = new System.Drawing.Point(83, 291);
+            this.txt_main_name_new.Location = new System.Drawing.Point(95, 374);
+            this.txt_main_name_new.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_name_new.MenuManager = this.barManager1;
             this.txt_main_name_new.Name = "txt_main_name_new";
-            this.txt_main_name_new.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_new.Size = new System.Drawing.Size(114, 24);
             this.txt_main_name_new.TabIndex = 12;
             // 
             // txt_main_value_CO
             // 
-            this.txt_main_value_CO.Location = new System.Drawing.Point(548, 146);
+            this.txt_main_value_CO.Location = new System.Drawing.Point(626, 188);
+            this.txt_main_value_CO.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_value_CO.MenuManager = this.barManager1;
             this.txt_main_value_CO.Name = "txt_main_value_CO";
-            this.txt_main_value_CO.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_CO.Size = new System.Drawing.Size(114, 24);
             this.txt_main_value_CO.TabIndex = 11;
             // 
             // txt_main_name_CO
             // 
-            this.txt_main_name_CO.Location = new System.Drawing.Point(414, 146);
+            this.txt_main_name_CO.Location = new System.Drawing.Point(473, 188);
+            this.txt_main_name_CO.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_name_CO.MenuManager = this.barManager1;
             this.txt_main_name_CO.Name = "txt_main_name_CO";
-            this.txt_main_name_CO.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_CO.Size = new System.Drawing.Size(114, 24);
             this.txt_main_name_CO.TabIndex = 10;
             // 
             // txt_main_value_sound
             // 
-            this.txt_main_value_sound.Location = new System.Drawing.Point(217, 241);
+            this.txt_main_value_sound.Location = new System.Drawing.Point(248, 310);
+            this.txt_main_value_sound.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_value_sound.MenuManager = this.barManager1;
             this.txt_main_value_sound.Name = "txt_main_value_sound";
-            this.txt_main_value_sound.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_sound.Size = new System.Drawing.Size(114, 24);
             this.txt_main_value_sound.TabIndex = 9;
             // 
             // txt_main_name_sound
             // 
-            this.txt_main_name_sound.Location = new System.Drawing.Point(83, 241);
+            this.txt_main_name_sound.Location = new System.Drawing.Point(95, 310);
+            this.txt_main_name_sound.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_name_sound.MenuManager = this.barManager1;
             this.txt_main_name_sound.Name = "txt_main_name_sound";
-            this.txt_main_name_sound.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_sound.Size = new System.Drawing.Size(114, 24);
             this.txt_main_name_sound.TabIndex = 8;
             // 
             // txt_main_value_O2
             // 
-            this.txt_main_value_O2.Location = new System.Drawing.Point(548, 96);
+            this.txt_main_value_O2.Location = new System.Drawing.Point(626, 123);
+            this.txt_main_value_O2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_value_O2.MenuManager = this.barManager1;
             this.txt_main_value_O2.Name = "txt_main_value_O2";
-            this.txt_main_value_O2.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_O2.Size = new System.Drawing.Size(114, 24);
             this.txt_main_value_O2.TabIndex = 7;
             // 
             // txt_main_name_O2
             // 
-            this.txt_main_name_O2.Location = new System.Drawing.Point(414, 96);
+            this.txt_main_name_O2.Location = new System.Drawing.Point(473, 123);
+            this.txt_main_name_O2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_name_O2.MenuManager = this.barManager1;
             this.txt_main_name_O2.Name = "txt_main_name_O2";
-            this.txt_main_name_O2.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_O2.Size = new System.Drawing.Size(114, 24);
             this.txt_main_name_O2.TabIndex = 6;
             // 
             // txt_main_value_humidity_in
             // 
-            this.txt_main_value_humidity_in.Location = new System.Drawing.Point(217, 146);
+            this.txt_main_value_humidity_in.Location = new System.Drawing.Point(248, 188);
+            this.txt_main_value_humidity_in.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_value_humidity_in.MenuManager = this.barManager1;
             this.txt_main_value_humidity_in.Name = "txt_main_value_humidity_in";
-            this.txt_main_value_humidity_in.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_humidity_in.Size = new System.Drawing.Size(114, 24);
             this.txt_main_value_humidity_in.TabIndex = 5;
             // 
             // txt_main_name_humidity_in
             // 
-            this.txt_main_name_humidity_in.Location = new System.Drawing.Point(83, 146);
+            this.txt_main_name_humidity_in.Location = new System.Drawing.Point(95, 188);
+            this.txt_main_name_humidity_in.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_name_humidity_in.MenuManager = this.barManager1;
             this.txt_main_name_humidity_in.Name = "txt_main_name_humidity_in";
-            this.txt_main_name_humidity_in.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_humidity_in.Size = new System.Drawing.Size(114, 24);
             this.txt_main_name_humidity_in.TabIndex = 4;
             // 
             // txt_main_value_TVOC
             // 
-            this.txt_main_value_TVOC.Location = new System.Drawing.Point(548, 46);
+            this.txt_main_value_TVOC.Location = new System.Drawing.Point(626, 59);
+            this.txt_main_value_TVOC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_value_TVOC.MenuManager = this.barManager1;
             this.txt_main_value_TVOC.Name = "txt_main_value_TVOC";
-            this.txt_main_value_TVOC.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_TVOC.Size = new System.Drawing.Size(114, 24);
             this.txt_main_value_TVOC.TabIndex = 3;
             // 
             // txt_main_name_TVOC
             // 
-            this.txt_main_name_TVOC.Location = new System.Drawing.Point(414, 46);
+            this.txt_main_name_TVOC.Location = new System.Drawing.Point(473, 59);
+            this.txt_main_name_TVOC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_name_TVOC.MenuManager = this.barManager1;
             this.txt_main_name_TVOC.Name = "txt_main_name_TVOC";
-            this.txt_main_name_TVOC.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_TVOC.Size = new System.Drawing.Size(114, 24);
             this.txt_main_name_TVOC.TabIndex = 2;
             // 
             // txt_main_value_temperature_in
             // 
-            this.txt_main_value_temperature_in.Location = new System.Drawing.Point(217, 46);
+            this.txt_main_value_temperature_in.Location = new System.Drawing.Point(248, 59);
+            this.txt_main_value_temperature_in.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_value_temperature_in.MenuManager = this.barManager1;
             this.txt_main_value_temperature_in.Name = "txt_main_value_temperature_in";
-            this.txt_main_value_temperature_in.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_temperature_in.Size = new System.Drawing.Size(114, 24);
             this.txt_main_value_temperature_in.TabIndex = 1;
             // 
             // txt_main_name_temperature_in
             // 
-            this.txt_main_name_temperature_in.Location = new System.Drawing.Point(83, 46);
+            this.txt_main_name_temperature_in.Location = new System.Drawing.Point(95, 59);
+            this.txt_main_name_temperature_in.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_main_name_temperature_in.MenuManager = this.barManager1;
             this.txt_main_name_temperature_in.Name = "txt_main_name_temperature_in";
-            this.txt_main_name_temperature_in.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_name_temperature_in.Size = new System.Drawing.Size(114, 24);
             this.txt_main_name_temperature_in.TabIndex = 0;
             // 
             // groupControl7
@@ -3619,9 +3842,10 @@
             this.groupControl7.Controls.Add(this.btn_Save3);
             this.groupControl7.Controls.Add(this.labelControl15);
             this.groupControl7.Controls.Add(this.labelControl14);
-            this.groupControl7.Location = new System.Drawing.Point(408, 539);
+            this.groupControl7.Location = new System.Drawing.Point(466, 693);
+            this.groupControl7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(217, 106);
+            this.groupControl7.Size = new System.Drawing.Size(248, 136);
             this.groupControl7.TabIndex = 5;
             this.groupControl7.Text = "中心站网络通讯参数";
             this.groupControl7.Visible = false;
@@ -3629,42 +3853,47 @@
             // textEdit_centerPort
             // 
             this.textEdit_centerPort.EditValue = "5718";
-            this.textEdit_centerPort.Location = new System.Drawing.Point(106, 51);
+            this.textEdit_centerPort.Location = new System.Drawing.Point(121, 66);
+            this.textEdit_centerPort.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_centerPort.MenuManager = this.barManager1;
             this.textEdit_centerPort.Name = "textEdit_centerPort";
-            this.textEdit_centerPort.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_centerPort.Size = new System.Drawing.Size(114, 24);
             this.textEdit_centerPort.TabIndex = 9;
             // 
             // textEdit_CenterIP
             // 
             this.textEdit_CenterIP.EditValue = "127.0.0.1";
-            this.textEdit_CenterIP.Location = new System.Drawing.Point(106, 25);
+            this.textEdit_CenterIP.Location = new System.Drawing.Point(121, 32);
+            this.textEdit_CenterIP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_CenterIP.MenuManager = this.barManager1;
             this.textEdit_CenterIP.Name = "textEdit_CenterIP";
-            this.textEdit_CenterIP.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_CenterIP.Size = new System.Drawing.Size(114, 24);
             this.textEdit_CenterIP.TabIndex = 8;
             // 
             // btn_Save3
             // 
-            this.btn_Save3.Location = new System.Drawing.Point(18, 79);
+            this.btn_Save3.Location = new System.Drawing.Point(21, 102);
+            this.btn_Save3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Save3.Name = "btn_Save3";
-            this.btn_Save3.Size = new System.Drawing.Size(75, 23);
+            this.btn_Save3.Size = new System.Drawing.Size(86, 30);
             this.btn_Save3.TabIndex = 7;
             this.btn_Save3.Text = "保存";
             // 
             // labelControl15
             // 
-            this.labelControl15.Location = new System.Drawing.Point(18, 57);
+            this.labelControl15.Location = new System.Drawing.Point(21, 73);
+            this.labelControl15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(84, 14);
+            this.labelControl15.Size = new System.Drawing.Size(105, 18);
             this.labelControl15.TabIndex = 6;
             this.labelControl15.Text = "中心站端口号：";
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(18, 31);
+            this.labelControl14.Location = new System.Drawing.Point(21, 40);
+            this.labelControl14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(59, 14);
+            this.labelControl14.Size = new System.Drawing.Size(74, 18);
             this.labelControl14.TabIndex = 5;
             this.labelControl14.Text = "中心站IP：";
             // 
@@ -3692,155 +3921,173 @@
             this.groupControl5.Controls.Add(this.labelControl8);
             this.groupControl5.Controls.Add(this.labelControl7);
             this.groupControl5.Controls.Add(this.labelControl6);
-            this.groupControl5.Location = new System.Drawing.Point(5, 5);
+            this.groupControl5.Location = new System.Drawing.Point(6, 6);
+            this.groupControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(397, 373);
+            this.groupControl5.Size = new System.Drawing.Size(454, 480);
             this.groupControl5.TabIndex = 3;
             this.groupControl5.Text = "数据采集通讯参数";
             // 
             // memoEdit1
             // 
-            this.memoEdit1.Location = new System.Drawing.Point(149, 274);
+            this.memoEdit1.Location = new System.Drawing.Point(170, 352);
+            this.memoEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.memoEdit1.MenuManager = this.barManager1;
             this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Size = new System.Drawing.Size(202, 53);
+            this.memoEdit1.Size = new System.Drawing.Size(231, 68);
             this.memoEdit1.TabIndex = 25;
             // 
             // labelControl56
             // 
-            this.labelControl56.Location = new System.Drawing.Point(35, 277);
+            this.labelControl56.Location = new System.Drawing.Point(40, 356);
+            this.labelControl56.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl56.Name = "labelControl56";
-            this.labelControl56.Size = new System.Drawing.Size(60, 14);
+            this.labelControl56.Size = new System.Drawing.Size(75, 18);
             this.labelControl56.TabIndex = 23;
             this.labelControl56.Text = "银行名称：";
             // 
             // textEdit_Molecular
             // 
             this.textEdit_Molecular.EditValue = "34";
-            this.textEdit_Molecular.Location = new System.Drawing.Point(153, 222);
+            this.textEdit_Molecular.Location = new System.Drawing.Point(175, 285);
+            this.textEdit_Molecular.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_Molecular.MenuManager = this.barManager1;
             this.textEdit_Molecular.Name = "textEdit_Molecular";
-            this.textEdit_Molecular.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_Molecular.Size = new System.Drawing.Size(114, 24);
             this.textEdit_Molecular.TabIndex = 22;
             // 
             // labelControl36
             // 
-            this.labelControl36.Location = new System.Drawing.Point(35, 225);
+            this.labelControl36.Location = new System.Drawing.Point(40, 289);
+            this.labelControl36.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl36.Name = "labelControl36";
-            this.labelControl36.Size = new System.Drawing.Size(72, 14);
+            this.labelControl36.Size = new System.Drawing.Size(90, 18);
             this.labelControl36.TabIndex = 20;
             this.labelControl36.Text = "相对分子量：";
             // 
             // textEdit_Volume
             // 
             this.textEdit_Volume.EditValue = "1";
-            this.textEdit_Volume.Location = new System.Drawing.Point(153, 195);
+            this.textEdit_Volume.Location = new System.Drawing.Point(175, 251);
+            this.textEdit_Volume.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_Volume.MenuManager = this.barManager1;
             this.textEdit_Volume.Name = "textEdit_Volume";
-            this.textEdit_Volume.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_Volume.Size = new System.Drawing.Size(114, 24);
             this.textEdit_Volume.TabIndex = 19;
             // 
             // labelControl33
             // 
-            this.labelControl33.Location = new System.Drawing.Point(259, 198);
+            this.labelControl33.Location = new System.Drawing.Point(296, 255);
+            this.labelControl33.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl33.Name = "labelControl33";
-            this.labelControl33.Size = new System.Drawing.Size(16, 14);
+            this.labelControl33.Size = new System.Drawing.Size(20, 18);
             this.labelControl33.TabIndex = 18;
             this.labelControl33.Text = "m³";
             // 
             // labelControl34
             // 
-            this.labelControl34.Location = new System.Drawing.Point(35, 198);
+            this.labelControl34.Location = new System.Drawing.Point(40, 255);
+            this.labelControl34.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl34.Name = "labelControl34";
-            this.labelControl34.Size = new System.Drawing.Size(60, 14);
+            this.labelControl34.Size = new System.Drawing.Size(75, 18);
             this.labelControl34.TabIndex = 17;
             this.labelControl34.Text = "反映体积：";
             // 
             // textEdit_Temperature
             // 
             this.textEdit_Temperature.EditValue = "20";
-            this.textEdit_Temperature.Location = new System.Drawing.Point(153, 165);
+            this.textEdit_Temperature.Location = new System.Drawing.Point(175, 212);
+            this.textEdit_Temperature.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_Temperature.MenuManager = this.barManager1;
             this.textEdit_Temperature.Name = "textEdit_Temperature";
-            this.textEdit_Temperature.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_Temperature.Size = new System.Drawing.Size(114, 24);
             this.textEdit_Temperature.TabIndex = 16;
             // 
             // labelControl31
             // 
-            this.labelControl31.Location = new System.Drawing.Point(259, 168);
+            this.labelControl31.Location = new System.Drawing.Point(296, 216);
+            this.labelControl31.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl31.Name = "labelControl31";
-            this.labelControl31.Size = new System.Drawing.Size(12, 14);
+            this.labelControl31.Size = new System.Drawing.Size(15, 18);
             this.labelControl31.TabIndex = 15;
             this.labelControl31.Text = "℃";
             this.labelControl31.Click += new System.EventHandler(this.labelControl31_Click);
             // 
             // labelControl32
             // 
-            this.labelControl32.Location = new System.Drawing.Point(35, 168);
+            this.labelControl32.Location = new System.Drawing.Point(40, 216);
+            this.labelControl32.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl32.Name = "labelControl32";
-            this.labelControl32.Size = new System.Drawing.Size(60, 14);
+            this.labelControl32.Size = new System.Drawing.Size(75, 18);
             this.labelControl32.TabIndex = 14;
             this.labelControl32.Text = "环境温度：";
             // 
             // checkEdit_autosample
             // 
-            this.checkEdit_autosample.Location = new System.Drawing.Point(33, 248);
+            this.checkEdit_autosample.Location = new System.Drawing.Point(38, 319);
+            this.checkEdit_autosample.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkEdit_autosample.MenuManager = this.barManager1;
             this.checkEdit_autosample.Name = "checkEdit_autosample";
             this.checkEdit_autosample.Properties.Caption = "开启自动检测";
-            this.checkEdit_autosample.Size = new System.Drawing.Size(119, 19);
+            this.checkEdit_autosample.Size = new System.Drawing.Size(136, 23);
             this.checkEdit_autosample.TabIndex = 13;
             // 
             // textEdit_RealTime
             // 
             this.textEdit_RealTime.EditValue = "30";
-            this.textEdit_RealTime.Location = new System.Drawing.Point(153, 131);
+            this.textEdit_RealTime.Location = new System.Drawing.Point(175, 168);
+            this.textEdit_RealTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_RealTime.MenuManager = this.barManager1;
             this.textEdit_RealTime.Name = "textEdit_RealTime";
-            this.textEdit_RealTime.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_RealTime.Size = new System.Drawing.Size(114, 24);
             this.textEdit_RealTime.TabIndex = 11;
             // 
             // btn_Save1
             // 
             this.btn_Save1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btn_Save1.Appearance.Options.UseBackColor = true;
-            this.btn_Save1.Location = new System.Drawing.Point(153, 345);
+            this.btn_Save1.Location = new System.Drawing.Point(175, 444);
+            this.btn_Save1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Save1.Name = "btn_Save1";
-            this.btn_Save1.Size = new System.Drawing.Size(75, 23);
+            this.btn_Save1.Size = new System.Drawing.Size(86, 30);
             this.btn_Save1.TabIndex = 10;
             this.btn_Save1.Text = "保存";
             this.btn_Save1.Click += new System.EventHandler(this.btn_Save1_Click);
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(259, 134);
+            this.labelControl10.Location = new System.Drawing.Point(296, 172);
+            this.labelControl10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(24, 14);
+            this.labelControl10.Size = new System.Drawing.Size(30, 18);
             this.labelControl10.TabIndex = 9;
             this.labelControl10.Text = "分钟";
             // 
             // textEdit_Preod
             // 
             this.textEdit_Preod.EditValue = "5";
-            this.textEdit_Preod.Location = new System.Drawing.Point(153, 95);
+            this.textEdit_Preod.Location = new System.Drawing.Point(175, 122);
+            this.textEdit_Preod.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_Preod.MenuManager = this.barManager1;
             this.textEdit_Preod.Name = "textEdit_Preod";
-            this.textEdit_Preod.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_Preod.Size = new System.Drawing.Size(114, 24);
             this.textEdit_Preod.TabIndex = 7;
             // 
             // textEdit_BaudRate
             // 
             this.textEdit_BaudRate.EditValue = "9600";
-            this.textEdit_BaudRate.Location = new System.Drawing.Point(153, 62);
+            this.textEdit_BaudRate.Location = new System.Drawing.Point(175, 80);
+            this.textEdit_BaudRate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_BaudRate.MenuManager = this.barManager1;
             this.textEdit_BaudRate.Name = "textEdit_BaudRate";
-            this.textEdit_BaudRate.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_BaudRate.Size = new System.Drawing.Size(114, 24);
             this.textEdit_BaudRate.TabIndex = 6;
             // 
             // comboBoxEdit_second
             // 
             this.comboBoxEdit_second.EditValue = "秒";
-            this.comboBoxEdit_second.Location = new System.Drawing.Point(259, 95);
+            this.comboBoxEdit_second.Location = new System.Drawing.Point(296, 122);
+            this.comboBoxEdit_second.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxEdit_second.MenuManager = this.barManager1;
             this.comboBoxEdit_second.Name = "comboBoxEdit_second";
             this.comboBoxEdit_second.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -3849,13 +4096,14 @@
             "秒",
             "分钟",
             "小时"});
-            this.comboBoxEdit_second.Size = new System.Drawing.Size(50, 20);
+            this.comboBoxEdit_second.Size = new System.Drawing.Size(57, 24);
             this.comboBoxEdit_second.TabIndex = 5;
             // 
             // comboBoxEdit_Port
             // 
             this.comboBoxEdit_Port.EditValue = "COM1";
-            this.comboBoxEdit_Port.Location = new System.Drawing.Point(153, 29);
+            this.comboBoxEdit_Port.Location = new System.Drawing.Point(175, 37);
+            this.comboBoxEdit_Port.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxEdit_Port.MenuManager = this.barManager1;
             this.comboBoxEdit_Port.Name = "comboBoxEdit_Port";
             this.comboBoxEdit_Port.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -3871,38 +4119,42 @@
             "COM8",
             "COM9",
             "COM10"});
-            this.comboBoxEdit_Port.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxEdit_Port.Size = new System.Drawing.Size(114, 24);
             this.comboBoxEdit_Port.TabIndex = 4;
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(35, 134);
+            this.labelControl9.Location = new System.Drawing.Point(40, 172);
+            this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(108, 14);
+            this.labelControl9.Size = new System.Drawing.Size(135, 18);
             this.labelControl9.TabIndex = 3;
             this.labelControl9.Text = "实时曲线窗口时长：";
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(35, 101);
+            this.labelControl8.Location = new System.Drawing.Point(40, 130);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(84, 14);
+            this.labelControl8.Size = new System.Drawing.Size(105, 18);
             this.labelControl8.TabIndex = 2;
             this.labelControl8.Text = "数据采集周期：";
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(35, 68);
+            this.labelControl7.Location = new System.Drawing.Point(40, 87);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(48, 14);
+            this.labelControl7.Size = new System.Drawing.Size(60, 18);
             this.labelControl7.TabIndex = 1;
             this.labelControl7.Text = "波特率：";
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(35, 35);
+            this.labelControl6.Location = new System.Drawing.Point(40, 45);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(48, 14);
+            this.labelControl6.Size = new System.Drawing.Size(60, 18);
             this.labelControl6.TabIndex = 0;
             this.labelControl6.Text = "串口号：";
             // 
@@ -3916,62 +4168,69 @@
             this.groupControl6.Controls.Add(this.btn_ChoosesPath);
             this.groupControl6.Controls.Add(this.textEdit_Path);
             this.groupControl6.Controls.Add(this.labelControl11);
-            this.groupControl6.Location = new System.Drawing.Point(5, 384);
+            this.groupControl6.Location = new System.Drawing.Point(6, 494);
+            this.groupControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(397, 219);
+            this.groupControl6.Size = new System.Drawing.Size(454, 282);
             this.groupControl6.TabIndex = 4;
             this.groupControl6.Text = "数据备份";
             // 
             // textEdit_BackupPreiod
             // 
             this.textEdit_BackupPreiod.EditValue = "30";
-            this.textEdit_BackupPreiod.Location = new System.Drawing.Point(294, 127);
+            this.textEdit_BackupPreiod.Location = new System.Drawing.Point(336, 163);
+            this.textEdit_BackupPreiod.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_BackupPreiod.MenuManager = this.barManager1;
             this.textEdit_BackupPreiod.Name = "textEdit_BackupPreiod";
-            this.textEdit_BackupPreiod.Size = new System.Drawing.Size(57, 20);
+            this.textEdit_BackupPreiod.Size = new System.Drawing.Size(65, 24);
             this.textEdit_BackupPreiod.TabIndex = 13;
             // 
             // checkEdit_Back
             // 
-            this.checkEdit_Back.Location = new System.Drawing.Point(24, 128);
+            this.checkEdit_Back.Location = new System.Drawing.Point(27, 165);
+            this.checkEdit_Back.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkEdit_Back.MenuManager = this.barManager1;
             this.checkEdit_Back.Name = "checkEdit_Back";
             this.checkEdit_Back.Properties.Caption = "数据库自动备份";
-            this.checkEdit_Back.Size = new System.Drawing.Size(119, 19);
+            this.checkEdit_Back.Size = new System.Drawing.Size(136, 23);
             this.checkEdit_Back.TabIndex = 12;
             // 
             // btn_Save2
             // 
             this.btn_Save2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btn_Save2.Appearance.Options.UseBackColor = true;
-            this.btn_Save2.Location = new System.Drawing.Point(149, 184);
+            this.btn_Save2.Location = new System.Drawing.Point(170, 237);
+            this.btn_Save2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Save2.Name = "btn_Save2";
-            this.btn_Save2.Size = new System.Drawing.Size(75, 23);
+            this.btn_Save2.Size = new System.Drawing.Size(86, 30);
             this.btn_Save2.TabIndex = 11;
             this.btn_Save2.Text = "保存";
             this.btn_Save2.Click += new System.EventHandler(this.btn_Save2_Click);
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(358, 132);
+            this.labelControl13.Location = new System.Drawing.Point(409, 170);
+            this.labelControl13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(12, 14);
+            this.labelControl13.Size = new System.Drawing.Size(15, 18);
             this.labelControl13.TabIndex = 10;
             this.labelControl13.Text = "天";
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(197, 130);
+            this.labelControl12.Location = new System.Drawing.Point(225, 167);
+            this.labelControl12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(76, 14);
+            this.labelControl12.Size = new System.Drawing.Size(95, 18);
             this.labelControl12.TabIndex = 4;
             this.labelControl12.Text = "自动备份周期:";
             // 
             // btn_ChoosesPath
             // 
-            this.btn_ChoosesPath.Location = new System.Drawing.Point(294, 85);
+            this.btn_ChoosesPath.Location = new System.Drawing.Point(336, 109);
+            this.btn_ChoosesPath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_ChoosesPath.Name = "btn_ChoosesPath";
-            this.btn_ChoosesPath.Size = new System.Drawing.Size(75, 23);
+            this.btn_ChoosesPath.Size = new System.Drawing.Size(86, 30);
             this.btn_ChoosesPath.TabIndex = 2;
             this.btn_ChoosesPath.Text = "更改...";
             this.btn_ChoosesPath.Click += new System.EventHandler(this.btn_ChoosesPath_Click);
@@ -3979,17 +4238,19 @@
             // textEdit_Path
             // 
             this.textEdit_Path.EditValue = "D:\\Backup";
-            this.textEdit_Path.Location = new System.Drawing.Point(26, 88);
+            this.textEdit_Path.Location = new System.Drawing.Point(30, 113);
+            this.textEdit_Path.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_Path.MenuManager = this.barManager1;
             this.textEdit_Path.Name = "textEdit_Path";
-            this.textEdit_Path.Size = new System.Drawing.Size(247, 20);
+            this.textEdit_Path.Size = new System.Drawing.Size(282, 24);
             this.textEdit_Path.TabIndex = 1;
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(26, 51);
+            this.labelControl11.Location = new System.Drawing.Point(30, 66);
+            this.labelControl11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(84, 14);
+            this.labelControl11.Size = new System.Drawing.Size(105, 18);
             this.labelControl11.TabIndex = 0;
             this.labelControl11.Text = "数据备份路径：";
             // 
@@ -3998,8 +4259,9 @@
             this.xtraTabPage4.Controls.Add(this.groupControl10);
             this.xtraTabPage4.Controls.Add(this.groupControl9);
             this.xtraTabPage4.Controls.Add(this.groupControl8);
+            this.xtraTabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(1364, 650);
+            this.xtraTabPage4.Size = new System.Drawing.Size(1560, 837);
             this.xtraTabPage4.Text = "添加设备";
             // 
             // groupControl10
@@ -4021,16 +4283,18 @@
             this.groupControl10.Controls.Add(this.labelControl20);
             this.groupControl10.Controls.Add(this.labelControl19);
             this.groupControl10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl10.Location = new System.Drawing.Point(361, 195);
+            this.groupControl10.Location = new System.Drawing.Point(413, 251);
+            this.groupControl10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl10.Name = "groupControl10";
-            this.groupControl10.Size = new System.Drawing.Size(1003, 455);
+            this.groupControl10.Size = new System.Drawing.Size(1147, 586);
             this.groupControl10.TabIndex = 2;
             this.groupControl10.Text = "测量参数";
             // 
             // comboBoxEdit1
             // 
             this.comboBoxEdit1.EditValue = "03";
-            this.comboBoxEdit1.Location = new System.Drawing.Point(396, 173);
+            this.comboBoxEdit1.Location = new System.Drawing.Point(453, 222);
+            this.comboBoxEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxEdit1.MenuManager = this.barManager1;
             this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -4039,21 +4303,23 @@
             "03",
             "04"});
             this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit1.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxEdit1.Size = new System.Drawing.Size(114, 24);
             this.comboBoxEdit1.TabIndex = 16;
             // 
             // labelControl38
             // 
-            this.labelControl38.Location = new System.Drawing.Point(320, 176);
+            this.labelControl38.Location = new System.Drawing.Point(366, 226);
+            this.labelControl38.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl38.Name = "labelControl38";
-            this.labelControl38.Size = new System.Drawing.Size(48, 14);
+            this.labelControl38.Size = new System.Drawing.Size(60, 18);
             this.labelControl38.TabIndex = 15;
             this.labelControl38.Text = "功能码：";
             // 
             // comboBoxEdit_UnitAdd
             // 
             this.comboBoxEdit_UnitAdd.EditValue = "PPM";
-            this.comboBoxEdit_UnitAdd.Location = new System.Drawing.Point(160, 79);
+            this.comboBoxEdit_UnitAdd.Location = new System.Drawing.Point(183, 102);
+            this.comboBoxEdit_UnitAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxEdit_UnitAdd.MenuManager = this.barManager1;
             this.comboBoxEdit_UnitAdd.Name = "comboBoxEdit_UnitAdd";
             this.comboBoxEdit_UnitAdd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -4069,13 +4335,14 @@
             "dB",
             "ug/m3"});
             this.comboBoxEdit_UnitAdd.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit_UnitAdd.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxEdit_UnitAdd.Size = new System.Drawing.Size(114, 24);
             this.comboBoxEdit_UnitAdd.TabIndex = 14;
             // 
             // comboBoxEdit_OpenAdd
             // 
             this.comboBoxEdit_OpenAdd.EditValue = "打开";
-            this.comboBoxEdit_OpenAdd.Location = new System.Drawing.Point(396, 126);
+            this.comboBoxEdit_OpenAdd.Location = new System.Drawing.Point(453, 162);
+            this.comboBoxEdit_OpenAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxEdit_OpenAdd.MenuManager = this.barManager1;
             this.comboBoxEdit_OpenAdd.Name = "comboBoxEdit_OpenAdd";
             this.comboBoxEdit_OpenAdd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -4084,13 +4351,14 @@
             "关闭",
             "打开"});
             this.comboBoxEdit_OpenAdd.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit_OpenAdd.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxEdit_OpenAdd.Size = new System.Drawing.Size(114, 24);
             this.comboBoxEdit_OpenAdd.TabIndex = 13;
             // 
             // comboBoxEdit_PointAdd
             // 
             this.comboBoxEdit_PointAdd.EditValue = "无小数";
-            this.comboBoxEdit_PointAdd.Location = new System.Drawing.Point(160, 126);
+            this.comboBoxEdit_PointAdd.Location = new System.Drawing.Point(183, 162);
+            this.comboBoxEdit_PointAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxEdit_PointAdd.MenuManager = this.barManager1;
             this.comboBoxEdit_PointAdd.Name = "comboBoxEdit_PointAdd";
             this.comboBoxEdit_PointAdd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -4101,98 +4369,109 @@
             "2位小数",
             "3位小数"});
             this.comboBoxEdit_PointAdd.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit_PointAdd.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxEdit_PointAdd.Size = new System.Drawing.Size(114, 24);
             this.comboBoxEdit_PointAdd.TabIndex = 12;
             // 
             // textEdit_LowAdd
             // 
             this.textEdit_LowAdd.EditValue = "30";
-            this.textEdit_LowAdd.Location = new System.Drawing.Point(396, 79);
+            this.textEdit_LowAdd.Location = new System.Drawing.Point(453, 102);
+            this.textEdit_LowAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_LowAdd.MenuManager = this.barManager1;
             this.textEdit_LowAdd.Name = "textEdit_LowAdd";
-            this.textEdit_LowAdd.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_LowAdd.Size = new System.Drawing.Size(114, 24);
             this.textEdit_LowAdd.TabIndex = 11;
             // 
             // textEdit_ReviseAdd
             // 
             this.textEdit_ReviseAdd.EditValue = "1";
-            this.textEdit_ReviseAdd.Location = new System.Drawing.Point(160, 173);
+            this.textEdit_ReviseAdd.Location = new System.Drawing.Point(183, 222);
+            this.textEdit_ReviseAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_ReviseAdd.MenuManager = this.barManager1;
             this.textEdit_ReviseAdd.Name = "textEdit_ReviseAdd";
-            this.textEdit_ReviseAdd.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_ReviseAdd.Size = new System.Drawing.Size(114, 24);
             this.textEdit_ReviseAdd.TabIndex = 10;
             // 
             // textEdit_HighAdd
             // 
             this.textEdit_HighAdd.EditValue = "60";
-            this.textEdit_HighAdd.Location = new System.Drawing.Point(396, 32);
+            this.textEdit_HighAdd.Location = new System.Drawing.Point(453, 41);
+            this.textEdit_HighAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_HighAdd.MenuManager = this.barManager1;
             this.textEdit_HighAdd.Name = "textEdit_HighAdd";
-            this.textEdit_HighAdd.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_HighAdd.Size = new System.Drawing.Size(114, 24);
             this.textEdit_HighAdd.TabIndex = 9;
             // 
             // textEdit_RangeAdd
             // 
             this.textEdit_RangeAdd.EditValue = "100";
-            this.textEdit_RangeAdd.Location = new System.Drawing.Point(160, 32);
+            this.textEdit_RangeAdd.Location = new System.Drawing.Point(183, 41);
+            this.textEdit_RangeAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_RangeAdd.MenuManager = this.barManager1;
             this.textEdit_RangeAdd.Name = "textEdit_RangeAdd";
-            this.textEdit_RangeAdd.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_RangeAdd.Size = new System.Drawing.Size(114, 24);
             this.textEdit_RangeAdd.TabIndex = 7;
             // 
             // labelControl25
             // 
-            this.labelControl25.Location = new System.Drawing.Point(320, 129);
+            this.labelControl25.Location = new System.Drawing.Point(366, 166);
+            this.labelControl25.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl25.Name = "labelControl25";
-            this.labelControl25.Size = new System.Drawing.Size(60, 14);
+            this.labelControl25.Size = new System.Drawing.Size(75, 18);
             this.labelControl25.TabIndex = 6;
             this.labelControl25.Text = "报警开关：";
             // 
             // labelControl24
             // 
-            this.labelControl24.Location = new System.Drawing.Point(320, 35);
+            this.labelControl24.Location = new System.Drawing.Point(366, 45);
+            this.labelControl24.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl24.Name = "labelControl24";
-            this.labelControl24.Size = new System.Drawing.Size(60, 14);
+            this.labelControl24.Size = new System.Drawing.Size(75, 18);
             this.labelControl24.TabIndex = 5;
             this.labelControl24.Text = "高报警线：";
             // 
             // labelControl23
             // 
-            this.labelControl23.Location = new System.Drawing.Point(320, 82);
+            this.labelControl23.Location = new System.Drawing.Point(366, 105);
+            this.labelControl23.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(60, 14);
+            this.labelControl23.Size = new System.Drawing.Size(75, 18);
             this.labelControl23.TabIndex = 4;
             this.labelControl23.Text = "低报警线：";
             // 
             // labelControl22
             // 
-            this.labelControl22.Location = new System.Drawing.Point(46, 176);
+            this.labelControl22.Location = new System.Drawing.Point(53, 226);
+            this.labelControl22.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl22.Name = "labelControl22";
-            this.labelControl22.Size = new System.Drawing.Size(60, 14);
+            this.labelControl22.Size = new System.Drawing.Size(75, 18);
             this.labelControl22.TabIndex = 3;
             this.labelControl22.Text = "修正因子：";
             // 
             // labelControl21
             // 
-            this.labelControl21.Location = new System.Drawing.Point(46, 129);
+            this.labelControl21.Location = new System.Drawing.Point(53, 166);
+            this.labelControl21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl21.Name = "labelControl21";
-            this.labelControl21.Size = new System.Drawing.Size(72, 14);
+            this.labelControl21.Size = new System.Drawing.Size(90, 18);
             this.labelControl21.TabIndex = 2;
             this.labelControl21.Text = "测量小数位：";
             // 
             // labelControl20
             // 
-            this.labelControl20.Location = new System.Drawing.Point(46, 82);
+            this.labelControl20.Location = new System.Drawing.Point(53, 105);
+            this.labelControl20.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(60, 14);
+            this.labelControl20.Size = new System.Drawing.Size(75, 18);
             this.labelControl20.TabIndex = 1;
             this.labelControl20.Text = "测量单位：";
             // 
             // labelControl19
             // 
-            this.labelControl19.Location = new System.Drawing.Point(46, 35);
+            this.labelControl19.Location = new System.Drawing.Point(53, 45);
+            this.labelControl19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(36, 14);
+            this.labelControl19.Size = new System.Drawing.Size(45, 18);
             this.labelControl19.TabIndex = 0;
             this.labelControl19.Text = "量程：";
             // 
@@ -4208,28 +4487,31 @@
             this.groupControl9.Controls.Add(this.labelControl17);
             this.groupControl9.Controls.Add(this.labelControl16);
             this.groupControl9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl9.Location = new System.Drawing.Point(361, 0);
+            this.groupControl9.Location = new System.Drawing.Point(413, 0);
+            this.groupControl9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl9.Name = "groupControl9";
-            this.groupControl9.Size = new System.Drawing.Size(1003, 195);
+            this.groupControl9.Size = new System.Drawing.Size(1147, 251);
             this.groupControl9.TabIndex = 1;
             this.groupControl9.Text = "仪器设备信息";
             // 
             // textEdit_PlaceAdd
             // 
             this.textEdit_PlaceAdd.EditValue = "默认位置";
-            this.textEdit_PlaceAdd.Location = new System.Drawing.Point(160, 134);
+            this.textEdit_PlaceAdd.Location = new System.Drawing.Point(183, 172);
+            this.textEdit_PlaceAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_PlaceAdd.MenuManager = this.barManager1;
             this.textEdit_PlaceAdd.Name = "textEdit_PlaceAdd";
-            this.textEdit_PlaceAdd.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_PlaceAdd.Size = new System.Drawing.Size(114, 24);
             this.textEdit_PlaceAdd.TabIndex = 8;
             // 
             // btn_UpdateAdd
             // 
             this.btn_UpdateAdd.Appearance.BackColor = System.Drawing.Color.Silver;
             this.btn_UpdateAdd.Appearance.Options.UseBackColor = true;
-            this.btn_UpdateAdd.Location = new System.Drawing.Point(434, 79);
+            this.btn_UpdateAdd.Location = new System.Drawing.Point(496, 102);
+            this.btn_UpdateAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_UpdateAdd.Name = "btn_UpdateAdd";
-            this.btn_UpdateAdd.Size = new System.Drawing.Size(75, 23);
+            this.btn_UpdateAdd.Size = new System.Drawing.Size(86, 30);
             this.btn_UpdateAdd.TabIndex = 7;
             this.btn_UpdateAdd.Text = "更新";
             this.btn_UpdateAdd.Click += new System.EventHandler(this.btn_UpdateAdd_Click);
@@ -4238,9 +4520,10 @@
             // 
             this.btn_DeleteAdd.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btn_DeleteAdd.Appearance.Options.UseBackColor = true;
-            this.btn_DeleteAdd.Location = new System.Drawing.Point(434, 128);
+            this.btn_DeleteAdd.Location = new System.Drawing.Point(496, 165);
+            this.btn_DeleteAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_DeleteAdd.Name = "btn_DeleteAdd";
-            this.btn_DeleteAdd.Size = new System.Drawing.Size(75, 23);
+            this.btn_DeleteAdd.Size = new System.Drawing.Size(86, 30);
             this.btn_DeleteAdd.TabIndex = 6;
             this.btn_DeleteAdd.Text = "移除";
             this.btn_DeleteAdd.Click += new System.EventHandler(this.btn_DeleteAdd_Click);
@@ -4249,9 +4532,10 @@
             // 
             this.btn_AddAdd.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btn_AddAdd.Appearance.Options.UseBackColor = true;
-            this.btn_AddAdd.Location = new System.Drawing.Point(434, 27);
+            this.btn_AddAdd.Location = new System.Drawing.Point(496, 35);
+            this.btn_AddAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_AddAdd.Name = "btn_AddAdd";
-            this.btn_AddAdd.Size = new System.Drawing.Size(75, 23);
+            this.btn_AddAdd.Size = new System.Drawing.Size(86, 30);
             this.btn_AddAdd.TabIndex = 5;
             this.btn_AddAdd.Text = "添加";
             this.btn_AddAdd.Click += new System.EventHandler(this.btn_AddAdd_Click);
@@ -4259,42 +4543,47 @@
             // textEdit_GasNameAdd
             // 
             this.textEdit_GasNameAdd.EditValue = "气体1";
-            this.textEdit_GasNameAdd.Location = new System.Drawing.Point(160, 82);
+            this.textEdit_GasNameAdd.Location = new System.Drawing.Point(183, 105);
+            this.textEdit_GasNameAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_GasNameAdd.MenuManager = this.barManager1;
             this.textEdit_GasNameAdd.Name = "textEdit_GasNameAdd";
-            this.textEdit_GasNameAdd.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_GasNameAdd.Size = new System.Drawing.Size(114, 24);
             this.textEdit_GasNameAdd.TabIndex = 4;
             // 
             // textEdit_AddressAdd
             // 
             this.textEdit_AddressAdd.EditValue = "1";
-            this.textEdit_AddressAdd.Location = new System.Drawing.Point(160, 30);
+            this.textEdit_AddressAdd.Location = new System.Drawing.Point(183, 39);
+            this.textEdit_AddressAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit_AddressAdd.MenuManager = this.barManager1;
             this.textEdit_AddressAdd.Name = "textEdit_AddressAdd";
-            this.textEdit_AddressAdd.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_AddressAdd.Size = new System.Drawing.Size(114, 24);
             this.textEdit_AddressAdd.TabIndex = 3;
             // 
             // labelControl18
             // 
-            this.labelControl18.Location = new System.Drawing.Point(34, 137);
+            this.labelControl18.Location = new System.Drawing.Point(39, 176);
+            this.labelControl18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(84, 14);
+            this.labelControl18.Size = new System.Drawing.Size(105, 18);
             this.labelControl18.TabIndex = 2;
             this.labelControl18.Text = "设备安装位置：";
             // 
             // labelControl17
             // 
-            this.labelControl17.Location = new System.Drawing.Point(36, 85);
+            this.labelControl17.Location = new System.Drawing.Point(41, 109);
+            this.labelControl17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(60, 14);
+            this.labelControl17.Size = new System.Drawing.Size(75, 18);
             this.labelControl17.TabIndex = 1;
             this.labelControl17.Text = "气体名称：";
             // 
             // labelControl16
             // 
-            this.labelControl16.Location = new System.Drawing.Point(34, 33);
+            this.labelControl16.Location = new System.Drawing.Point(39, 42);
+            this.labelControl16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(48, 14);
+            this.labelControl16.Size = new System.Drawing.Size(61, 18);
             this.labelControl16.TabIndex = 0;
             this.labelControl16.Text = "仪器ID：";
             // 
@@ -4303,19 +4592,22 @@
             this.groupControl8.Controls.Add(this.gridControl_Add);
             this.groupControl8.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl8.Location = new System.Drawing.Point(0, 0);
+            this.groupControl8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl8.Name = "groupControl8";
-            this.groupControl8.Size = new System.Drawing.Size(361, 650);
+            this.groupControl8.Size = new System.Drawing.Size(413, 837);
             this.groupControl8.TabIndex = 0;
             this.groupControl8.Text = "已添加的设备";
             // 
             // gridControl_Add
             // 
             this.gridControl_Add.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl_Add.Location = new System.Drawing.Point(2, 22);
+            this.gridControl_Add.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridControl_Add.Location = new System.Drawing.Point(2, 26);
             this.gridControl_Add.MainView = this.gridView_Add;
+            this.gridControl_Add.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl_Add.MenuManager = this.barManager1;
             this.gridControl_Add.Name = "gridControl_Add";
-            this.gridControl_Add.Size = new System.Drawing.Size(357, 626);
+            this.gridControl_Add.Size = new System.Drawing.Size(409, 809);
             this.gridControl_Add.TabIndex = 0;
             this.gridControl_Add.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Add});
@@ -4384,18 +4676,21 @@
             // 
             this.xtraTabPage5.Controls.Add(this.gridControl_Alert);
             this.xtraTabPage5.Controls.Add(this.groupControl11);
+            this.xtraTabPage5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(1364, 650);
+            this.xtraTabPage5.Size = new System.Drawing.Size(1560, 837);
             this.xtraTabPage5.Text = "报警记录";
             // 
             // gridControl_Alert
             // 
             this.gridControl_Alert.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl_Alert.Location = new System.Drawing.Point(0, 100);
+            this.gridControl_Alert.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridControl_Alert.Location = new System.Drawing.Point(0, 129);
             this.gridControl_Alert.MainView = this.gridView_Alert;
+            this.gridControl_Alert.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl_Alert.MenuManager = this.barManager1;
             this.gridControl_Alert.Name = "gridControl_Alert";
-            this.gridControl_Alert.Size = new System.Drawing.Size(1364, 550);
+            this.gridControl_Alert.Size = new System.Drawing.Size(1560, 708);
             this.gridControl_Alert.TabIndex = 1;
             this.gridControl_Alert.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Alert});
@@ -4513,8 +4808,9 @@
             this.groupControl11.Controls.Add(this.labelControl26);
             this.groupControl11.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl11.Location = new System.Drawing.Point(0, 0);
+            this.groupControl11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl11.Name = "groupControl11";
-            this.groupControl11.Size = new System.Drawing.Size(1364, 100);
+            this.groupControl11.Size = new System.Drawing.Size(1560, 129);
             this.groupControl11.TabIndex = 0;
             this.groupControl11.Text = "查询时间";
             // 
@@ -4522,9 +4818,10 @@
             // 
             this.btn_ExportAlert.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btn_ExportAlert.Appearance.Options.UseBackColor = true;
-            this.btn_ExportAlert.Location = new System.Drawing.Point(847, 44);
+            this.btn_ExportAlert.Location = new System.Drawing.Point(968, 57);
+            this.btn_ExportAlert.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_ExportAlert.Name = "btn_ExportAlert";
-            this.btn_ExportAlert.Size = new System.Drawing.Size(75, 23);
+            this.btn_ExportAlert.Size = new System.Drawing.Size(86, 30);
             this.btn_ExportAlert.TabIndex = 14;
             this.btn_ExportAlert.Text = "导出";
             this.btn_ExportAlert.Click += new System.EventHandler(this.btn_ExportAlert_Click);
@@ -4533,9 +4830,10 @@
             // 
             this.btn_searchAlert.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btn_searchAlert.Appearance.Options.UseBackColor = true;
-            this.btn_searchAlert.Location = new System.Drawing.Point(713, 44);
+            this.btn_searchAlert.Location = new System.Drawing.Point(815, 57);
+            this.btn_searchAlert.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_searchAlert.Name = "btn_searchAlert";
-            this.btn_searchAlert.Size = new System.Drawing.Size(75, 23);
+            this.btn_searchAlert.Size = new System.Drawing.Size(86, 30);
             this.btn_searchAlert.TabIndex = 13;
             this.btn_searchAlert.Text = "查询";
             this.btn_searchAlert.Click += new System.EventHandler(this.btn_searchAlert_Click);
@@ -4543,7 +4841,8 @@
             // dateEdit_EndAlert
             // 
             this.dateEdit_EndAlert.EditValue = null;
-            this.dateEdit_EndAlert.Location = new System.Drawing.Point(440, 47);
+            this.dateEdit_EndAlert.Location = new System.Drawing.Point(503, 60);
+            this.dateEdit_EndAlert.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateEdit_EndAlert.MenuManager = this.barManager1;
             this.dateEdit_EndAlert.Name = "dateEdit_EndAlert";
             this.dateEdit_EndAlert.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -4557,21 +4856,23 @@
             this.dateEdit_EndAlert.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
             this.dateEdit_EndAlert.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit_EndAlert.Size = new System.Drawing.Size(179, 20);
+            this.dateEdit_EndAlert.Size = new System.Drawing.Size(205, 24);
             this.dateEdit_EndAlert.TabIndex = 12;
             // 
             // labelControl27
             // 
-            this.labelControl27.Location = new System.Drawing.Point(348, 50);
+            this.labelControl27.Location = new System.Drawing.Point(398, 64);
+            this.labelControl27.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl27.Name = "labelControl27";
-            this.labelControl27.Size = new System.Drawing.Size(60, 14);
+            this.labelControl27.Size = new System.Drawing.Size(75, 18);
             this.labelControl27.TabIndex = 11;
             this.labelControl27.Text = "结束时间：";
             // 
             // dateEdit_StartAlert
             // 
             this.dateEdit_StartAlert.EditValue = null;
-            this.dateEdit_StartAlert.Location = new System.Drawing.Point(112, 47);
+            this.dateEdit_StartAlert.Location = new System.Drawing.Point(128, 60);
+            this.dateEdit_StartAlert.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateEdit_StartAlert.MenuManager = this.barManager1;
             this.dateEdit_StartAlert.Name = "dateEdit_StartAlert";
             this.dateEdit_StartAlert.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -4585,14 +4886,15 @@
             this.dateEdit_StartAlert.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
             this.dateEdit_StartAlert.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit_StartAlert.Size = new System.Drawing.Size(178, 20);
+            this.dateEdit_StartAlert.Size = new System.Drawing.Size(203, 24);
             this.dateEdit_StartAlert.TabIndex = 10;
             // 
             // labelControl26
             // 
-            this.labelControl26.Location = new System.Drawing.Point(19, 50);
+            this.labelControl26.Location = new System.Drawing.Point(22, 64);
+            this.labelControl26.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl26.Name = "labelControl26";
-            this.labelControl26.Size = new System.Drawing.Size(60, 14);
+            this.labelControl26.Size = new System.Drawing.Size(75, 18);
             this.labelControl26.TabIndex = 9;
             this.labelControl26.Text = "开始时间：";
             // 
@@ -4604,15 +4906,16 @@
             // 
             // MainForm2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 750);
+            this.ClientSize = new System.Drawing.Size(1566, 964);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CTS60有毒有害气体在线监测系统";
@@ -4729,10 +5032,10 @@
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl_History)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);

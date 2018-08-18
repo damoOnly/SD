@@ -333,3 +333,5 @@ Build/
 *.exe
 *.zip
 *.dgml
+
+SDApplication/Properties/licenses.licx
