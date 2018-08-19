@@ -253,6 +253,8 @@
             this.btn_Export = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.groupControl17 = new DevExpress.XtraEditors.GroupControl();
+            this.btn_ClearRunTime = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl15 = new DevExpress.XtraEditors.GroupControl();
             this.txt_main_value_humidity_out = new DevExpress.XtraEditors.TextEdit();
             this.txt_main_name_humidity_out = new DevExpress.XtraEditors.TextEdit();
@@ -500,6 +502,8 @@
             this.xtraTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl17)).BeginInit();
+            this.groupControl17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl15)).BeginInit();
             this.groupControl15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_humidity_out.Properties)).BeginInit();
@@ -1202,12 +1206,12 @@
             // label_h_in_1
             // 
             this.label_h_in_1.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_h_in_1.Location = new System.Drawing.Point(10, 164);
+            this.label_h_in_1.Location = new System.Drawing.Point(1, 166);
             this.label_h_in_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_h_in_1.Name = "label_h_in_1";
             this.label_h_in_1.Size = new System.Drawing.Size(108, 27);
             this.label_h_in_1.TabIndex = 131;
-            this.label_h_in_1.Text = "室外湿度";
+            this.label_h_in_1.Text = "室内湿度";
             // 
             // txt_n_d7_1
             // 
@@ -2653,12 +2657,12 @@
             // label_h_out_1
             // 
             this.label_h_out_1.Appearance.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_h_out_1.Location = new System.Drawing.Point(3, 233);
+            this.label_h_out_1.Location = new System.Drawing.Point(0, 233);
             this.label_h_out_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.label_h_out_1.Name = "label_h_out_1";
             this.label_h_out_1.Size = new System.Drawing.Size(108, 27);
             this.label_h_out_1.TabIndex = 5;
-            this.label_h_out_1.Text = "室内湿度";
+            this.label_h_out_1.Text = "室外湿度";
             // 
             // label_nr_1
             // 
@@ -2851,11 +2855,11 @@
             this.groupControl13.Controls.Add(this.txt_d10);
             this.groupControl13.Controls.Add(this.labelControl44);
             this.groupControl13.Controls.Add(this.labelControl42);
-            this.groupControl13.Location = new System.Drawing.Point(9, 388);
+            this.groupControl13.Location = new System.Drawing.Point(3, 388);
             this.groupControl13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl13.Name = "groupControl13";
             this.groupControl13.ShowCaption = false;
-            this.groupControl13.Size = new System.Drawing.Size(224, 301);
+            this.groupControl13.Size = new System.Drawing.Size(230, 301);
             this.groupControl13.TabIndex = 22;
             this.groupControl13.Text = "风管截面积";
             // 
@@ -2871,7 +2875,7 @@
             // 
             // txt_pipeBack
             // 
-            this.txt_pipeBack.Location = new System.Drawing.Point(86, 240);
+            this.txt_pipeBack.Location = new System.Drawing.Point(112, 240);
             this.txt_pipeBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_pipeBack.MenuManager = this.barManager1;
             this.txt_pipeBack.Name = "txt_pipeBack";
@@ -2896,7 +2900,7 @@
             // 
             // txt_pipeNew
             // 
-            this.txt_pipeNew.Location = new System.Drawing.Point(86, 176);
+            this.txt_pipeNew.Location = new System.Drawing.Point(112, 176);
             this.txt_pipeNew.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_pipeNew.MenuManager = this.barManager1;
             this.txt_pipeNew.Name = "txt_pipeNew";
@@ -2921,7 +2925,7 @@
             // 
             // txt_d9
             // 
-            this.txt_d9.Location = new System.Drawing.Point(86, 10);
+            this.txt_d9.Location = new System.Drawing.Point(112, 6);
             this.txt_d9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d9.MenuManager = this.barManager1;
             this.txt_d9.Name = "txt_d9";
@@ -2937,7 +2941,7 @@
             // 
             // txt_d10
             // 
-            this.txt_d10.Location = new System.Drawing.Point(86, 75);
+            this.txt_d10.Location = new System.Drawing.Point(112, 75);
             this.txt_d10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_d10.MenuManager = this.barManager1;
             this.txt_d10.Name = "txt_d10";
@@ -3058,7 +3062,7 @@
             this.xtraTabPage2.Controls.Add(this.splitContainerControl_His);
             this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1560, 837);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1560, 853);
             this.xtraTabPage2.Text = "历史记录";
             // 
             // splitContainerControl_His
@@ -3072,7 +3076,7 @@
             this.splitContainerControl_His.Panel1.Text = "Panel1";
             this.splitContainerControl_His.Panel2.Controls.Add(this.splitContainerControl1);
             this.splitContainerControl_His.Panel2.Text = "Panel2";
-            this.splitContainerControl_His.Size = new System.Drawing.Size(1560, 837);
+            this.splitContainerControl_His.Size = new System.Drawing.Size(1560, 853);
             this.splitContainerControl_His.SplitterPosition = 89;
             this.splitContainerControl_His.TabIndex = 0;
             this.splitContainerControl_His.Text = "splitContainerControl1";
@@ -3238,7 +3242,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1560, 743);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1560, 759);
             this.splitContainerControl1.SplitterPosition = 337;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -3250,7 +3254,7 @@
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1218, 743);
+            this.groupControl2.Size = new System.Drawing.Size(1218, 759);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "历史数据曲线";
             // 
@@ -3288,7 +3292,7 @@
             this.chartControl_History.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
             this.chartControl_History.SeriesTemplate.View = swiftPlotSeriesView2;
-            this.chartControl_History.Size = new System.Drawing.Size(1214, 715);
+            this.chartControl_History.Size = new System.Drawing.Size(1214, 731);
             this.chartControl_History.TabIndex = 0;
             // 
             // splitContainerControl2
@@ -3303,7 +3307,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl4);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(337, 743);
+            this.splitContainerControl2.Size = new System.Drawing.Size(337, 759);
             this.splitContainerControl2.SplitterPosition = 59;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -3315,7 +3319,7 @@
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(337, 679);
+            this.groupControl3.Size = new System.Drawing.Size(337, 695);
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "历史数据列表";
             // 
@@ -3328,7 +3332,7 @@
             this.gridControl_History.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl_History.MenuManager = this.barManager1;
             this.gridControl_History.Name = "gridControl_History";
-            this.gridControl_History.Size = new System.Drawing.Size(333, 651);
+            this.gridControl_History.Size = new System.Drawing.Size(333, 667);
             this.gridControl_History.TabIndex = 0;
             this.gridControl_History.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_History});
@@ -3459,11 +3463,12 @@
             this.xtraTabPage3.Controls.Add(this.panelControl1);
             this.xtraTabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1560, 837);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1560, 853);
             this.xtraTabPage3.Text = "系统参数设置";
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.groupControl17);
             this.panelControl1.Controls.Add(this.groupControl15);
             this.panelControl1.Controls.Add(this.groupControl7);
             this.panelControl1.Controls.Add(this.groupControl5);
@@ -3472,8 +3477,29 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1560, 837);
+            this.panelControl1.Size = new System.Drawing.Size(1560, 853);
             this.panelControl1.TabIndex = 6;
+            // 
+            // groupControl17
+            // 
+            this.groupControl17.Controls.Add(this.btn_ClearRunTime);
+            this.groupControl17.Location = new System.Drawing.Point(1102, 625);
+            this.groupControl17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupControl17.Name = "groupControl17";
+            this.groupControl17.ShowCaption = false;
+            this.groupControl17.Size = new System.Drawing.Size(342, 151);
+            this.groupControl17.TabIndex = 10;
+            this.groupControl17.Text = "中心站网络通讯参数";
+            // 
+            // btn_ClearRunTime
+            // 
+            this.btn_ClearRunTime.Location = new System.Drawing.Point(73, 39);
+            this.btn_ClearRunTime.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_ClearRunTime.Name = "btn_ClearRunTime";
+            this.btn_ClearRunTime.Size = new System.Drawing.Size(194, 30);
+            this.btn_ClearRunTime.TabIndex = 35;
+            this.btn_ClearRunTime.Text = "清除运行时间";
+            this.btn_ClearRunTime.Click += new System.EventHandler(this.btn_ClearRunTime_Click);
             // 
             // groupControl15
             // 
@@ -4261,7 +4287,7 @@
             this.xtraTabPage4.Controls.Add(this.groupControl8);
             this.xtraTabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(1560, 837);
+            this.xtraTabPage4.Size = new System.Drawing.Size(1560, 853);
             this.xtraTabPage4.Text = "添加设备";
             // 
             // groupControl10
@@ -4286,7 +4312,7 @@
             this.groupControl10.Location = new System.Drawing.Point(413, 251);
             this.groupControl10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl10.Name = "groupControl10";
-            this.groupControl10.Size = new System.Drawing.Size(1147, 586);
+            this.groupControl10.Size = new System.Drawing.Size(1147, 602);
             this.groupControl10.TabIndex = 2;
             this.groupControl10.Text = "测量参数";
             // 
@@ -4594,7 +4620,7 @@
             this.groupControl8.Location = new System.Drawing.Point(0, 0);
             this.groupControl8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupControl8.Name = "groupControl8";
-            this.groupControl8.Size = new System.Drawing.Size(413, 837);
+            this.groupControl8.Size = new System.Drawing.Size(413, 853);
             this.groupControl8.TabIndex = 0;
             this.groupControl8.Text = "已添加的设备";
             // 
@@ -4607,7 +4633,7 @@
             this.gridControl_Add.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl_Add.MenuManager = this.barManager1;
             this.gridControl_Add.Name = "gridControl_Add";
-            this.gridControl_Add.Size = new System.Drawing.Size(409, 809);
+            this.gridControl_Add.Size = new System.Drawing.Size(409, 825);
             this.gridControl_Add.TabIndex = 0;
             this.gridControl_Add.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Add});
@@ -4678,7 +4704,7 @@
             this.xtraTabPage5.Controls.Add(this.groupControl11);
             this.xtraTabPage5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(1560, 837);
+            this.xtraTabPage5.Size = new System.Drawing.Size(1560, 853);
             this.xtraTabPage5.Text = "报警记录";
             // 
             // gridControl_Alert
@@ -4690,7 +4716,7 @@
             this.gridControl_Alert.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl_Alert.MenuManager = this.barManager1;
             this.gridControl_Alert.Name = "gridControl_Alert";
-            this.gridControl_Alert.Size = new System.Drawing.Size(1560, 708);
+            this.gridControl_Alert.Size = new System.Drawing.Size(1560, 724);
             this.gridControl_Alert.TabIndex = 1;
             this.gridControl_Alert.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Alert});
@@ -5048,6 +5074,8 @@
             this.xtraTabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl17)).EndInit();
+            this.groupControl17.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl15)).EndInit();
             this.groupControl15.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_humidity_out.Properties)).EndInit();
@@ -5493,5 +5521,7 @@
         private DevExpress.XtraEditors.TextEdit txt_main_name_temperature_out;
         private DevExpress.XtraEditors.TextEdit txt_main_value_humidity_out;
         private DevExpress.XtraEditors.TextEdit txt_main_name_humidity_out;
+        private DevExpress.XtraEditors.GroupControl groupControl17;
+        private DevExpress.XtraEditors.SimpleButton btn_ClearRunTime;
     }
 }

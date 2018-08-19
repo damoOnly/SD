@@ -88,10 +88,5 @@
   <ValueMinPM>2</ValueMinPM>
   <ValueMaxPM>2</ValueMaxPM>
 
-  <ValueYear>0</ValueYear>
-  <ValueDay>0</ValueDay>
-  <ValueHour>0</ValueHour>
-  <ValueMinute>0</ValueMinute>
-  <ValueSecond>0</ValueSecond>
-  <ValueTotalHour>0</ValueTotalHour>
+  <RunTimeSpan>00:00:00</RunTimeSpan>
 </SystemConfig>

@@ -19,12 +19,7 @@ namespace Entity
             Xrange = 30;
             BackupPreiod = 30;
             CenterPort = 5718;
-            ValueYear = 0;
-            ValueHour = 0;
-            ValueDay = 0;
-            ValueMinute = 0;
-            ValueSecond = 0;
-            ValueTotalHour = 0;
+            RunTimeSpan = "00:00:00";
         }
         /// <summary>
         /// 串口号
@@ -218,11 +213,6 @@ namespace Entity
         public string ValueMinPM { get; set; }
         public string ValueMaxPM { get; set; }
 
-        public int ValueYear { get; set; }
-        public int ValueDay { get; set; }
-        public int ValueHour { get; set; }
-        public int ValueMinute { get; set; }
-        public int ValueSecond { get; set; }
-        public double ValueTotalHour { get; set; }
+        public string RunTimeSpan { get; set; }
     }
 }
