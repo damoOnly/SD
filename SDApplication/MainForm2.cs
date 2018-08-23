@@ -238,18 +238,18 @@ namespace SDApplication
                     txt_t_d3.Text = chroma + " ℃";
                     break;
                 case 4:
-                    txt_n_d4.Text = chroma + " RH";
+                    txt_n_d4.Text = chroma + " RH%";
                     break;
                 case 5:
-                    txt_pm_d5.Text = chroma;
+                    txt_pm_d5.Text = chroma + " ug/m3";
                     break;
                 case 6:
                     txt_t_d6_1.Text = chroma + " ℃";
                     txt_t_d6_2.Text = chroma + " ℃";
                     break;
                 case 7:
-                    txt_n_d7_1.Text = chroma + " RH";
-                    txt_n_d7_2.Text = chroma + " RH";
+                    txt_n_d7_1.Text = chroma + " RH%";
+                    txt_n_d7_2.Text = chroma + " RH%";
                     break;
                 case 8:
                     txt_tvoc_d8.Text = chroma + " ppm";
@@ -293,13 +293,13 @@ namespace SDApplication
                     txt_nox_d17.Text = chroma + " ppm";
                     break;
                 case 18:
-                    txt_t_d18.Text = chroma + " ppm";
+                    txt_t_d18.Text = chroma + " ℃";
                     break;
                 case 19:
-                    txt_n_d19.Text = chroma + " ppm";
+                    txt_n_d19.Text = chroma + " RH%";
                     break;
                 case 20:
-                    txt_pm_d20.Text = chroma + " ppm";
+                    txt_pm_d20.Text = chroma + " ug/m3";
                     break;
                 default:
                     break;
