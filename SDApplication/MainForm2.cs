@@ -232,7 +232,7 @@ namespace SDApplication
                     txt_h_d3.Text = chroma + " RH%";
                     break;
                 case 4:
-                    txt_pm_d4.Text = chroma + " ppm";
+                    txt_pm_d4.Text = chroma + " ug/m3";
                     break;
                 case 5:
                     txt_t_d5.Text = chroma + " ℃";
