@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm2));
             DevExpress.XtraCharts.SwiftPlotDiagram swiftPlotDiagram1 = new DevExpress.XtraCharts.SwiftPlotDiagram();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView1 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
             DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView2 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btn_Back = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btn_Start = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -63,8 +64,8 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
+            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl_center = new DevExpress.XtraEditors.PanelControl();
@@ -379,9 +380,9 @@
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
             this.dateEdit_StartAlert = new DevExpress.XtraEditors.DateEdit();
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
-            this.serialPort1 = new System.IO.Ports.SerialPort();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
-            this.timer_now = new System.Windows.Forms.Timer();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.timer_now = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -476,9 +477,9 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_Place.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_GasName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_ID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -585,9 +586,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView_Alert)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).BeginInit();
             this.groupControl11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -877,32 +878,31 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1199, 71);
+            this.barDockControlTop.Size = new System.Drawing.Size(1350, 71);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 560);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1199, 23);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 707);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1350, 23);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 71);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 489);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 636);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1199, 71);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 489);
+            this.barDockControlRight.Location = new System.Drawing.Point(1350, 71);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 636);
             // 
             // applicationMenu1
             // 
-            this.applicationMenu1.Manager = this.barManager1;
             this.applicationMenu1.Name = "applicationMenu1";
             // 
             // popupMenu1
@@ -917,7 +917,7 @@
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
             this.xtraTabControl1.ShowTabHeader = DevExpress.Utils.DefaultBoolean.False;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1199, 489);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1350, 636);
             this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -932,7 +932,7 @@
             this.xtraTabPage1.Controls.Add(this.richTextBox1);
             this.xtraTabPage1.Controls.Add(this.labelControl29);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1193, 483);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1344, 630);
             this.xtraTabPage1.Text = "xtraTabPage1";
             // 
             // panelControl_center
@@ -2889,9 +2889,9 @@
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 473);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 620);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1193, 10);
+            this.richTextBox1.Size = new System.Drawing.Size(1344, 10);
             this.richTextBox1.TabIndex = 35;
             this.richTextBox1.Text = "";
             // 
@@ -2908,7 +2908,7 @@
             // 
             this.xtraTabPage2.Controls.Add(this.splitContainerControl_His);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1364, 662);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1193, 483);
             this.xtraTabPage2.Text = "历史记录";
             // 
             // splitContainerControl_His
@@ -2921,7 +2921,7 @@
             this.splitContainerControl_His.Panel1.Text = "Panel1";
             this.splitContainerControl_His.Panel2.Controls.Add(this.splitContainerControl1);
             this.splitContainerControl_His.Panel2.Text = "Panel2";
-            this.splitContainerControl_His.Size = new System.Drawing.Size(1364, 662);
+            this.splitContainerControl_His.Size = new System.Drawing.Size(1193, 483);
             this.splitContainerControl_His.SplitterPosition = 89;
             this.splitContainerControl_His.TabIndex = 0;
             this.splitContainerControl_His.Text = "splitContainerControl1";
@@ -2942,7 +2942,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1364, 89);
+            this.groupControl1.Size = new System.Drawing.Size(1193, 89);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "数据查询条件";
             // 
@@ -2981,15 +2981,16 @@
             this.dateEdit_End.Name = "dateEdit_End";
             this.dateEdit_End.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit_End.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.dateEdit_End.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.dateEdit_End.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
             this.dateEdit_End.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_End.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_End.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_End.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_End.Properties.Mask.EditMask = "G";
             this.dateEdit_End.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_End.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_End.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateEdit_End.Size = new System.Drawing.Size(179, 20);
             this.dateEdit_End.TabIndex = 9;
             // 
@@ -3001,15 +3002,16 @@
             this.dateEdit_Start.Name = "dateEdit_Start";
             this.dateEdit_Start.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit_Start.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.dateEdit_Start.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.dateEdit_Start.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
             this.dateEdit_Start.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_Start.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_Start.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_Start.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_Start.Properties.Mask.EditMask = "G";
             this.dateEdit_Start.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_Start.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_Start.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateEdit_Start.Size = new System.Drawing.Size(178, 20);
             this.dateEdit_Start.TabIndex = 8;
             // 
@@ -3074,7 +3076,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1364, 568);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1193, 389);
             this.splitContainerControl1.SplitterPosition = 337;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -3085,35 +3087,33 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1022, 568);
+            this.groupControl2.Size = new System.Drawing.Size(851, 389);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "历史数据曲线";
             // 
             // chartControl_History
             // 
             this.chartControl_History.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            swiftPlotDiagram1.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
-            swiftPlotDiagram1.AxisX.Range.SideMarginsEnabled = true;
             swiftPlotDiagram1.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
             swiftPlotDiagram1.AxisX.Title.Antialiasing = false;
             swiftPlotDiagram1.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             swiftPlotDiagram1.AxisX.Title.Text = "时间";
-            swiftPlotDiagram1.AxisX.Title.Visible = true;
+            swiftPlotDiagram1.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
             swiftPlotDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram1.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
-            swiftPlotDiagram1.AxisY.Range.SideMarginsEnabled = true;
+            swiftPlotDiagram1.AxisX.WholeRange.AutoSideMargins = true;
             swiftPlotDiagram1.AxisY.Title.Alignment = System.Drawing.StringAlignment.Far;
             swiftPlotDiagram1.AxisY.Title.Antialiasing = false;
             swiftPlotDiagram1.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             swiftPlotDiagram1.AxisY.Title.Text = "浓度";
-            swiftPlotDiagram1.AxisY.Title.Visible = true;
+            swiftPlotDiagram1.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
             swiftPlotDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            swiftPlotDiagram1.AxisY.WholeRange.AutoSideMargins = true;
             swiftPlotDiagram1.DefaultPane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
             swiftPlotDiagram1.EnableAxisXScrolling = true;
             this.chartControl_History.Diagram = swiftPlotDiagram1;
             this.chartControl_History.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControl_History.Legend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            this.chartControl_History.Legend.Visible = false;
+            this.chartControl_History.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControl_History.Location = new System.Drawing.Point(2, 22);
             this.chartControl_History.Name = "chartControl_History";
             series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
@@ -3122,7 +3122,7 @@
             this.chartControl_History.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
             this.chartControl_History.SeriesTemplate.View = swiftPlotSeriesView2;
-            this.chartControl_History.Size = new System.Drawing.Size(1018, 544);
+            this.chartControl_History.Size = new System.Drawing.Size(847, 365);
             this.chartControl_History.TabIndex = 0;
             // 
             // splitContainerControl2
@@ -3136,7 +3136,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl4);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(337, 568);
+            this.splitContainerControl2.Size = new System.Drawing.Size(337, 389);
             this.splitContainerControl2.SplitterPosition = 59;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -3147,7 +3147,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(337, 504);
+            this.groupControl3.Size = new System.Drawing.Size(337, 325);
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "历史数据列表";
             // 
@@ -3158,7 +3158,7 @@
             this.gridControl_History.MainView = this.gridView_History;
             this.gridControl_History.MenuManager = this.barManager1;
             this.gridControl_History.Name = "gridControl_History";
-            this.gridControl_History.Size = new System.Drawing.Size(333, 480);
+            this.gridControl_History.Size = new System.Drawing.Size(333, 301);
             this.gridControl_History.TabIndex = 0;
             this.gridControl_History.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_History});
@@ -3284,7 +3284,7 @@
             // 
             this.xtraTabPage3.Controls.Add(this.panelControl1);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1364, 662);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1193, 483);
             this.xtraTabPage3.Text = "系统参数设置";
             // 
             // panelControl1
@@ -3297,7 +3297,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1364, 662);
+            this.panelControl1.Size = new System.Drawing.Size(1193, 483);
             this.panelControl1.TabIndex = 6;
             // 
             // groupControl17
@@ -4030,7 +4030,7 @@
             this.xtraTabPage4.Controls.Add(this.groupControl9);
             this.xtraTabPage4.Controls.Add(this.groupControl8);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(1364, 662);
+            this.xtraTabPage4.Size = new System.Drawing.Size(1193, 483);
             this.xtraTabPage4.Text = "添加设备";
             // 
             // groupControl10
@@ -4054,7 +4054,7 @@
             this.groupControl10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl10.Location = new System.Drawing.Point(361, 195);
             this.groupControl10.Name = "groupControl10";
-            this.groupControl10.Size = new System.Drawing.Size(1003, 467);
+            this.groupControl10.Size = new System.Drawing.Size(832, 288);
             this.groupControl10.TabIndex = 2;
             this.groupControl10.Text = "测量参数";
             // 
@@ -4241,7 +4241,7 @@
             this.groupControl9.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl9.Location = new System.Drawing.Point(361, 0);
             this.groupControl9.Name = "groupControl9";
-            this.groupControl9.Size = new System.Drawing.Size(1003, 195);
+            this.groupControl9.Size = new System.Drawing.Size(832, 195);
             this.groupControl9.TabIndex = 1;
             this.groupControl9.Text = "仪器设备信息";
             // 
@@ -4335,7 +4335,7 @@
             this.groupControl8.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl8.Location = new System.Drawing.Point(0, 0);
             this.groupControl8.Name = "groupControl8";
-            this.groupControl8.Size = new System.Drawing.Size(361, 662);
+            this.groupControl8.Size = new System.Drawing.Size(361, 483);
             this.groupControl8.TabIndex = 0;
             this.groupControl8.Text = "已添加的设备";
             // 
@@ -4346,7 +4346,7 @@
             this.gridControl_Add.MainView = this.gridView_Add;
             this.gridControl_Add.MenuManager = this.barManager1;
             this.gridControl_Add.Name = "gridControl_Add";
-            this.gridControl_Add.Size = new System.Drawing.Size(357, 638);
+            this.gridControl_Add.Size = new System.Drawing.Size(357, 459);
             this.gridControl_Add.TabIndex = 0;
             this.gridControl_Add.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Add});
@@ -4416,7 +4416,7 @@
             this.xtraTabPage5.Controls.Add(this.gridControl_Alert);
             this.xtraTabPage5.Controls.Add(this.groupControl11);
             this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(1364, 662);
+            this.xtraTabPage5.Size = new System.Drawing.Size(1193, 483);
             this.xtraTabPage5.Text = "报警记录";
             // 
             // gridControl_Alert
@@ -4426,7 +4426,7 @@
             this.gridControl_Alert.MainView = this.gridView_Alert;
             this.gridControl_Alert.MenuManager = this.barManager1;
             this.gridControl_Alert.Name = "gridControl_Alert";
-            this.gridControl_Alert.Size = new System.Drawing.Size(1364, 562);
+            this.gridControl_Alert.Size = new System.Drawing.Size(1193, 383);
             this.gridControl_Alert.TabIndex = 1;
             this.gridControl_Alert.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Alert});
@@ -4545,7 +4545,7 @@
             this.groupControl11.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl11.Location = new System.Drawing.Point(0, 0);
             this.groupControl11.Name = "groupControl11";
-            this.groupControl11.Size = new System.Drawing.Size(1364, 100);
+            this.groupControl11.Size = new System.Drawing.Size(1193, 100);
             this.groupControl11.TabIndex = 0;
             this.groupControl11.Text = "查询时间";
             // 
@@ -4579,15 +4579,16 @@
             this.dateEdit_EndAlert.Name = "dateEdit_EndAlert";
             this.dateEdit_EndAlert.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit_EndAlert.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.dateEdit_EndAlert.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.dateEdit_EndAlert.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
             this.dateEdit_EndAlert.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_EndAlert.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_EndAlert.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_EndAlert.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_EndAlert.Properties.Mask.EditMask = "G";
             this.dateEdit_EndAlert.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_EndAlert.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_EndAlert.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateEdit_EndAlert.Size = new System.Drawing.Size(179, 20);
             this.dateEdit_EndAlert.TabIndex = 12;
             // 
@@ -4607,15 +4608,16 @@
             this.dateEdit_StartAlert.Name = "dateEdit_StartAlert";
             this.dateEdit_StartAlert.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit_StartAlert.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.dateEdit_StartAlert.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.dateEdit_StartAlert.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
             this.dateEdit_StartAlert.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_StartAlert.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_StartAlert.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_StartAlert.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_StartAlert.Properties.Mask.EditMask = "G";
             this.dateEdit_StartAlert.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_StartAlert.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_StartAlert.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateEdit_StartAlert.Size = new System.Drawing.Size(178, 20);
             this.dateEdit_StartAlert.TabIndex = 10;
             // 
@@ -4637,7 +4639,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 583);
+            this.ClientSize = new System.Drawing.Size(1350, 730);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -4751,9 +4753,9 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_Place.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_GasName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_ID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
@@ -4866,9 +4868,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).EndInit();
             this.groupControl11.ResumeLayout(false);
             this.groupControl11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).EndInit();
             this.ResumeLayout(false);
 

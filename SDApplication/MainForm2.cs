@@ -1518,7 +1518,7 @@ namespace SDApplication
 
         private void btn_returnExit_Click(object sender, EventArgs e)
         {
-            btnm_Exit_ItemClick(null, null);
+            btnm_Exit_ItemClick(sender, null);
         }
 
         private void btn_returnAdd_Click(object sender, EventArgs e)
