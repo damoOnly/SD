@@ -944,8 +944,15 @@ namespace SDApplication
             //        break;
             //}
             //gridView_Main.BestFitColumns();
-            
+            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+
+            //this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+
             asc.controlAutoSize(this.xtraTabControl1);
+
+            //int with = this.xtraTabPage1.Width;
+            //int titleWidth = this.labelControl29.Width;
+            //this.labelControl29.Location = new Point((with - titleWidth) / 2, this.labelControl29.Location.Y);
         }
 
         private bool formIsReady = false;
@@ -1424,9 +1431,14 @@ namespace SDApplication
         {
             try
             {
+                //asc.controlAutoSize(this.xtraTabControl1);
                 this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 
                 this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+
+                int with = this.xtraTabPage1.Width;
+                int titleWidth = this.labelControl29.Width;
+                this.labelControl29.Location = new Point((with - titleWidth) / 2, this.labelControl29.Location.Y);
                 //modifyLocation();
                 // 自动启动检测
                 if (systemConfig.Isauto)
@@ -1470,6 +1482,15 @@ namespace SDApplication
             }
 
             foreach (var item in this.groupControl13.Controls)
+            {
+                if (item is DevExpress.XtraEditors.TextEdit)
+                {
+                    DevExpress.XtraEditors.TextEdit edit = item as DevExpress.XtraEditors.TextEdit;
+                    edit.Refresh();
+                }
+            }
+
+            foreach (var item in this.groupControl16.Controls)
             {
                 if (item is DevExpress.XtraEditors.TextEdit)
                 {
