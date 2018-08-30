@@ -2898,7 +2898,7 @@
             // labelControl29
             // 
             this.labelControl29.Appearance.Font = new System.Drawing.Font("宋体", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelControl29.Location = new System.Drawing.Point(55, 24);
+            this.labelControl29.Location = new System.Drawing.Point(131, 24);
             this.labelControl29.Name = "labelControl29";
             this.labelControl29.Size = new System.Drawing.Size(1083, 56);
             this.labelControl29.TabIndex = 2;
@@ -2908,7 +2908,7 @@
             // 
             this.xtraTabPage2.Controls.Add(this.splitContainerControl_His);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1193, 483);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1344, 630);
             this.xtraTabPage2.Text = "历史记录";
             // 
             // splitContainerControl_His
@@ -2921,7 +2921,7 @@
             this.splitContainerControl_His.Panel1.Text = "Panel1";
             this.splitContainerControl_His.Panel2.Controls.Add(this.splitContainerControl1);
             this.splitContainerControl_His.Panel2.Text = "Panel2";
-            this.splitContainerControl_His.Size = new System.Drawing.Size(1193, 483);
+            this.splitContainerControl_His.Size = new System.Drawing.Size(1344, 630);
             this.splitContainerControl_His.SplitterPosition = 89;
             this.splitContainerControl_His.TabIndex = 0;
             this.splitContainerControl_His.Text = "splitContainerControl1";
@@ -2942,7 +2942,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1193, 89);
+            this.groupControl1.Size = new System.Drawing.Size(1344, 89);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "数据查询条件";
             // 
@@ -3076,7 +3076,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1193, 389);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1344, 536);
             this.splitContainerControl1.SplitterPosition = 337;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -3087,7 +3087,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(851, 389);
+            this.groupControl2.Size = new System.Drawing.Size(1002, 536);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "历史数据曲线";
             // 
@@ -3122,7 +3122,7 @@
             this.chartControl_History.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
             this.chartControl_History.SeriesTemplate.View = swiftPlotSeriesView2;
-            this.chartControl_History.Size = new System.Drawing.Size(847, 365);
+            this.chartControl_History.Size = new System.Drawing.Size(998, 512);
             this.chartControl_History.TabIndex = 0;
             // 
             // splitContainerControl2
@@ -3136,7 +3136,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl4);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(337, 389);
+            this.splitContainerControl2.Size = new System.Drawing.Size(337, 536);
             this.splitContainerControl2.SplitterPosition = 59;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -3147,7 +3147,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(337, 325);
+            this.groupControl3.Size = new System.Drawing.Size(337, 472);
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "历史数据列表";
             // 
@@ -3158,7 +3158,7 @@
             this.gridControl_History.MainView = this.gridView_History;
             this.gridControl_History.MenuManager = this.barManager1;
             this.gridControl_History.Name = "gridControl_History";
-            this.gridControl_History.Size = new System.Drawing.Size(333, 301);
+            this.gridControl_History.Size = new System.Drawing.Size(333, 448);
             this.gridControl_History.TabIndex = 0;
             this.gridControl_History.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_History});
@@ -3284,7 +3284,7 @@
             // 
             this.xtraTabPage3.Controls.Add(this.panelControl1);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1193, 483);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1344, 630);
             this.xtraTabPage3.Text = "系统参数设置";
             // 
             // panelControl1
@@ -3297,7 +3297,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1193, 483);
+            this.panelControl1.Size = new System.Drawing.Size(1344, 630);
             this.panelControl1.TabIndex = 6;
             // 
             // groupControl17
@@ -4030,7 +4030,7 @@
             this.xtraTabPage4.Controls.Add(this.groupControl9);
             this.xtraTabPage4.Controls.Add(this.groupControl8);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(1193, 483);
+            this.xtraTabPage4.Size = new System.Drawing.Size(1344, 630);
             this.xtraTabPage4.Text = "添加设备";
             // 
             // groupControl10
@@ -4054,7 +4054,7 @@
             this.groupControl10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl10.Location = new System.Drawing.Point(361, 195);
             this.groupControl10.Name = "groupControl10";
-            this.groupControl10.Size = new System.Drawing.Size(832, 288);
+            this.groupControl10.Size = new System.Drawing.Size(983, 435);
             this.groupControl10.TabIndex = 2;
             this.groupControl10.Text = "测量参数";
             // 
@@ -4241,7 +4241,7 @@
             this.groupControl9.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl9.Location = new System.Drawing.Point(361, 0);
             this.groupControl9.Name = "groupControl9";
-            this.groupControl9.Size = new System.Drawing.Size(832, 195);
+            this.groupControl9.Size = new System.Drawing.Size(983, 195);
             this.groupControl9.TabIndex = 1;
             this.groupControl9.Text = "仪器设备信息";
             // 
@@ -4335,7 +4335,7 @@
             this.groupControl8.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl8.Location = new System.Drawing.Point(0, 0);
             this.groupControl8.Name = "groupControl8";
-            this.groupControl8.Size = new System.Drawing.Size(361, 483);
+            this.groupControl8.Size = new System.Drawing.Size(361, 630);
             this.groupControl8.TabIndex = 0;
             this.groupControl8.Text = "已添加的设备";
             // 
@@ -4346,7 +4346,7 @@
             this.gridControl_Add.MainView = this.gridView_Add;
             this.gridControl_Add.MenuManager = this.barManager1;
             this.gridControl_Add.Name = "gridControl_Add";
-            this.gridControl_Add.Size = new System.Drawing.Size(357, 459);
+            this.gridControl_Add.Size = new System.Drawing.Size(357, 606);
             this.gridControl_Add.TabIndex = 0;
             this.gridControl_Add.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Add});
@@ -4416,7 +4416,7 @@
             this.xtraTabPage5.Controls.Add(this.gridControl_Alert);
             this.xtraTabPage5.Controls.Add(this.groupControl11);
             this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(1193, 483);
+            this.xtraTabPage5.Size = new System.Drawing.Size(1344, 630);
             this.xtraTabPage5.Text = "报警记录";
             // 
             // gridControl_Alert
@@ -4426,7 +4426,7 @@
             this.gridControl_Alert.MainView = this.gridView_Alert;
             this.gridControl_Alert.MenuManager = this.barManager1;
             this.gridControl_Alert.Name = "gridControl_Alert";
-            this.gridControl_Alert.Size = new System.Drawing.Size(1193, 383);
+            this.gridControl_Alert.Size = new System.Drawing.Size(1344, 530);
             this.gridControl_Alert.TabIndex = 1;
             this.gridControl_Alert.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Alert});
@@ -4545,7 +4545,7 @@
             this.groupControl11.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl11.Location = new System.Drawing.Point(0, 0);
             this.groupControl11.Name = "groupControl11";
-            this.groupControl11.Size = new System.Drawing.Size(1193, 100);
+            this.groupControl11.Size = new System.Drawing.Size(1344, 100);
             this.groupControl11.TabIndex = 0;
             this.groupControl11.Text = "查询时间";
             // 
