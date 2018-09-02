@@ -1528,7 +1528,7 @@ namespace SDApplication
             txt_nowDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             txt_nowTime.Text = DateTime.Now.ToString("HH:mm:ss");
             txt_nowWeek.Text = weekdays[Convert.ToInt32(DateTime.Now.DayOfWeek)];
-            TimeSpan ts = DateTime.Now - startTime + TimeSpan.Parse(systemConfig.RunTimeSpan);
+            ts = DateTime.Now - startTime + TimeSpan.Parse(systemConfig.RunTimeSpan);
             txt_year.Text = (ts.Days / 365).ToString();
             txt_day.Text = (ts.Days % 365).ToString();
             txt_hour.Text = ts.Hours.ToString();
