@@ -590,22 +590,22 @@ namespace SDApplication
                 txt_n_d7_2.Text = systemConfig.ValueHumidityOut;
                 txt_nr_d2.Text = systemConfig.ValueSound;
 
-                txt_d_tvoc_min_2.Text = systemConfig.ValueMinTVOC;
-                txt_d_tvoc_max_2.Text = systemConfig.ValueMaxTVOC;
-                txt_d_o2_min_2.Text = systemConfig.ValueMinO2;
-                txt_d_o2_max_2.Text = systemConfig.ValueMaxO2;
-                txt_d_co_min_2.Text = systemConfig.ValueMinCO;
-                txt_d_co_max_2.Text = systemConfig.ValueMaxCO;
-                txt_d_so2_min_2.Text = systemConfig.ValueMinSO2;
-                txt_d_so2_max_2.Text = systemConfig.ValueMaxSO2;
-                txt_d_nox_min_2.Text = systemConfig.ValueMinNOX;
-                txt_d_nox_max_2.Text = systemConfig.ValueMaxNOX;
-                txt_d_airQuality_min_2.Text = systemConfig.ValueMinAirQuality;
-                txt_d_airQuality_max_2.Text = systemConfig.ValueMaxAirQuality;
-                txt_d_sterilize_min_2.Text = systemConfig.ValueMinSterilize;
-                txt_d_sterilize_max_2.Text = systemConfig.ValueMaxSterilize;
-                txt_d_pm_min_2.Text = systemConfig.ValueMinPM;
-                txt_d_pm_max_2.Text = systemConfig.ValueMaxPM;
+                txt_d_tvoc_min_2.Text = systemConfig.Value2MinTVOC;
+                txt_d_tvoc_max_2.Text = systemConfig.Value2MaxTVOC;
+                txt_d_o2_min_2.Text = systemConfig.Value2MinO2;
+                txt_d_o2_max_2.Text = systemConfig.Value2MaxO2;
+                txt_d_co_min_2.Text = systemConfig.Value2MinCO;
+                txt_d_co_max_2.Text = systemConfig.Value2MaxCO;
+                txt_d_so2_min_2.Text = systemConfig.Value2MinSO2;
+                txt_d_so2_max_2.Text = systemConfig.Value2MaxSO2;
+                txt_d_nox_min_2.Text = systemConfig.Value2MinNOX;
+                txt_d_nox_max_2.Text = systemConfig.Value2MaxNOX;
+                txt_d_airQuality_min_2.Text = systemConfig.Value2MinAirQuality;
+                txt_d_airQuality_max_2.Text = systemConfig.Value2MaxAirQuality;
+                txt_d_sterilize_min_2.Text = systemConfig.Value2MinSterilize;
+                txt_d_sterilize_max_2.Text = systemConfig.Value2MaxSterilize;
+                txt_d_pm_min_2.Text = systemConfig.Value2MinPM;
+                txt_d_pm_max_2.Text = systemConfig.Value2MaxPM;
 
                 #endregion
 
@@ -826,6 +826,23 @@ namespace SDApplication
                 systemConfig.ValueMaxSterilize = txt_d_sterilize_max_1.Text;
                 systemConfig.ValueMinPM = txt_d_pm_min_1.Text;
                 systemConfig.ValueMaxPM = txt_d_pm_max_1.Text;
+
+                systemConfig.Value2MinTVOC = txt_d_tvoc_min_2.Text;
+                systemConfig.Value2MaxTVOC = txt_d_tvoc_max_2.Text;
+                systemConfig.Value2MinO2 = txt_d_o2_min_2.Text;
+                systemConfig.Value2MaxO2 = txt_d_o2_max_2.Text;
+                systemConfig.Value2MinCO = txt_d_co_min_2.Text;
+                systemConfig.Value2MaxCO = txt_d_co_max_2.Text;
+                systemConfig.Value2MinSO2 = txt_d_so2_min_2.Text;
+                systemConfig.Value2MaxSO2 = txt_d_so2_max_2.Text;
+                systemConfig.Value2MinNOX = txt_d_nox_min_2.Text;
+                systemConfig.Value2MaxNOX = txt_d_nox_max_2.Text;
+                systemConfig.Value2MinAirQuality = txt_d_airQuality_min_2.Text;
+                systemConfig.Value2MaxAirQuality = txt_d_airQuality_max_2.Text;
+                systemConfig.Value2MinSterilize = txt_d_sterilize_min_2.Text;
+                systemConfig.Value2MaxSterilize = txt_d_sterilize_max_2.Text;
+                systemConfig.Value2MinPM = txt_d_pm_min_2.Text;
+                systemConfig.Value2MaxPM = txt_d_pm_max_2.Text;
 
                 systemConfig.RunTimeSpan = ts.ToString();
                 #endregion

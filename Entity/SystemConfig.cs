@@ -167,26 +167,36 @@ namespace Entity
         public string ValueTVOC { get; set; }
         public string ValueMinTVOC { get; set; }
         public string ValueMaxTVOC { get; set; }
+        public string Value2MinTVOC { get; set; }
+        public string Value2MaxTVOC { get; set; }
 
         public string NameO2 { get; set; }
         public string ValueO2 { get; set; }
         public string ValueMinO2 { get; set; }
         public string ValueMaxO2 { get; set; }
+        public string Value2MinO2 { get; set; }
+        public string Value2MaxO2 { get; set; }
 
         public string NameCO { get; set; }
         public string ValueCO { get; set; }
         public string ValueMinCO { get; set; }
         public string ValueMaxCO { get; set; }
+        public string Value2MinCO { get; set; }
+        public string Value2MaxCO { get; set; }
 
         public string NameSO2 { get; set; }
         public string ValueSO2 { get; set; }
         public string ValueMinSO2 { get; set; }
         public string ValueMaxSO2 { get; set; }
+        public string Value2MinSO2 { get; set; }
+        public string Value2MaxSO2 { get; set; }
 
         public string NameNOX { get; set; }
         public string ValueNOX { get; set; }
         public string ValueMinNOX { get; set; }
         public string ValueMaxNOX { get; set; }
+        public string Value2MinNOX { get; set; }
+        public string Value2MaxNOX { get; set; }
 
         public string NameNewarea { get; set; }
         public string ValueNewarea { get; set; }
@@ -202,16 +212,22 @@ namespace Entity
         public string ValueAirQuality { get; set; }
         public string ValueMinAirQuality { get; set; }
         public string ValueMaxAirQuality { get; set; }
+        public string Value2MinAirQuality { get; set; }
+        public string Value2MaxAirQuality { get; set; }
 
         public string NameSterilize { get; set; }
         public string ValueSterilize { get; set; }
         public string ValueMinSterilize { get; set; }
         public string ValueMaxSterilize { get; set; }
+        public string Value2MinSterilize { get; set; }
+        public string Value2MaxSterilize { get; set; }
 
         public string NamePM { get; set; }
         public string ValuePM { get; set; }
         public string ValueMinPM { get; set; }
         public string ValueMaxPM { get; set; }
+        public string Value2MinPM { get; set; }
+        public string Value2MaxPM { get; set; }
 
         public string RunTimeSpan { get; set; }
     }

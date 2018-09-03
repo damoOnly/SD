@@ -88,5 +88,22 @@
   <ValueMinPM>2</ValueMinPM>
   <ValueMaxPM>2</ValueMaxPM>
 
+  <Value2MinTVOC>2</Value2MinTVOC>
+  <Value2MaxTVOC2>2</Value2MaxTVOC2>
+  <Value2MinO2>2</Value2MinO2>
+  <Value2MaxO2>2</Value2MaxO2>
+  <Value2MinCO>2</Value2MinCO>
+  <Value2MaxCO>2</Value2MaxCO>
+  <Value2MinSO2>2</Value2MinSO2>
+  <Value2MaxSO2>2</Value2MaxSO2>
+  <Value2MinNOX>2</Value2MinNOX>
+  <Value2MaxNOX>2</Value2MaxNOX>
+  <Value2MinAirQuality>2</Value2MinAirQuality>
+  <Value2MaxAirQuality>2</Value2MaxAirQuality>
+  <Value2MinSterilize>2</Value2MinSterilize>
+  <Value2MaxSterilize>2</Value2MaxSterilize>
+  <Value2MinPM>2</Value2MinPM>
+  <Value2MaxPM>2</Value2MaxPM>
+
   <RunTimeSpan>00:00:00</RunTimeSpan>
 </SystemConfig>

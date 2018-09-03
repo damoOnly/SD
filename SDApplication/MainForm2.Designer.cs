@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraCharts.SwiftPlotDiagram swiftPlotDiagram2 = new DevExpress.XtraCharts.SwiftPlotDiagram();
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView3 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
-            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView4 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm2));
+            DevExpress.XtraCharts.SwiftPlotDiagram swiftPlotDiagram1 = new DevExpress.XtraCharts.SwiftPlotDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView1 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
+            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView2 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btn_Back = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -487,10 +487,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl_History)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -1256,6 +1256,7 @@
             this.txt_d_pm_max_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_pm_max_2.Size = new System.Drawing.Size(66, 26);
             this.txt_d_pm_max_2.TabIndex = 127;
+            this.txt_d_pm_max_2.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_pm_min_2
             // 
@@ -1270,6 +1271,7 @@
             this.txt_d_pm_min_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_pm_min_2.Size = new System.Drawing.Size(66, 26);
             this.txt_d_pm_min_2.TabIndex = 126;
+            this.txt_d_pm_min_2.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl75
             // 
@@ -1302,6 +1304,7 @@
             this.txt_d_sterilize_max_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_sterilize_max_2.Size = new System.Drawing.Size(66, 26);
             this.txt_d_sterilize_max_2.TabIndex = 123;
+            this.txt_d_sterilize_max_2.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_sterilize_min_2
             // 
@@ -1316,6 +1319,7 @@
             this.txt_d_sterilize_min_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_sterilize_min_2.Size = new System.Drawing.Size(66, 26);
             this.txt_d_sterilize_min_2.TabIndex = 122;
+            this.txt_d_sterilize_min_2.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl77
             // 
@@ -1348,6 +1352,7 @@
             this.txt_d_airQuality_max_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_airQuality_max_2.Size = new System.Drawing.Size(66, 26);
             this.txt_d_airQuality_max_2.TabIndex = 119;
+            this.txt_d_airQuality_max_2.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_airQuality_min_2
             // 
@@ -1362,6 +1367,7 @@
             this.txt_d_airQuality_min_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_airQuality_min_2.Size = new System.Drawing.Size(66, 26);
             this.txt_d_airQuality_min_2.TabIndex = 118;
+            this.txt_d_airQuality_min_2.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl79
             // 
@@ -1394,6 +1400,7 @@
             this.txt_d_nox_max_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_nox_max_2.Size = new System.Drawing.Size(66, 26);
             this.txt_d_nox_max_2.TabIndex = 115;
+            this.txt_d_nox_max_2.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_nox_min_2
             // 
@@ -1408,6 +1415,7 @@
             this.txt_d_nox_min_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_nox_min_2.Size = new System.Drawing.Size(66, 26);
             this.txt_d_nox_min_2.TabIndex = 114;
+            this.txt_d_nox_min_2.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl81
             // 
@@ -1440,6 +1448,7 @@
             this.txt_d_so2_max_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_so2_max_2.Size = new System.Drawing.Size(66, 26);
             this.txt_d_so2_max_2.TabIndex = 111;
+            this.txt_d_so2_max_2.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_so2_min_2
             // 
@@ -1454,6 +1463,7 @@
             this.txt_d_so2_min_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_so2_min_2.Size = new System.Drawing.Size(66, 26);
             this.txt_d_so2_min_2.TabIndex = 110;
+            this.txt_d_so2_min_2.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl83
             // 
@@ -1486,6 +1496,7 @@
             this.txt_d_co_max_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_co_max_2.Size = new System.Drawing.Size(66, 26);
             this.txt_d_co_max_2.TabIndex = 107;
+            this.txt_d_co_max_2.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_co_min_2
             // 
@@ -1500,6 +1511,7 @@
             this.txt_d_co_min_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_co_min_2.Size = new System.Drawing.Size(66, 26);
             this.txt_d_co_min_2.TabIndex = 106;
+            this.txt_d_co_min_2.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl85
             // 
@@ -1532,6 +1544,7 @@
             this.txt_d_o2_max_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_o2_max_2.Size = new System.Drawing.Size(66, 26);
             this.txt_d_o2_max_2.TabIndex = 103;
+            this.txt_d_o2_max_2.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_o2_min_2
             // 
@@ -1546,6 +1559,7 @@
             this.txt_d_o2_min_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_o2_min_2.Size = new System.Drawing.Size(66, 26);
             this.txt_d_o2_min_2.TabIndex = 102;
+            this.txt_d_o2_min_2.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl87
             // 
@@ -1578,6 +1592,7 @@
             this.txt_d_tvoc_max_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_tvoc_max_2.Size = new System.Drawing.Size(66, 26);
             this.txt_d_tvoc_max_2.TabIndex = 99;
+            this.txt_d_tvoc_max_2.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // txt_d_tvoc_min_2
             // 
@@ -1592,6 +1607,7 @@
             this.txt_d_tvoc_min_2.Properties.Appearance.Options.UseForeColor = true;
             this.txt_d_tvoc_min_2.Size = new System.Drawing.Size(66, 26);
             this.txt_d_tvoc_min_2.TabIndex = 98;
+            this.txt_d_tvoc_min_2.TextChanged += new System.EventHandler(this.SaveSystemConfig);
             // 
             // labelControl89
             // 
@@ -3088,34 +3104,34 @@
             // chartControl_History
             // 
             this.chartControl_History.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            swiftPlotDiagram2.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
-            swiftPlotDiagram2.AxisX.Title.Antialiasing = false;
-            swiftPlotDiagram2.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            swiftPlotDiagram2.AxisX.Title.Text = "时间";
-            swiftPlotDiagram2.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            swiftPlotDiagram2.AxisX.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram2.AxisX.WholeRange.AutoSideMargins = true;
-            swiftPlotDiagram2.AxisY.Title.Alignment = System.Drawing.StringAlignment.Far;
-            swiftPlotDiagram2.AxisY.Title.Antialiasing = false;
-            swiftPlotDiagram2.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            swiftPlotDiagram2.AxisY.Title.Text = "浓度";
-            swiftPlotDiagram2.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            swiftPlotDiagram2.AxisY.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram2.AxisY.WholeRange.AutoSideMargins = true;
-            swiftPlotDiagram2.DefaultPane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            swiftPlotDiagram2.EnableAxisXScrolling = true;
-            this.chartControl_History.Diagram = swiftPlotDiagram2;
+            swiftPlotDiagram1.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
+            swiftPlotDiagram1.AxisX.Title.Antialiasing = false;
+            swiftPlotDiagram1.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            swiftPlotDiagram1.AxisX.Title.Text = "时间";
+            swiftPlotDiagram1.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            swiftPlotDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            swiftPlotDiagram1.AxisX.WholeRange.AutoSideMargins = true;
+            swiftPlotDiagram1.AxisY.Title.Alignment = System.Drawing.StringAlignment.Far;
+            swiftPlotDiagram1.AxisY.Title.Antialiasing = false;
+            swiftPlotDiagram1.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            swiftPlotDiagram1.AxisY.Title.Text = "浓度";
+            swiftPlotDiagram1.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            swiftPlotDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            swiftPlotDiagram1.AxisY.WholeRange.AutoSideMargins = true;
+            swiftPlotDiagram1.DefaultPane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
+            swiftPlotDiagram1.EnableAxisXScrolling = true;
+            this.chartControl_History.Diagram = swiftPlotDiagram1;
             this.chartControl_History.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControl_History.Legend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
             this.chartControl_History.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControl_History.Location = new System.Drawing.Point(2, 22);
             this.chartControl_History.Name = "chartControl_History";
-            series2.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series2.Name = "Series 1";
-            series2.View = swiftPlotSeriesView3;
+            series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            series1.Name = "Series 1";
+            series1.View = swiftPlotSeriesView1;
             this.chartControl_History.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series2};
-            this.chartControl_History.SeriesTemplate.View = swiftPlotSeriesView4;
+        series1};
+            this.chartControl_History.SeriesTemplate.View = swiftPlotSeriesView2;
             this.chartControl_History.Size = new System.Drawing.Size(998, 512);
             this.chartControl_History.TabIndex = 0;
             // 
@@ -4756,10 +4772,10 @@
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl_History)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);
