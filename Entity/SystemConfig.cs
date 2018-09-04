@@ -210,6 +210,7 @@ namespace Entity
 
         public string NameAirQuality { get; set; }
         public string ValueAirQuality { get; set; }
+        public string ValueAirQuality2 { get; set; }
         public string ValueMinAirQuality { get; set; }
         public string ValueMaxAirQuality { get; set; }
         public string Value2MinAirQuality { get; set; }
@@ -217,6 +218,7 @@ namespace Entity
 
         public string NameSterilize { get; set; }
         public string ValueSterilize { get; set; }
+        public string ValueSterilize2 { get; set; }
         public string ValueMinSterilize { get; set; }
         public string ValueMaxSterilize { get; set; }
         public string Value2MinSterilize { get; set; }

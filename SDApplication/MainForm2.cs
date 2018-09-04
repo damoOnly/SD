@@ -500,7 +500,9 @@ namespace SDApplication
                 txt_main_value_backarea.Text = systemConfig.ValueBackarea;
                 txt_main_value_newarea.Text = systemConfig.ValueNewarea;
                 txt_main_value_airQuality.Text = systemConfig.ValueAirQuality;
+                txt_main_value_airQuality2.Text = systemConfig.ValueAirQuality2;
                 txt_main_value_sterilize.Text = systemConfig.ValueSterilize;
+                txt_main_value_sterilize2.Text = systemConfig.ValueSterilize2;
                 txt_main_value_PM.Text = systemConfig.ValuePM;
 
                 // 更新主界面
@@ -581,8 +583,8 @@ namespace SDApplication
                 txt_co_d15.Text = systemConfig.ValueCO;
                 txt_so2_d16.Text = systemConfig.ValueSO2;
                 txt_nox_d17.Text = systemConfig.ValueNOX;
-                txt_airQuality_d_2.Text = systemConfig.ValueAirQuality;
-                txt_sterilize_d_2.Text = systemConfig.ValueSterilize;
+                txt_airQuality_d_2.Text = systemConfig.ValueAirQuality2;
+                txt_sterilize_d_2.Text = systemConfig.ValueSterilize2;
                 txt_pm_d20.Text = systemConfig.ValuePM;
                 txt_t_d18.Text = systemConfig.ValueTemperatureIn;
                 txt_t_d6_2.Text = systemConfig.ValueTemperatureOut;
@@ -807,7 +809,9 @@ namespace SDApplication
                 systemConfig.ValueBackarea = txt_main_value_backarea.Text;
                 systemConfig.ValueNewarea = txt_main_value_newarea.Text;
                 systemConfig.ValueAirQuality = txt_main_value_airQuality.Text;
+                systemConfig.ValueAirQuality2 = txt_main_value_airQuality2.Text;
                 systemConfig.ValueSterilize = txt_main_value_sterilize.Text;
+                systemConfig.ValueSterilize2 = txt_main_value_sterilize2.Text;
                 systemConfig.ValuePM = txt_main_value_PM.Text;
 
                 systemConfig.ValueMinTVOC = txt_d_tvoc_min_1.Text;

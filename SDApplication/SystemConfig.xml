@@ -67,8 +67,10 @@
   <ValueBackarea>2</ValueBackarea>
   <NameAirQuality>空气质量</NameAirQuality>
   <ValueAirQuality>2</ValueAirQuality>
+  <ValueAirQuality2>2</ValueAirQuality2>
   <NameSterilize>消毒杀菌</NameSterilize>
   <ValueSterilize>2</ValueSterilize>
+  <ValueSterilize2>2</ValueSterilize2>
   <NamePM>PM2.5值</NamePM>
   <ValuePM>2</ValuePM>
   <ValueMinTVOC>2</ValueMinTVOC>

@@ -383,6 +383,8 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.timer_now = new System.Windows.Forms.Timer(this.components);
+            this.txt_main_value_sterilize2 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_main_value_airQuality2 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -590,6 +592,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_sterilize2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_airQuality2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -1581,7 +1585,7 @@
             // 
             // txt_d_tvoc_max_2
             // 
-            this.txt_d_tvoc_max_2.Location = new System.Drawing.Point(1060, 52);
+            this.txt_d_tvoc_max_2.Location = new System.Drawing.Point(1060, 49);
             this.txt_d_tvoc_max_2.MenuManager = this.barManager1;
             this.txt_d_tvoc_max_2.Name = "txt_d_tvoc_max_2";
             this.txt_d_tvoc_max_2.Properties.Appearance.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -3331,6 +3335,8 @@
             // 
             // groupControl15
             // 
+            this.groupControl15.Controls.Add(this.txt_main_value_airQuality2);
+            this.groupControl15.Controls.Add(this.txt_main_value_sterilize2);
             this.groupControl15.Controls.Add(this.txt_main_value_humidity_out);
             this.groupControl15.Controls.Add(this.txt_main_name_humidity_out);
             this.groupControl15.Controls.Add(this.txt_main_value_temperature_out);
@@ -3406,7 +3412,7 @@
             // 
             // txt_main_value_PM
             // 
-            this.txt_main_value_PM.Location = new System.Drawing.Point(548, 365);
+            this.txt_main_value_PM.Location = new System.Drawing.Point(548, 402);
             this.txt_main_value_PM.MenuManager = this.barManager1;
             this.txt_main_value_PM.Name = "txt_main_value_PM";
             this.txt_main_value_PM.Size = new System.Drawing.Size(100, 20);
@@ -3414,7 +3420,7 @@
             // 
             // txt_main_name_PM
             // 
-            this.txt_main_name_PM.Location = new System.Drawing.Point(414, 365);
+            this.txt_main_name_PM.Location = new System.Drawing.Point(414, 402);
             this.txt_main_name_PM.MenuManager = this.barManager1;
             this.txt_main_name_PM.Name = "txt_main_name_PM";
             this.txt_main_name_PM.Size = new System.Drawing.Size(100, 20);
@@ -3422,7 +3428,7 @@
             // 
             // txt_main_value_sterilize
             // 
-            this.txt_main_value_sterilize.Location = new System.Drawing.Point(548, 329);
+            this.txt_main_value_sterilize.Location = new System.Drawing.Point(548, 346);
             this.txt_main_value_sterilize.MenuManager = this.barManager1;
             this.txt_main_value_sterilize.Name = "txt_main_value_sterilize";
             this.txt_main_value_sterilize.Size = new System.Drawing.Size(100, 20);
@@ -3430,7 +3436,7 @@
             // 
             // txt_main_name_sterilize
             // 
-            this.txt_main_name_sterilize.Location = new System.Drawing.Point(414, 329);
+            this.txt_main_name_sterilize.Location = new System.Drawing.Point(414, 353);
             this.txt_main_name_sterilize.MenuManager = this.barManager1;
             this.txt_main_name_sterilize.Name = "txt_main_name_sterilize";
             this.txt_main_name_sterilize.Size = new System.Drawing.Size(100, 20);
@@ -3446,7 +3452,7 @@
             // 
             // txt_main_name_airQuality
             // 
-            this.txt_main_name_airQuality.Location = new System.Drawing.Point(414, 291);
+            this.txt_main_name_airQuality.Location = new System.Drawing.Point(414, 307);
             this.txt_main_name_airQuality.MenuManager = this.barManager1;
             this.txt_main_name_airQuality.Name = "txt_main_name_airQuality";
             this.txt_main_name_airQuality.Size = new System.Drawing.Size(100, 20);
@@ -3486,7 +3492,7 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(507, 412);
+            this.simpleButton1.Location = new System.Drawing.Point(507, 426);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
             this.simpleButton1.TabIndex = 20;
@@ -4645,6 +4651,22 @@
             this.timer_now.Interval = 1000;
             this.timer_now.Tick += new System.EventHandler(this.timer_now_Tick);
             // 
+            // txt_main_value_sterilize2
+            // 
+            this.txt_main_value_sterilize2.Location = new System.Drawing.Point(548, 370);
+            this.txt_main_value_sterilize2.MenuManager = this.barManager1;
+            this.txt_main_value_sterilize2.Name = "txt_main_value_sterilize2";
+            this.txt_main_value_sterilize2.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_sterilize2.TabIndex = 35;
+            // 
+            // txt_main_value_airQuality2
+            // 
+            this.txt_main_value_airQuality2.Location = new System.Drawing.Point(548, 317);
+            this.txt_main_value_airQuality2.MenuManager = this.barManager1;
+            this.txt_main_value_airQuality2.Name = "txt_main_value_airQuality2";
+            this.txt_main_value_airQuality2.Size = new System.Drawing.Size(100, 20);
+            this.txt_main_value_airQuality2.TabIndex = 36;
+            // 
             // MainForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -4882,6 +4904,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_sterilize2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_main_value_airQuality2.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -5237,5 +5261,7 @@
         private DevExpress.XtraEditors.TextEdit txt_main_name_humidity_out;
         private DevExpress.XtraEditors.GroupControl groupControl17;
         private DevExpress.XtraEditors.SimpleButton btn_ClearRunTime;
+        private DevExpress.XtraEditors.TextEdit txt_main_value_airQuality2;
+        private DevExpress.XtraEditors.TextEdit txt_main_value_sterilize2;
     }
 }
