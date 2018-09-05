@@ -1077,6 +1077,7 @@
             this.label_h_out_2.Size = new System.Drawing.Size(84, 21);
             this.label_h_out_2.TabIndex = 141;
             this.label_h_out_2.Text = "室外湿度";
+            this.label_h_out_2.Visible = false;
             // 
             // txt_n_d7_2
             // 
@@ -1092,6 +1093,7 @@
             this.txt_n_d7_2.Properties.ReadOnly = true;
             this.txt_n_d7_2.Size = new System.Drawing.Size(102, 28);
             this.txt_n_d7_2.TabIndex = 142;
+            this.txt_n_d7_2.Visible = false;
             // 
             // label_t_out_2
             // 
@@ -1101,6 +1103,7 @@
             this.label_t_out_2.Size = new System.Drawing.Size(84, 21);
             this.label_t_out_2.TabIndex = 139;
             this.label_t_out_2.Text = "室外温度";
+            this.label_t_out_2.Visible = false;
             // 
             // txt_t_d6_2
             // 
@@ -1116,6 +1119,7 @@
             this.txt_t_d6_2.Properties.ReadOnly = true;
             this.txt_t_d6_2.Size = new System.Drawing.Size(102, 28);
             this.txt_t_d6_2.TabIndex = 140;
+            this.txt_t_d6_2.Visible = false;
             // 
             // label_t_in_2
             // 
@@ -1212,6 +1216,7 @@
             this.txt_n_d7_1.Properties.ReadOnly = true;
             this.txt_n_d7_1.Size = new System.Drawing.Size(102, 28);
             this.txt_n_d7_1.TabIndex = 132;
+            this.txt_n_d7_1.Visible = false;
             // 
             // label_t_in_1
             // 
@@ -1236,6 +1241,7 @@
             this.txt_t_d6_1.Properties.ReadOnly = true;
             this.txt_t_d6_1.Size = new System.Drawing.Size(102, 28);
             this.txt_t_d6_1.TabIndex = 130;
+            this.txt_t_d6_1.Visible = false;
             // 
             // labelControl74
             // 
@@ -2534,6 +2540,7 @@
             this.label_t_out_1.Size = new System.Drawing.Size(84, 21);
             this.label_t_out_1.TabIndex = 0;
             this.label_t_out_1.Text = "室外温度";
+            this.label_t_out_1.Visible = false;
             // 
             // label_tvoc_1
             // 
@@ -2552,6 +2559,7 @@
             this.label_h_out_1.Size = new System.Drawing.Size(84, 21);
             this.label_h_out_1.TabIndex = 5;
             this.label_h_out_1.Text = "室外湿度";
+            this.label_h_out_1.Visible = false;
             // 
             // label_nr_1
             // 
@@ -3385,6 +3393,7 @@
             this.txt_main_value_humidity_out.Name = "txt_main_value_humidity_out";
             this.txt_main_value_humidity_out.Size = new System.Drawing.Size(100, 20);
             this.txt_main_value_humidity_out.TabIndex = 34;
+            this.txt_main_value_humidity_out.Visible = false;
             // 
             // txt_main_name_humidity_out
             // 
@@ -3393,6 +3402,7 @@
             this.txt_main_name_humidity_out.Name = "txt_main_name_humidity_out";
             this.txt_main_name_humidity_out.Size = new System.Drawing.Size(100, 20);
             this.txt_main_name_humidity_out.TabIndex = 33;
+            this.txt_main_name_humidity_out.Visible = false;
             // 
             // txt_main_value_temperature_out
             // 
@@ -3401,6 +3411,7 @@
             this.txt_main_value_temperature_out.Name = "txt_main_value_temperature_out";
             this.txt_main_value_temperature_out.Size = new System.Drawing.Size(100, 20);
             this.txt_main_value_temperature_out.TabIndex = 32;
+            this.txt_main_value_temperature_out.Visible = false;
             // 
             // txt_main_name_temperature_out
             // 
@@ -3409,6 +3420,7 @@
             this.txt_main_name_temperature_out.Name = "txt_main_name_temperature_out";
             this.txt_main_name_temperature_out.Size = new System.Drawing.Size(100, 20);
             this.txt_main_name_temperature_out.TabIndex = 31;
+            this.txt_main_name_temperature_out.Visible = false;
             // 
             // txt_main_value_PM
             // 
