@@ -943,6 +943,7 @@
             this.label_h_out.Size = new System.Drawing.Size(176, 44);
             this.label_h_out.TabIndex = 75;
             this.label_h_out.Text = "室外湿度";
+            this.label_h_out.Visible = false;
             // 
             // txt_h_d6
             // 
@@ -959,6 +960,7 @@
             this.txt_h_d6.Properties.ReadOnly = true;
             this.txt_h_d6.Size = new System.Drawing.Size(246, 50);
             this.txt_h_d6.TabIndex = 76;
+            this.txt_h_d6.Visible = false;
             // 
             // label_t_out
             // 
@@ -969,6 +971,7 @@
             this.label_t_out.Size = new System.Drawing.Size(176, 44);
             this.label_t_out.TabIndex = 73;
             this.label_t_out.Text = "室外温度";
+            this.label_t_out.Visible = false;
             // 
             // txt_t_d5
             // 
@@ -985,6 +988,7 @@
             this.txt_t_d5.Properties.ReadOnly = true;
             this.txt_t_d5.Size = new System.Drawing.Size(246, 50);
             this.txt_t_d5.TabIndex = 74;
+            this.txt_t_d5.Visible = false;
             // 
             // labelControl71
             // 
@@ -1597,6 +1601,7 @@
             this.txt_pm_d4.Properties.ReadOnly = true;
             this.txt_pm_d4.Size = new System.Drawing.Size(246, 42);
             this.txt_pm_d4.TabIndex = 40;
+            this.txt_pm_d4.Visible = false;
             // 
             // label_pm
             // 
@@ -1607,6 +1612,7 @@
             this.label_pm.Size = new System.Drawing.Size(154, 44);
             this.label_pm.TabIndex = 39;
             this.label_pm.Text = "PM2.5值";
+            this.label_pm.Visible = false;
             // 
             // txt_d_sterilize
             // 
