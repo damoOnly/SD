@@ -722,6 +722,7 @@ namespace SDApplication
             eee.AlertType = (byte)comboBoxEdit_OpenAdd.SelectedIndex;
             eee.Place = textEdit_PlaceAdd.Text.Trim();
             eee.Addtime = DateTime.Now;
+            eee.IsAnemoscope = checkEdit1.Checked;
             return eee;
         }
 
@@ -865,6 +866,10 @@ namespace SDApplication
             Equipment eq = mainList.Find(c => c.Address == Convert.ToInt64(comboBoxEdit_ID.Text));
 
             List<EquipmentData> data = EquipmentDataDal.GetListByTime(eq.ID, dateEdit_Start.DateTime, dateEdit_End.DateTime);
+            foreach (var item in data)
+            {
+                item.IsAnemoscope = eq.IsAnemoscope;
+            }
             if (data == null || data.Count < 1)
             {
                 LogLib.Log.GetLogger(this).Warn("数据库中没有记录");
@@ -983,6 +988,7 @@ namespace SDApplication
                 textEdit_LowAdd.Text = eee.LowAlert.ToString();
                 comboBoxEdit_OpenAdd.SelectedIndex = eee.AlertType;
                 textEdit_PlaceAdd.Text = eee.Place.ToString();
+                checkEdit1.Checked = eee.IsAnemoscope;
             }
             catch (Exception ex)
             {
@@ -1037,6 +1043,7 @@ namespace SDApplication
                 eee.LowAlert = upd.LowAlert;
                 eee.AlertType = upd.AlertType;
                 eee.Place = upd.Place;
+                eee.IsAnemoscope = upd.IsAnemoscope;
                 EquipmentDal.UpdateOne(eee);
                 RefreshenAdd();
 

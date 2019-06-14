@@ -5,6 +5,7 @@ using System.Text;
 
 using Entity;
 using System.Data;
+using System.Data.SQLite;
 
 namespace Dal
 {
@@ -12,8 +13,21 @@ namespace Dal
     {
         public static bool AddOne(Equipment data)
         {
-            string sql = string.Format("insert into tb_Equipment (Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime) values ({0},{1},'{2}','{3}',{4},'{5}',{6},{7},{8},{9},'{10}')", data.Address, data.AlertType, data.EName, data.Place, data.Range, data.Unit, data.Point, data.Revise, data.LowAlert, data.HighAlert, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"));
-            if (SqliteHelper.ExecuteNonQuery(sql) == 1)
+            string sql = "insert into tb_Equipment (Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime, IsAnemoscope) values (@Address,@AlertType,@EName,@Place,@Range,@Unit,@Point,@Revise,@LowAlert,@HighAlert,@Addtime,@IsAnemoscope)";
+            List<SQLiteParameter> param = new List<SQLiteParameter>();
+            param.Add(new SQLiteParameter() { ParameterName = "@Address", Value = data.Address });
+            param.Add(new SQLiteParameter() { ParameterName = "@AlertType", Value = data.AlertType });
+            param.Add(new SQLiteParameter() { ParameterName = "@EName", Value = data.EName });
+            param.Add(new SQLiteParameter() { ParameterName = "@Place", Value = data.Place });
+            param.Add(new SQLiteParameter() { ParameterName = "@Range", Value = data.Range });
+            param.Add(new SQLiteParameter() { ParameterName = "@Unit", Value = data.Unit });
+            param.Add(new SQLiteParameter() { ParameterName = "@Point", Value = data.Point });
+            param.Add(new SQLiteParameter() { ParameterName = "@Revise", Value = data.Revise });
+            param.Add(new SQLiteParameter() { ParameterName = "@LowAlert", Value = data.LowAlert });
+            param.Add(new SQLiteParameter() { ParameterName = "@HighAlert", Value = data.HighAlert });
+            param.Add(new SQLiteParameter() { ParameterName = "@Addtime", Value = data.Addtime });
+            param.Add(new SQLiteParameter() { ParameterName = "@IsAnemoscope", Value = data.IsAnemoscope });
+            if (SqliteHelper.ExecuteInsert(sql, param.ToArray()) > 0)
             {
                 return true;
             }
@@ -26,24 +40,44 @@ namespace Dal
 
         public static Equipment AddOneR(Equipment data)
         {
-            string sql = string.Format("insert into tb_Equipment (Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime) values ({0},{1},'{2}','{3}',{4},'{5}',{6},{7},{8},{9},'{10}')", data.Address, data.AlertType, data.EName, data.Place, data.Range, data.Unit, data.Point, data.Revise, data.LowAlert, data.HighAlert, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"));
-            if (SqliteHelper.ExecuteNonQuery(sql) == 1)
-            {
-                string whe = string.Format("Address = {0} AND Addtime = '{1}'", data.Address, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"));
-                Equipment eee = EquipmentDal.GetOneByWh(whe);
-                return eee;
-            }
-            else
-            {
-                LogLib.Log.GetLogger("EquipmentDal").Warn("插入设备传感器失败");
-                return null;
-            }
+            string sql = "insert into tb_Equipment (Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime, IsAnemoscope) values (@Address,@AlertType,@EName,@Place,@Range,@Unit,@Point,@Revise,@LowAlert,@HighAlert,@Addtime,@IsAnemoscope);";
+            List<SQLiteParameter> param = new List<SQLiteParameter>();
+            param.Add(new SQLiteParameter() { ParameterName = "@Address", Value = data.Address });
+            param.Add(new SQLiteParameter() { ParameterName = "@AlertType", Value = data.AlertType });
+            param.Add(new SQLiteParameter() { ParameterName = "@EName", Value = data.EName });
+            param.Add(new SQLiteParameter() { ParameterName = "@Place", Value = data.Place });
+            param.Add(new SQLiteParameter() { ParameterName = "@Range", Value = data.Range });
+            param.Add(new SQLiteParameter() { ParameterName = "@Unit", Value = data.Unit });
+            param.Add(new SQLiteParameter() { ParameterName = "@Point", Value = data.Point });
+            param.Add(new SQLiteParameter() { ParameterName = "@Revise", Value = data.Revise });
+            param.Add(new SQLiteParameter() { ParameterName = "@LowAlert", Value = data.LowAlert });
+            param.Add(new SQLiteParameter() { ParameterName = "@HighAlert", Value = data.HighAlert });
+            param.Add(new SQLiteParameter() { ParameterName = "@Addtime", Value = data.Addtime });
+            param.Add(new SQLiteParameter() { ParameterName = "@IsAnemoscope", Value = data.IsAnemoscope });
+
+            data.ID = SqliteHelper.ExecuteInsert(sql, param.ToArray());
+            return data;
         }
 
         public static bool UpdateOne(Equipment data)
         {
-            string sql = string.Format("UPDATE tb_Equipment SET Address={0},AlertType={1},EName='{2}',Place='{3}',Range={4},Unit='{5}',Point={6},Revise={7},LowAlert={8},HighAlert={9},Addtime='{10}' WHERE ID={11}", data.Address, data.AlertType, data.EName, data.Place, data.Range, data.Unit, data.Point, data.Revise, data.LowAlert, data.HighAlert, data.Addtime.ToString("yyyy/MM/dd HH:mm:ss"), data.ID);
-            if (SqliteHelper.ExecuteNonQuery(sql) == 1)
+            string sql = "UPDATE tb_Equipment SET Address=@Address,AlertType=@AlertType,EName=@EName,Place=@Place,Range=@Range,Unit=@Unit,Point=@Point,Revise=@Revise,LowAlert=@LowAlert,HighAlert=@HighAlert,Addtime=@Addtime,IsAnemoscope=@IsAnemoscope WHERE ID=@id";
+            List<SQLiteParameter> param = new List<SQLiteParameter>();
+            param.Add(new SQLiteParameter() { ParameterName = "@Address", Value = data.Address });
+            param.Add(new SQLiteParameter() { ParameterName = "@AlertType", Value = data.AlertType });
+            param.Add(new SQLiteParameter() { ParameterName = "@EName", Value = data.EName });
+            param.Add(new SQLiteParameter() { ParameterName = "@Place", Value = data.Place });
+            param.Add(new SQLiteParameter() { ParameterName = "@Range", Value = data.Range });
+            param.Add(new SQLiteParameter() { ParameterName = "@Unit", Value = data.Unit });
+            param.Add(new SQLiteParameter() { ParameterName = "@Point", Value = data.Point });
+            param.Add(new SQLiteParameter() { ParameterName = "@Revise", Value = data.Revise });
+            param.Add(new SQLiteParameter() { ParameterName = "@LowAlert", Value = data.LowAlert });
+            param.Add(new SQLiteParameter() { ParameterName = "@HighAlert", Value = data.HighAlert });
+            param.Add(new SQLiteParameter() { ParameterName = "@Addtime", Value = data.Addtime });
+            param.Add(new SQLiteParameter() { ParameterName = "@IsAnemoscope", Value = data.IsAnemoscope });
+            param.Add(new SQLiteParameter() { ParameterName = "@id", Value = data.ID });
+
+            if (SqliteHelper.ExecuteSql(sql,param.ToArray()) == 1)
             {
                 return true;
             }
@@ -61,7 +95,7 @@ namespace Dal
 
         public static Equipment GetOneByID(int id)
         {
-            string sql = string.Format("select Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime from tb_Equipment where ID={0} limit 0,1", id);
+            string sql = string.Format("select Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime,IsAnemoscope from tb_Equipment where ID={0} limit 0,1", id);
             DataSet ds = new DataSet();
             ds = SqliteHelper.Query(sql);
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
@@ -78,7 +112,7 @@ namespace Dal
                 eq.LowAlert = Convert.ToSingle(ds.Tables[0].Rows[0]["LowAlert"]);
                 eq.HighAlert = Convert.ToSingle(ds.Tables[0].Rows[0]["HighAlert"]);
                 eq.Addtime = Convert.ToDateTime(ds.Tables[0].Rows[0]["Addtime"]);
-
+                eq.IsAnemoscope = Convert.ToBoolean(ds.Tables[0].Rows[0]["IsAnemoscope"]);
 
                 return eq;
             }
@@ -88,7 +122,7 @@ namespace Dal
 
         public static Equipment GetOneByWh(string where)
         {
-            string sql = string.Format("select ID,Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime from tb_Equipment where {0}  limit 0,1", where);
+            string sql = string.Format("select ID,Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime,IsAnemoscope from tb_Equipment where {0}  limit 0,1", where);
             DataSet ds = new DataSet();
             ds = SqliteHelper.Query(sql);
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
@@ -99,13 +133,14 @@ namespace Dal
                 eq.Address = Convert.ToByte(ds.Tables[0].Rows[0]["Address"]);
                 eq.AlertType = Convert.ToByte(ds.Tables[0].Rows[0]["AlertType"]);
                 eq.Place = ds.Tables[0].Rows[0]["Place"].ToString();
-                eq.Range = Convert.ToSingle(ds.Tables[0].Rows[0]["Range"]); 
+                eq.Range = Convert.ToSingle(ds.Tables[0].Rows[0]["Range"]);
                 eq.Unit = ds.Tables[0].Rows[0]["Unit"].ToString();
                 eq.Point = Convert.ToByte(ds.Tables[0].Rows[0]["Point"]);
                 eq.Revise = Convert.ToSingle(ds.Tables[0].Rows[0]["Revise"]);
                 eq.LowAlert = Convert.ToSingle(ds.Tables[0].Rows[0]["LowAlert"]);
                 eq.HighAlert = Convert.ToSingle(ds.Tables[0].Rows[0]["HighAlert"]);
                 eq.Addtime = Convert.ToDateTime(ds.Tables[0].Rows[0]["Addtime"]);
+                eq.IsAnemoscope = Convert.ToBoolean(ds.Tables[0].Rows[0]["IsAnemoscope"]);
                 return eq;
             }
             LogLib.Log.GetLogger("EquipmentDal").Warn("获取设备传感器失败");
@@ -114,7 +149,7 @@ namespace Dal
 
         public static List<Equipment> GetAllList()
         {
-            string sql = string.Format("select ID, Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime from tb_Equipment");
+            string sql = string.Format("select ID, Address,AlertType,EName,Place,Range,Unit,Point,Revise,LowAlert,HighAlert,Addtime,IsAnemoscope from tb_Equipment");
             DataSet ds = new DataSet();
             ds = SqliteHelper.Query(sql);
             if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
@@ -135,6 +170,7 @@ namespace Dal
                     eq.LowAlert = Convert.ToSingle(row["LowAlert"]);
                     eq.HighAlert = Convert.ToSingle(row["HighAlert"]);
                     eq.Addtime = Convert.ToDateTime(row["Addtime"]);
+                    eq.IsAnemoscope = Convert.ToBoolean(row["IsAnemoscope"]);
                     list.Add(eq);
                 }
                 return list;
@@ -262,7 +298,7 @@ namespace Dal
             string sql;
             sql = string.Format("delete from tb_Equipment where ID = {0}", one.ID);
             if (SqliteHelper.ExecuteNonQuery(sql) != 1)
-            {                
+            {
                 LogLib.Log.GetLogger("EquipmentDal").Warn("删除失败");
                 return false;
             }

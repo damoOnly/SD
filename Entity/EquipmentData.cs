@@ -27,6 +27,21 @@ namespace Entity
         /// </summary>
         public float Chroma { get; set; }
 
+        public string DisplayChroma
+        {
+            get
+            {
+                if (!IsAnemoscope)
+                {
+                    return Chroma.ToString();
+                }
+                else
+                {
+                    return Equipment.GetWind(Chroma);
+                }
+            }
+        }
+
         /// <summary>
         /// 增加时间
         /// </summary>
@@ -46,5 +61,6 @@ namespace Entity
         /// 报警状态
         /// </summary>
         public string ChromaAlertStr { get; set; }
+        public bool IsAnemoscope { get; set; }
     }
 }

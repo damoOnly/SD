@@ -152,17 +152,15 @@ namespace Dal
                 if (parameters != null) cmd.Parameters.AddRange(parameters);
                 cmd.ExecuteNonQuery();
                 cmd.Parameters.Clear();
-                cmd.CommandText = @"select @@identity";
+                cmd.CommandText = @"select last_insert_rowid()";
                 int value = Int32.Parse(cmd.ExecuteScalar().ToString());
                 //connection.Close();
                 ////connection.Close();
                 return value;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                LogLib.Log.GetLogger("SqliteHelper").Warn(e);
-                return 0;
-
+                throw;
             }
         }
 

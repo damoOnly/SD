@@ -218,6 +218,7 @@
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -248,9 +249,9 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_Place.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_GasName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_ID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -317,10 +318,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView_Alert)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).BeginInit();
             this.groupControl11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -634,7 +636,6 @@
             // 
             // applicationMenu1
             // 
-            this.applicationMenu1.Manager = this.barManager1;
             this.applicationMenu1.Name = "applicationMenu1";
             // 
             // popupMenu1
@@ -747,7 +748,7 @@
             this.gridColumn_Chorma.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn_Chorma.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn_Chorma.Caption = "测量值";
-            this.gridColumn_Chorma.FieldName = "Chroma";
+            this.gridColumn_Chorma.FieldName = "DisplayChroma";
             this.gridColumn_Chorma.Name = "gridColumn_Chorma";
             this.gridColumn_Chorma.Visible = true;
             this.gridColumn_Chorma.VisibleIndex = 3;
@@ -840,12 +841,10 @@
             // 
             // chartControl_Main
             // 
-            swiftPlotDiagram1.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
-            swiftPlotDiagram1.AxisX.Range.SideMarginsEnabled = true;
             swiftPlotDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram1.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
-            swiftPlotDiagram1.AxisY.Range.SideMarginsEnabled = true;
+            swiftPlotDiagram1.AxisX.WholeRange.AutoSideMargins = true;
             swiftPlotDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            swiftPlotDiagram1.AxisY.WholeRange.AutoSideMargins = true;
             this.chartControl_Main.Diagram = swiftPlotDiagram1;
             this.chartControl_Main.Dock = System.Windows.Forms.DockStyle.Top;
             this.chartControl_Main.Location = new System.Drawing.Point(0, 32);
@@ -1044,15 +1043,16 @@
             this.dateEdit_End.Name = "dateEdit_End";
             this.dateEdit_End.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit_End.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.dateEdit_End.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.dateEdit_End.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
             this.dateEdit_End.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_End.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_End.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_End.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_End.Properties.Mask.EditMask = "G";
             this.dateEdit_End.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_End.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_End.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateEdit_End.Size = new System.Drawing.Size(179, 20);
             this.dateEdit_End.TabIndex = 9;
             // 
@@ -1064,15 +1064,16 @@
             this.dateEdit_Start.Name = "dateEdit_Start";
             this.dateEdit_Start.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit_Start.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.dateEdit_Start.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.dateEdit_Start.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
             this.dateEdit_Start.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_Start.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_Start.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_Start.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_Start.Properties.Mask.EditMask = "G";
             this.dateEdit_Start.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_Start.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_Start.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateEdit_Start.Size = new System.Drawing.Size(178, 20);
             this.dateEdit_Start.TabIndex = 8;
             // 
@@ -1155,28 +1156,26 @@
             // chartControl_History
             // 
             this.chartControl_History.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            swiftPlotDiagram2.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
-            swiftPlotDiagram2.AxisX.Range.SideMarginsEnabled = true;
             swiftPlotDiagram2.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
             swiftPlotDiagram2.AxisX.Title.Antialiasing = false;
             swiftPlotDiagram2.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             swiftPlotDiagram2.AxisX.Title.Text = "时间";
-            swiftPlotDiagram2.AxisX.Title.Visible = true;
+            swiftPlotDiagram2.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
             swiftPlotDiagram2.AxisX.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram2.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
-            swiftPlotDiagram2.AxisY.Range.SideMarginsEnabled = true;
+            swiftPlotDiagram2.AxisX.WholeRange.AutoSideMargins = true;
             swiftPlotDiagram2.AxisY.Title.Alignment = System.Drawing.StringAlignment.Far;
             swiftPlotDiagram2.AxisY.Title.Antialiasing = false;
             swiftPlotDiagram2.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             swiftPlotDiagram2.AxisY.Title.Text = "浓度";
-            swiftPlotDiagram2.AxisY.Title.Visible = true;
+            swiftPlotDiagram2.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
             swiftPlotDiagram2.AxisY.VisibleInPanesSerializable = "-1";
+            swiftPlotDiagram2.AxisY.WholeRange.AutoSideMargins = true;
             swiftPlotDiagram2.DefaultPane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
             swiftPlotDiagram2.EnableAxisXScrolling = true;
             this.chartControl_History.Diagram = swiftPlotDiagram2;
             this.chartControl_History.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControl_History.Legend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            this.chartControl_History.Legend.Visible = false;
+            this.chartControl_History.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControl_History.Location = new System.Drawing.Point(2, 22);
             this.chartControl_History.Name = "chartControl_History";
             series3.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
@@ -1284,7 +1283,7 @@
             this.gridColumn_Hischorma.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn_Hischorma.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn_Hischorma.Caption = "浓度值";
-            this.gridColumn_Hischorma.FieldName = "Chroma";
+            this.gridColumn_Hischorma.FieldName = "DisplayChroma";
             this.gridColumn_Hischorma.Name = "gridColumn_Hischorma";
             this.gridColumn_Hischorma.Visible = true;
             this.gridColumn_Hischorma.VisibleIndex = 2;
@@ -1735,6 +1734,7 @@
             // 
             // groupControl10
             // 
+            this.groupControl10.Controls.Add(this.checkEdit1);
             this.groupControl10.Controls.Add(this.comboBoxEdit_UnitAdd);
             this.groupControl10.Controls.Add(this.comboBoxEdit_OpenAdd);
             this.groupControl10.Controls.Add(this.comboBoxEdit_PointAdd);
@@ -1771,7 +1771,11 @@
             "mg/m3",
             "PPB",
             "m/s",
-            "m3/s"});
+            "m3/s",
+            "%RH",
+            "℃",
+            "ug/m3",
+            "空白"});
             this.comboBoxEdit_UnitAdd.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEdit_UnitAdd.Size = new System.Drawing.Size(100, 20);
             this.comboBoxEdit_UnitAdd.TabIndex = 14;
@@ -2252,15 +2256,16 @@
             this.dateEdit_EndAlert.Name = "dateEdit_EndAlert";
             this.dateEdit_EndAlert.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit_EndAlert.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.dateEdit_EndAlert.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.dateEdit_EndAlert.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
             this.dateEdit_EndAlert.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_EndAlert.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_EndAlert.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_EndAlert.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_EndAlert.Properties.Mask.EditMask = "G";
             this.dateEdit_EndAlert.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_EndAlert.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_EndAlert.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateEdit_EndAlert.Size = new System.Drawing.Size(179, 20);
             this.dateEdit_EndAlert.TabIndex = 12;
             // 
@@ -2280,15 +2285,16 @@
             this.dateEdit_StartAlert.Name = "dateEdit_StartAlert";
             this.dateEdit_StartAlert.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit_StartAlert.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.dateEdit_StartAlert.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.dateEdit_StartAlert.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
             this.dateEdit_StartAlert.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_StartAlert.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_StartAlert.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_StartAlert.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_StartAlert.Properties.Mask.EditMask = "G";
             this.dateEdit_StartAlert.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_StartAlert.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_StartAlert.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateEdit_StartAlert.Size = new System.Drawing.Size(178, 20);
             this.dateEdit_StartAlert.TabIndex = 10;
             // 
@@ -2299,6 +2305,15 @@
             this.labelControl26.Size = new System.Drawing.Size(60, 14);
             this.labelControl26.TabIndex = 9;
             this.labelControl26.Text = "开始时间：";
+            // 
+            // checkEdit1
+            // 
+            this.checkEdit1.Location = new System.Drawing.Point(320, 173);
+            this.checkEdit1.MenuManager = this.barManager1;
+            this.checkEdit1.Name = "checkEdit1";
+            this.checkEdit1.Properties.Caption = "是否风向设备";
+            this.checkEdit1.Size = new System.Drawing.Size(91, 19);
+            this.checkEdit1.TabIndex = 15;
             // 
             // MainForm
             // 
@@ -2350,9 +2365,9 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_Place.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_GasName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_ID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
@@ -2425,10 +2440,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).EndInit();
             this.groupControl11.ResumeLayout(false);
             this.groupControl11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2613,5 +2629,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl35;
         private DevExpress.XtraEditors.TextEdit textEdit_ggg;
         private DevExpress.XtraEditors.LabelControl labelControl37;
+        private DevExpress.XtraEditors.CheckEdit checkEdit1;
     }
 }

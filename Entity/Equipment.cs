@@ -10,7 +10,7 @@ namespace Entity
     /// </summary>
     public class Equipment
     {
-        
+
         public Equipment()
         {
             ChromaAlertStr = "正常";
@@ -38,7 +38,7 @@ namespace Entity
         /// </summary>
         public byte AlertType { get; set; }
 
-        public string AlertTypeStr 
+        public string AlertTypeStr
         {
             get
             {
@@ -113,6 +113,21 @@ namespace Entity
         /// </summary>
         public float Chroma { get; set; }
 
+        public string DisplayChroma
+        {
+            get
+            {
+                if (!IsAnemoscope)
+                {
+                    return Chroma.ToString();
+                }
+                else
+                {
+                    return GetWind(Chroma);
+                }
+            }
+        }
+
         /// <summary>
         /// 报警状态
         /// </summary>
@@ -127,10 +142,82 @@ namespace Entity
         /// 丢包计时
         /// </summary>
         public int lostNum { get; set; }
+
+        public bool IsAnemoscope { get; set; }
+
+        public static string GetWind(float value)
+        {
+            string result = "未知";
+            if ((value >= 0 && value <= 11.2) || (value >= 348.8 && value <= 360))
+            {
+                result = "北";
+            }
+            else if (value >= 11.3 && value <= 33.7)
+            {
+                result = "北东北";
+            }
+            else if (value >= 33.8 && value <= 56.2)
+            {
+                result = "东北";
+            }
+            else if (value >= 56.3 && value <= 78.7)
+            {
+                result = "东东北";
+            }
+            else if (value >= 78.8 && value <= 101.2)
+            {
+                result = "东";
+            }
+            else if (value >= 101.3 && value <= 123.7)
+            {
+                result = "东东南";
+            }
+            else if (value >= 123.8 && value <= 146.2)
+            {
+                result = "东南";
+            }
+            else if (value >= 146.3 && value <= 168.7)
+            {
+                result = "南东南";
+            }
+            else if (value >= 168.8 && value <= 191.2)
+            {
+                result = "南";
+            }
+            else if (value >= 191.3 && value <= 213.7)
+            {
+                result = "南西南";
+            }
+            else if (value >= 213.8 && value <= 236.2)
+            {
+                result = "西南";
+            }
+            else if (value >= 236.3 && value <= 258.7)
+            {
+                result = "西西南";
+            }
+            else if (value >= 258.8 && value <= 281.2)
+            {
+                result = "西";
+            }
+            else if (value >= 218.3 && value <= 303.7)
+            {
+                result = "西西北";
+            }
+            else if (value >= 303.8 && value <= 326.2)
+            {
+                result = "西北";
+            }
+            else if (value >= 326.3 && value <= 348.7)
+            {
+                result = "北西北";
+            }
+            return result;
+        }
     }
 
     //public class EquipmentComparer : IEqualityComparer<Equipment>
     //{
-        
+
     //}
 }
