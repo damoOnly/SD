@@ -169,6 +169,7 @@
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl10 = new DevExpress.XtraEditors.GroupControl();
+            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.comboBoxEdit_UnitAdd = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comboBoxEdit_OpenAdd = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comboBoxEdit_PointAdd = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -218,7 +219,6 @@
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -297,6 +297,7 @@
             this.xtraTabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).BeginInit();
             this.groupControl10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_UnitAdd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_OpenAdd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_PointAdd.Properties)).BeginInit();
@@ -322,7 +323,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -841,8 +841,19 @@
             // 
             // chartControl_Main
             // 
+            swiftPlotDiagram1.AxisX.DateTimeScaleOptions.AutoGrid = false;
+            swiftPlotDiagram1.AxisX.DateTimeScaleOptions.GridAlignment = DevExpress.XtraCharts.DateTimeGridAlignment.Hour;
+            swiftPlotDiagram1.AxisX.DateTimeScaleOptions.MeasureUnit = DevExpress.XtraCharts.DateTimeMeasureUnit.Hour;
+            swiftPlotDiagram1.AxisX.DateTimeScaleOptions.ScaleMode = DevExpress.XtraCharts.ScaleMode.Manual;
+            swiftPlotDiagram1.AxisX.Label.TextPattern = "{A:yyyy/M/d}";
+            swiftPlotDiagram1.AxisX.Logarithmic = true;
+            swiftPlotDiagram1.AxisX.MinorCount = 1;
             swiftPlotDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram1.AxisX.WholeRange.AutoSideMargins = true;
+            swiftPlotDiagram1.AxisX.WholeRange.Auto = false;
+            swiftPlotDiagram1.AxisX.WholeRange.AutoSideMargins = false;
+            swiftPlotDiagram1.AxisX.WholeRange.MaxValueSerializable = "06/18/2019 00:00:00.000";
+            swiftPlotDiagram1.AxisX.WholeRange.MinValueSerializable = "06/15/2019 21:00:00.000";
+            swiftPlotDiagram1.AxisX.WholeRange.SideMarginsValue = 10D;
             swiftPlotDiagram1.AxisY.VisibleInPanesSerializable = "-1";
             swiftPlotDiagram1.AxisY.WholeRange.AutoSideMargins = true;
             this.chartControl_Main.Diagram = swiftPlotDiagram1;
@@ -851,6 +862,7 @@
             this.chartControl_Main.Name = "chartControl_Main";
             series1.Name = "Series 1";
             series1.View = swiftPlotSeriesView1;
+            series2.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
             series2.Name = "Series 2";
             series2.View = swiftPlotSeriesView2;
             this.chartControl_Main.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
@@ -1156,6 +1168,7 @@
             // chartControl_History
             // 
             this.chartControl_History.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
+            swiftPlotDiagram2.AxisX.Label.TextPattern = "{A:yyyy.MM.dd}";
             swiftPlotDiagram2.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
             swiftPlotDiagram2.AxisX.Title.Antialiasing = false;
             swiftPlotDiagram2.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -1756,6 +1769,15 @@
             this.groupControl10.TabIndex = 2;
             this.groupControl10.Text = "测量参数";
             // 
+            // checkEdit1
+            // 
+            this.checkEdit1.Location = new System.Drawing.Point(320, 173);
+            this.checkEdit1.MenuManager = this.barManager1;
+            this.checkEdit1.Name = "checkEdit1";
+            this.checkEdit1.Properties.Caption = "是否风向设备";
+            this.checkEdit1.Size = new System.Drawing.Size(91, 19);
+            this.checkEdit1.TabIndex = 15;
+            // 
             // comboBoxEdit_UnitAdd
             // 
             this.comboBoxEdit_UnitAdd.EditValue = "PPM";
@@ -2306,15 +2328,6 @@
             this.labelControl26.TabIndex = 9;
             this.labelControl26.Text = "开始时间：";
             // 
-            // checkEdit1
-            // 
-            this.checkEdit1.Location = new System.Drawing.Point(320, 173);
-            this.checkEdit1.MenuManager = this.barManager1;
-            this.checkEdit1.Name = "checkEdit1";
-            this.checkEdit1.Properties.Caption = "是否风向设备";
-            this.checkEdit1.Size = new System.Drawing.Size(91, 19);
-            this.checkEdit1.TabIndex = 15;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -2417,6 +2430,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).EndInit();
             this.groupControl10.ResumeLayout(false);
             this.groupControl10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_UnitAdd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_OpenAdd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_PointAdd.Properties)).EndInit();
@@ -2444,7 +2458,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
