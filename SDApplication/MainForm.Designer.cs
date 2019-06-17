@@ -1797,6 +1797,7 @@
             "%RH",
             "℃",
             "ug/m3",
+            "dB",
             "空白"});
             this.comboBoxEdit_UnitAdd.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEdit_UnitAdd.Size = new System.Drawing.Size(100, 20);
