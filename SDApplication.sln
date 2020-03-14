@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDApplication", "SDApplication\SDApplication.csproj", "{C2CDA45A-0A16-4D64-8427-D45CA881AE4E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandManager", "CommandManager\CommandManager.csproj", "{B9FC7165-C65B-4CCC-906D-2ED31BDF07B5}"
@@ -10,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{920662A5-8768-42FB-ACA4-4DF8EB1351F0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogLib", "LogLib\LogLib.csproj", "{664237F0-6F59-477A-9B2E-3879E6128F7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UntilTest", "UntilTest\UntilTest.csproj", "{923B206B-61D0-4D29-8978-79785C2D1C07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +75,16 @@ Global
 		{664237F0-6F59-477A-9B2E-3879E6128F7E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{664237F0-6F59-477A-9B2E-3879E6128F7E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{664237F0-6F59-477A-9B2E-3879E6128F7E}.Release|x86.ActiveCfg = Release|Any CPU
+		{923B206B-61D0-4D29-8978-79785C2D1C07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{923B206B-61D0-4D29-8978-79785C2D1C07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{923B206B-61D0-4D29-8978-79785C2D1C07}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{923B206B-61D0-4D29-8978-79785C2D1C07}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{923B206B-61D0-4D29-8978-79785C2D1C07}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{923B206B-61D0-4D29-8978-79785C2D1C07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{923B206B-61D0-4D29-8978-79785C2D1C07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{923B206B-61D0-4D29-8978-79785C2D1C07}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{923B206B-61D0-4D29-8978-79785C2D1C07}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{923B206B-61D0-4D29-8978-79785C2D1C07}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -58,7 +58,7 @@ namespace CommandManager
         public static List<EquipmentData> GetSocketDataList(string data)
         {
             List<EquipmentData> result = new List<EquipmentData>();
-            MatchCollection mc = Regex.Matches(data, @"##0096([\s\S]*?)\&\&[0-9a-fA-F]{4}");
+            MatchCollection mc = Regex.Matches(data, @"##([\s\S]*?)\&\&[0-9a-fA-F]{4}");
             foreach (Match item in mc)
             {
                 result.Add(GetSocketData(item.Value)); 
@@ -70,13 +70,14 @@ namespace CommandManager
         public static EquipmentData GetSocketData(string one)
         {
             EquipmentData result = new EquipmentData();
-            Match rtd = Regex.Match(one, @"025-Rtd=(-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0))");
+            //Match rtd = Regex.Match(one, @"025-Rtd=(-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0))");
+            Match rtd = Regex.Match(one, @"\d*-Rtd=(-?\d*.?\d*)[,|;]");
             result.Chroma = rtd.Groups.Count >= 2 ? float.Parse(rtd.Groups[1].Value) : 0;
 
-            Match mn = Regex.Match(one, @"MN=([1-9]\d*)");
+            Match mn = Regex.Match(one, @"MN=(\d*);");
             result.Address = mn.Groups.Count >= 2 ? mn.Groups[1].Value : string.Empty;
 
-            Match flag = Regex.Match(one, @"025-Flag=N");
+            Match flag = Regex.Match(one, @"\d*-Flag=N");
             result.Flag = flag.Success;
 
             Match CRC = Regex.Match(one, @"\&\&([0-9a-fA-F]{4})");
