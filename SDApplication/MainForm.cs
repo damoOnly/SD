@@ -102,11 +102,6 @@ namespace SDApplication
 
             SwiftPlotDiagram diagram_Tem = chartControl_Main.Diagram as SwiftPlotDiagram;
             diagram_Tem.AxisY.Title.Text = string.Format("浓度({0})", ep.Unit);
-            diagram_Tem.AxisX.Range.SetMinMaxValues(minTime, maxTime);
-            if (ep.Range > 0)
-            {
-                diagram_Tem.AxisY.Range.SetMinMaxValues(0, ep.Range);
-            }
 
             List<EquipmentData> datalist = EquipmentDataDal.GetListByTime(ep.ID, minTime, maxTime);
             if (datalist == null)
@@ -514,27 +509,25 @@ namespace SDApplication
             SwiftPlotDiagram diagram_Tem = chartControl_Main.Diagram as SwiftPlotDiagram;
             diagram_Tem.Margins.Right = 15;
             //diagram_Tem.AxisX.
-            diagram_Tem.AxisX.DateTimeGridAlignment = DateTimeMeasurementUnit.Minute;
-            diagram_Tem.AxisX.DateTimeMeasureUnit = DateTimeMeasurementUnit.Second;
-            diagram_Tem.AxisX.DateTimeOptions.Format = DateTimeFormat.Custom;
-            diagram_Tem.AxisX.DateTimeOptions.FormatString = "HH:mm:ss";
-            //diagram_Tem.AxisX.GridLines.Visible = true;
-            diagram_Tem.AxisX.Range.SideMarginsEnabled = false;
-            diagram_Tem.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
+            diagram_Tem.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Second;
+            diagram_Tem.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Minute;
+            diagram_Tem.AxisX.Label.TextPattern = "{A:HH:mm:ss}";
+            diagram_Tem.AxisX.VisualRange.AutoSideMargins = false;
+            diagram_Tem.AxisX.WholeRange.AutoSideMargins = true;
             diagram_Tem.AxisX.Title.Text = "时间";
-            diagram_Tem.AxisX.Title.Visible = true;
+            diagram_Tem.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
             diagram_Tem.AxisX.Title.Alignment = StringAlignment.Far;
             diagram_Tem.AxisX.Title.Antialiasing = false;
             diagram_Tem.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 8);
 
-            diagram_Tem.AxisY.Range.AlwaysShowZeroLevel = false;
+            diagram_Tem.AxisY.WholeRange.AlwaysShowZeroLevel = false;
             //diagram_Tem.EnableAxisYZooming = true;
             //diagram_Tem.EnableAxisYScrolling = true;
             diagram_Tem.AxisY.Interlaced = true;
-            diagram_Tem.AxisY.Range.SideMarginsEnabled = true;
-            diagram_Tem.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
+            diagram_Tem.AxisY.VisualRange.AutoSideMargins = true;
+            diagram_Tem.AxisY.WholeRange.AutoSideMargins = true;
             diagram_Tem.AxisY.Title.Text = string.Format("浓度({0})", ep.Unit);
-            diagram_Tem.AxisY.Title.Visible = true;
+            diagram_Tem.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
             diagram_Tem.AxisY.Title.Alignment = StringAlignment.Far;
             diagram_Tem.AxisY.Title.Antialiasing = false;
             diagram_Tem.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 8);
@@ -561,103 +554,48 @@ namespace SDApplication
 
                 if (ts.TotalMinutes < 1)
                 {
-                    spd.AxisX.DateTimeGridAlignment = DateTimeMeasurementUnit.Second;
-                    spd.AxisX.DateTimeMeasureUnit = DateTimeMeasurementUnit.Second;
-                    spd.AxisX.DateTimeOptions.Format = DateTimeFormat.LongTime;
-                    spd.AxisX.Range.SetMinMaxValues(dt1, dt2);
-                    spd.AxisX.Range.ScrollingRange.SetMinMaxValues(dt1, dt2);
+                    spd.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Second;
+                    spd.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Minute;
+                    spd.AxisX.Label.TextPattern = "{A:HH:mm:ss}";
+                    spd.AxisX.WholeRange.SetMinMaxValues(dt1, dt2);
+                    spd.AxisX.VisualRange.SetMinMaxValues(dt1, dt2);
                 }
                 // 时间范围在1小时以内
                 else if (ts.TotalHours < 1)
                 {
-                    spd.AxisX.DateTimeGridAlignment = DateTimeMeasurementUnit.Minute;
-                    spd.AxisX.DateTimeMeasureUnit = DateTimeMeasurementUnit.Minute;
-                    spd.AxisX.DateTimeOptions.Format = DateTimeFormat.LongTime;
-                    if (dt1.AddHours(1) > dt2)
-                    {
-                        spd.AxisX.Range.SetMinMaxValues(dt1, dt2);
-                    }
-                    else
-                    {
-                        spd.AxisX.Range.SetMinMaxValues(dt1, dt1.AddHours(1));
-                    }
-                    spd.AxisX.Range.ScrollingRange.MinValue = dt1;
-                    spd.AxisX.Range.ScrollingRange.MaxValue = dt2;
+                    spd.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Minute;
+                    spd.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Minute;
+                    spd.AxisX.Label.TextPattern = "{A:HH:mm}";
 
                 }
                 // 1天以内
                 else if (ts.TotalDays <= 1)
                 {
-                    spd.AxisX.DateTimeGridAlignment = DateTimeMeasurementUnit.Minute;
-                    spd.AxisX.DateTimeMeasureUnit = DateTimeMeasurementUnit.Minute;
-                    spd.AxisX.DateTimeOptions.Format = DateTimeFormat.LongTime;
-                    if (dt1.AddHours(12) > dt2)
-                    {
-                        spd.AxisX.Range.SetMinMaxValues(dt1, dt2);
-                    }
-                    else
-                    {
-                        spd.AxisX.Range.SetMinMaxValues(dt1, dt1.AddHours(12));
-                    }
-                    spd.AxisX.Range.ScrollingRange.MinValue = dt1;
-                    spd.AxisX.Range.ScrollingRange.MaxValue = dt2;
+                    spd.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Minute;
+                    spd.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Minute;
+                    spd.AxisX.Label.TextPattern = "{A:HH:mm}";
                 }
                 // 1个星期以内
                 else if (ts.TotalDays < 7)
                 {
-                    spd.AxisX.DateTimeGridAlignment = DateTimeMeasurementUnit.Hour;
-                    spd.AxisX.DateTimeMeasureUnit = DateTimeMeasurementUnit.Hour;
-                    spd.AxisX.DateTimeOptions.Format = DateTimeFormat.Custom;
-                    spd.AxisX.DateTimeOptions.FormatString = "dd HH:mm";
-                    if (dt1.AddDays(3) > dt2)
-                    {
-                        spd.AxisX.Range.SetMinMaxValues(dt1, dt2);
-                    }
-                    else
-                    {
-                        spd.AxisX.Range.SetMinMaxValues(dt1, dt1.AddDays(3));
-                    }
-                    spd.AxisX.Range.ScrollingRange.MinValue = dt1;
-                    spd.AxisX.Range.ScrollingRange.MaxValue = dt2;
-
-
+                    spd.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Hour;
+                    spd.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Hour;
+                    spd.AxisX.Label.TextPattern = "{A:dd HH:mm}";
                 }
                 // 1个月以内
                 else if (ts.TotalDays < 30)
                 {
-                    spd.AxisX.DateTimeGridAlignment = DateTimeMeasurementUnit.Hour;
-                    spd.AxisX.DateTimeMeasureUnit = DateTimeMeasurementUnit.Hour;
-                    spd.AxisX.DateTimeOptions.Format = DateTimeFormat.Custom;
-                    spd.AxisX.DateTimeOptions.FormatString = "yyyy-MM-dd HH:mm";
-                    if (dt1.AddDays(15) > dt2)
-                    {
-                        spd.AxisX.Range.SetMinMaxValues(dt1, dt2);
-                    }
-                    else
-                    {
-                        spd.AxisX.Range.SetMinMaxValues(dt1, dt1.AddDays(15));
-                    }
-                    spd.AxisX.Range.ScrollingRange.MinValue = dt1;
-                    spd.AxisX.Range.ScrollingRange.MaxValue = dt2;
+                    spd.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Hour;
+                    spd.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Hour;
+                    spd.AxisX.Label.TextPattern = "{A:yyyy-MM-dd HH:mm}";
 
                 }
                 // 1年以内
                 else
                 {
-                    spd.AxisX.DateTimeGridAlignment = DateTimeMeasurementUnit.Month;
-                    spd.AxisX.DateTimeMeasureUnit = DateTimeMeasurementUnit.Day;
-                    spd.AxisX.DateTimeOptions.Format = DateTimeFormat.LongDate;
-                    if (dt1.AddDays(30) > dt2)
-                    {
-                        spd.AxisX.Range.SetMinMaxValues(dt1, dt2);
-                    }
-                    else
-                    {
-                        spd.AxisX.Range.SetMinMaxValues(dt1, dt1.AddDays(30));
-                    }
-
-                    spd.AxisX.Range.ScrollingRange.MinValue = dt1;
-                    spd.AxisX.Range.ScrollingRange.MaxValue = dt2;
+                    spd.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Day;
+                    spd.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Month;
+                    spd.AxisX.Label.TextPattern = "{A:yyyy-MM-dd}";
                 }
             }
             catch (Exception e)
@@ -823,7 +761,7 @@ namespace SDApplication
 
                 tcpserver.Start();
             }
-            catch (Exception ex)
+            catch
             {
                 XtraMessageBox.Show("打开网络连接失败");
                 return;
@@ -921,10 +859,6 @@ namespace SDApplication
             // 更改曲线纵坐标描述
             SwiftPlotDiagram diagram_Tem = chartControl_History.Diagram as SwiftPlotDiagram;
             diagram_Tem.AxisY.Title.Text = eq.EName + ":" + eq.Unit;
-            if (eq.Range > 0)
-            {
-                diagram_Tem.AxisY.Range.SetMinMaxValues(0, eq.Range);
-            }
 
             setX(data);
         }

@@ -74,7 +74,7 @@ namespace CommandManager
             Match rtd = Regex.Match(one, @"\d*-Rtd=(-?\d*.?\d*)[,|;]");
             result.Chroma = rtd.Groups.Count >= 2 ? float.Parse(rtd.Groups[1].Value) : 0;
 
-            Match mn = Regex.Match(one, @"MN=(\d*);");
+            Match mn = Regex.Match(one, @"MN=([0-9a-zA-Z]*);");
             result.Address = mn.Groups.Count >= 2 ? mn.Groups[1].Value : string.Empty;
 
             Match flag = Regex.Match(one, @"\d*-Flag=N");
