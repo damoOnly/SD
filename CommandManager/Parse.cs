@@ -61,7 +61,11 @@ namespace CommandManager
             MatchCollection mc = Regex.Matches(data, @"##([\s\S]*?)\&\&[0-9a-fA-F]{4}");
             foreach (Match item in mc)
             {
-                result.Add(GetSocketData(item.Value)); 
+                // 不包含-rtd的数据包要过滤掉
+                if (item.Value.ToLower().Contains("-rtd"))
+                {
+                    result.Add(GetSocketData(item.Value)); 
+                }                
             }
             
             return result;

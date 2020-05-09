@@ -1300,6 +1300,11 @@ namespace SDApplication
 
         }
 
+        private void btn_Save3_Click(object sender, EventArgs e)
+        {
+            SaveSystemConfig();
+        }
+
        
     }
 }

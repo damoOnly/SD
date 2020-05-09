@@ -248,9 +248,9 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_Place.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_GasName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_ID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -317,9 +317,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView_Alert)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).BeginInit();
             this.groupControl11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -609,32 +609,31 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(963, 71);
+            this.barDockControlTop.Size = new System.Drawing.Size(825, 71);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 669);
-            this.barDockControlBottom.Size = new System.Drawing.Size(963, 23);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 620);
+            this.barDockControlBottom.Size = new System.Drawing.Size(825, 23);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 71);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 598);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 549);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(963, 71);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 598);
+            this.barDockControlRight.Location = new System.Drawing.Point(825, 71);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 549);
             // 
             // applicationMenu1
             // 
-            this.applicationMenu1.Manager = this.barManager1;
             this.applicationMenu1.Name = "applicationMenu1";
             // 
             // popupMenu1
@@ -654,8 +653,8 @@
             this.splitContainerControl_Main.Panel2.Controls.Add(this.chartControl_Main);
             this.splitContainerControl_Main.Panel2.Controls.Add(this.groupArea);
             this.splitContainerControl_Main.Panel2.Text = "Panel2";
-            this.splitContainerControl_Main.Size = new System.Drawing.Size(957, 592);
-            this.splitContainerControl_Main.SplitterPosition = 341;
+            this.splitContainerControl_Main.Size = new System.Drawing.Size(819, 543);
+            this.splitContainerControl_Main.SplitterPosition = 332;
             this.splitContainerControl_Main.TabIndex = 4;
             this.splitContainerControl_Main.Text = "splitContainerControl1";
             // 
@@ -668,7 +667,7 @@
             this.gridControl_Main.Name = "gridControl_Main";
             this.gridControl_Main.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.gridControl_Main.Size = new System.Drawing.Size(957, 341);
+            this.gridControl_Main.Size = new System.Drawing.Size(819, 332);
             this.gridControl_Main.TabIndex = 0;
             this.gridControl_Main.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Main});
@@ -831,24 +830,22 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(0, 159);
+            this.richTextBox1.Location = new System.Drawing.Point(0, 148);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(957, 87);
+            this.richTextBox1.Size = new System.Drawing.Size(821, 81);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             this.richTextBox1.Visible = false;
             // 
             // chartControl_Main
             // 
-            swiftPlotDiagram1.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
-            swiftPlotDiagram1.AxisX.Range.SideMarginsEnabled = true;
             swiftPlotDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram1.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
-            swiftPlotDiagram1.AxisY.Range.SideMarginsEnabled = true;
+            swiftPlotDiagram1.AxisX.WholeRange.AutoSideMargins = true;
             swiftPlotDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            swiftPlotDiagram1.AxisY.WholeRange.AutoSideMargins = true;
             this.chartControl_Main.Diagram = swiftPlotDiagram1;
             this.chartControl_Main.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chartControl_Main.Location = new System.Drawing.Point(0, 32);
+            this.chartControl_Main.Location = new System.Drawing.Point(0, 30);
             this.chartControl_Main.Name = "chartControl_Main";
             series1.Name = "Series 1";
             series1.View = swiftPlotSeriesView1;
@@ -858,7 +855,7 @@
         series1,
         series2};
             this.chartControl_Main.SeriesTemplate.View = swiftPlotSeriesView3;
-            this.chartControl_Main.Size = new System.Drawing.Size(957, 132);
+            this.chartControl_Main.Size = new System.Drawing.Size(819, 123);
             this.chartControl_Main.TabIndex = 1;
             // 
             // groupArea
@@ -876,71 +873,71 @@
             this.groupArea.Location = new System.Drawing.Point(0, 0);
             this.groupArea.Name = "groupArea";
             this.groupArea.ShowCaption = false;
-            this.groupArea.Size = new System.Drawing.Size(957, 32);
+            this.groupArea.Size = new System.Drawing.Size(819, 30);
             this.groupArea.TabIndex = 0;
             this.groupArea.Text = "groupControl12";
             // 
             // labelControl37
             // 
-            this.labelControl37.Location = new System.Drawing.Point(605, 9);
+            this.labelControl37.Location = new System.Drawing.Point(519, 8);
             this.labelControl37.Name = "labelControl37";
-            this.labelControl37.Size = new System.Drawing.Size(60, 14);
+            this.labelControl37.Size = new System.Drawing.Size(54, 13);
             this.labelControl37.TabIndex = 7;
             this.labelControl37.Text = "累计质量：";
             // 
             // labelControl35
             // 
-            this.labelControl35.Location = new System.Drawing.Point(777, 8);
+            this.labelControl35.Location = new System.Drawing.Point(666, 7);
             this.labelControl35.Name = "labelControl35";
-            this.labelControl35.Size = new System.Drawing.Size(17, 14);
+            this.labelControl35.Size = new System.Drawing.Size(14, 13);
             this.labelControl35.TabIndex = 6;
             this.labelControl35.Text = "mg";
             // 
             // textEdit_ggg
             // 
-            this.textEdit_ggg.Location = new System.Drawing.Point(671, 5);
+            this.textEdit_ggg.Location = new System.Drawing.Point(575, 5);
             this.textEdit_ggg.MenuManager = this.barManager1;
             this.textEdit_ggg.Name = "textEdit_ggg";
-            this.textEdit_ggg.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_ggg.Size = new System.Drawing.Size(86, 20);
             this.textEdit_ggg.TabIndex = 5;
             // 
             // labelControl30
             // 
-            this.labelControl30.Location = new System.Drawing.Point(516, 8);
+            this.labelControl30.Location = new System.Drawing.Point(442, 7);
             this.labelControl30.Name = "labelControl30";
-            this.labelControl30.Size = new System.Drawing.Size(38, 14);
+            this.labelControl30.Size = new System.Drawing.Size(31, 13);
             this.labelControl30.TabIndex = 4;
             this.labelControl30.Text = "mg/m³";
             // 
             // textEdit_area2
             // 
-            this.textEdit_area2.Location = new System.Drawing.Point(410, 5);
+            this.textEdit_area2.Location = new System.Drawing.Point(351, 5);
             this.textEdit_area2.MenuManager = this.barManager1;
             this.textEdit_area2.Name = "textEdit_area2";
-            this.textEdit_area2.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_area2.Size = new System.Drawing.Size(86, 20);
             this.textEdit_area2.TabIndex = 3;
             // 
             // labelControl29
             // 
-            this.labelControl29.Location = new System.Drawing.Point(342, 8);
+            this.labelControl29.Location = new System.Drawing.Point(293, 7);
             this.labelControl29.Name = "labelControl29";
-            this.labelControl29.Size = new System.Drawing.Size(24, 14);
+            this.labelControl29.Size = new System.Drawing.Size(20, 13);
             this.labelControl29.TabIndex = 2;
             this.labelControl29.Text = "ppm";
             // 
             // textEdit_area1
             // 
-            this.textEdit_area1.Location = new System.Drawing.Point(236, 5);
+            this.textEdit_area1.Location = new System.Drawing.Point(202, 5);
             this.textEdit_area1.MenuManager = this.barManager1;
             this.textEdit_area1.Name = "textEdit_area1";
-            this.textEdit_area1.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_area1.Size = new System.Drawing.Size(86, 20);
             this.textEdit_area1.TabIndex = 1;
             // 
             // labelControl28
             // 
-            this.labelControl28.Location = new System.Drawing.Point(170, 9);
+            this.labelControl28.Location = new System.Drawing.Point(146, 8);
             this.labelControl28.Name = "labelControl28";
-            this.labelControl28.Size = new System.Drawing.Size(60, 14);
+            this.labelControl28.Size = new System.Drawing.Size(54, 13);
             this.labelControl28.TabIndex = 0;
             this.labelControl28.Text = "累计浓度：";
             // 
@@ -951,7 +948,7 @@
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
             this.xtraTabControl1.ShowTabHeader = DevExpress.Utils.DefaultBoolean.False;
-            this.xtraTabControl1.Size = new System.Drawing.Size(963, 598);
+            this.xtraTabControl1.Size = new System.Drawing.Size(825, 549);
             this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -964,14 +961,14 @@
             // 
             this.xtraTabPage1.Controls.Add(this.splitContainerControl_Main);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(957, 592);
+            this.xtraTabPage1.Size = new System.Drawing.Size(819, 543);
             this.xtraTabPage1.Text = "xtraTabPage1";
             // 
             // xtraTabPage2
             // 
             this.xtraTabPage2.Controls.Add(this.splitContainerControl_His);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(957, 592);
+            this.xtraTabPage2.Size = new System.Drawing.Size(819, 543);
             this.xtraTabPage2.Text = "历史记录";
             // 
             // splitContainerControl_His
@@ -984,8 +981,8 @@
             this.splitContainerControl_His.Panel1.Text = "Panel1";
             this.splitContainerControl_His.Panel2.Controls.Add(this.splitContainerControl1);
             this.splitContainerControl_His.Panel2.Text = "Panel2";
-            this.splitContainerControl_His.Size = new System.Drawing.Size(957, 592);
-            this.splitContainerControl_His.SplitterPosition = 89;
+            this.splitContainerControl_His.Size = new System.Drawing.Size(819, 543);
+            this.splitContainerControl_His.SplitterPosition = 79;
             this.splitContainerControl_His.TabIndex = 0;
             this.splitContainerControl_His.Text = "splitContainerControl1";
             // 
@@ -1005,33 +1002,33 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(957, 89);
+            this.groupControl1.Size = new System.Drawing.Size(819, 79);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "数据查询条件";
             // 
             // textEdit_Place
             // 
-            this.textEdit_Place.Location = new System.Drawing.Point(114, 61);
+            this.textEdit_Place.Location = new System.Drawing.Point(98, 57);
             this.textEdit_Place.MenuManager = this.barManager1;
             this.textEdit_Place.Name = "textEdit_Place";
             this.textEdit_Place.Properties.ReadOnly = true;
-            this.textEdit_Place.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_Place.Size = new System.Drawing.Size(86, 20);
             this.textEdit_Place.TabIndex = 12;
             // 
             // textEdit_GasName
             // 
-            this.textEdit_GasName.Location = new System.Drawing.Point(114, 28);
+            this.textEdit_GasName.Location = new System.Drawing.Point(98, 26);
             this.textEdit_GasName.MenuManager = this.barManager1;
             this.textEdit_GasName.Name = "textEdit_GasName";
             this.textEdit_GasName.Properties.ReadOnly = true;
-            this.textEdit_GasName.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_GasName.Size = new System.Drawing.Size(86, 20);
             this.textEdit_GasName.TabIndex = 11;
             // 
             // btn_SearchHistory
             // 
-            this.btn_SearchHistory.Location = new System.Drawing.Point(765, 44);
+            this.btn_SearchHistory.Location = new System.Drawing.Point(656, 41);
             this.btn_SearchHistory.Name = "btn_SearchHistory";
-            this.btn_SearchHistory.Size = new System.Drawing.Size(75, 23);
+            this.btn_SearchHistory.Size = new System.Drawing.Size(64, 21);
             this.btn_SearchHistory.TabIndex = 10;
             this.btn_SearchHistory.Text = "搜索";
             this.btn_SearchHistory.Click += new System.EventHandler(this.btn_SearchHistory_Click);
@@ -1039,91 +1036,93 @@
             // dateEdit_End
             // 
             this.dateEdit_End.EditValue = null;
-            this.dateEdit_End.Location = new System.Drawing.Point(494, 61);
+            this.dateEdit_End.Location = new System.Drawing.Point(423, 57);
             this.dateEdit_End.MenuManager = this.barManager1;
             this.dateEdit_End.Name = "dateEdit_End";
             this.dateEdit_End.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit_End.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.dateEdit_End.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.dateEdit_End.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
             this.dateEdit_End.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_End.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_End.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_End.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_End.Properties.Mask.EditMask = "G";
             this.dateEdit_End.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_End.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_End.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit_End.Size = new System.Drawing.Size(179, 20);
+            this.dateEdit_End.Size = new System.Drawing.Size(153, 20);
             this.dateEdit_End.TabIndex = 9;
             // 
             // dateEdit_Start
             // 
             this.dateEdit_Start.EditValue = null;
-            this.dateEdit_Start.Location = new System.Drawing.Point(495, 28);
+            this.dateEdit_Start.Location = new System.Drawing.Point(424, 26);
             this.dateEdit_Start.MenuManager = this.barManager1;
             this.dateEdit_Start.Name = "dateEdit_Start";
             this.dateEdit_Start.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit_Start.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.dateEdit_Start.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.dateEdit_Start.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
             this.dateEdit_Start.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_Start.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_Start.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_Start.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_Start.Properties.Mask.EditMask = "G";
             this.dateEdit_Start.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_Start.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_Start.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit_Start.Size = new System.Drawing.Size(178, 20);
+            this.dateEdit_Start.Size = new System.Drawing.Size(153, 20);
             this.dateEdit_Start.TabIndex = 8;
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(402, 64);
+            this.labelControl5.Location = new System.Drawing.Point(345, 59);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(60, 14);
+            this.labelControl5.Size = new System.Drawing.Size(54, 13);
             this.labelControl5.TabIndex = 7;
             this.labelControl5.Text = "结束时间：";
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(402, 31);
+            this.labelControl4.Location = new System.Drawing.Point(345, 29);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(60, 14);
+            this.labelControl4.Size = new System.Drawing.Size(54, 13);
             this.labelControl4.TabIndex = 6;
             this.labelControl4.Text = "开始时间：";
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(229, 31);
+            this.labelControl3.Location = new System.Drawing.Point(196, 29);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(48, 14);
+            this.labelControl3.Size = new System.Drawing.Size(41, 13);
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "仪器ID：";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(24, 64);
+            this.labelControl2.Location = new System.Drawing.Point(21, 59);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(84, 14);
+            this.labelControl2.Size = new System.Drawing.Size(78, 13);
             this.labelControl2.TabIndex = 4;
             this.labelControl2.Text = "气体安装位置：";
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(24, 31);
+            this.labelControl1.Location = new System.Drawing.Point(21, 29);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(60, 14);
+            this.labelControl1.Size = new System.Drawing.Size(54, 13);
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "气体名称：";
             // 
             // comboBoxEdit_ID
             // 
-            this.comboBoxEdit_ID.Location = new System.Drawing.Point(278, 28);
+            this.comboBoxEdit_ID.Location = new System.Drawing.Point(238, 26);
             this.comboBoxEdit_ID.MenuManager = this.barManager1;
             this.comboBoxEdit_ID.Name = "comboBoxEdit_ID";
             this.comboBoxEdit_ID.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit_ID.Size = new System.Drawing.Size(118, 20);
+            this.comboBoxEdit_ID.Size = new System.Drawing.Size(101, 20);
             this.comboBoxEdit_ID.TabIndex = 1;
             this.comboBoxEdit_ID.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit_ID_SelectedIndexChanged);
             // 
@@ -1137,8 +1136,8 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(957, 498);
-            this.splitContainerControl1.SplitterPosition = 337;
+            this.splitContainerControl1.Size = new System.Drawing.Size(819, 459);
+            this.splitContainerControl1.SplitterPosition = 321;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -1148,36 +1147,34 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(615, 498);
+            this.groupControl2.Size = new System.Drawing.Size(493, 459);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "历史数据曲线";
             // 
             // chartControl_History
             // 
             this.chartControl_History.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            swiftPlotDiagram2.AxisX.Range.ScrollingRange.SideMarginsEnabled = true;
-            swiftPlotDiagram2.AxisX.Range.SideMarginsEnabled = true;
             swiftPlotDiagram2.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
             swiftPlotDiagram2.AxisX.Title.Antialiasing = false;
             swiftPlotDiagram2.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             swiftPlotDiagram2.AxisX.Title.Text = "时间";
-            swiftPlotDiagram2.AxisX.Title.Visible = true;
+            swiftPlotDiagram2.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
             swiftPlotDiagram2.AxisX.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram2.AxisY.Range.ScrollingRange.SideMarginsEnabled = true;
-            swiftPlotDiagram2.AxisY.Range.SideMarginsEnabled = true;
+            swiftPlotDiagram2.AxisX.WholeRange.AutoSideMargins = true;
             swiftPlotDiagram2.AxisY.Title.Alignment = System.Drawing.StringAlignment.Far;
             swiftPlotDiagram2.AxisY.Title.Antialiasing = false;
             swiftPlotDiagram2.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             swiftPlotDiagram2.AxisY.Title.Text = "浓度";
-            swiftPlotDiagram2.AxisY.Title.Visible = true;
+            swiftPlotDiagram2.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
             swiftPlotDiagram2.AxisY.VisibleInPanesSerializable = "-1";
+            swiftPlotDiagram2.AxisY.WholeRange.AutoSideMargins = true;
             swiftPlotDiagram2.DefaultPane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
             swiftPlotDiagram2.EnableAxisXScrolling = true;
             this.chartControl_History.Diagram = swiftPlotDiagram2;
             this.chartControl_History.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControl_History.Legend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            this.chartControl_History.Legend.Visible = false;
-            this.chartControl_History.Location = new System.Drawing.Point(2, 22);
+            this.chartControl_History.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
+            this.chartControl_History.Location = new System.Drawing.Point(2, 21);
             this.chartControl_History.Name = "chartControl_History";
             series3.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
             series3.Name = "Series 1";
@@ -1185,7 +1182,7 @@
             this.chartControl_History.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series3};
             this.chartControl_History.SeriesTemplate.View = swiftPlotSeriesView5;
-            this.chartControl_History.Size = new System.Drawing.Size(611, 474);
+            this.chartControl_History.Size = new System.Drawing.Size(489, 436);
             this.chartControl_History.TabIndex = 0;
             // 
             // splitContainerControl2
@@ -1199,8 +1196,8 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl4);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(337, 498);
-            this.splitContainerControl2.SplitterPosition = 59;
+            this.splitContainerControl2.Size = new System.Drawing.Size(321, 459);
+            this.splitContainerControl2.SplitterPosition = 39;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
             // 
@@ -1210,18 +1207,18 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(337, 434);
+            this.groupControl3.Size = new System.Drawing.Size(321, 415);
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "历史数据列表";
             // 
             // gridControl_History
             // 
             this.gridControl_History.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl_History.Location = new System.Drawing.Point(2, 22);
+            this.gridControl_History.Location = new System.Drawing.Point(2, 21);
             this.gridControl_History.MainView = this.gridView_History;
             this.gridControl_History.MenuManager = this.barManager1;
             this.gridControl_History.Name = "gridControl_History";
-            this.gridControl_History.Size = new System.Drawing.Size(333, 410);
+            this.gridControl_History.Size = new System.Drawing.Size(317, 392);
             this.gridControl_History.TabIndex = 0;
             this.gridControl_History.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_History});
@@ -1307,7 +1304,7 @@
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.Location = new System.Drawing.Point(0, 0);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(337, 59);
+            this.groupControl4.Size = new System.Drawing.Size(321, 39);
             this.groupControl4.TabIndex = 0;
             this.groupControl4.Text = "数据操作";
             // 
@@ -1315,9 +1312,9 @@
             // 
             this.btn_DeleteData.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btn_DeleteData.Appearance.Options.UseBackColor = true;
-            this.btn_DeleteData.Location = new System.Drawing.Point(246, 28);
+            this.btn_DeleteData.Location = new System.Drawing.Point(211, 26);
             this.btn_DeleteData.Name = "btn_DeleteData";
-            this.btn_DeleteData.Size = new System.Drawing.Size(80, 23);
+            this.btn_DeleteData.Size = new System.Drawing.Size(69, 21);
             this.btn_DeleteData.TabIndex = 2;
             this.btn_DeleteData.Text = "删除查询数据";
             this.btn_DeleteData.Click += new System.EventHandler(this.btn_DeleteData_Click);
@@ -1326,9 +1323,9 @@
             // 
             this.btn_BackData.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btn_BackData.Appearance.Options.UseBackColor = true;
-            this.btn_BackData.Location = new System.Drawing.Point(138, 28);
+            this.btn_BackData.Location = new System.Drawing.Point(118, 26);
             this.btn_BackData.Name = "btn_BackData";
-            this.btn_BackData.Size = new System.Drawing.Size(75, 23);
+            this.btn_BackData.Size = new System.Drawing.Size(64, 21);
             this.btn_BackData.TabIndex = 1;
             this.btn_BackData.Text = "数据库备份";
             // 
@@ -1336,9 +1333,9 @@
             // 
             this.btn_Export.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btn_Export.Appearance.Options.UseBackColor = true;
-            this.btn_Export.Location = new System.Drawing.Point(28, 28);
+            this.btn_Export.Location = new System.Drawing.Point(24, 26);
             this.btn_Export.Name = "btn_Export";
-            this.btn_Export.Size = new System.Drawing.Size(75, 23);
+            this.btn_Export.Size = new System.Drawing.Size(64, 21);
             this.btn_Export.TabIndex = 0;
             this.btn_Export.Text = "导出数据";
             this.btn_Export.Click += new System.EventHandler(this.btn_Export_Click);
@@ -1347,7 +1344,7 @@
             // 
             this.xtraTabPage3.Controls.Add(this.panelControl1);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(957, 592);
+            this.xtraTabPage3.Size = new System.Drawing.Size(819, 543);
             this.xtraTabPage3.Text = "系统参数设置";
             // 
             // panelControl1
@@ -1358,7 +1355,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(957, 592);
+            this.panelControl1.Size = new System.Drawing.Size(819, 543);
             this.panelControl1.TabIndex = 6;
             // 
             // groupControl7
@@ -1368,52 +1365,52 @@
             this.groupControl7.Controls.Add(this.btn_Save3);
             this.groupControl7.Controls.Add(this.labelControl15);
             this.groupControl7.Controls.Add(this.labelControl14);
-            this.groupControl7.Location = new System.Drawing.Point(490, 230);
+            this.groupControl7.Location = new System.Drawing.Point(350, 5);
             this.groupControl7.Name = "groupControl7";
-            this.groupControl7.Size = new System.Drawing.Size(406, 189);
+            this.groupControl7.Size = new System.Drawing.Size(462, 175);
             this.groupControl7.TabIndex = 5;
-            this.groupControl7.Text = "中心站网络通讯参数";
-            this.groupControl7.Visible = false;
+            this.groupControl7.Text = "网络通讯参数";
             // 
             // textEdit_centerPort
             // 
             this.textEdit_centerPort.EditValue = "5718";
-            this.textEdit_centerPort.Location = new System.Drawing.Point(262, 96);
+            this.textEdit_centerPort.Location = new System.Drawing.Point(225, 89);
             this.textEdit_centerPort.MenuManager = this.barManager1;
             this.textEdit_centerPort.Name = "textEdit_centerPort";
-            this.textEdit_centerPort.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_centerPort.Size = new System.Drawing.Size(86, 20);
             this.textEdit_centerPort.TabIndex = 9;
             // 
             // textEdit_CenterIP
             // 
             this.textEdit_CenterIP.EditValue = "127.0.0.1";
-            this.textEdit_CenterIP.Location = new System.Drawing.Point(262, 54);
+            this.textEdit_CenterIP.Location = new System.Drawing.Point(225, 50);
             this.textEdit_CenterIP.MenuManager = this.barManager1;
             this.textEdit_CenterIP.Name = "textEdit_CenterIP";
-            this.textEdit_CenterIP.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_CenterIP.Size = new System.Drawing.Size(86, 20);
             this.textEdit_CenterIP.TabIndex = 8;
             // 
             // btn_Save3
             // 
-            this.btn_Save3.Location = new System.Drawing.Point(217, 154);
+            this.btn_Save3.Location = new System.Drawing.Point(186, 143);
             this.btn_Save3.Name = "btn_Save3";
-            this.btn_Save3.Size = new System.Drawing.Size(75, 23);
+            this.btn_Save3.Size = new System.Drawing.Size(64, 21);
             this.btn_Save3.TabIndex = 7;
             this.btn_Save3.Text = "保存";
+            this.btn_Save3.Click += new System.EventHandler(this.btn_Save3_Click);
             // 
             // labelControl15
             // 
-            this.labelControl15.Location = new System.Drawing.Point(140, 102);
+            this.labelControl15.Location = new System.Drawing.Point(120, 95);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(84, 14);
+            this.labelControl15.Size = new System.Drawing.Size(78, 13);
             this.labelControl15.TabIndex = 6;
             this.labelControl15.Text = "中心站端口号：";
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(140, 60);
+            this.labelControl14.Location = new System.Drawing.Point(120, 56);
             this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(59, 14);
+            this.labelControl14.Size = new System.Drawing.Size(52, 13);
             this.labelControl14.TabIndex = 5;
             this.labelControl14.Text = "中心站IP：";
             // 
@@ -1439,139 +1436,139 @@
             this.groupControl5.Controls.Add(this.labelControl8);
             this.groupControl5.Controls.Add(this.labelControl7);
             this.groupControl5.Controls.Add(this.labelControl6);
-            this.groupControl5.Location = new System.Drawing.Point(5, 5);
+            this.groupControl5.Location = new System.Drawing.Point(4, 5);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(397, 299);
+            this.groupControl5.Size = new System.Drawing.Size(340, 278);
             this.groupControl5.TabIndex = 3;
             this.groupControl5.Text = "数据采集通讯参数";
             // 
             // textEdit_Molecular
             // 
             this.textEdit_Molecular.EditValue = "34";
-            this.textEdit_Molecular.Location = new System.Drawing.Point(153, 222);
+            this.textEdit_Molecular.Location = new System.Drawing.Point(131, 206);
             this.textEdit_Molecular.MenuManager = this.barManager1;
             this.textEdit_Molecular.Name = "textEdit_Molecular";
-            this.textEdit_Molecular.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_Molecular.Size = new System.Drawing.Size(86, 20);
             this.textEdit_Molecular.TabIndex = 22;
             // 
             // labelControl36
             // 
-            this.labelControl36.Location = new System.Drawing.Point(35, 225);
+            this.labelControl36.Location = new System.Drawing.Point(30, 209);
             this.labelControl36.Name = "labelControl36";
-            this.labelControl36.Size = new System.Drawing.Size(72, 14);
+            this.labelControl36.Size = new System.Drawing.Size(66, 13);
             this.labelControl36.TabIndex = 20;
             this.labelControl36.Text = "相对分子量：";
             // 
             // textEdit_Volume
             // 
             this.textEdit_Volume.EditValue = "1";
-            this.textEdit_Volume.Location = new System.Drawing.Point(153, 195);
+            this.textEdit_Volume.Location = new System.Drawing.Point(131, 181);
             this.textEdit_Volume.MenuManager = this.barManager1;
             this.textEdit_Volume.Name = "textEdit_Volume";
-            this.textEdit_Volume.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_Volume.Size = new System.Drawing.Size(86, 20);
             this.textEdit_Volume.TabIndex = 19;
             // 
             // labelControl33
             // 
-            this.labelControl33.Location = new System.Drawing.Point(259, 198);
+            this.labelControl33.Location = new System.Drawing.Point(222, 184);
             this.labelControl33.Name = "labelControl33";
-            this.labelControl33.Size = new System.Drawing.Size(16, 14);
+            this.labelControl33.Size = new System.Drawing.Size(13, 13);
             this.labelControl33.TabIndex = 18;
             this.labelControl33.Text = "m³";
             // 
             // labelControl34
             // 
-            this.labelControl34.Location = new System.Drawing.Point(35, 198);
+            this.labelControl34.Location = new System.Drawing.Point(30, 184);
             this.labelControl34.Name = "labelControl34";
-            this.labelControl34.Size = new System.Drawing.Size(60, 14);
+            this.labelControl34.Size = new System.Drawing.Size(54, 13);
             this.labelControl34.TabIndex = 17;
             this.labelControl34.Text = "反映体积：";
             // 
             // textEdit_Temperature
             // 
             this.textEdit_Temperature.EditValue = "20";
-            this.textEdit_Temperature.Location = new System.Drawing.Point(153, 165);
+            this.textEdit_Temperature.Location = new System.Drawing.Point(131, 153);
             this.textEdit_Temperature.MenuManager = this.barManager1;
             this.textEdit_Temperature.Name = "textEdit_Temperature";
-            this.textEdit_Temperature.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_Temperature.Size = new System.Drawing.Size(86, 20);
             this.textEdit_Temperature.TabIndex = 16;
             // 
             // labelControl31
             // 
-            this.labelControl31.Location = new System.Drawing.Point(259, 168);
+            this.labelControl31.Location = new System.Drawing.Point(222, 156);
             this.labelControl31.Name = "labelControl31";
-            this.labelControl31.Size = new System.Drawing.Size(12, 14);
+            this.labelControl31.Size = new System.Drawing.Size(12, 13);
             this.labelControl31.TabIndex = 15;
             this.labelControl31.Text = "℃";
             this.labelControl31.Click += new System.EventHandler(this.labelControl31_Click);
             // 
             // labelControl32
             // 
-            this.labelControl32.Location = new System.Drawing.Point(35, 168);
+            this.labelControl32.Location = new System.Drawing.Point(30, 156);
             this.labelControl32.Name = "labelControl32";
-            this.labelControl32.Size = new System.Drawing.Size(60, 14);
+            this.labelControl32.Size = new System.Drawing.Size(54, 13);
             this.labelControl32.TabIndex = 14;
             this.labelControl32.Text = "环境温度：";
             // 
             // checkEdit_autosample
             // 
-            this.checkEdit_autosample.Location = new System.Drawing.Point(33, 248);
+            this.checkEdit_autosample.Location = new System.Drawing.Point(28, 230);
             this.checkEdit_autosample.MenuManager = this.barManager1;
             this.checkEdit_autosample.Name = "checkEdit_autosample";
             this.checkEdit_autosample.Properties.Caption = "开启自动检测";
-            this.checkEdit_autosample.Size = new System.Drawing.Size(119, 19);
+            this.checkEdit_autosample.Size = new System.Drawing.Size(102, 19);
             this.checkEdit_autosample.TabIndex = 13;
             // 
             // textEdit_RealTime
             // 
             this.textEdit_RealTime.EditValue = "30";
-            this.textEdit_RealTime.Location = new System.Drawing.Point(153, 131);
+            this.textEdit_RealTime.Location = new System.Drawing.Point(131, 122);
             this.textEdit_RealTime.MenuManager = this.barManager1;
             this.textEdit_RealTime.Name = "textEdit_RealTime";
-            this.textEdit_RealTime.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_RealTime.Size = new System.Drawing.Size(86, 20);
             this.textEdit_RealTime.TabIndex = 11;
             // 
             // btn_Save1
             // 
             this.btn_Save1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btn_Save1.Appearance.Options.UseBackColor = true;
-            this.btn_Save1.Location = new System.Drawing.Point(153, 271);
+            this.btn_Save1.Location = new System.Drawing.Point(131, 252);
             this.btn_Save1.Name = "btn_Save1";
-            this.btn_Save1.Size = new System.Drawing.Size(75, 23);
+            this.btn_Save1.Size = new System.Drawing.Size(64, 21);
             this.btn_Save1.TabIndex = 10;
             this.btn_Save1.Text = "保存";
             this.btn_Save1.Click += new System.EventHandler(this.btn_Save1_Click);
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(259, 134);
+            this.labelControl10.Location = new System.Drawing.Point(222, 124);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(24, 14);
+            this.labelControl10.Size = new System.Drawing.Size(24, 13);
             this.labelControl10.TabIndex = 9;
             this.labelControl10.Text = "分钟";
             // 
             // textEdit_Preod
             // 
             this.textEdit_Preod.EditValue = "5";
-            this.textEdit_Preod.Location = new System.Drawing.Point(153, 95);
+            this.textEdit_Preod.Location = new System.Drawing.Point(131, 88);
             this.textEdit_Preod.MenuManager = this.barManager1;
             this.textEdit_Preod.Name = "textEdit_Preod";
-            this.textEdit_Preod.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_Preod.Size = new System.Drawing.Size(86, 20);
             this.textEdit_Preod.TabIndex = 7;
             // 
             // textEdit_BaudRate
             // 
             this.textEdit_BaudRate.EditValue = "9600";
-            this.textEdit_BaudRate.Location = new System.Drawing.Point(153, 62);
+            this.textEdit_BaudRate.Location = new System.Drawing.Point(131, 58);
             this.textEdit_BaudRate.MenuManager = this.barManager1;
             this.textEdit_BaudRate.Name = "textEdit_BaudRate";
-            this.textEdit_BaudRate.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_BaudRate.Size = new System.Drawing.Size(86, 20);
             this.textEdit_BaudRate.TabIndex = 6;
             // 
             // comboBoxEdit_second
             // 
             this.comboBoxEdit_second.EditValue = "秒";
-            this.comboBoxEdit_second.Location = new System.Drawing.Point(259, 95);
+            this.comboBoxEdit_second.Location = new System.Drawing.Point(222, 88);
             this.comboBoxEdit_second.MenuManager = this.barManager1;
             this.comboBoxEdit_second.Name = "comboBoxEdit_second";
             this.comboBoxEdit_second.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -1580,13 +1577,13 @@
             "秒",
             "分钟",
             "小时"});
-            this.comboBoxEdit_second.Size = new System.Drawing.Size(50, 20);
+            this.comboBoxEdit_second.Size = new System.Drawing.Size(43, 20);
             this.comboBoxEdit_second.TabIndex = 5;
             // 
             // comboBoxEdit_Port
             // 
             this.comboBoxEdit_Port.EditValue = "COM1";
-            this.comboBoxEdit_Port.Location = new System.Drawing.Point(153, 29);
+            this.comboBoxEdit_Port.Location = new System.Drawing.Point(131, 27);
             this.comboBoxEdit_Port.MenuManager = this.barManager1;
             this.comboBoxEdit_Port.Name = "comboBoxEdit_Port";
             this.comboBoxEdit_Port.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -1602,38 +1599,38 @@
             "COM8",
             "COM9",
             "COM10"});
-            this.comboBoxEdit_Port.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxEdit_Port.Size = new System.Drawing.Size(86, 20);
             this.comboBoxEdit_Port.TabIndex = 4;
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(35, 134);
+            this.labelControl9.Location = new System.Drawing.Point(30, 124);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(108, 14);
+            this.labelControl9.Size = new System.Drawing.Size(102, 13);
             this.labelControl9.TabIndex = 3;
             this.labelControl9.Text = "实时曲线窗口时长：";
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(35, 101);
+            this.labelControl8.Location = new System.Drawing.Point(30, 94);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(84, 14);
+            this.labelControl8.Size = new System.Drawing.Size(78, 13);
             this.labelControl8.TabIndex = 2;
             this.labelControl8.Text = "数据采集周期：";
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(35, 68);
+            this.labelControl7.Location = new System.Drawing.Point(30, 63);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(48, 14);
+            this.labelControl7.Size = new System.Drawing.Size(42, 13);
             this.labelControl7.TabIndex = 1;
             this.labelControl7.Text = "波特率：";
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(35, 35);
+            this.labelControl6.Location = new System.Drawing.Point(30, 32);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(48, 14);
+            this.labelControl6.Size = new System.Drawing.Size(42, 13);
             this.labelControl6.TabIndex = 0;
             this.labelControl6.Text = "串口号：";
             // 
@@ -1647,62 +1644,62 @@
             this.groupControl6.Controls.Add(this.btn_ChoosesPath);
             this.groupControl6.Controls.Add(this.textEdit_Path);
             this.groupControl6.Controls.Add(this.labelControl11);
-            this.groupControl6.Location = new System.Drawing.Point(5, 317);
+            this.groupControl6.Location = new System.Drawing.Point(4, 294);
             this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(397, 219);
+            this.groupControl6.Size = new System.Drawing.Size(340, 203);
             this.groupControl6.TabIndex = 4;
             this.groupControl6.Text = "数据备份";
             // 
             // textEdit_BackupPreiod
             // 
             this.textEdit_BackupPreiod.EditValue = "30";
-            this.textEdit_BackupPreiod.Location = new System.Drawing.Point(294, 127);
+            this.textEdit_BackupPreiod.Location = new System.Drawing.Point(252, 118);
             this.textEdit_BackupPreiod.MenuManager = this.barManager1;
             this.textEdit_BackupPreiod.Name = "textEdit_BackupPreiod";
-            this.textEdit_BackupPreiod.Size = new System.Drawing.Size(57, 20);
+            this.textEdit_BackupPreiod.Size = new System.Drawing.Size(49, 20);
             this.textEdit_BackupPreiod.TabIndex = 13;
             // 
             // checkEdit_Back
             // 
-            this.checkEdit_Back.Location = new System.Drawing.Point(24, 128);
+            this.checkEdit_Back.Location = new System.Drawing.Point(21, 119);
             this.checkEdit_Back.MenuManager = this.barManager1;
             this.checkEdit_Back.Name = "checkEdit_Back";
             this.checkEdit_Back.Properties.Caption = "数据库自动备份";
-            this.checkEdit_Back.Size = new System.Drawing.Size(119, 19);
+            this.checkEdit_Back.Size = new System.Drawing.Size(102, 19);
             this.checkEdit_Back.TabIndex = 12;
             // 
             // btn_Save2
             // 
             this.btn_Save2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btn_Save2.Appearance.Options.UseBackColor = true;
-            this.btn_Save2.Location = new System.Drawing.Point(149, 184);
+            this.btn_Save2.Location = new System.Drawing.Point(128, 171);
             this.btn_Save2.Name = "btn_Save2";
-            this.btn_Save2.Size = new System.Drawing.Size(75, 23);
+            this.btn_Save2.Size = new System.Drawing.Size(64, 21);
             this.btn_Save2.TabIndex = 11;
             this.btn_Save2.Text = "保存";
             this.btn_Save2.Click += new System.EventHandler(this.btn_Save2_Click);
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(358, 132);
+            this.labelControl13.Location = new System.Drawing.Point(307, 123);
             this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(12, 14);
+            this.labelControl13.Size = new System.Drawing.Size(12, 13);
             this.labelControl13.TabIndex = 10;
             this.labelControl13.Text = "天";
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(197, 130);
+            this.labelControl12.Location = new System.Drawing.Point(169, 121);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(76, 14);
+            this.labelControl12.Size = new System.Drawing.Size(76, 13);
             this.labelControl12.TabIndex = 4;
             this.labelControl12.Text = "自动备份周期:";
             // 
             // btn_ChoosesPath
             // 
-            this.btn_ChoosesPath.Location = new System.Drawing.Point(294, 85);
+            this.btn_ChoosesPath.Location = new System.Drawing.Point(252, 79);
             this.btn_ChoosesPath.Name = "btn_ChoosesPath";
-            this.btn_ChoosesPath.Size = new System.Drawing.Size(75, 23);
+            this.btn_ChoosesPath.Size = new System.Drawing.Size(64, 21);
             this.btn_ChoosesPath.TabIndex = 2;
             this.btn_ChoosesPath.Text = "更改...";
             this.btn_ChoosesPath.Click += new System.EventHandler(this.btn_ChoosesPath_Click);
@@ -1710,17 +1707,17 @@
             // textEdit_Path
             // 
             this.textEdit_Path.EditValue = "D:\\Backup";
-            this.textEdit_Path.Location = new System.Drawing.Point(26, 88);
+            this.textEdit_Path.Location = new System.Drawing.Point(22, 82);
             this.textEdit_Path.MenuManager = this.barManager1;
             this.textEdit_Path.Name = "textEdit_Path";
-            this.textEdit_Path.Size = new System.Drawing.Size(247, 20);
+            this.textEdit_Path.Size = new System.Drawing.Size(212, 20);
             this.textEdit_Path.TabIndex = 1;
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(26, 51);
+            this.labelControl11.Location = new System.Drawing.Point(22, 47);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(84, 14);
+            this.labelControl11.Size = new System.Drawing.Size(78, 13);
             this.labelControl11.TabIndex = 0;
             this.labelControl11.Text = "数据备份路径：";
             // 
@@ -1730,7 +1727,7 @@
             this.xtraTabPage4.Controls.Add(this.groupControl9);
             this.xtraTabPage4.Controls.Add(this.groupControl8);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(957, 592);
+            this.xtraTabPage4.Size = new System.Drawing.Size(819, 543);
             this.xtraTabPage4.Text = "添加设备";
             // 
             // groupControl10
@@ -1750,16 +1747,16 @@
             this.groupControl10.Controls.Add(this.labelControl20);
             this.groupControl10.Controls.Add(this.labelControl19);
             this.groupControl10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl10.Location = new System.Drawing.Point(361, 195);
+            this.groupControl10.Location = new System.Drawing.Point(309, 181);
             this.groupControl10.Name = "groupControl10";
-            this.groupControl10.Size = new System.Drawing.Size(596, 397);
+            this.groupControl10.Size = new System.Drawing.Size(510, 362);
             this.groupControl10.TabIndex = 2;
             this.groupControl10.Text = "测量参数";
             // 
             // comboBoxEdit_UnitAdd
             // 
             this.comboBoxEdit_UnitAdd.EditValue = "PPM";
-            this.comboBoxEdit_UnitAdd.Location = new System.Drawing.Point(160, 79);
+            this.comboBoxEdit_UnitAdd.Location = new System.Drawing.Point(137, 73);
             this.comboBoxEdit_UnitAdd.MenuManager = this.barManager1;
             this.comboBoxEdit_UnitAdd.Name = "comboBoxEdit_UnitAdd";
             this.comboBoxEdit_UnitAdd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -1773,13 +1770,13 @@
             "m/s",
             "m3/s"});
             this.comboBoxEdit_UnitAdd.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit_UnitAdd.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxEdit_UnitAdd.Size = new System.Drawing.Size(86, 20);
             this.comboBoxEdit_UnitAdd.TabIndex = 14;
             // 
             // comboBoxEdit_OpenAdd
             // 
             this.comboBoxEdit_OpenAdd.EditValue = "打开";
-            this.comboBoxEdit_OpenAdd.Location = new System.Drawing.Point(396, 126);
+            this.comboBoxEdit_OpenAdd.Location = new System.Drawing.Point(339, 117);
             this.comboBoxEdit_OpenAdd.MenuManager = this.barManager1;
             this.comboBoxEdit_OpenAdd.Name = "comboBoxEdit_OpenAdd";
             this.comboBoxEdit_OpenAdd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -1788,13 +1785,13 @@
             "关闭",
             "打开"});
             this.comboBoxEdit_OpenAdd.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit_OpenAdd.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxEdit_OpenAdd.Size = new System.Drawing.Size(86, 20);
             this.comboBoxEdit_OpenAdd.TabIndex = 13;
             // 
             // comboBoxEdit_PointAdd
             // 
             this.comboBoxEdit_PointAdd.EditValue = "无小数";
-            this.comboBoxEdit_PointAdd.Location = new System.Drawing.Point(160, 126);
+            this.comboBoxEdit_PointAdd.Location = new System.Drawing.Point(137, 117);
             this.comboBoxEdit_PointAdd.MenuManager = this.barManager1;
             this.comboBoxEdit_PointAdd.Name = "comboBoxEdit_PointAdd";
             this.comboBoxEdit_PointAdd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -1805,98 +1802,98 @@
             "2位小数",
             "3位小数"});
             this.comboBoxEdit_PointAdd.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit_PointAdd.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxEdit_PointAdd.Size = new System.Drawing.Size(86, 20);
             this.comboBoxEdit_PointAdd.TabIndex = 12;
             // 
             // textEdit_LowAdd
             // 
             this.textEdit_LowAdd.EditValue = "30";
-            this.textEdit_LowAdd.Location = new System.Drawing.Point(396, 79);
+            this.textEdit_LowAdd.Location = new System.Drawing.Point(339, 73);
             this.textEdit_LowAdd.MenuManager = this.barManager1;
             this.textEdit_LowAdd.Name = "textEdit_LowAdd";
-            this.textEdit_LowAdd.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_LowAdd.Size = new System.Drawing.Size(86, 20);
             this.textEdit_LowAdd.TabIndex = 11;
             // 
             // textEdit_ReviseAdd
             // 
             this.textEdit_ReviseAdd.EditValue = "1";
-            this.textEdit_ReviseAdd.Location = new System.Drawing.Point(160, 173);
+            this.textEdit_ReviseAdd.Location = new System.Drawing.Point(137, 161);
             this.textEdit_ReviseAdd.MenuManager = this.barManager1;
             this.textEdit_ReviseAdd.Name = "textEdit_ReviseAdd";
-            this.textEdit_ReviseAdd.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_ReviseAdd.Size = new System.Drawing.Size(86, 20);
             this.textEdit_ReviseAdd.TabIndex = 10;
             // 
             // textEdit_HighAdd
             // 
             this.textEdit_HighAdd.EditValue = "60";
-            this.textEdit_HighAdd.Location = new System.Drawing.Point(396, 32);
+            this.textEdit_HighAdd.Location = new System.Drawing.Point(339, 30);
             this.textEdit_HighAdd.MenuManager = this.barManager1;
             this.textEdit_HighAdd.Name = "textEdit_HighAdd";
-            this.textEdit_HighAdd.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_HighAdd.Size = new System.Drawing.Size(86, 20);
             this.textEdit_HighAdd.TabIndex = 9;
             // 
             // textEdit_RangeAdd
             // 
             this.textEdit_RangeAdd.EditValue = "100";
-            this.textEdit_RangeAdd.Location = new System.Drawing.Point(160, 32);
+            this.textEdit_RangeAdd.Location = new System.Drawing.Point(137, 30);
             this.textEdit_RangeAdd.MenuManager = this.barManager1;
             this.textEdit_RangeAdd.Name = "textEdit_RangeAdd";
-            this.textEdit_RangeAdd.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_RangeAdd.Size = new System.Drawing.Size(86, 20);
             this.textEdit_RangeAdd.TabIndex = 7;
             // 
             // labelControl25
             // 
-            this.labelControl25.Location = new System.Drawing.Point(320, 129);
+            this.labelControl25.Location = new System.Drawing.Point(274, 120);
             this.labelControl25.Name = "labelControl25";
-            this.labelControl25.Size = new System.Drawing.Size(60, 14);
+            this.labelControl25.Size = new System.Drawing.Size(54, 13);
             this.labelControl25.TabIndex = 6;
             this.labelControl25.Text = "报警开关：";
             // 
             // labelControl24
             // 
-            this.labelControl24.Location = new System.Drawing.Point(320, 35);
+            this.labelControl24.Location = new System.Drawing.Point(274, 32);
             this.labelControl24.Name = "labelControl24";
-            this.labelControl24.Size = new System.Drawing.Size(60, 14);
+            this.labelControl24.Size = new System.Drawing.Size(54, 13);
             this.labelControl24.TabIndex = 5;
             this.labelControl24.Text = "高报警线：";
             // 
             // labelControl23
             // 
-            this.labelControl23.Location = new System.Drawing.Point(320, 82);
+            this.labelControl23.Location = new System.Drawing.Point(274, 76);
             this.labelControl23.Name = "labelControl23";
-            this.labelControl23.Size = new System.Drawing.Size(60, 14);
+            this.labelControl23.Size = new System.Drawing.Size(54, 13);
             this.labelControl23.TabIndex = 4;
             this.labelControl23.Text = "低报警线：";
             // 
             // labelControl22
             // 
-            this.labelControl22.Location = new System.Drawing.Point(46, 176);
+            this.labelControl22.Location = new System.Drawing.Point(39, 163);
             this.labelControl22.Name = "labelControl22";
-            this.labelControl22.Size = new System.Drawing.Size(60, 14);
+            this.labelControl22.Size = new System.Drawing.Size(54, 13);
             this.labelControl22.TabIndex = 3;
             this.labelControl22.Text = "修正因子：";
             // 
             // labelControl21
             // 
-            this.labelControl21.Location = new System.Drawing.Point(46, 129);
+            this.labelControl21.Location = new System.Drawing.Point(39, 120);
             this.labelControl21.Name = "labelControl21";
-            this.labelControl21.Size = new System.Drawing.Size(72, 14);
+            this.labelControl21.Size = new System.Drawing.Size(66, 13);
             this.labelControl21.TabIndex = 2;
             this.labelControl21.Text = "测量小数位：";
             // 
             // labelControl20
             // 
-            this.labelControl20.Location = new System.Drawing.Point(46, 82);
+            this.labelControl20.Location = new System.Drawing.Point(39, 76);
             this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(60, 14);
+            this.labelControl20.Size = new System.Drawing.Size(54, 13);
             this.labelControl20.TabIndex = 1;
             this.labelControl20.Text = "测量单位：";
             // 
             // labelControl19
             // 
-            this.labelControl19.Location = new System.Drawing.Point(46, 35);
+            this.labelControl19.Location = new System.Drawing.Point(39, 32);
             this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(36, 14);
+            this.labelControl19.Size = new System.Drawing.Size(30, 13);
             this.labelControl19.TabIndex = 0;
             this.labelControl19.Text = "量程：";
             // 
@@ -1912,28 +1909,28 @@
             this.groupControl9.Controls.Add(this.labelControl17);
             this.groupControl9.Controls.Add(this.labelControl16);
             this.groupControl9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl9.Location = new System.Drawing.Point(361, 0);
+            this.groupControl9.Location = new System.Drawing.Point(309, 0);
             this.groupControl9.Name = "groupControl9";
-            this.groupControl9.Size = new System.Drawing.Size(596, 195);
+            this.groupControl9.Size = new System.Drawing.Size(510, 181);
             this.groupControl9.TabIndex = 1;
             this.groupControl9.Text = "仪器设备信息";
             // 
             // textEdit_PlaceAdd
             // 
             this.textEdit_PlaceAdd.EditValue = "默认位置";
-            this.textEdit_PlaceAdd.Location = new System.Drawing.Point(160, 134);
+            this.textEdit_PlaceAdd.Location = new System.Drawing.Point(137, 124);
             this.textEdit_PlaceAdd.MenuManager = this.barManager1;
             this.textEdit_PlaceAdd.Name = "textEdit_PlaceAdd";
-            this.textEdit_PlaceAdd.Size = new System.Drawing.Size(167, 20);
+            this.textEdit_PlaceAdd.Size = new System.Drawing.Size(143, 20);
             this.textEdit_PlaceAdd.TabIndex = 8;
             // 
             // btn_UpdateAdd
             // 
             this.btn_UpdateAdd.Appearance.BackColor = System.Drawing.Color.Silver;
             this.btn_UpdateAdd.Appearance.Options.UseBackColor = true;
-            this.btn_UpdateAdd.Location = new System.Drawing.Point(434, 79);
+            this.btn_UpdateAdd.Location = new System.Drawing.Point(372, 73);
             this.btn_UpdateAdd.Name = "btn_UpdateAdd";
-            this.btn_UpdateAdd.Size = new System.Drawing.Size(75, 23);
+            this.btn_UpdateAdd.Size = new System.Drawing.Size(64, 21);
             this.btn_UpdateAdd.TabIndex = 7;
             this.btn_UpdateAdd.Text = "更新";
             this.btn_UpdateAdd.Click += new System.EventHandler(this.btn_UpdateAdd_Click);
@@ -1942,9 +1939,9 @@
             // 
             this.btn_DeleteAdd.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btn_DeleteAdd.Appearance.Options.UseBackColor = true;
-            this.btn_DeleteAdd.Location = new System.Drawing.Point(434, 128);
+            this.btn_DeleteAdd.Location = new System.Drawing.Point(372, 119);
             this.btn_DeleteAdd.Name = "btn_DeleteAdd";
-            this.btn_DeleteAdd.Size = new System.Drawing.Size(75, 23);
+            this.btn_DeleteAdd.Size = new System.Drawing.Size(64, 21);
             this.btn_DeleteAdd.TabIndex = 6;
             this.btn_DeleteAdd.Text = "移除";
             this.btn_DeleteAdd.Click += new System.EventHandler(this.btn_DeleteAdd_Click);
@@ -1953,9 +1950,9 @@
             // 
             this.btn_AddAdd.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btn_AddAdd.Appearance.Options.UseBackColor = true;
-            this.btn_AddAdd.Location = new System.Drawing.Point(434, 27);
+            this.btn_AddAdd.Location = new System.Drawing.Point(372, 25);
             this.btn_AddAdd.Name = "btn_AddAdd";
-            this.btn_AddAdd.Size = new System.Drawing.Size(75, 23);
+            this.btn_AddAdd.Size = new System.Drawing.Size(64, 21);
             this.btn_AddAdd.TabIndex = 5;
             this.btn_AddAdd.Text = "添加";
             this.btn_AddAdd.Click += new System.EventHandler(this.btn_AddAdd_Click);
@@ -1963,42 +1960,42 @@
             // textEdit_GasNameAdd
             // 
             this.textEdit_GasNameAdd.EditValue = "气体1";
-            this.textEdit_GasNameAdd.Location = new System.Drawing.Point(160, 82);
+            this.textEdit_GasNameAdd.Location = new System.Drawing.Point(137, 76);
             this.textEdit_GasNameAdd.MenuManager = this.barManager1;
             this.textEdit_GasNameAdd.Name = "textEdit_GasNameAdd";
-            this.textEdit_GasNameAdd.Size = new System.Drawing.Size(167, 20);
+            this.textEdit_GasNameAdd.Size = new System.Drawing.Size(143, 20);
             this.textEdit_GasNameAdd.TabIndex = 4;
             // 
             // textEdit_AddressAdd
             // 
             this.textEdit_AddressAdd.EditValue = "1";
-            this.textEdit_AddressAdd.Location = new System.Drawing.Point(160, 30);
+            this.textEdit_AddressAdd.Location = new System.Drawing.Point(137, 28);
             this.textEdit_AddressAdd.MenuManager = this.barManager1;
             this.textEdit_AddressAdd.Name = "textEdit_AddressAdd";
-            this.textEdit_AddressAdd.Size = new System.Drawing.Size(167, 20);
+            this.textEdit_AddressAdd.Size = new System.Drawing.Size(143, 20);
             this.textEdit_AddressAdd.TabIndex = 3;
             // 
             // labelControl18
             // 
-            this.labelControl18.Location = new System.Drawing.Point(34, 137);
+            this.labelControl18.Location = new System.Drawing.Point(29, 127);
             this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(84, 14);
+            this.labelControl18.Size = new System.Drawing.Size(78, 13);
             this.labelControl18.TabIndex = 2;
             this.labelControl18.Text = "设备安装位置：";
             // 
             // labelControl17
             // 
-            this.labelControl17.Location = new System.Drawing.Point(36, 85);
+            this.labelControl17.Location = new System.Drawing.Point(31, 79);
             this.labelControl17.Name = "labelControl17";
-            this.labelControl17.Size = new System.Drawing.Size(60, 14);
+            this.labelControl17.Size = new System.Drawing.Size(54, 13);
             this.labelControl17.TabIndex = 1;
             this.labelControl17.Text = "气体名称：";
             // 
             // labelControl16
             // 
-            this.labelControl16.Location = new System.Drawing.Point(34, 33);
+            this.labelControl16.Location = new System.Drawing.Point(29, 31);
             this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(48, 14);
+            this.labelControl16.Size = new System.Drawing.Size(41, 13);
             this.labelControl16.TabIndex = 0;
             this.labelControl16.Text = "仪器ID：";
             // 
@@ -2008,18 +2005,18 @@
             this.groupControl8.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl8.Location = new System.Drawing.Point(0, 0);
             this.groupControl8.Name = "groupControl8";
-            this.groupControl8.Size = new System.Drawing.Size(361, 592);
+            this.groupControl8.Size = new System.Drawing.Size(309, 543);
             this.groupControl8.TabIndex = 0;
             this.groupControl8.Text = "已添加的设备";
             // 
             // gridControl_Add
             // 
             this.gridControl_Add.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl_Add.Location = new System.Drawing.Point(2, 22);
+            this.gridControl_Add.Location = new System.Drawing.Point(2, 21);
             this.gridControl_Add.MainView = this.gridView_Add;
             this.gridControl_Add.MenuManager = this.barManager1;
             this.gridControl_Add.Name = "gridControl_Add";
-            this.gridControl_Add.Size = new System.Drawing.Size(357, 568);
+            this.gridControl_Add.Size = new System.Drawing.Size(305, 520);
             this.gridControl_Add.TabIndex = 0;
             this.gridControl_Add.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Add});
@@ -2089,17 +2086,17 @@
             this.xtraTabPage5.Controls.Add(this.gridControl_Alert);
             this.xtraTabPage5.Controls.Add(this.groupControl11);
             this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(957, 592);
+            this.xtraTabPage5.Size = new System.Drawing.Size(819, 543);
             this.xtraTabPage5.Text = "报警记录";
             // 
             // gridControl_Alert
             // 
             this.gridControl_Alert.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl_Alert.Location = new System.Drawing.Point(0, 100);
+            this.gridControl_Alert.Location = new System.Drawing.Point(0, 93);
             this.gridControl_Alert.MainView = this.gridView_Alert;
             this.gridControl_Alert.MenuManager = this.barManager1;
             this.gridControl_Alert.Name = "gridControl_Alert";
-            this.gridControl_Alert.Size = new System.Drawing.Size(957, 492);
+            this.gridControl_Alert.Size = new System.Drawing.Size(819, 450);
             this.gridControl_Alert.TabIndex = 1;
             this.gridControl_Alert.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Alert});
@@ -2218,7 +2215,7 @@
             this.groupControl11.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl11.Location = new System.Drawing.Point(0, 0);
             this.groupControl11.Name = "groupControl11";
-            this.groupControl11.Size = new System.Drawing.Size(957, 100);
+            this.groupControl11.Size = new System.Drawing.Size(819, 93);
             this.groupControl11.TabIndex = 0;
             this.groupControl11.Text = "查询时间";
             // 
@@ -2226,9 +2223,9 @@
             // 
             this.btn_ExportAlert.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btn_ExportAlert.Appearance.Options.UseBackColor = true;
-            this.btn_ExportAlert.Location = new System.Drawing.Point(847, 44);
+            this.btn_ExportAlert.Location = new System.Drawing.Point(726, 41);
             this.btn_ExportAlert.Name = "btn_ExportAlert";
-            this.btn_ExportAlert.Size = new System.Drawing.Size(75, 23);
+            this.btn_ExportAlert.Size = new System.Drawing.Size(64, 21);
             this.btn_ExportAlert.TabIndex = 14;
             this.btn_ExportAlert.Text = "导出";
             this.btn_ExportAlert.Click += new System.EventHandler(this.btn_ExportAlert_Click);
@@ -2237,9 +2234,9 @@
             // 
             this.btn_searchAlert.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(102)))), ((int)(((byte)(255)))));
             this.btn_searchAlert.Appearance.Options.UseBackColor = true;
-            this.btn_searchAlert.Location = new System.Drawing.Point(713, 44);
+            this.btn_searchAlert.Location = new System.Drawing.Point(611, 41);
             this.btn_searchAlert.Name = "btn_searchAlert";
-            this.btn_searchAlert.Size = new System.Drawing.Size(75, 23);
+            this.btn_searchAlert.Size = new System.Drawing.Size(64, 21);
             this.btn_searchAlert.TabIndex = 13;
             this.btn_searchAlert.Text = "查询";
             this.btn_searchAlert.Click += new System.EventHandler(this.btn_searchAlert_Click);
@@ -2247,64 +2244,66 @@
             // dateEdit_EndAlert
             // 
             this.dateEdit_EndAlert.EditValue = null;
-            this.dateEdit_EndAlert.Location = new System.Drawing.Point(440, 47);
+            this.dateEdit_EndAlert.Location = new System.Drawing.Point(377, 44);
             this.dateEdit_EndAlert.MenuManager = this.barManager1;
             this.dateEdit_EndAlert.Name = "dateEdit_EndAlert";
             this.dateEdit_EndAlert.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit_EndAlert.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.dateEdit_EndAlert.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.dateEdit_EndAlert.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
             this.dateEdit_EndAlert.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_EndAlert.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_EndAlert.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_EndAlert.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_EndAlert.Properties.Mask.EditMask = "G";
             this.dateEdit_EndAlert.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_EndAlert.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_EndAlert.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit_EndAlert.Size = new System.Drawing.Size(179, 20);
+            this.dateEdit_EndAlert.Size = new System.Drawing.Size(153, 20);
             this.dateEdit_EndAlert.TabIndex = 12;
             // 
             // labelControl27
             // 
-            this.labelControl27.Location = new System.Drawing.Point(348, 50);
+            this.labelControl27.Location = new System.Drawing.Point(298, 46);
             this.labelControl27.Name = "labelControl27";
-            this.labelControl27.Size = new System.Drawing.Size(60, 14);
+            this.labelControl27.Size = new System.Drawing.Size(54, 13);
             this.labelControl27.TabIndex = 11;
             this.labelControl27.Text = "结束时间：";
             // 
             // dateEdit_StartAlert
             // 
             this.dateEdit_StartAlert.EditValue = null;
-            this.dateEdit_StartAlert.Location = new System.Drawing.Point(112, 47);
+            this.dateEdit_StartAlert.Location = new System.Drawing.Point(96, 44);
             this.dateEdit_StartAlert.MenuManager = this.barManager1;
             this.dateEdit_StartAlert.Name = "dateEdit_StartAlert";
             this.dateEdit_StartAlert.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit_StartAlert.Properties.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.True;
+            this.dateEdit_StartAlert.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.dateEdit_StartAlert.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
             this.dateEdit_StartAlert.Properties.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_StartAlert.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_StartAlert.Properties.EditFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.dateEdit_StartAlert.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.dateEdit_StartAlert.Properties.Mask.EditMask = "G";
             this.dateEdit_StartAlert.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_StartAlert.Properties.VistaEditTime = DevExpress.Utils.DefaultBoolean.True;
-            this.dateEdit_StartAlert.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit_StartAlert.Size = new System.Drawing.Size(178, 20);
+            this.dateEdit_StartAlert.Size = new System.Drawing.Size(153, 20);
             this.dateEdit_StartAlert.TabIndex = 10;
             // 
             // labelControl26
             // 
-            this.labelControl26.Location = new System.Drawing.Point(19, 50);
+            this.labelControl26.Location = new System.Drawing.Point(16, 46);
             this.labelControl26.Name = "labelControl26";
-            this.labelControl26.Size = new System.Drawing.Size(60, 14);
+            this.labelControl26.Size = new System.Drawing.Size(54, 13);
             this.labelControl26.TabIndex = 9;
             this.labelControl26.Text = "开始时间：";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 692);
+            this.ClientSize = new System.Drawing.Size(825, 643);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -2349,9 +2348,9 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_Place.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_GasName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_End.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_Start.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit_ID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
@@ -2424,9 +2423,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl11)).EndInit();
             this.groupControl11.ResumeLayout(false);
             this.groupControl11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).EndInit();
             this.ResumeLayout(false);
 
