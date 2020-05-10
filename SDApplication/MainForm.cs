@@ -366,6 +366,7 @@ namespace SDApplication
                 {
                     return false;
                 }
+                InitControl();
                 // 登录
                 //Form_Login login = new Form_Login(systemConfig);
                 //login.ShowDialog();
@@ -532,6 +533,12 @@ namespace SDApplication
             diagram_Tem.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 8);
             //if (diagram_Tem != null && diagram_Tem.AxisX.DateTimeMeasureUnit == DateTimeMeasurementUnit.Millisecond)
             //    diagram_Tem.AxisX.Range.SetMinMaxValues(minDate, argument);
+        }
+
+        private void InitControl()
+        {
+            comboBoxEdit_UnitAdd.Properties.Items.Clear();
+            comboBoxEdit_UnitAdd.Properties.Items.AddRange(systemConfig.Units);
         }
 
         // 设置历史曲线

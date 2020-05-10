@@ -119,5 +119,7 @@ namespace Entity
         /// 是否自动检测
         /// </summary>
         public bool Isauto { get; set; }
+
+        public List<string> Units { get; set; }
     }
 }

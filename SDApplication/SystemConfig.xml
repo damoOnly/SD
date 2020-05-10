@@ -36,4 +36,19 @@
   <SkinName>Black</SkinName>
   <!--是否自动检测-->
   <Isauto>false</Isauto>
+  <Units>
+    <string>PPM</string>
+    <string>%VOL</string>
+    <string>%LEL</string>
+    <string>mg/m3</string>
+    <string>PPB</string>
+    <string>m/s</string>
+    <string>m3/s</string>
+    <string>%RH</string>
+    <string>℃</string>
+    <string>ug/m3</string>
+    <string>dB</string>
+    <string>mbar</string>
+    <string>空白</string>    
+  </Units>
 </SystemConfig>
