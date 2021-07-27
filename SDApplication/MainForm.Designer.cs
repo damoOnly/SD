@@ -663,13 +663,14 @@
             // gridControl_Main
             // 
             this.gridControl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl_Main.Font = new System.Drawing.Font("Tahoma", 12F);
             this.gridControl_Main.Location = new System.Drawing.Point(0, 0);
             this.gridControl_Main.MainView = this.gridView_Main;
             this.gridControl_Main.MenuManager = this.barManager1;
             this.gridControl_Main.Name = "gridControl_Main";
             this.gridControl_Main.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.gridControl_Main.Size = new System.Drawing.Size(819, 285);
+            this.gridControl_Main.Size = new System.Drawing.Size(819, 332);
             this.gridControl_Main.TabIndex = 0;
             this.gridControl_Main.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Main});
@@ -680,10 +681,14 @@
             this.gridView_Main.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.gridView_Main.Appearance.FocusedCell.BackColor = System.Drawing.Color.Cyan;
             this.gridView_Main.Appearance.FocusedRow.BackColor = System.Drawing.Color.Cyan;
+            this.gridView_Main.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView_Main.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView_Main.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView_Main.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView_Main.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.Cyan;
             this.gridView_Main.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.gridView_Main.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView_Main.Appearance.Row.Options.UseFont = true;
             this.gridView_Main.Appearance.SelectedRow.BackColor = System.Drawing.Color.Cyan;
             this.gridView_Main.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn_GasName,
@@ -1016,7 +1021,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(819, 59);
+            this.groupControl1.Size = new System.Drawing.Size(819, 68);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "数据查询条件";
             // 
@@ -1150,7 +1155,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(819, 479);
+            this.splitContainerControl1.Size = new System.Drawing.Size(819, 470);
             this.splitContainerControl1.SplitterPosition = 305;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -1161,7 +1166,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(552, 479);
+            this.groupControl2.Size = new System.Drawing.Size(509, 470);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "历史数据曲线";
             // 
@@ -1197,7 +1202,7 @@
             this.chartControl_History.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series3};
             this.chartControl_History.SeriesTemplate.View = swiftPlotSeriesView5;
-            this.chartControl_History.Size = new System.Drawing.Size(548, 456);
+            this.chartControl_History.Size = new System.Drawing.Size(505, 447);
             this.chartControl_History.TabIndex = 0;
             // 
             // splitContainerControl2
@@ -1211,7 +1216,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl4);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(262, 479);
+            this.splitContainerControl2.Size = new System.Drawing.Size(305, 470);
             this.splitContainerControl2.SplitterPosition = 16;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -1222,7 +1227,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(262, 460);
+            this.groupControl3.Size = new System.Drawing.Size(305, 449);
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "历史数据列表";
             // 
@@ -1233,7 +1238,7 @@
             this.gridControl_History.MainView = this.gridView_History;
             this.gridControl_History.MenuManager = this.barManager1;
             this.gridControl_History.Name = "gridControl_History";
-            this.gridControl_History.Size = new System.Drawing.Size(258, 437);
+            this.gridControl_History.Size = new System.Drawing.Size(301, 426);
             this.gridControl_History.TabIndex = 0;
             this.gridControl_History.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_History});
@@ -1319,7 +1324,7 @@
             this.groupControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl4.Location = new System.Drawing.Point(0, 0);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(262, 14);
+            this.groupControl4.Size = new System.Drawing.Size(305, 16);
             this.groupControl4.TabIndex = 0;
             this.groupControl4.Text = "数据操作";
             // 
@@ -2116,7 +2121,7 @@
             this.xtraTabPage5.Controls.Add(this.gridControl_Alert);
             this.xtraTabPage5.Controls.Add(this.groupControl11);
             this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(819, 549);
+            this.xtraTabPage5.Size = new System.Drawing.Size(819, 543);
             this.xtraTabPage5.Text = "报警记录";
             // 
             // gridControl_Alert
@@ -2126,7 +2131,7 @@
             this.gridControl_Alert.MainView = this.gridView_Alert;
             this.gridControl_Alert.MenuManager = this.barManager1;
             this.gridControl_Alert.Name = "gridControl_Alert";
-            this.gridControl_Alert.Size = new System.Drawing.Size(819, 456);
+            this.gridControl_Alert.Size = new System.Drawing.Size(819, 450);
             this.gridControl_Alert.TabIndex = 1;
             this.gridControl_Alert.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Alert});
