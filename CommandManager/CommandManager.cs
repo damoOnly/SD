@@ -44,11 +44,15 @@ namespace CommandManager
                     cd.ResultByte = PLAASerialPort.GetInstance().DataBufferList.ToArray();
                     result = checkSum(cd.ResultByte);
                     break;
-                }  
+                }
+                if (i == 29)
+                {
+                    LogLib.Log.GetLogger("CommandResult").Warn(string.Format("命令超时:{0}", PLAASerialPort.byteToHexStr(cd.SendByte)));
+                    Trace.WriteLine("超时");
+                }
             }
             PLAASerialPort.GetInstance().DataBufferList.Clear();
-            LogLib.Log.GetLogger("CommandResult").Warn(string.Format("命令超时:{0}",PLAASerialPort.byteToHexStr(cd.SendByte)));
-            Trace.WriteLine("超时");
+            
             return result;
         }
 

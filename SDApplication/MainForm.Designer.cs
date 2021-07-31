@@ -681,13 +681,13 @@
             this.gridView_Main.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.gridView_Main.Appearance.FocusedCell.BackColor = System.Drawing.Color.Cyan;
             this.gridView_Main.Appearance.FocusedRow.BackColor = System.Drawing.Color.Cyan;
-            this.gridView_Main.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView_Main.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView_Main.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView_Main.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView_Main.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView_Main.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.Cyan;
             this.gridView_Main.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gridView_Main.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView_Main.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView_Main.Appearance.Row.Options.UseFont = true;
             this.gridView_Main.Appearance.SelectedRow.BackColor = System.Drawing.Color.Cyan;
             this.gridView_Main.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -2333,6 +2333,10 @@
             this.labelControl26.Size = new System.Drawing.Size(60, 13);
             this.labelControl26.TabIndex = 9;
             this.labelControl26.Text = "开始时间：";
+            // 
+            // serialPort1
+            // 
+            this.serialPort1.ReadBufferSize = 2048;
             // 
             // MainForm
             // 
