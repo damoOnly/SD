@@ -165,6 +165,7 @@ namespace SDApplication
                     default:
                         break;
                 }
+                RenderAreaLable(false);
                 Thread.Sleep(readHZ * 1000);
                 //Thread.Sleep(2000);
             }
@@ -431,7 +432,7 @@ namespace SDApplication
                     return false;
                 }
                 Gloabl.IsOpen = true;
-                
+                RenderAreaLable(true);
             }
             catch (Exception ex)
             {
@@ -440,6 +441,75 @@ namespace SDApplication
             }
             return true;
         }
+
+        // 渲染地图控件里面的值，定制版本
+        private void RenderAreaLable(bool isInit)
+        {
+            foreach (var item in mainList)
+            {
+                switch (item.Address)
+                {
+                    case 1:
+                        if (isInit)
+                        {
+                            s1_n.Text = item.EName;
+                            s1_u.Text = item.Unit;
+                        }
+                        else
+                        {
+                            s1_v.Text = item.DisplayChroma;
+                        }
+                        break;
+                    case 2:
+                        if (isInit)
+                        {
+                            s2_n.Text = item.EName;
+                            s2_u.Text = item.Unit;
+                        }
+                        else
+                        {
+                            s2_v.Text = item.DisplayChroma;
+                        }
+                        break;
+                    case 3:
+                        if (isInit)
+                        {
+                            s3_n.Text = item.EName;
+                            s3_u.Text = item.Unit;
+                        }
+                        else
+                        {
+                            s3_v.Text = item.DisplayChroma;
+                        }
+                        break;
+                    case 4:
+                        if (isInit)
+                        {
+                            s4_n.Text = item.EName;
+                            s4_u.Text = item.Unit;
+                        }
+                        else
+                        {
+                            s4_v.Text = item.DisplayChroma;
+                        }
+                        break;
+                    case 5:
+                        if (isInit)
+                        {
+                            s5_n.Text = item.EName;
+                            s5_u.Text = item.Unit;
+                        }
+                        else
+                        {
+                            s5_v.Text = item.DisplayChroma;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
 
         // 读取系统配置文件
         private bool ReadSystemConfig()
@@ -1329,6 +1399,11 @@ namespace SDApplication
         private void labelControl31_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            xtraTabControl1.SelectedTabPage = xtraTabPage6;
         }
 
        

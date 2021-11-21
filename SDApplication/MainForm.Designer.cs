@@ -217,8 +217,31 @@
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
             this.dateEdit_StartAlert = new DevExpress.XtraEditors.DateEdit();
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
+            this.xtraTabPage6 = new DevExpress.XtraTab.XtraTabPage();
+            this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.s4_u = new DevExpress.XtraEditors.LabelControl();
+            this.s4_v = new DevExpress.XtraEditors.LabelControl();
+            this.s4_n = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.s5_u = new DevExpress.XtraEditors.LabelControl();
+            this.s5_v = new DevExpress.XtraEditors.LabelControl();
+            this.s5_n = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.s3_u = new DevExpress.XtraEditors.LabelControl();
+            this.s3_v = new DevExpress.XtraEditors.LabelControl();
+            this.s3_n = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.s1_u = new DevExpress.XtraEditors.LabelControl();
+            this.s1_v = new DevExpress.XtraEditors.LabelControl();
+            this.s1_n = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.s2_u = new DevExpress.XtraEditors.LabelControl();
+            this.s2_v = new DevExpress.XtraEditors.LabelControl();
+            this.s2_n = new DevExpress.XtraEditors.LabelControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -323,6 +346,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).BeginInit();
+            this.xtraTabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
+            this.panelControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
+            this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -358,9 +393,10 @@
             this.btn_Help,
             this.btn_Back,
             this.btn_mute,
-            this.btn_ModifPass});
+            this.btn_ModifPass,
+            this.barButtonItem1});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 27;
+            this.barManager1.MaxItemId = 28;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar1
@@ -380,7 +416,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Add),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Help),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_mute),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_ModifPass)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_ModifPass),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
             this.bar1.OptionsBar.AllowQuickCustomization = false;
             this.bar1.OptionsBar.DrawDragBorder = false;
             this.bar1.OptionsBar.MultiLine = true;
@@ -974,7 +1011,8 @@
             this.xtraTabPage2,
             this.xtraTabPage3,
             this.xtraTabPage4,
-            this.xtraTabPage5});
+            this.xtraTabPage5,
+            this.xtraTabPage6});
             // 
             // xtraTabPage1
             // 
@@ -2334,9 +2372,219 @@
             this.labelControl26.TabIndex = 9;
             this.labelControl26.Text = "开始时间：";
             // 
+            // xtraTabPage6
+            // 
+            this.xtraTabPage6.Controls.Add(this.panelControl6);
+            this.xtraTabPage6.Controls.Add(this.panelControl5);
+            this.xtraTabPage6.Controls.Add(this.panelControl4);
+            this.xtraTabPage6.Controls.Add(this.panelControl3);
+            this.xtraTabPage6.Controls.Add(this.panelControl2);
+            this.xtraTabPage6.Controls.Add(this.pictureBox1);
+            this.xtraTabPage6.Name = "xtraTabPage6";
+            this.xtraTabPage6.Size = new System.Drawing.Size(819, 543);
+            this.xtraTabPage6.Text = "xtraTabPage6";
+            // 
+            // panelControl6
+            // 
+            this.panelControl6.Controls.Add(this.s4_u);
+            this.panelControl6.Controls.Add(this.s4_v);
+            this.panelControl6.Controls.Add(this.s4_n);
+            this.panelControl6.Location = new System.Drawing.Point(430, 333);
+            this.panelControl6.Name = "panelControl6";
+            this.panelControl6.Size = new System.Drawing.Size(100, 44);
+            this.panelControl6.TabIndex = 7;
+            // 
+            // s4_u
+            // 
+            this.s4_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.s4_u.Location = new System.Drawing.Point(72, 24);
+            this.s4_u.Name = "s4_u";
+            this.s4_u.Size = new System.Drawing.Size(21, 13);
+            this.s4_u.TabIndex = 3;
+            this.s4_u.Text = "labelControl47";
+            // 
+            // s4_v
+            // 
+            this.s4_v.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.s4_v.Location = new System.Drawing.Point(16, 24);
+            this.s4_v.Name = "s4_v";
+            this.s4_v.Size = new System.Drawing.Size(50, 13);
+            this.s4_v.TabIndex = 2;
+            this.s4_v.Text = "labelControl48";
+            // 
+            // s4_n
+            // 
+            this.s4_n.Location = new System.Drawing.Point(16, 5);
+            this.s4_n.Name = "s4_n";
+            this.s4_n.Size = new System.Drawing.Size(23, 13);
+            this.s4_n.TabIndex = 1;
+            this.s4_n.Text = "s1_n";
+            // 
+            // panelControl5
+            // 
+            this.panelControl5.Controls.Add(this.s5_u);
+            this.panelControl5.Controls.Add(this.s5_v);
+            this.panelControl5.Controls.Add(this.s5_n);
+            this.panelControl5.Location = new System.Drawing.Point(537, 211);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Size = new System.Drawing.Size(100, 44);
+            this.panelControl5.TabIndex = 6;
+            // 
+            // s5_u
+            // 
+            this.s5_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.s5_u.Location = new System.Drawing.Point(72, 24);
+            this.s5_u.Name = "s5_u";
+            this.s5_u.Size = new System.Drawing.Size(21, 13);
+            this.s5_u.TabIndex = 3;
+            this.s5_u.Text = "labelControl44";
+            // 
+            // s5_v
+            // 
+            this.s5_v.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.s5_v.Location = new System.Drawing.Point(16, 24);
+            this.s5_v.Name = "s5_v";
+            this.s5_v.Size = new System.Drawing.Size(50, 13);
+            this.s5_v.TabIndex = 2;
+            this.s5_v.Text = "labelControl45";
+            // 
+            // s5_n
+            // 
+            this.s5_n.Location = new System.Drawing.Point(16, 5);
+            this.s5_n.Name = "s5_n";
+            this.s5_n.Size = new System.Drawing.Size(23, 13);
+            this.s5_n.TabIndex = 1;
+            this.s5_n.Text = "s1_n";
+            // 
+            // panelControl4
+            // 
+            this.panelControl4.Controls.Add(this.s3_u);
+            this.panelControl4.Controls.Add(this.s3_v);
+            this.panelControl4.Controls.Add(this.s3_n);
+            this.panelControl4.Location = new System.Drawing.Point(455, 17);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(100, 44);
+            this.panelControl4.TabIndex = 5;
+            // 
+            // s3_u
+            // 
+            this.s3_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.s3_u.Location = new System.Drawing.Point(72, 24);
+            this.s3_u.Name = "s3_u";
+            this.s3_u.Size = new System.Drawing.Size(21, 13);
+            this.s3_u.TabIndex = 3;
+            this.s3_u.Text = "labelControl41";
+            // 
+            // s3_v
+            // 
+            this.s3_v.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.s3_v.Location = new System.Drawing.Point(16, 24);
+            this.s3_v.Name = "s3_v";
+            this.s3_v.Size = new System.Drawing.Size(50, 13);
+            this.s3_v.TabIndex = 2;
+            this.s3_v.Text = "labelControl42";
+            // 
+            // s3_n
+            // 
+            this.s3_n.Location = new System.Drawing.Point(16, 5);
+            this.s3_n.Name = "s3_n";
+            this.s3_n.Size = new System.Drawing.Size(23, 13);
+            this.s3_n.TabIndex = 1;
+            this.s3_n.Text = "s1_n";
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.Controls.Add(this.s1_u);
+            this.panelControl3.Controls.Add(this.s1_v);
+            this.panelControl3.Controls.Add(this.s1_n);
+            this.panelControl3.Location = new System.Drawing.Point(303, 187);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(100, 44);
+            this.panelControl3.TabIndex = 4;
+            // 
+            // s1_u
+            // 
+            this.s1_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.s1_u.Location = new System.Drawing.Point(72, 24);
+            this.s1_u.Name = "s1_u";
+            this.s1_u.Size = new System.Drawing.Size(21, 13);
+            this.s1_u.TabIndex = 3;
+            this.s1_u.Text = "labelControl38";
+            // 
+            // s1_v
+            // 
+            this.s1_v.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.s1_v.Location = new System.Drawing.Point(16, 24);
+            this.s1_v.Name = "s1_v";
+            this.s1_v.Size = new System.Drawing.Size(50, 13);
+            this.s1_v.TabIndex = 2;
+            this.s1_v.Text = "labelControl39";
+            // 
+            // s1_n
+            // 
+            this.s1_n.Location = new System.Drawing.Point(16, 5);
+            this.s1_n.Name = "s1_n";
+            this.s1_n.Size = new System.Drawing.Size(23, 13);
+            this.s1_n.TabIndex = 1;
+            this.s1_n.Text = "s1_n";
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.s2_u);
+            this.panelControl2.Controls.Add(this.s2_v);
+            this.panelControl2.Controls.Add(this.s2_n);
+            this.panelControl2.Location = new System.Drawing.Point(209, 300);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(100, 44);
+            this.panelControl2.TabIndex = 2;
+            // 
+            // s2_u
+            // 
+            this.s2_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.s2_u.Location = new System.Drawing.Point(72, 24);
+            this.s2_u.Name = "s2_u";
+            this.s2_u.Size = new System.Drawing.Size(21, 13);
+            this.s2_u.TabIndex = 3;
+            this.s2_u.Text = "s1_u";
+            // 
+            // s2_v
+            // 
+            this.s2_v.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.s2_v.Location = new System.Drawing.Point(16, 24);
+            this.s2_v.Name = "s2_v";
+            this.s2_v.Size = new System.Drawing.Size(50, 13);
+            this.s2_v.TabIndex = 2;
+            this.s2_v.Text = "s1_v";
+            // 
+            // s2_n
+            // 
+            this.s2_n.Location = new System.Drawing.Point(16, 5);
+            this.s2_n.Name = "s2_n";
+            this.s2_n.Size = new System.Drawing.Size(23, 13);
+            this.s2_n.TabIndex = 1;
+            this.s2_n.Text = "s1_n";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(819, 543);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // serialPort1
             // 
             this.serialPort1.ReadBufferSize = 2048;
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "地图";
+            this.barButtonItem1.Id = 27;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // MainForm
             // 
@@ -2468,6 +2716,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).EndInit();
+            this.xtraTabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
+            this.panelControl6.ResumeLayout(false);
+            this.panelControl6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
+            this.panelControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
+            this.panelControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
+            this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2653,5 +2918,28 @@
         private DevExpress.XtraEditors.TextEdit textEdit_ggg;
         private DevExpress.XtraEditors.LabelControl labelControl37;
         private DevExpress.XtraEditors.CheckEdit checkEdit1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage6;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.LabelControl s2_v;
+        private DevExpress.XtraEditors.LabelControl s2_n;
+        private DevExpress.XtraEditors.LabelControl s2_u;
+        private DevExpress.XtraEditors.PanelControl panelControl6;
+        private DevExpress.XtraEditors.LabelControl s4_u;
+        private DevExpress.XtraEditors.LabelControl s4_v;
+        private DevExpress.XtraEditors.LabelControl s4_n;
+        private DevExpress.XtraEditors.PanelControl panelControl5;
+        private DevExpress.XtraEditors.LabelControl s5_u;
+        private DevExpress.XtraEditors.LabelControl s5_v;
+        private DevExpress.XtraEditors.LabelControl s5_n;
+        private DevExpress.XtraEditors.PanelControl panelControl4;
+        private DevExpress.XtraEditors.LabelControl s3_u;
+        private DevExpress.XtraEditors.LabelControl s3_v;
+        private DevExpress.XtraEditors.LabelControl s3_n;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.LabelControl s1_u;
+        private DevExpress.XtraEditors.LabelControl s1_v;
+        private DevExpress.XtraEditors.LabelControl s1_n;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }
