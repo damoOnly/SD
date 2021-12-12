@@ -52,6 +52,7 @@
             this.btn_Help = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btn_mute = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ModifPass = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.btnm_Start = new DevExpress.XtraBars.BarButtonItem();
@@ -89,15 +90,6 @@
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.chartControl_Main = new DevExpress.XtraCharts.ChartControl();
-            this.groupArea = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl37 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl35 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit_ggg = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl30 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit_area2 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit_area1 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
@@ -241,7 +233,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -257,11 +248,6 @@
             ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupArea)).BeginInit();
-            this.groupArea.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit_ggg.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit_area2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit_area1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -505,6 +491,14 @@
             this.btn_ModifPass.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btn_ModifPass.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ModifPass_ItemClick);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "地图";
+            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
+            this.barButtonItem1.Id = 27;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // bar2
             // 
             this.bar2.BarAppearance.Disabled.BackColor = System.Drawing.Color.Red;
@@ -690,7 +684,6 @@
             this.splitContainerControl_Main.Panel1.Text = "Panel1";
             this.splitContainerControl_Main.Panel2.Controls.Add(this.richTextBox1);
             this.splitContainerControl_Main.Panel2.Controls.Add(this.chartControl_Main);
-            this.splitContainerControl_Main.Panel2.Controls.Add(this.groupArea);
             this.splitContainerControl_Main.Panel2.Text = "Panel2";
             this.splitContainerControl_Main.Size = new System.Drawing.Size(819, 543);
             this.splitContainerControl_Main.SplitterPosition = 332;
@@ -900,7 +893,7 @@
             swiftPlotDiagram1.AxisY.WholeRange.AutoSideMargins = true;
             this.chartControl_Main.Diagram = swiftPlotDiagram1;
             this.chartControl_Main.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chartControl_Main.Location = new System.Drawing.Point(0, 30);
+            this.chartControl_Main.Location = new System.Drawing.Point(0, 0);
             this.chartControl_Main.Name = "chartControl_Main";
             series1.Name = "Series 1";
             series1.View = swiftPlotSeriesView1;
@@ -913,89 +906,6 @@
             this.chartControl_Main.SeriesTemplate.View = swiftPlotSeriesView3;
             this.chartControl_Main.Size = new System.Drawing.Size(819, 123);
             this.chartControl_Main.TabIndex = 1;
-            // 
-            // groupArea
-            // 
-            this.groupArea.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.groupArea.Controls.Add(this.labelControl37);
-            this.groupArea.Controls.Add(this.labelControl35);
-            this.groupArea.Controls.Add(this.textEdit_ggg);
-            this.groupArea.Controls.Add(this.labelControl30);
-            this.groupArea.Controls.Add(this.textEdit_area2);
-            this.groupArea.Controls.Add(this.labelControl29);
-            this.groupArea.Controls.Add(this.textEdit_area1);
-            this.groupArea.Controls.Add(this.labelControl28);
-            this.groupArea.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupArea.Location = new System.Drawing.Point(0, 0);
-            this.groupArea.Name = "groupArea";
-            this.groupArea.ShowCaption = false;
-            this.groupArea.Size = new System.Drawing.Size(819, 30);
-            this.groupArea.TabIndex = 0;
-            this.groupArea.Text = "groupControl12";
-            // 
-            // labelControl37
-            // 
-            this.labelControl37.Location = new System.Drawing.Point(519, 8);
-            this.labelControl37.Name = "labelControl37";
-            this.labelControl37.Size = new System.Drawing.Size(60, 13);
-            this.labelControl37.TabIndex = 7;
-            this.labelControl37.Text = "累计质量：";
-            // 
-            // labelControl35
-            // 
-            this.labelControl35.Location = new System.Drawing.Point(666, 7);
-            this.labelControl35.Name = "labelControl35";
-            this.labelControl35.Size = new System.Drawing.Size(14, 13);
-            this.labelControl35.TabIndex = 6;
-            this.labelControl35.Text = "mg";
-            // 
-            // textEdit_ggg
-            // 
-            this.textEdit_ggg.Location = new System.Drawing.Point(575, 5);
-            this.textEdit_ggg.MenuManager = this.barManager1;
-            this.textEdit_ggg.Name = "textEdit_ggg";
-            this.textEdit_ggg.Size = new System.Drawing.Size(86, 20);
-            this.textEdit_ggg.TabIndex = 5;
-            // 
-            // labelControl30
-            // 
-            this.labelControl30.Location = new System.Drawing.Point(442, 7);
-            this.labelControl30.Name = "labelControl30";
-            this.labelControl30.Size = new System.Drawing.Size(31, 13);
-            this.labelControl30.TabIndex = 4;
-            this.labelControl30.Text = "mg/m³";
-            // 
-            // textEdit_area2
-            // 
-            this.textEdit_area2.Location = new System.Drawing.Point(351, 5);
-            this.textEdit_area2.MenuManager = this.barManager1;
-            this.textEdit_area2.Name = "textEdit_area2";
-            this.textEdit_area2.Size = new System.Drawing.Size(86, 20);
-            this.textEdit_area2.TabIndex = 3;
-            // 
-            // labelControl29
-            // 
-            this.labelControl29.Location = new System.Drawing.Point(293, 7);
-            this.labelControl29.Name = "labelControl29";
-            this.labelControl29.Size = new System.Drawing.Size(20, 13);
-            this.labelControl29.TabIndex = 2;
-            this.labelControl29.Text = "ppm";
-            // 
-            // textEdit_area1
-            // 
-            this.textEdit_area1.Location = new System.Drawing.Point(202, 5);
-            this.textEdit_area1.MenuManager = this.barManager1;
-            this.textEdit_area1.Name = "textEdit_area1";
-            this.textEdit_area1.Size = new System.Drawing.Size(86, 20);
-            this.textEdit_area1.TabIndex = 1;
-            // 
-            // labelControl28
-            // 
-            this.labelControl28.Location = new System.Drawing.Point(146, 8);
-            this.labelControl28.Name = "labelControl28";
-            this.labelControl28.Size = new System.Drawing.Size(60, 13);
-            this.labelControl28.TabIndex = 0;
-            this.labelControl28.Text = "累计浓度：";
             // 
             // xtraTabControl1
             // 
@@ -2391,32 +2301,35 @@
             this.panelControl6.Controls.Add(this.s4_n);
             this.panelControl6.Location = new System.Drawing.Point(430, 333);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(100, 44);
+            this.panelControl6.Size = new System.Drawing.Size(158, 70);
             this.panelControl6.TabIndex = 7;
             // 
             // s4_u
             // 
+            this.s4_u.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.s4_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s4_u.Location = new System.Drawing.Point(72, 24);
+            this.s4_u.Location = new System.Drawing.Point(89, 40);
             this.s4_u.Name = "s4_u";
-            this.s4_u.Size = new System.Drawing.Size(21, 13);
+            this.s4_u.Size = new System.Drawing.Size(39, 20);
             this.s4_u.TabIndex = 3;
             this.s4_u.Text = "labelControl47";
             // 
             // s4_v
             // 
+            this.s4_v.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.s4_v.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s4_v.Location = new System.Drawing.Point(16, 24);
+            this.s4_v.Location = new System.Drawing.Point(22, 40);
             this.s4_v.Name = "s4_v";
-            this.s4_v.Size = new System.Drawing.Size(50, 13);
+            this.s4_v.Size = new System.Drawing.Size(50, 20);
             this.s4_v.TabIndex = 2;
             this.s4_v.Text = "labelControl48";
             // 
             // s4_n
             // 
+            this.s4_n.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.s4_n.Location = new System.Drawing.Point(16, 5);
             this.s4_n.Name = "s4_n";
-            this.s4_n.Size = new System.Drawing.Size(23, 13);
+            this.s4_n.Size = new System.Drawing.Size(39, 23);
             this.s4_n.TabIndex = 1;
             this.s4_n.Text = "s1_n";
             // 
@@ -2427,32 +2340,35 @@
             this.panelControl5.Controls.Add(this.s5_n);
             this.panelControl5.Location = new System.Drawing.Point(537, 211);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(100, 44);
+            this.panelControl5.Size = new System.Drawing.Size(158, 70);
             this.panelControl5.TabIndex = 6;
             // 
             // s5_u
             // 
+            this.s5_u.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.s5_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s5_u.Location = new System.Drawing.Point(72, 24);
+            this.s5_u.Location = new System.Drawing.Point(90, 43);
             this.s5_u.Name = "s5_u";
-            this.s5_u.Size = new System.Drawing.Size(21, 13);
+            this.s5_u.Size = new System.Drawing.Size(39, 20);
             this.s5_u.TabIndex = 3;
             this.s5_u.Text = "labelControl44";
             // 
             // s5_v
             // 
+            this.s5_v.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.s5_v.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s5_v.Location = new System.Drawing.Point(16, 24);
+            this.s5_v.Location = new System.Drawing.Point(16, 43);
             this.s5_v.Name = "s5_v";
-            this.s5_v.Size = new System.Drawing.Size(50, 13);
+            this.s5_v.Size = new System.Drawing.Size(50, 20);
             this.s5_v.TabIndex = 2;
             this.s5_v.Text = "labelControl45";
             // 
             // s5_n
             // 
+            this.s5_n.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.s5_n.Location = new System.Drawing.Point(16, 5);
             this.s5_n.Name = "s5_n";
-            this.s5_n.Size = new System.Drawing.Size(23, 13);
+            this.s5_n.Size = new System.Drawing.Size(39, 23);
             this.s5_n.TabIndex = 1;
             this.s5_n.Text = "s1_n";
             // 
@@ -2463,32 +2379,35 @@
             this.panelControl4.Controls.Add(this.s3_n);
             this.panelControl4.Location = new System.Drawing.Point(455, 17);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(100, 44);
+            this.panelControl4.Size = new System.Drawing.Size(158, 70);
             this.panelControl4.TabIndex = 5;
             // 
             // s3_u
             // 
+            this.s3_u.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.s3_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s3_u.Location = new System.Drawing.Point(72, 24);
+            this.s3_u.Location = new System.Drawing.Point(84, 42);
             this.s3_u.Name = "s3_u";
-            this.s3_u.Size = new System.Drawing.Size(21, 13);
+            this.s3_u.Size = new System.Drawing.Size(39, 20);
             this.s3_u.TabIndex = 3;
             this.s3_u.Text = "labelControl41";
             // 
             // s3_v
             // 
+            this.s3_v.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.s3_v.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s3_v.Location = new System.Drawing.Point(16, 24);
+            this.s3_v.Location = new System.Drawing.Point(16, 42);
             this.s3_v.Name = "s3_v";
-            this.s3_v.Size = new System.Drawing.Size(50, 13);
+            this.s3_v.Size = new System.Drawing.Size(50, 20);
             this.s3_v.TabIndex = 2;
             this.s3_v.Text = "labelControl42";
             // 
             // s3_n
             // 
+            this.s3_n.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.s3_n.Location = new System.Drawing.Point(16, 5);
             this.s3_n.Name = "s3_n";
-            this.s3_n.Size = new System.Drawing.Size(23, 13);
+            this.s3_n.Size = new System.Drawing.Size(39, 23);
             this.s3_n.TabIndex = 1;
             this.s3_n.Text = "s1_n";
             // 
@@ -2499,32 +2418,35 @@
             this.panelControl3.Controls.Add(this.s1_n);
             this.panelControl3.Location = new System.Drawing.Point(303, 187);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(100, 44);
+            this.panelControl3.Size = new System.Drawing.Size(158, 70);
             this.panelControl3.TabIndex = 4;
             // 
             // s1_u
             // 
+            this.s1_u.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.s1_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s1_u.Location = new System.Drawing.Point(72, 24);
+            this.s1_u.Location = new System.Drawing.Point(86, 43);
             this.s1_u.Name = "s1_u";
-            this.s1_u.Size = new System.Drawing.Size(21, 13);
+            this.s1_u.Size = new System.Drawing.Size(39, 20);
             this.s1_u.TabIndex = 3;
             this.s1_u.Text = "labelControl38";
             // 
             // s1_v
             // 
+            this.s1_v.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.s1_v.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s1_v.Location = new System.Drawing.Point(16, 24);
+            this.s1_v.Location = new System.Drawing.Point(15, 43);
             this.s1_v.Name = "s1_v";
-            this.s1_v.Size = new System.Drawing.Size(50, 13);
+            this.s1_v.Size = new System.Drawing.Size(50, 20);
             this.s1_v.TabIndex = 2;
             this.s1_v.Text = "labelControl39";
             // 
             // s1_n
             // 
+            this.s1_n.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.s1_n.Location = new System.Drawing.Point(16, 5);
             this.s1_n.Name = "s1_n";
-            this.s1_n.Size = new System.Drawing.Size(23, 13);
+            this.s1_n.Size = new System.Drawing.Size(39, 23);
             this.s1_n.TabIndex = 1;
             this.s1_n.Text = "s1_n";
             // 
@@ -2535,32 +2457,35 @@
             this.panelControl2.Controls.Add(this.s2_n);
             this.panelControl2.Location = new System.Drawing.Point(209, 300);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(100, 44);
+            this.panelControl2.Size = new System.Drawing.Size(158, 70);
             this.panelControl2.TabIndex = 2;
             // 
             // s2_u
             // 
+            this.s2_u.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.s2_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s2_u.Location = new System.Drawing.Point(72, 24);
+            this.s2_u.Location = new System.Drawing.Point(83, 39);
             this.s2_u.Name = "s2_u";
-            this.s2_u.Size = new System.Drawing.Size(21, 13);
+            this.s2_u.Size = new System.Drawing.Size(39, 20);
             this.s2_u.TabIndex = 3;
             this.s2_u.Text = "s1_u";
             // 
             // s2_v
             // 
+            this.s2_v.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.s2_v.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s2_v.Location = new System.Drawing.Point(16, 24);
+            this.s2_v.Location = new System.Drawing.Point(15, 39);
             this.s2_v.Name = "s2_v";
-            this.s2_v.Size = new System.Drawing.Size(50, 13);
+            this.s2_v.Size = new System.Drawing.Size(50, 20);
             this.s2_v.TabIndex = 2;
             this.s2_v.Text = "s1_v";
             // 
             // s2_n
             // 
+            this.s2_n.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.s2_n.Location = new System.Drawing.Point(16, 5);
             this.s2_n.Name = "s2_n";
-            this.s2_n.Size = new System.Drawing.Size(23, 13);
+            this.s2_n.Size = new System.Drawing.Size(39, 23);
             this.s2_n.TabIndex = 1;
             this.s2_n.Text = "s1_n";
             // 
@@ -2574,17 +2499,11 @@
             this.pictureBox1.Size = new System.Drawing.Size(819, 543);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Resize += new System.EventHandler(this.pictureBox1_Resize);
             // 
             // serialPort1
             // 
             this.serialPort1.ReadBufferSize = 2048;
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "地图";
-            this.barButtonItem1.Id = 27;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // MainForm
             // 
@@ -2619,12 +2538,6 @@
             ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl_Main)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupArea)).EndInit();
-            this.groupArea.ResumeLayout(false);
-            this.groupArea.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit_ggg.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit_area2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit_area1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
@@ -2900,12 +2813,6 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private DevExpress.XtraBars.BarButtonItem btn_ModifPass;
         private DevExpress.XtraEditors.CheckEdit checkEdit_autosample;
-        private DevExpress.XtraEditors.GroupControl groupArea;
-        private DevExpress.XtraEditors.LabelControl labelControl30;
-        private DevExpress.XtraEditors.TextEdit textEdit_area2;
-        private DevExpress.XtraEditors.LabelControl labelControl29;
-        private DevExpress.XtraEditors.TextEdit textEdit_area1;
-        private DevExpress.XtraEditors.LabelControl labelControl28;
         private DevExpress.XtraEditors.TextEdit textEdit_Temperature;
         private DevExpress.XtraEditors.LabelControl labelControl31;
         private DevExpress.XtraEditors.LabelControl labelControl32;
@@ -2914,9 +2821,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl34;
         private DevExpress.XtraEditors.TextEdit textEdit_Molecular;
         private DevExpress.XtraEditors.LabelControl labelControl36;
-        private DevExpress.XtraEditors.LabelControl labelControl35;
-        private DevExpress.XtraEditors.TextEdit textEdit_ggg;
-        private DevExpress.XtraEditors.LabelControl labelControl37;
         private DevExpress.XtraEditors.CheckEdit checkEdit1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage6;
         private System.Windows.Forms.PictureBox pictureBox1;

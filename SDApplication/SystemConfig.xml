@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <SystemConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="SystemConfig">
   <!--串口号-->
-  <Port>COM8</Port>
+  <Port>COM3</Port>
   <!--波特率-->
   <BaudRate>9600</BaudRate>
   <!--检测周期-->

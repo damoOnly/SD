@@ -139,7 +139,7 @@ namespace SDApplication
                     readMain(eq);
                     //Thread.Sleep(1000);
                 }
-                Equipment eqqq = mainList.Find(c => !c.ChromaAlertStr.Equals(Gloabl.NormalStr,StringComparison.OrdinalIgnoreCase));
+                Equipment eqqq = mainList.Find(c => !c.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase));
                 if (eqqq != null)
                 {
                     PlaySound(true);
@@ -181,12 +181,12 @@ namespace SDApplication
             {
                 this.Invoke(new Action<string>(addText), "W: " + Parse.byteToHexStr(cd.SendByte));
             }
-            
+
             if (!CommandResult.GetResult(cd))
             {
-                if (eq.lostNum >= 10 )
+                if (eq.lostNum >= 10)
                 {
-                    eq.IsConnect = false;                    
+                    eq.IsConnect = false;
                 }
                 else
                 {
@@ -203,15 +203,15 @@ namespace SDApplication
             {
                 this.Invoke(new Action<string>(addText), "R: " + Parse.byteToHexStr(cd.ResultByte));
             }
-            
+
             EquipmentData data = Parse.GetRealData(cd.ResultByte, eq);
             data.EquipmentID = eq.ID;
-            
+
             // 添加数据库
             EquipmentDataDal.AddOne(data);
 
             eq.Chroma = data.Chroma;
-            
+
 
             // 绘制曲线
             if (eq.ID == Convert.ToInt32(seriesOne.Tag))
@@ -228,7 +228,7 @@ namespace SDApplication
                 if (eq.ChromaAlertStr != data.ChromaAlertStr)
                 {
 
-                    if (eq.ChromaAlertStr.Equals(Gloabl.NormalStr,StringComparison.OrdinalIgnoreCase))
+                    if (eq.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase))
                     {
                         Alert art = new Alert();
                         art.AlertName = data.ChromaAlertStr;
@@ -239,7 +239,7 @@ namespace SDApplication
                     {
                         eq.AlertObject.EndTime = DateTime.Now;
                         AlertDal.UpdateOne(eq.AlertObject);
-                        if (!eq.ChromaAlertStr.Equals(data.ChromaAlertStr,StringComparison.OrdinalIgnoreCase))
+                        if (!eq.ChromaAlertStr.Equals(data.ChromaAlertStr, StringComparison.OrdinalIgnoreCase))
                         {
                             Alert art = new Alert();
                             art.AlertName = data.ChromaAlertStr;
@@ -263,7 +263,7 @@ namespace SDApplication
                         }
                     }
                 }
-            }            
+            }
         }
 
         // 新增点
@@ -303,7 +303,7 @@ namespace SDApplication
                 //Console.WriteLine("point:    " + point.DateTimeArgument);
                 //Console.WriteLine("high :    " + high);
                 //Console.WriteLine("\r\n");
-                if (high<systemConfig.Preiod)
+                if (high < systemConfig.Preiod)
                 {
                     high = systemConfig.Preiod;
                 }
@@ -314,9 +314,9 @@ namespace SDApplication
             }
             area2 = (decimal)(systemConfig.Molecular / ((1 + systemConfig.Temperature / 272.15) * 22.4)) * area1;
             ggg = area2 * (decimal)systemConfig.Volume;
-            textEdit_area1.Text = area1.ToString("f3");
-            textEdit_area2.Text = area2.ToString("f3");
-            textEdit_ggg.Text = ggg.ToString("f3");
+            //textEdit_area1.Text = area1.ToString("f3");
+            //textEdit_area2.Text = area2.ToString("f3");
+            //textEdit_ggg.Text = ggg.ToString("f3");
         }
 
         /// <summary>
@@ -405,9 +405,10 @@ namespace SDApplication
                 {
                     LogLib.Log.GetLogger(this).Warn("mainList为空");
                     return true;
-                }    
-                
+                }
+
                 mainList.ForEach(c => { comboBoxEdit_ID.Properties.Items.Add(c.Address); });
+                RenderAreaLable(true);
 
                 Equipment eee = mainList.First();
                 if (eee != null)
@@ -432,7 +433,6 @@ namespace SDApplication
                     return false;
                 }
                 Gloabl.IsOpen = true;
-                RenderAreaLable(true);
             }
             catch (Exception ex)
             {
@@ -445,6 +445,17 @@ namespace SDApplication
         // 渲染地图控件里面的值，定制版本
         private void RenderAreaLable(bool isInit)
         {
+            int h = pictureBox1.Size.Height;
+            int w = pictureBox1.Size.Width;
+            if (isInit)
+            {
+                areaPre.Add(new List<double>() { panelControl4.Location.X * 1.0f / w, panelControl4.Location.Y * 1.0f / h });
+                areaPre.Add(new List<double>() { panelControl3.Location.X * 1.0f / w, panelControl3.Location.Y * 1.0f / h });
+                areaPre.Add(new List<double>() { panelControl5.Location.X * 1.0f / w, panelControl5.Location.Y * 1.0f / h });
+                areaPre.Add(new List<double>() { panelControl2.Location.X * 1.0f / w, panelControl2.Location.Y * 1.0f / h });
+                areaPre.Add(new List<double>() { panelControl6.Location.X * 1.0f / w, panelControl6.Location.Y * 1.0f / h });
+            }
+
             foreach (var item in mainList)
             {
                 switch (item.Address)
@@ -561,7 +572,7 @@ namespace SDApplication
         private void InitSeries()
         {
             chartControl_Main.Legend.AlignmentHorizontal = LegendAlignmentHorizontal.Right;
-            
+
             chartControl_Main.Series.Clear();
             Equipment ep = new Equipment();
             if (mainList.Count > 0)
@@ -580,7 +591,7 @@ namespace SDApplication
             diagram_Tem.Margins.Right = 15;
             //diagram_Tem.AxisX.
             diagram_Tem.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Second;
-            diagram_Tem.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Minute;            
+            diagram_Tem.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Minute;
             diagram_Tem.AxisX.Label.TextPattern = "{A:HH:mm:ss}";
             diagram_Tem.AxisX.VisualRange.AutoSideMargins = false;
             diagram_Tem.AxisX.WholeRange.AutoSideMargins = true;
@@ -822,14 +833,14 @@ namespace SDApplication
             // 自动滚到底部
             richTextBox1.SelectionStart = richTextBox1.Text.Length;
             richTextBox1.ScrollToCaret();
-        } 
+        }
 
         #endregion
 
         public MainForm()
         {
             InitializeComponent();
-            
+
         }
 
         private void btn_Start_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -853,7 +864,7 @@ namespace SDApplication
             {
                 changeSeries(mainList.Find(c => c.ID == Convert.ToInt32(seriesOne.Tag)));
             }
-            
+
             mainThread = new Thread(new ThreadStart(ReadData));
             isRead = true;
             mainThread.Start();
@@ -879,7 +890,7 @@ namespace SDApplication
         }
 
         private void MainForm_Load(object sender, EventArgs e)
-        {            
+        {
             if (!InitializeForm())
             {
                 XtraMessageBox.Show("初始化失败");
@@ -1099,7 +1110,7 @@ namespace SDApplication
                 List<byte> adds = EquipmentDal.GetAddress();
                 // 不能和自己比较
                 adds.Remove(eee.Address);
-                
+
                 Equipment upd = GetAddEquip();
                 if (adds.Contains(upd.Address))
                 {
@@ -1196,7 +1207,7 @@ namespace SDApplication
                 mainThread.Abort();
             }
             PLAASerialPort.GetInstance().Abort();
-            
+
         }
 
         private void btn_Back_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1221,7 +1232,7 @@ namespace SDApplication
             else
             {
                 xtraTabControl1.SelectedTabPage = xtraTabPage3;
-            }            
+            }
         }
 
         private void btn_Alert_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1239,7 +1250,7 @@ namespace SDApplication
 
         private void btnm_Start_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            btn_Start_ItemClick(null,null);
+            btn_Start_ItemClick(null, null);
         }
 
         private void btnm_Stop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1276,7 +1287,7 @@ namespace SDApplication
             catch (Exception ex)
             {
                 LogLib.Log.GetLogger(this).Warn(ex);
-            } 
+            }
         }
 
         private void btn_Help_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1304,7 +1315,7 @@ namespace SDApplication
             {
                 LogLib.Log.GetLogger(this).Warn(ex);
             }
-            
+
         }
 
         private void ntn_mute_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1325,7 +1336,7 @@ namespace SDApplication
 
         private void btnm_Help_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            btn_Help_ItemClick(null,null);
+            btn_Help_ItemClick(null, null);
         }
 
         private void btn_Save2_Click(object sender, EventArgs e)
@@ -1347,8 +1358,8 @@ namespace SDApplication
             {
                 Form_ChangeAdmin fc = new Form_ChangeAdmin();
                 if (fc.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {                    
-                    if ("admin123"!= fc.ValueStr)
+                {
+                    if ("admin123" != fc.ValueStr)
                     {
                         XtraMessageBox.Show("密码不正确");
                     }
@@ -1359,7 +1370,7 @@ namespace SDApplication
                         Gloabl.IsAdmin = true;
                         richTextBox1.Visible = true;
                         btn_ModifPass.Caption = "切换到普通用户";
-                        
+
                     }
                 }
             }
@@ -1392,8 +1403,8 @@ namespace SDApplication
             {
                 LogLib.Log.GetLogger(this).Warn(ex);
             }
-            
-            
+
+
         }
 
         private void labelControl31_Click(object sender, EventArgs e)
@@ -1406,6 +1417,22 @@ namespace SDApplication
             xtraTabControl1.SelectedTabPage = xtraTabPage6;
         }
 
-       
+        private List<List<double>> areaPre = new List<List<double>>();
+
+        private void pictureBox1_Resize(object sender, EventArgs e)
+        {
+            int h = pictureBox1.Size.Height;
+            int w = pictureBox1.Size.Width;
+            if (areaPre.Count > 0)
+            {
+                panelControl4.Location = new Point((int)Math.Ceiling(w * areaPre[0][0]), (int)Math.Ceiling(h * areaPre[0][1]));
+                panelControl3.Location = new Point((int)Math.Ceiling(w * areaPre[1][0]), (int)Math.Ceiling(h * areaPre[1][1]));
+                panelControl5.Location = new Point((int)Math.Ceiling(w * areaPre[2][0]), (int)Math.Ceiling(h * areaPre[2][1]));
+                panelControl2.Location = new Point((int)Math.Ceiling(w * areaPre[3][0]), (int)Math.Ceiling(h * areaPre[3][1]));
+                panelControl6.Location = new Point((int)Math.Ceiling(w * areaPre[4][0]), (int)Math.Ceiling(h * areaPre[4][1]));
+            }
+        }
+
+
     }
 }
