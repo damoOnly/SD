@@ -463,6 +463,17 @@ namespace SDApplication
                     case 1:
                         if (isInit)
                         {
+                            s3_n.Text = item.EName;
+                            s3_u.Text = item.Unit;
+                        }
+                        else
+                        {
+                            s3_v.Text = item.DisplayChroma;
+                        }
+                        break;
+                    case 2:
+                        if (isInit)
+                        {
                             s1_n.Text = item.EName;
                             s1_u.Text = item.Unit;
                         }
@@ -471,7 +482,7 @@ namespace SDApplication
                             s1_v.Text = item.DisplayChroma;
                         }
                         break;
-                    case 2:
+                    case 3:
                         if (isInit)
                         {
                             s2_n.Text = item.EName;
@@ -482,29 +493,7 @@ namespace SDApplication
                             s2_v.Text = item.DisplayChroma;
                         }
                         break;
-                    case 3:
-                        if (isInit)
-                        {
-                            s3_n.Text = item.EName;
-                            s3_u.Text = item.Unit;
-                        }
-                        else
-                        {
-                            s3_v.Text = item.DisplayChroma;
-                        }
-                        break;
                     case 4:
-                        if (isInit)
-                        {
-                            s4_n.Text = item.EName;
-                            s4_u.Text = item.Unit;
-                        }
-                        else
-                        {
-                            s4_v.Text = item.DisplayChroma;
-                        }
-                        break;
-                    case 5:
                         if (isInit)
                         {
                             s5_n.Text = item.EName;
@@ -513,6 +502,17 @@ namespace SDApplication
                         else
                         {
                             s5_v.Text = item.DisplayChroma;
+                        }
+                        break;
+                    case 5:
+                        if (isInit)
+                        {
+                            s4_n.Text = item.EName;
+                            s4_u.Text = item.Unit;
+                        }
+                        else
+                        {
+                            s4_v.Text = item.DisplayChroma;
                         }
                         break;
                     default:

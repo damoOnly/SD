@@ -928,6 +928,7 @@
             // 
             this.xtraTabPage1.Controls.Add(this.splitContainerControl_Main);
             this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.PageVisible = false;
             this.xtraTabPage1.Size = new System.Drawing.Size(819, 543);
             this.xtraTabPage1.Text = "xtraTabPage1";
             // 
@@ -2310,7 +2311,7 @@
             this.s4_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.s4_u.Location = new System.Drawing.Point(89, 40);
             this.s4_u.Name = "s4_u";
-            this.s4_u.Size = new System.Drawing.Size(39, 20);
+            this.s4_u.Size = new System.Drawing.Size(50, 20);
             this.s4_u.TabIndex = 3;
             this.s4_u.Text = "labelControl47";
             // 
@@ -2349,7 +2350,7 @@
             this.s5_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.s5_u.Location = new System.Drawing.Point(90, 43);
             this.s5_u.Name = "s5_u";
-            this.s5_u.Size = new System.Drawing.Size(39, 20);
+            this.s5_u.Size = new System.Drawing.Size(50, 20);
             this.s5_u.TabIndex = 3;
             this.s5_u.Text = "labelControl44";
             // 
@@ -2388,7 +2389,7 @@
             this.s3_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.s3_u.Location = new System.Drawing.Point(84, 42);
             this.s3_u.Name = "s3_u";
-            this.s3_u.Size = new System.Drawing.Size(39, 20);
+            this.s3_u.Size = new System.Drawing.Size(50, 20);
             this.s3_u.TabIndex = 3;
             this.s3_u.Text = "labelControl41";
             // 
@@ -2427,7 +2428,7 @@
             this.s1_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.s1_u.Location = new System.Drawing.Point(86, 43);
             this.s1_u.Name = "s1_u";
-            this.s1_u.Size = new System.Drawing.Size(39, 20);
+            this.s1_u.Size = new System.Drawing.Size(50, 20);
             this.s1_u.TabIndex = 3;
             this.s1_u.Text = "labelControl38";
             // 
@@ -2466,7 +2467,7 @@
             this.s2_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
             this.s2_u.Location = new System.Drawing.Point(83, 39);
             this.s2_u.Name = "s2_u";
-            this.s2_u.Size = new System.Drawing.Size(39, 20);
+            this.s2_u.Size = new System.Drawing.Size(50, 20);
             this.s2_u.TabIndex = 3;
             this.s2_u.Text = "s1_u";
             // 
