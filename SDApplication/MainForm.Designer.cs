@@ -33,13 +33,7 @@
             DevExpress.XtraCharts.SwiftPlotDiagram swiftPlotDiagram1 = new DevExpress.XtraCharts.SwiftPlotDiagram();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView1 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView2 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
-            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView3 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
-            DevExpress.XtraCharts.SwiftPlotDiagram swiftPlotDiagram2 = new DevExpress.XtraCharts.SwiftPlotDiagram();
-            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView4 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
-            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView5 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btn_Back = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -52,7 +46,6 @@
             this.btn_Help = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btn_mute = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ModifPass = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.btnm_Start = new DevExpress.XtraBars.BarButtonItem();
@@ -73,23 +66,6 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.splitContainerControl_Main = new DevExpress.XtraEditors.SplitContainerControl();
-            this.gridControl_Main = new DevExpress.XtraGrid.GridControl();
-            this.gridView_Main = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn_GasName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_Place = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_Chorma = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_Unit = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_Alert = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_A1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_A2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_Rang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_IsAlert = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn_Connect = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.chartControl_Main = new DevExpress.XtraCharts.ChartControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
@@ -209,48 +185,13 @@
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
             this.dateEdit_StartAlert = new DevExpress.XtraEditors.DateEdit();
             this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
-            this.xtraTabPage6 = new DevExpress.XtraTab.XtraTabPage();
-            this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
-            this.s4_u = new DevExpress.XtraEditors.LabelControl();
-            this.s4_v = new DevExpress.XtraEditors.LabelControl();
-            this.s4_n = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.s5_u = new DevExpress.XtraEditors.LabelControl();
-            this.s5_v = new DevExpress.XtraEditors.LabelControl();
-            this.s5_n = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.s3_u = new DevExpress.XtraEditors.LabelControl();
-            this.s3_v = new DevExpress.XtraEditors.LabelControl();
-            this.s3_n = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.s1_u = new DevExpress.XtraEditors.LabelControl();
-            this.s1_v = new DevExpress.XtraEditors.LabelControl();
-            this.s1_n = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.s2_u = new DevExpress.XtraEditors.LabelControl();
-            this.s2_v = new DevExpress.XtraEditors.LabelControl();
-            this.s2_n = new DevExpress.XtraEditors.LabelControl();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl_Main)).BeginInit();
-            this.splitContainerControl_Main.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl_Main)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView_Main)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl_Main)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
-            this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl_His)).BeginInit();
             this.splitContainerControl_His.SuspendLayout();
@@ -268,10 +209,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl_History)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -332,18 +273,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).BeginInit();
-            this.xtraTabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
-            this.panelControl6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
-            this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -379,8 +308,7 @@
             this.btn_Help,
             this.btn_Back,
             this.btn_mute,
-            this.btn_ModifPass,
-            this.barButtonItem1});
+            this.btn_ModifPass});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 28;
             this.barManager1.StatusBar = this.bar3;
@@ -402,8 +330,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Add),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Help),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_mute),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_ModifPass),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_ModifPass)});
             this.bar1.OptionsBar.AllowQuickCustomization = false;
             this.bar1.OptionsBar.DrawDragBorder = false;
             this.bar1.OptionsBar.MultiLine = true;
@@ -490,14 +417,6 @@
             this.btn_ModifPass.Name = "btn_ModifPass";
             this.btn_ModifPass.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btn_ModifPass.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ModifPass_ItemClick);
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "地图";
-            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
-            this.barButtonItem1.Id = 27;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // bar2
             // 
@@ -674,239 +593,6 @@
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
-            // splitContainerControl_Main
-            // 
-            this.splitContainerControl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl_Main.Horizontal = false;
-            this.splitContainerControl_Main.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerControl_Main.Name = "splitContainerControl_Main";
-            this.splitContainerControl_Main.Panel1.Controls.Add(this.gridControl_Main);
-            this.splitContainerControl_Main.Panel1.Text = "Panel1";
-            this.splitContainerControl_Main.Panel2.Controls.Add(this.richTextBox1);
-            this.splitContainerControl_Main.Panel2.Controls.Add(this.chartControl_Main);
-            this.splitContainerControl_Main.Panel2.Text = "Panel2";
-            this.splitContainerControl_Main.Size = new System.Drawing.Size(819, 543);
-            this.splitContainerControl_Main.SplitterPosition = 332;
-            this.splitContainerControl_Main.TabIndex = 4;
-            this.splitContainerControl_Main.Text = "splitContainerControl1";
-            // 
-            // gridControl_Main
-            // 
-            this.gridControl_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl_Main.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.gridControl_Main.Location = new System.Drawing.Point(0, 0);
-            this.gridControl_Main.MainView = this.gridView_Main;
-            this.gridControl_Main.MenuManager = this.barManager1;
-            this.gridControl_Main.Name = "gridControl_Main";
-            this.gridControl_Main.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemPictureEdit1});
-            this.gridControl_Main.Size = new System.Drawing.Size(819, 332);
-            this.gridControl_Main.TabIndex = 0;
-            this.gridControl_Main.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView_Main});
-            // 
-            // gridView_Main
-            // 
-            this.gridView_Main.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            this.gridView_Main.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
-            this.gridView_Main.Appearance.FocusedCell.BackColor = System.Drawing.Color.Cyan;
-            this.gridView_Main.Appearance.FocusedRow.BackColor = System.Drawing.Color.Cyan;
-            this.gridView_Main.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView_Main.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView_Main.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gridView_Main.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView_Main.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.Cyan;
-            this.gridView_Main.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.gridView_Main.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView_Main.Appearance.Row.Options.UseFont = true;
-            this.gridView_Main.Appearance.SelectedRow.BackColor = System.Drawing.Color.Cyan;
-            this.gridView_Main.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn_GasName,
-            this.gridColumn_Place,
-            this.gridColumn_ID,
-            this.gridColumn_Chorma,
-            this.gridColumn_Unit,
-            this.gridColumn_Alert,
-            this.gridColumn_A1,
-            this.gridColumn_A2,
-            this.gridColumn_Rang,
-            this.gridColumn_IsAlert,
-            this.gridColumn_Connect});
-            this.gridView_Main.GridControl = this.gridControl_Main;
-            this.gridView_Main.Name = "gridView_Main";
-            this.gridView_Main.OptionsBehavior.Editable = false;
-            this.gridView_Main.OptionsCustomization.AllowColumnMoving = false;
-            this.gridView_Main.OptionsCustomization.AllowColumnResizing = false;
-            this.gridView_Main.OptionsCustomization.AllowFilter = false;
-            this.gridView_Main.OptionsCustomization.AllowGroup = false;
-            this.gridView_Main.OptionsCustomization.AllowQuickHideColumns = false;
-            this.gridView_Main.OptionsCustomization.AllowSort = false;
-            this.gridView_Main.OptionsMenu.EnableColumnMenu = false;
-            this.gridView_Main.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridView_Main.OptionsView.EnableAppearanceOddRow = true;
-            this.gridView_Main.OptionsView.ShowGroupPanel = false;
-            this.gridView_Main.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView_Main_RowClick);
-            this.gridView_Main.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gridView_Main_CustomUnboundColumnData);
-            // 
-            // gridColumn_GasName
-            // 
-            this.gridColumn_GasName.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_GasName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_GasName.Caption = "气体名称";
-            this.gridColumn_GasName.FieldName = "EName";
-            this.gridColumn_GasName.Name = "gridColumn_GasName";
-            this.gridColumn_GasName.Visible = true;
-            this.gridColumn_GasName.VisibleIndex = 0;
-            // 
-            // gridColumn_Place
-            // 
-            this.gridColumn_Place.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_Place.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_Place.Caption = "仪器位置";
-            this.gridColumn_Place.FieldName = "Place";
-            this.gridColumn_Place.Name = "gridColumn_Place";
-            this.gridColumn_Place.Visible = true;
-            this.gridColumn_Place.VisibleIndex = 1;
-            // 
-            // gridColumn_ID
-            // 
-            this.gridColumn_ID.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_ID.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_ID.Caption = "仪器ID";
-            this.gridColumn_ID.FieldName = "Address";
-            this.gridColumn_ID.Name = "gridColumn_ID";
-            this.gridColumn_ID.Visible = true;
-            this.gridColumn_ID.VisibleIndex = 2;
-            // 
-            // gridColumn_Chorma
-            // 
-            this.gridColumn_Chorma.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_Chorma.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_Chorma.Caption = "测量值";
-            this.gridColumn_Chorma.FieldName = "DisplayChroma";
-            this.gridColumn_Chorma.Name = "gridColumn_Chorma";
-            this.gridColumn_Chorma.Visible = true;
-            this.gridColumn_Chorma.VisibleIndex = 3;
-            // 
-            // gridColumn_Unit
-            // 
-            this.gridColumn_Unit.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_Unit.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_Unit.Caption = "单位";
-            this.gridColumn_Unit.FieldName = "Unit";
-            this.gridColumn_Unit.Name = "gridColumn_Unit";
-            this.gridColumn_Unit.Visible = true;
-            this.gridColumn_Unit.VisibleIndex = 4;
-            // 
-            // gridColumn_Alert
-            // 
-            this.gridColumn_Alert.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_Alert.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_Alert.Caption = "报警状态";
-            this.gridColumn_Alert.FieldName = "ChromaAlertStr";
-            this.gridColumn_Alert.Name = "gridColumn_Alert";
-            this.gridColumn_Alert.Visible = true;
-            this.gridColumn_Alert.VisibleIndex = 5;
-            // 
-            // gridColumn_A1
-            // 
-            this.gridColumn_A1.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_A1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_A1.Caption = "一级报警点";
-            this.gridColumn_A1.FieldName = "LowAlert";
-            this.gridColumn_A1.Name = "gridColumn_A1";
-            this.gridColumn_A1.Visible = true;
-            this.gridColumn_A1.VisibleIndex = 6;
-            // 
-            // gridColumn_A2
-            // 
-            this.gridColumn_A2.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_A2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_A2.Caption = "二级报警点";
-            this.gridColumn_A2.FieldName = "HighAlert";
-            this.gridColumn_A2.Name = "gridColumn_A2";
-            this.gridColumn_A2.Visible = true;
-            this.gridColumn_A2.VisibleIndex = 7;
-            // 
-            // gridColumn_Rang
-            // 
-            this.gridColumn_Rang.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_Rang.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_Rang.Caption = "量程";
-            this.gridColumn_Rang.FieldName = "Range";
-            this.gridColumn_Rang.Name = "gridColumn_Rang";
-            this.gridColumn_Rang.Visible = true;
-            this.gridColumn_Rang.VisibleIndex = 8;
-            // 
-            // gridColumn_IsAlert
-            // 
-            this.gridColumn_IsAlert.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_IsAlert.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_IsAlert.Caption = "报警开关";
-            this.gridColumn_IsAlert.FieldName = "AlertTypeStr";
-            this.gridColumn_IsAlert.Name = "gridColumn_IsAlert";
-            this.gridColumn_IsAlert.Visible = true;
-            this.gridColumn_IsAlert.VisibleIndex = 9;
-            // 
-            // gridColumn_Connect
-            // 
-            this.gridColumn_Connect.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn_Connect.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn_Connect.Caption = "仪器连接状态";
-            this.gridColumn_Connect.ColumnEdit = this.repositoryItemPictureEdit1;
-            this.gridColumn_Connect.FieldName = "gridColumn_Connect";
-            this.gridColumn_Connect.Name = "gridColumn_Connect";
-            this.gridColumn_Connect.UnboundType = DevExpress.Data.UnboundColumnType.Object;
-            this.gridColumn_Connect.Visible = true;
-            this.gridColumn_Connect.VisibleIndex = 10;
-            // 
-            // repositoryItemPictureEdit1
-            // 
-            this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
-            this.repositoryItemPictureEdit1.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(0, 148);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(821, 81);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.Visible = false;
-            // 
-            // chartControl_Main
-            // 
-            swiftPlotDiagram1.AxisX.DateTimeScaleOptions.AutoGrid = false;
-            swiftPlotDiagram1.AxisX.DateTimeScaleOptions.GridAlignment = DevExpress.XtraCharts.DateTimeGridAlignment.Hour;
-            swiftPlotDiagram1.AxisX.DateTimeScaleOptions.MeasureUnit = DevExpress.XtraCharts.DateTimeMeasureUnit.Hour;
-            swiftPlotDiagram1.AxisX.DateTimeScaleOptions.ScaleMode = DevExpress.XtraCharts.ScaleMode.Manual;
-            swiftPlotDiagram1.AxisX.Label.TextPattern = "{A:yyyy/M/d}";
-            swiftPlotDiagram1.AxisX.Logarithmic = true;
-            swiftPlotDiagram1.AxisX.MinorCount = 1;
-            swiftPlotDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram1.AxisX.WholeRange.Auto = false;
-            swiftPlotDiagram1.AxisX.WholeRange.AutoSideMargins = false;
-            swiftPlotDiagram1.AxisX.WholeRange.MaxValueSerializable = "06/18/2019 00:00:00.000";
-            swiftPlotDiagram1.AxisX.WholeRange.MinValueSerializable = "06/15/2019 21:00:00.000";
-            swiftPlotDiagram1.AxisX.WholeRange.SideMarginsValue = 10D;
-            swiftPlotDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram1.AxisY.WholeRange.AutoSideMargins = true;
-            this.chartControl_Main.Diagram = swiftPlotDiagram1;
-            this.chartControl_Main.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chartControl_Main.Location = new System.Drawing.Point(0, 0);
-            this.chartControl_Main.Name = "chartControl_Main";
-            series1.Name = "Series 1";
-            series1.View = swiftPlotSeriesView1;
-            series2.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series2.Name = "Series 2";
-            series2.View = swiftPlotSeriesView2;
-            this.chartControl_Main.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1,
-        series2};
-            this.chartControl_Main.SeriesTemplate.View = swiftPlotSeriesView3;
-            this.chartControl_Main.Size = new System.Drawing.Size(819, 123);
-            this.chartControl_Main.TabIndex = 1;
-            // 
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -921,14 +607,11 @@
             this.xtraTabPage2,
             this.xtraTabPage3,
             this.xtraTabPage4,
-            this.xtraTabPage5,
-            this.xtraTabPage6});
+            this.xtraTabPage5});
             // 
             // xtraTabPage1
             // 
-            this.xtraTabPage1.Controls.Add(this.splitContainerControl_Main);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.PageVisible = false;
             this.xtraTabPage1.Size = new System.Drawing.Size(819, 543);
             this.xtraTabPage1.Text = "xtraTabPage1";
             // 
@@ -1122,35 +805,35 @@
             // chartControl_History
             // 
             this.chartControl_History.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            swiftPlotDiagram2.AxisX.Label.TextPattern = "{A:yyyy.MM.dd}";
-            swiftPlotDiagram2.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
-            swiftPlotDiagram2.AxisX.Title.Antialiasing = false;
-            swiftPlotDiagram2.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            swiftPlotDiagram2.AxisX.Title.Text = "时间";
-            swiftPlotDiagram2.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            swiftPlotDiagram2.AxisX.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram2.AxisX.WholeRange.AutoSideMargins = true;
-            swiftPlotDiagram2.AxisY.Title.Alignment = System.Drawing.StringAlignment.Far;
-            swiftPlotDiagram2.AxisY.Title.Antialiasing = false;
-            swiftPlotDiagram2.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            swiftPlotDiagram2.AxisY.Title.Text = "浓度";
-            swiftPlotDiagram2.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            swiftPlotDiagram2.AxisY.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram2.AxisY.WholeRange.AutoSideMargins = true;
-            swiftPlotDiagram2.DefaultPane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            swiftPlotDiagram2.EnableAxisXScrolling = true;
-            this.chartControl_History.Diagram = swiftPlotDiagram2;
+            swiftPlotDiagram1.AxisX.Label.TextPattern = "{A:yyyy.MM.dd}";
+            swiftPlotDiagram1.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
+            swiftPlotDiagram1.AxisX.Title.Antialiasing = false;
+            swiftPlotDiagram1.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            swiftPlotDiagram1.AxisX.Title.Text = "时间";
+            swiftPlotDiagram1.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            swiftPlotDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            swiftPlotDiagram1.AxisX.WholeRange.AutoSideMargins = true;
+            swiftPlotDiagram1.AxisY.Title.Alignment = System.Drawing.StringAlignment.Far;
+            swiftPlotDiagram1.AxisY.Title.Antialiasing = false;
+            swiftPlotDiagram1.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            swiftPlotDiagram1.AxisY.Title.Text = "浓度";
+            swiftPlotDiagram1.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            swiftPlotDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            swiftPlotDiagram1.AxisY.WholeRange.AutoSideMargins = true;
+            swiftPlotDiagram1.DefaultPane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
+            swiftPlotDiagram1.EnableAxisXScrolling = true;
+            this.chartControl_History.Diagram = swiftPlotDiagram1;
             this.chartControl_History.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControl_History.Legend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
             this.chartControl_History.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControl_History.Location = new System.Drawing.Point(2, 21);
             this.chartControl_History.Name = "chartControl_History";
-            series3.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series3.Name = "Series 1";
-            series3.View = swiftPlotSeriesView4;
+            series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            series1.Name = "Series 1";
+            series1.View = swiftPlotSeriesView1;
             this.chartControl_History.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series3};
-            this.chartControl_History.SeriesTemplate.View = swiftPlotSeriesView5;
+        series1};
+            this.chartControl_History.SeriesTemplate.View = swiftPlotSeriesView2;
             this.chartControl_History.Size = new System.Drawing.Size(505, 447);
             this.chartControl_History.TabIndex = 0;
             // 
@@ -2283,225 +1966,6 @@
             this.labelControl26.TabIndex = 9;
             this.labelControl26.Text = "开始时间：";
             // 
-            // xtraTabPage6
-            // 
-            this.xtraTabPage6.Controls.Add(this.panelControl6);
-            this.xtraTabPage6.Controls.Add(this.panelControl5);
-            this.xtraTabPage6.Controls.Add(this.panelControl4);
-            this.xtraTabPage6.Controls.Add(this.panelControl3);
-            this.xtraTabPage6.Controls.Add(this.panelControl2);
-            this.xtraTabPage6.Controls.Add(this.pictureBox1);
-            this.xtraTabPage6.Name = "xtraTabPage6";
-            this.xtraTabPage6.Size = new System.Drawing.Size(819, 543);
-            this.xtraTabPage6.Text = "xtraTabPage6";
-            // 
-            // panelControl6
-            // 
-            this.panelControl6.Controls.Add(this.s4_u);
-            this.panelControl6.Controls.Add(this.s4_v);
-            this.panelControl6.Controls.Add(this.s4_n);
-            this.panelControl6.Location = new System.Drawing.Point(430, 333);
-            this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(158, 70);
-            this.panelControl6.TabIndex = 7;
-            // 
-            // s4_u
-            // 
-            this.s4_u.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s4_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s4_u.Location = new System.Drawing.Point(89, 40);
-            this.s4_u.Name = "s4_u";
-            this.s4_u.Size = new System.Drawing.Size(50, 20);
-            this.s4_u.TabIndex = 3;
-            this.s4_u.Text = "labelControl47";
-            // 
-            // s4_v
-            // 
-            this.s4_v.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s4_v.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s4_v.Location = new System.Drawing.Point(22, 40);
-            this.s4_v.Name = "s4_v";
-            this.s4_v.Size = new System.Drawing.Size(50, 20);
-            this.s4_v.TabIndex = 2;
-            this.s4_v.Text = "labelControl48";
-            // 
-            // s4_n
-            // 
-            this.s4_n.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s4_n.Location = new System.Drawing.Point(16, 5);
-            this.s4_n.Name = "s4_n";
-            this.s4_n.Size = new System.Drawing.Size(39, 23);
-            this.s4_n.TabIndex = 1;
-            this.s4_n.Text = "s1_n";
-            // 
-            // panelControl5
-            // 
-            this.panelControl5.Controls.Add(this.s5_u);
-            this.panelControl5.Controls.Add(this.s5_v);
-            this.panelControl5.Controls.Add(this.s5_n);
-            this.panelControl5.Location = new System.Drawing.Point(537, 211);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(158, 70);
-            this.panelControl5.TabIndex = 6;
-            // 
-            // s5_u
-            // 
-            this.s5_u.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s5_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s5_u.Location = new System.Drawing.Point(90, 43);
-            this.s5_u.Name = "s5_u";
-            this.s5_u.Size = new System.Drawing.Size(50, 20);
-            this.s5_u.TabIndex = 3;
-            this.s5_u.Text = "labelControl44";
-            // 
-            // s5_v
-            // 
-            this.s5_v.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s5_v.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s5_v.Location = new System.Drawing.Point(16, 43);
-            this.s5_v.Name = "s5_v";
-            this.s5_v.Size = new System.Drawing.Size(50, 20);
-            this.s5_v.TabIndex = 2;
-            this.s5_v.Text = "labelControl45";
-            // 
-            // s5_n
-            // 
-            this.s5_n.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s5_n.Location = new System.Drawing.Point(16, 5);
-            this.s5_n.Name = "s5_n";
-            this.s5_n.Size = new System.Drawing.Size(39, 23);
-            this.s5_n.TabIndex = 1;
-            this.s5_n.Text = "s1_n";
-            // 
-            // panelControl4
-            // 
-            this.panelControl4.Controls.Add(this.s3_u);
-            this.panelControl4.Controls.Add(this.s3_v);
-            this.panelControl4.Controls.Add(this.s3_n);
-            this.panelControl4.Location = new System.Drawing.Point(455, 17);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(158, 70);
-            this.panelControl4.TabIndex = 5;
-            // 
-            // s3_u
-            // 
-            this.s3_u.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s3_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s3_u.Location = new System.Drawing.Point(84, 42);
-            this.s3_u.Name = "s3_u";
-            this.s3_u.Size = new System.Drawing.Size(50, 20);
-            this.s3_u.TabIndex = 3;
-            this.s3_u.Text = "labelControl41";
-            // 
-            // s3_v
-            // 
-            this.s3_v.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s3_v.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s3_v.Location = new System.Drawing.Point(16, 42);
-            this.s3_v.Name = "s3_v";
-            this.s3_v.Size = new System.Drawing.Size(50, 20);
-            this.s3_v.TabIndex = 2;
-            this.s3_v.Text = "labelControl42";
-            // 
-            // s3_n
-            // 
-            this.s3_n.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s3_n.Location = new System.Drawing.Point(16, 5);
-            this.s3_n.Name = "s3_n";
-            this.s3_n.Size = new System.Drawing.Size(39, 23);
-            this.s3_n.TabIndex = 1;
-            this.s3_n.Text = "s1_n";
-            // 
-            // panelControl3
-            // 
-            this.panelControl3.Controls.Add(this.s1_u);
-            this.panelControl3.Controls.Add(this.s1_v);
-            this.panelControl3.Controls.Add(this.s1_n);
-            this.panelControl3.Location = new System.Drawing.Point(303, 187);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(158, 70);
-            this.panelControl3.TabIndex = 4;
-            // 
-            // s1_u
-            // 
-            this.s1_u.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s1_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s1_u.Location = new System.Drawing.Point(86, 43);
-            this.s1_u.Name = "s1_u";
-            this.s1_u.Size = new System.Drawing.Size(50, 20);
-            this.s1_u.TabIndex = 3;
-            this.s1_u.Text = "labelControl38";
-            // 
-            // s1_v
-            // 
-            this.s1_v.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s1_v.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s1_v.Location = new System.Drawing.Point(15, 43);
-            this.s1_v.Name = "s1_v";
-            this.s1_v.Size = new System.Drawing.Size(50, 20);
-            this.s1_v.TabIndex = 2;
-            this.s1_v.Text = "labelControl39";
-            // 
-            // s1_n
-            // 
-            this.s1_n.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s1_n.Location = new System.Drawing.Point(16, 5);
-            this.s1_n.Name = "s1_n";
-            this.s1_n.Size = new System.Drawing.Size(39, 23);
-            this.s1_n.TabIndex = 1;
-            this.s1_n.Text = "s1_n";
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.s2_u);
-            this.panelControl2.Controls.Add(this.s2_v);
-            this.panelControl2.Controls.Add(this.s2_n);
-            this.panelControl2.Location = new System.Drawing.Point(209, 300);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(158, 70);
-            this.panelControl2.TabIndex = 2;
-            // 
-            // s2_u
-            // 
-            this.s2_u.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s2_u.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s2_u.Location = new System.Drawing.Point(83, 39);
-            this.s2_u.Name = "s2_u";
-            this.s2_u.Size = new System.Drawing.Size(50, 20);
-            this.s2_u.TabIndex = 3;
-            this.s2_u.Text = "s1_u";
-            // 
-            // s2_v
-            // 
-            this.s2_v.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s2_v.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.s2_v.Location = new System.Drawing.Point(15, 39);
-            this.s2_v.Name = "s2_v";
-            this.s2_v.Size = new System.Drawing.Size(50, 20);
-            this.s2_v.TabIndex = 2;
-            this.s2_v.Text = "s1_v";
-            // 
-            // s2_n
-            // 
-            this.s2_n.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.s2_n.Location = new System.Drawing.Point(16, 5);
-            this.s2_n.Name = "s2_n";
-            this.s2_n.Size = new System.Drawing.Size(39, 23);
-            this.s2_n.TabIndex = 1;
-            this.s2_n.Text = "s1_n";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(819, 543);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Resize += new System.EventHandler(this.pictureBox1_Resize);
-            // 
             // serialPort1
             // 
             this.serialPort1.ReadBufferSize = 2048;
@@ -2527,21 +1991,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl_Main)).EndInit();
-            this.splitContainerControl_Main.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl_Main)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView_Main)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl_Main)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl_His)).EndInit();
             this.splitContainerControl_His.ResumeLayout(false);
@@ -2559,10 +2010,10 @@
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl_History)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);
@@ -2630,23 +2081,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_EndAlert.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit_StartAlert.Properties)).EndInit();
-            this.xtraTabPage6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
-            this.panelControl6.ResumeLayout(false);
-            this.panelControl6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
-            this.panelControl5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            this.panelControl4.ResumeLayout(false);
-            this.panelControl4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
-            this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2685,21 +2119,6 @@
         private DevExpress.XtraBars.BarButtonItem btnm_Help;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl_Main;
-        private DevExpress.XtraGrid.GridControl gridControl_Main;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView_Main;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_GasName;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_Place;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_ID;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_Chorma;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_Unit;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_Alert;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_A1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_A2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_Rang;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_IsAlert;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn_Connect;
-        private DevExpress.XtraCharts.ChartControl chartControl_Main;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl_His;
         private DevExpress.XtraEditors.GroupControl groupControl1;
@@ -2752,7 +2171,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
         private DevExpress.XtraEditors.TextEdit textEdit_Place;
         private DevExpress.XtraEditors.TextEdit textEdit_GasName;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
@@ -2811,7 +2229,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraBars.BarButtonItem btn_mute;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private DevExpress.XtraBars.BarButtonItem btn_ModifPass;
         private DevExpress.XtraEditors.CheckEdit checkEdit_autosample;
         private DevExpress.XtraEditors.TextEdit textEdit_Temperature;
@@ -2823,28 +2240,5 @@
         private DevExpress.XtraEditors.TextEdit textEdit_Molecular;
         private DevExpress.XtraEditors.LabelControl labelControl36;
         private DevExpress.XtraEditors.CheckEdit checkEdit1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage6;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.LabelControl s2_v;
-        private DevExpress.XtraEditors.LabelControl s2_n;
-        private DevExpress.XtraEditors.LabelControl s2_u;
-        private DevExpress.XtraEditors.PanelControl panelControl6;
-        private DevExpress.XtraEditors.LabelControl s4_u;
-        private DevExpress.XtraEditors.LabelControl s4_v;
-        private DevExpress.XtraEditors.LabelControl s4_n;
-        private DevExpress.XtraEditors.PanelControl panelControl5;
-        private DevExpress.XtraEditors.LabelControl s5_u;
-        private DevExpress.XtraEditors.LabelControl s5_v;
-        private DevExpress.XtraEditors.LabelControl s5_n;
-        private DevExpress.XtraEditors.PanelControl panelControl4;
-        private DevExpress.XtraEditors.LabelControl s3_u;
-        private DevExpress.XtraEditors.LabelControl s3_v;
-        private DevExpress.XtraEditors.LabelControl s3_n;
-        private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraEditors.LabelControl s1_u;
-        private DevExpress.XtraEditors.LabelControl s1_v;
-        private DevExpress.XtraEditors.LabelControl s1_n;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

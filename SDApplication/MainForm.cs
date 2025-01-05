@@ -15,23 +15,17 @@ using System.Diagnostics;
 using System.Media;
 using System.Linq;
 using SDApplication.Properties;
+using CefSharp;
+using CefSharp.WinForms;
+using CefSharp.SchemeHandler;
+using System.IO;
+using SDApplication.Process;
 
 namespace SDApplication
 {
     public partial class MainForm : DevExpress.XtraEditors.XtraForm
     {
         #region 变量
-
-        /// <summary>
-        /// 实时曲线X轴最小值
-        /// </summary>
-        private DateTime minTime = DateTime.Now;
-
-        /// <summary>
-        /// 实时曲线X轴最大值
-        /// </summary>
-        private DateTime maxTime = DateTime.Now.AddMinutes(30);
-
         /// <summary>
         /// 当前设备
         /// </summary>
@@ -85,41 +79,6 @@ namespace SDApplication
         #endregion
 
         #region 方法
-        // 切换曲线
-        private void changeSeries(Equipment ep, bool isClear = true)
-        {
-            if (ep == null)
-            {
-                LogLib.Log.GetLogger(this).Warn("切换曲线时对象为空");
-                return;
-            }
-            seriesOne.Name = ep.EName;
-            seriesOne.Tag = ep.ID;
-            if (isClear)
-            {
-                seriesOne.Points.Clear();
-            }
-
-            SwiftPlotDiagram diagram_Tem = chartControl_Main.Diagram as SwiftPlotDiagram;
-            diagram_Tem.AxisY.Title.Text = string.Format("浓度({0})", ep.Unit);
-            //diagram_Tem.AxisX.Range.SetMinMaxValues(minTime, maxTime);
-            //if (ep.Range > 0)
-            //{
-            //    diagram_Tem.AxisY.Range.SetMinMaxValues(0, ep.Range);
-            //}
-
-            List<EquipmentData> datalist = EquipmentDataDal.GetListByTime(ep.ID, minTime, maxTime);
-            if (datalist == null)
-            {
-                return;
-            }
-            datalist.ForEach(c =>
-            {
-                SeriesPoint sp = new SeriesPoint(c.AddTime, c.Chroma);
-                seriesOne.Points.Add(sp);
-            });
-            //datalist.Aggregate
-        }
 
         // 发命令，读数据
         private void ReadData()
@@ -135,21 +94,13 @@ namespace SDApplication
 
                 foreach (Equipment eq in mainList)
                 {
-                    // 读取主表类容
-                    readMain(eq);
-                    //Thread.Sleep(1000);
+                    // 从串口读取数据,并处理数据
+                    MainProcess.readMain(eq);
                 }
-                Equipment eqqq = mainList.Find(c => !c.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase));
-                if (eqqq != null)
-                {
-                    PlaySound(true);
-                }
-                else
-                {
-                    PlaySound(false);
-                }
-                this.Invoke(new Action(gridControl_Main.RefreshDataSource));
-                this.Invoke(new Action(gridView_Main.BestFitColumns));
+
+                // 播放报警数据
+                PlaySound();
+
                 int readHZ = 5;
                 switch (systemConfig.PreiodUnit)
                 {
@@ -165,7 +116,6 @@ namespace SDApplication
                     default:
                         break;
                 }
-                RenderAreaLable(false);
                 Thread.Sleep(readHZ * 1000);
                 //Thread.Sleep(2000);
             }
@@ -173,158 +123,15 @@ namespace SDApplication
             this.Invoke(new Action<bool>(c => btn_Start.Enabled = c), true);
         }
 
-        // 读取主表类容
-        private void readMain(Equipment eq)
-        {
-            Command cd = new Command(eq.Address, 0x00, 0x00, 3);
-            if (Gloabl.IsAdmin)
-            {
-                this.Invoke(new Action<string>(addText), "W: " + Parse.byteToHexStr(cd.SendByte));
-            }
-
-            if (!CommandResult.GetResult(cd))
-            {
-                if (eq.lostNum >= 10)
-                {
-                    eq.IsConnect = false;
-                }
-                else
-                {
-                    eq.lostNum++;
-                }
-                return;
-            }
-            else
-            {
-                eq.IsConnect = true;
-                eq.lostNum = 0;
-            }
-            if (Gloabl.IsAdmin)
-            {
-                this.Invoke(new Action<string>(addText), "R: " + Parse.byteToHexStr(cd.ResultByte));
-            }
-
-            EquipmentData data = Parse.GetRealData(cd.ResultByte, eq);
-            data.EquipmentID = eq.ID;
-
-            // 添加数据库
-            EquipmentDataDal.AddOne(data);
-
-            eq.Chroma = data.Chroma;
-
-
-            // 绘制曲线
-            if (eq.ID == Convert.ToInt32(seriesOne.Tag))
-            {
-                this.Invoke(new Action<EquipmentData>(c => addPoint(c)), data);
-            }
-            if (eq.AlertType == 0)
-            {
-                eq.ChromaAlertStr = Gloabl.NormalStr;
-            }
-            else
-            {
-                // 报警记录
-                if (eq.ChromaAlertStr != data.ChromaAlertStr)
-                {
-
-                    if (eq.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase))
-                    {
-                        Alert art = new Alert();
-                        art.AlertName = data.ChromaAlertStr;
-                        art.EquipmentID = eq.ID;
-                        eq.AlertObject = AlertDal.AddOneR(art);
-                    }
-                    else
-                    {
-                        eq.AlertObject.EndTime = DateTime.Now;
-                        AlertDal.UpdateOne(eq.AlertObject);
-                        if (!eq.ChromaAlertStr.Equals(data.ChromaAlertStr, StringComparison.OrdinalIgnoreCase))
-                        {
-                            Alert art = new Alert();
-                            art.AlertName = data.ChromaAlertStr;
-                            art.EquipmentID = eq.ID;
-                            eq.AlertObject = AlertDal.AddOneR(art);
-                        }
-                    }
-                    eq.ChromaAlertStr = data.ChromaAlertStr;
-                }
-                else
-                {
-                    if (!eq.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase))
-                    {
-                        eq.AlertObject.EndTime = DateTime.Now;
-                        if (!AlertDal.UpdateOne(eq.AlertObject))
-                        {
-                            Alert art = new Alert();
-                            art.AlertName = data.ChromaAlertStr;
-                            art.EquipmentID = eq.ID;
-                            eq.AlertObject = AlertDal.AddOneR(art);
-                        }
-                    }
-                }
-            }
-        }
-
-        // 新增点
-        private void addPoint(EquipmentData ed)
-        {
-            if (ed.AddTime > maxTime)
-            {
-                minTime = DateTime.Now;
-                maxTime = minTime.AddMinutes(systemConfig.Xrange);
-                changeSeries(mainList.Find(c => c.ID == ed.EquipmentID));
-            }
-            seriesOne.Points.Add(new SeriesPoint(ed.AddTime, ed.Chroma));
-            // 计算并显示面积值
-            CalcArea();
-        }
-
-        /// <summary>
-        /// 计算面积和显示面积都放在同一个方法里面
-        /// </summary>
-        private void CalcArea()
-        {
-            decimal area1 = 0m;
-            decimal area2 = 0m;
-            decimal ggg = 0m;
-            // 上一个节点,默认为第一个节点
-            SeriesPoint lastPoint = seriesOne.Points.First() as SeriesPoint;
-            if (lastPoint == null)
-            {
-                return;
-            }
-
-            // 循环计算每个梯形的面积，再求和
-            foreach (SeriesPoint point in seriesOne.Points)
-            {
-                int high = (point.DateTimeArgument - lastPoint.DateTimeArgument).Seconds;
-                //Console.WriteLine("lastPoint:" + lastPoint.DateTimeArgument);
-                //Console.WriteLine("point:    " + point.DateTimeArgument);
-                //Console.WriteLine("high :    " + high);
-                //Console.WriteLine("\r\n");
-                if (high < systemConfig.Preiod)
-                {
-                    high = systemConfig.Preiod;
-                }
-                // 梯形的面积，上底加下底乘以高除以2
-                decimal temparea = Convert.ToDecimal((point.Values[0] + lastPoint.Values[0]) * high / 2);
-                area1 += temparea;
-                lastPoint = point;
-            }
-            area2 = (decimal)(systemConfig.Molecular / ((1 + systemConfig.Temperature / 272.15) * 22.4)) * area1;
-            ggg = area2 * (decimal)systemConfig.Volume;
-            //textEdit_area1.Text = area1.ToString("f3");
-            //textEdit_area2.Text = area2.ToString("f3");
-            //textEdit_ggg.Text = ggg.ToString("f3");
-        }
-
         /// <summary>
         /// 播放报警函数
         /// </summary>
         /// <param name="isp"></param>
-        private void PlaySound(bool isp)
+        private void PlaySound()
         {
+            Equipment eqqq = mainList.Find(c => !c.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase));
+            bool isp = eqqq != null;
+
             if (IsClosePlay)
             {
                 LogLib.Log.GetLogger(this).Warn("IsClosePlay");
@@ -361,8 +168,7 @@ namespace SDApplication
             try
             {
                 Gloabl.IsAdmin = false;
-                richTextBox1.Dock = DockStyle.None;
-                chartControl_Main.Dock = DockStyle.Fill;
+
                 if (!ReadSystemConfig())
                 {
                     return false;
@@ -389,8 +195,7 @@ namespace SDApplication
                 //SqliteHelper.SetConnectionString(AppDomain.CurrentDomain.BaseDirectory + "SDData.db");
 
                 mainList = EquipmentDal.GetAllList();
-                gridControl_Main.DataSource = mainList;
-                gridView_Main.BestFitColumns();
+
                 gridControl_Add.DataSource = mainList;
                 gridView_Add.BestFitColumns();
 
@@ -399,7 +204,6 @@ namespace SDApplication
                 dateEdit_End.DateTime = time;
                 dateEdit_StartAlert.DateTime = time.AddDays(-7);
                 dateEdit_EndAlert.DateTime = time;
-                InitSeries();
 
                 if (mainList.Count < 1)
                 {
@@ -408,7 +212,6 @@ namespace SDApplication
                 }
 
                 mainList.ForEach(c => { comboBoxEdit_ID.Properties.Items.Add(c.Address); });
-                RenderAreaLable(true);
 
                 Equipment eee = mainList.First();
                 if (eee != null)
@@ -441,87 +244,7 @@ namespace SDApplication
             }
             return true;
         }
-
-        // 渲染地图控件里面的值，定制版本
-        private void RenderAreaLable(bool isInit)
-        {
-            int h = pictureBox1.Size.Height;
-            int w = pictureBox1.Size.Width;
-            if (isInit)
-            {
-                areaPre.Add(new List<double>() { panelControl4.Location.X * 1.0f / w, panelControl4.Location.Y * 1.0f / h });
-                areaPre.Add(new List<double>() { panelControl3.Location.X * 1.0f / w, panelControl3.Location.Y * 1.0f / h });
-                areaPre.Add(new List<double>() { panelControl5.Location.X * 1.0f / w, panelControl5.Location.Y * 1.0f / h });
-                areaPre.Add(new List<double>() { panelControl2.Location.X * 1.0f / w, panelControl2.Location.Y * 1.0f / h });
-                areaPre.Add(new List<double>() { panelControl6.Location.X * 1.0f / w, panelControl6.Location.Y * 1.0f / h });
-            }
-
-            foreach (var item in mainList)
-            {
-                switch (item.Address)
-                {
-                    case 1:
-                        if (isInit)
-                        {
-                            s3_n.Text = item.EName;
-                            s3_u.Text = item.Unit;
-                        }
-                        else
-                        {
-                            s3_v.Text = item.DisplayChroma;
-                        }
-                        break;
-                    case 2:
-                        if (isInit)
-                        {
-                            s1_n.Text = item.EName;
-                            s1_u.Text = item.Unit;
-                        }
-                        else
-                        {
-                            s1_v.Text = item.DisplayChroma;
-                        }
-                        break;
-                    case 3:
-                        if (isInit)
-                        {
-                            s2_n.Text = item.EName;
-                            s2_u.Text = item.Unit;
-                        }
-                        else
-                        {
-                            s2_v.Text = item.DisplayChroma;
-                        }
-                        break;
-                    case 4:
-                        if (isInit)
-                        {
-                            s5_n.Text = item.EName;
-                            s5_u.Text = item.Unit;
-                        }
-                        else
-                        {
-                            s5_v.Text = item.DisplayChroma;
-                        }
-                        break;
-                    case 5:
-                        if (isInit)
-                        {
-                            s4_n.Text = item.EName;
-                            s4_u.Text = item.Unit;
-                        }
-                        else
-                        {
-                            s4_v.Text = item.DisplayChroma;
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-
-
+        
         // 读取系统配置文件
         private bool ReadSystemConfig()
         {
@@ -568,58 +291,12 @@ namespace SDApplication
             return true;
         }
 
-        // 初始化曲线
-        private void InitSeries()
-        {
-            chartControl_Main.Legend.AlignmentHorizontal = LegendAlignmentHorizontal.Right;
-
-            chartControl_Main.Series.Clear();
-            Equipment ep = new Equipment();
-            if (mainList.Count > 0)
-            {
-                ep = mainList.First();
-            }
-            seriesOne = new Series(string.Format(ep.EName), ViewType.SwiftPlot);
-            seriesOne.Tag = ep.ID;
-            seriesOne.ArgumentScaleType = ScaleType.DateTime;
-            SwiftPlotSeriesView spsv1 = new SwiftPlotSeriesView();
-            spsv1.LineStyle.Thickness = 2;
-            seriesOne.View = spsv1;
-            chartControl_Main.Series.Add(seriesOne);
-
-            SwiftPlotDiagram diagram_Tem = chartControl_Main.Diagram as SwiftPlotDiagram;
-            diagram_Tem.Margins.Right = 15;
-            //diagram_Tem.AxisX.
-            diagram_Tem.AxisX.DateTimeScaleOptions.MeasureUnit = DateTimeMeasureUnit.Second;
-            diagram_Tem.AxisX.DateTimeScaleOptions.GridAlignment = DateTimeGridAlignment.Minute;
-            diagram_Tem.AxisX.Label.TextPattern = "{A:HH:mm:ss}";
-            diagram_Tem.AxisX.VisualRange.AutoSideMargins = false;
-            diagram_Tem.AxisX.WholeRange.AutoSideMargins = true;
-            diagram_Tem.AxisX.Title.Text = "时间";
-            diagram_Tem.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            diagram_Tem.AxisX.Title.Alignment = StringAlignment.Far;
-            diagram_Tem.AxisX.Title.Antialiasing = false;
-            diagram_Tem.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 8);
-
-            diagram_Tem.AxisY.WholeRange.AlwaysShowZeroLevel = false;
-            //diagram_Tem.EnableAxisYZooming = true;
-            //diagram_Tem.EnableAxisYScrolling = true;
-            diagram_Tem.AxisY.Interlaced = true;
-            diagram_Tem.AxisY.VisualRange.AutoSideMargins = true;
-            diagram_Tem.AxisY.WholeRange.AutoSideMargins = true;
-            diagram_Tem.AxisY.Title.Text = string.Format("浓度({0})", ep.Unit);
-            diagram_Tem.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            diagram_Tem.AxisY.Title.Alignment = StringAlignment.Far;
-            diagram_Tem.AxisY.Title.Antialiasing = false;
-            diagram_Tem.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 8);
-            //if (diagram_Tem != null && diagram_Tem.AxisX.DateTimeMeasureUnit == DateTimeMeasurementUnit.Millisecond)
-            //    diagram_Tem.AxisX.Range.SetMinMaxValues(minDate, argument);
-        }
-
         private void InitControl()
         {
             comboBoxEdit_UnitAdd.Properties.Items.Clear();
             comboBoxEdit_UnitAdd.Properties.Items.AddRange(systemConfig.Units);
+
+            initializeChromium();
         }
 
         // 设置历史曲线
@@ -815,24 +492,8 @@ namespace SDApplication
         /// </summary>
         private void RefreshenAdd()
         {
-            gridControl_Main.RefreshDataSource();
-            gridView_Main.BestFitColumns();
             gridControl_Add.RefreshDataSource();
             gridView_Add.BestFitColumns();
-        }
-
-        private void addText(string txt)
-        {
-            int MaxLines = 1000;
-            //cjComment这部分来的奇怪。应该会自己滚动的
-            if (richTextBox1.Lines.Length > MaxLines)
-            {
-                richTextBox1.Clear();
-            }
-            richTextBox1.AppendText(txt);
-            // 自动滚到底部
-            richTextBox1.SelectionStart = richTextBox1.Text.Length;
-            richTextBox1.ScrollToCaret();
         }
 
         #endregion
@@ -853,16 +514,6 @@ namespace SDApplication
             if (mainList.Count < 1)
             {
                 return;
-            }
-            minTime = DateTime.Now;
-            maxTime = minTime.AddMinutes(systemConfig.Xrange);
-            if (seriesOne == null || seriesOne.Tag == null)
-            {
-                changeSeries(mainList.First());
-            }
-            else
-            {
-                changeSeries(mainList.Find(c => c.ID == Convert.ToInt32(seriesOne.Tag)));
             }
 
             mainThread = new Thread(new ThreadStart(ReadData));
@@ -891,30 +542,23 @@ namespace SDApplication
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
             if (!InitializeForm())
             {
                 XtraMessageBox.Show("初始化失败");
             }
-        }
 
-        private void gridView_Main_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
-        {
-            if (e.Column.Name == "gridColumn_Connect" && e.IsGetData)
-            {
-                if ((e.Row as Equipment).IsConnect)
-                {
-                    e.Value = Resources.link;
-                }
-                else
-                {
-                    e.Value = Resources.off_link;
-                }
-            }
         }
 
         private void btn_Stop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            PlaySound(false);
+            // 如果有打开的报警,停止检测的时候关闭报警
+            if (IsSoundPlayed)
+            {
+                player.Stop();
+                IsSoundPlayed = false;
+            }
+
             isRead = false;
             if (mainThread != null)
             {
@@ -1304,20 +948,6 @@ namespace SDApplication
             }
         }
 
-        private void gridView_Main_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            try
-            {
-                Equipment eee = gridView_Main.GetFocusedRow() as Equipment;
-                changeSeries(eee);
-            }
-            catch (Exception ex)
-            {
-                LogLib.Log.GetLogger(this).Warn(ex);
-            }
-
-        }
-
         private void ntn_mute_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (btn_mute.Caption == "关闭报警声音")
@@ -1348,11 +978,8 @@ namespace SDApplication
         {
             if (btn_ModifPass.Caption == "切换到普通用户")
             {
-                richTextBox1.Visible = false;
                 Gloabl.IsAdmin = false;
                 btn_ModifPass.Caption = "管理员登入";
-                richTextBox1.Dock = DockStyle.None;
-                chartControl_Main.Dock = DockStyle.Fill;
             }
             else if (btn_ModifPass.Caption == "管理员登入")
             {
@@ -1365,10 +992,7 @@ namespace SDApplication
                     }
                     else
                     {
-                        chartControl_Main.Dock = DockStyle.Top;
-                        richTextBox1.Dock = DockStyle.Fill;
                         Gloabl.IsAdmin = true;
-                        richTextBox1.Visible = true;
                         btn_ModifPass.Caption = "切换到普通用户";
 
                     }
@@ -1392,12 +1016,6 @@ namespace SDApplication
                 {
                     this.Close();
                 }
-                else if (Gloabl.IsAdmin)
-                {
-                    chartControl_Main.Dock = DockStyle.Top;
-                    richTextBox1.Dock = DockStyle.Fill;
-                    richTextBox1.Visible = true;
-                }
             }
             catch (Exception ex)
             {
@@ -1412,27 +1030,72 @@ namespace SDApplication
 
         }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            xtraTabControl1.SelectedTabPage = xtraTabPage6;
-        }
-
         private List<List<double>> areaPre = new List<List<double>>();
 
-        private void pictureBox1_Resize(object sender, EventArgs e)
+
+        private void initializeChromium()
         {
-            int h = pictureBox1.Size.Height;
-            int w = pictureBox1.Size.Width;
-            if (areaPre.Count > 0)
+            Cef.EnableHighDPISupport();
+            CefSettings settings = new CefSettings();
+            settings.Locale = "zh-CN";
+            settings.RemoteDebuggingPort = 8089;
+            settings.RegisterScheme(new CefCustomScheme
             {
-                panelControl4.Location = new Point((int)Math.Ceiling(w * areaPre[0][0]), (int)Math.Ceiling(h * areaPre[0][1]));
-                panelControl3.Location = new Point((int)Math.Ceiling(w * areaPre[1][0]), (int)Math.Ceiling(h * areaPre[1][1]));
-                panelControl5.Location = new Point((int)Math.Ceiling(w * areaPre[2][0]), (int)Math.Ceiling(h * areaPre[2][1]));
-                panelControl2.Location = new Point((int)Math.Ceiling(w * areaPre[3][0]), (int)Math.Ceiling(h * areaPre[3][1]));
-                panelControl6.Location = new Point((int)Math.Ceiling(w * areaPre[4][0]), (int)Math.Ceiling(h * areaPre[4][1]));
+                SchemeName = "localfolder",
+                DomainName = "cefsharp",
+                SchemeHandlerFactory = new FolderSchemeHandlerFactory(
+                    rootFolder: string.Format(@"{0}\html\", Application.StartupPath),
+                    hostName: "cefsharp",
+                    defaultPage: "index.html" // will default to index.html
+                )
+            });
+            settings.LogSeverity = LogSeverity.Disable;
+            Cef.Initialize(settings);
+            String page = string.Format(@"{0}\html\index.html", Application.StartupPath);
+
+            if (!File.Exists(page))
+            {
+                MessageBox.Show("Error The html file doesn't exists : " + page);
             }
+            MainProcess.chromeBrower = new ChromiumWebBrowser("localfolder://cefsharp/");
+            //chromeBrower.ShowDevTools();
+            MainProcess.chromeBrower.MenuHandler = new MenuHandler();
+
+            var obj = new BoundObject(this);
+            //For async object registration (equivalent to the old RegisterAsyncJsObject)
+            MainProcess.chromeBrower.JavascriptObjectRepository.Register("boundAsync", obj, true, BindingOptions.DefaultBinder);
+
+            MainProcess.chromeBrower.FrameLoadEnd += chromeBrower_FrameLoadEnd;
+
+
+            MainProcess.chromeBrower.Dock = DockStyle.Fill;
+            this.xtraTabPage1.Controls.Add(MainProcess.chromeBrower);
+
+
+            // Allow the use of local resources in the browser
+            //BrowserSettings browserSettings = new BrowserSettings();
+            //browserSettings.FileAccessFromFileUrls = CefState.Enabled;
+            //browserSettings.UniversalAccessFromFileUrls = CefState.Enabled;
+            //chromeBrower.BrowserSettings = browserSettings;
         }
 
+        void chromeBrower_FrameLoadEnd(object sender, FrameLoadEndEventArgs args)
+        {
+            Console.WriteLine("chromeBrower_FrameLoadEnd");
+            //Wait for the MainFrame to finish loading
+            if (args.Frame.IsMain)
+            {
+                //InitState _state = new InitState();
+                //foreach (string port in System.IO.Ports.SerialPort.GetPortNames())
+                //{
+                //    _state.portList.Add(port);
+                //}
+                //_state.sysConfig = CommonMemory.SysConfig;
+                //_state.mainList = MainProcess.mainList;
+                //string str = JsonConvert.SerializeObject(_state);
+                //args.Frame.ExecuteJavaScriptAsync(string.Format(@"window.setInitState('{0}');", "aa"));
+            }
+        }
 
     }
 }
