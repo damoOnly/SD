@@ -36,9 +36,9 @@
             DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView2 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.btn_Back = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btn_Start = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btn_Stop = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.btn_Back = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btn_History = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btn_ParamSet = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btn_Alert = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -321,9 +321,9 @@
             this.bar1.DockRow = 1;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Back),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.KeyTip, this.btn_Start, "", false, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.Standard, "啊啊啊啊", ""),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Stop),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btn_Back),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_History),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_ParamSet),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Alert),
@@ -336,14 +336,6 @@
             this.bar1.OptionsBar.MultiLine = true;
             this.bar1.OptionsBar.UseWholeRow = true;
             this.bar1.Text = "Tools";
-            // 
-            // btn_Back
-            // 
-            this.btn_Back.Caption = "返回主界面";
-            this.btn_Back.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_Back.Glyph")));
-            this.btn_Back.Id = 23;
-            this.btn_Back.Name = "btn_Back";
-            this.btn_Back.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Back_ItemClick);
             // 
             // btn_Start
             // 
@@ -360,6 +352,14 @@
             this.btn_Stop.Id = 17;
             this.btn_Stop.Name = "btn_Stop";
             this.btn_Stop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Stop_ItemClick);
+            // 
+            // btn_Back
+            // 
+            this.btn_Back.Caption = "返回主界面";
+            this.btn_Back.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_Back.Glyph")));
+            this.btn_Back.Id = 23;
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Back_ItemClick);
             // 
             // btn_History
             // 
@@ -383,6 +383,7 @@
             this.btn_Alert.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_Alert.Glyph")));
             this.btn_Alert.Id = 20;
             this.btn_Alert.Name = "btn_Alert";
+            this.btn_Alert.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btn_Alert.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Alert_ItemClick);
             // 
             // btn_Add

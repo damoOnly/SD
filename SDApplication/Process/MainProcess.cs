@@ -5,6 +5,7 @@ using Entity;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace SDApplication.Process
     class MainProcess
     {
         public static ChromiumWebBrowser chromeBrower;
+        public static List<Equipment> mainList = new List<Equipment>();
 
         public static void readMain(Equipment eq)
         {
@@ -38,18 +40,18 @@ namespace SDApplication.Process
             }
 
             EquipmentData data = Parse.GetRealData(cd.ResultByte, eq);
-            data.EquipmentID = eq.ID;
+            data.EquipmentID = eq.ID;            
 
             eq.Chroma = data.Chroma;
 
             // 添加数据库
-            EquipmentDataDal.AddOne(data);
+            //EquipmentDataDal.AddOne(data);
 
             // 添加报警到数据库
-            addAlertData(eq, data);
+            //addAlertData(eq, data);
 
             // 显示数据到界面
-            renderOne(data);
+            renderOne(data, eq.Address);
         }
 
         private static void addAlertData(Equipment eq,  EquipmentData data) {
@@ -102,9 +104,25 @@ namespace SDApplication.Process
         }
 
         // 显示数据到界面
-        private static void renderOne(EquipmentData data)
+        private static void renderOne(EquipmentData data, int address)
         {
-            string str = JsonConvert.SerializeObject(data);
+            EquipmentItem item = new EquipmentItem();
+            // 计算房间号
+            item.roomId = (int)Math.Ceiling((double)(address / 12.00));
+            item.id = address;
+            Random ran = new Random();
+            if (item.id % 2 == 0)
+            {
+                item.humidity = data.Chroma;
+                item.isAlertHumidity = data.ChromaAlertStr != string.Empty && data.ChromaAlertStr != EM_AlertType.正常.ToString();
+            }
+            else {
+                item.temperature = data.Chroma;
+                item.isAlertTemperature = data.ChromaAlertStr != string.Empty && data.ChromaAlertStr != EM_AlertType.正常.ToString();
+            }
+            item.eqName = data.EName;
+
+            string str = JsonConvert.SerializeObject(item);
 
             MainProcess.chromeBrower.GetBrowser().MainFrame.ExecuteJavaScriptAsync(string.Format(@"window.setOneData({0});", str));
         }

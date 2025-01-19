@@ -364,9 +364,11 @@ namespace Entity
 
     public enum EM_AlertType : byte
     {
+        正常 = 0,
         低浓度报警 = 1,
         高浓度报警 = 2,
         超量程报警 = 3,
+
     }
 
     public enum EM_UserType : byte

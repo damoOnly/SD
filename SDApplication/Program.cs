@@ -13,6 +13,7 @@ namespace SDApplication
         [STAThread]
         static void Main()
         {
+            log4net.Config.XmlConfigurator.Configure();
             //DevExpress.UserSkins.OfficeSkins.Register();//进行皮肤组件注册
             DevExpress.UserSkins.BonusSkins.Register();//进行皮肤组件注册
            

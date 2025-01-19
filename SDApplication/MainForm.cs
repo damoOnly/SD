@@ -42,11 +42,6 @@ namespace SDApplication
         private SystemConfig systemConfig = new SystemConfig();
 
         /// <summary>
-        /// 所有设备列表
-        /// </summary>
-        private List<Equipment> mainList = new List<Equipment>();
-
-        /// <summary>
         /// 主要线程
         /// </summary>
         private Thread mainThread;
@@ -92,7 +87,7 @@ namespace SDApplication
                     continue;
                 }
 
-                foreach (Equipment eq in mainList)
+                foreach (Equipment eq in MainProcess.mainList)
                 {
                     // 从串口读取数据,并处理数据
                     MainProcess.readMain(eq);
@@ -129,7 +124,7 @@ namespace SDApplication
         /// <param name="isp"></param>
         private void PlaySound()
         {
-            Equipment eqqq = mainList.Find(c => !c.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase));
+            Equipment eqqq = MainProcess.mainList.Find(c => !c.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase));
             bool isp = eqqq != null;
 
             if (IsClosePlay)
@@ -194,9 +189,9 @@ namespace SDApplication
                 SqliteHelper.SetConnectionString(string.Format("Data Source={0};Version=3;", AppDomain.CurrentDomain.BaseDirectory + "\\SDData.db3"));
                 //SqliteHelper.SetConnectionString(AppDomain.CurrentDomain.BaseDirectory + "SDData.db");
 
-                mainList = EquipmentDal.GetAllList();
+                MainProcess.mainList = EquipmentDal.GetAllList();
 
-                gridControl_Add.DataSource = mainList;
+                gridControl_Add.DataSource = MainProcess.mainList;
                 gridView_Add.BestFitColumns();
 
                 DateTime time = DateTime.Now;
@@ -205,15 +200,15 @@ namespace SDApplication
                 dateEdit_StartAlert.DateTime = time.AddDays(-7);
                 dateEdit_EndAlert.DateTime = time;
 
-                if (mainList.Count < 1)
+                if (MainProcess.mainList.Count < 1)
                 {
                     LogLib.Log.GetLogger(this).Warn("mainList为空");
                     return true;
                 }
 
-                mainList.ForEach(c => { comboBoxEdit_ID.Properties.Items.Add(c.Address); });
+                MainProcess.mainList.ForEach(c => { comboBoxEdit_ID.Properties.Items.Add(c.Address); });
 
-                Equipment eee = mainList.First();
+                Equipment eee = MainProcess.mainList.First();
                 if (eee != null)
                 {
                     textEdit_AddressAdd.Text = eee.Address.ToString();
@@ -511,7 +506,7 @@ namespace SDApplication
                 XtraMessageBox.Show("请先打开串口");
                 return;
             }
-            if (mainList.Count < 1)
+            if (MainProcess.mainList.Count < 1)
             {
                 return;
             }
@@ -566,7 +561,7 @@ namespace SDApplication
                 btn_Start.Enabled = true;
             }
             // 连接状态改为 关闭
-            foreach (Equipment eq in mainList)
+            foreach (Equipment eq in MainProcess.mainList)
             {
                 eq.IsConnect = false;
             }
@@ -591,7 +586,7 @@ namespace SDApplication
                 XtraMessageBox.Show("截止时间必须大于起始时间");
                 return;
             }
-            Equipment eq = mainList.Find(c => c.Address == Convert.ToInt64(comboBoxEdit_ID.Text));
+            Equipment eq = MainProcess.mainList.Find(c => c.Address == Convert.ToInt64(comboBoxEdit_ID.Text));
 
             List<EquipmentData> data = EquipmentDataDal.GetListByTime(eq.ID, dateEdit_Start.DateTime, dateEdit_End.DateTime);
             foreach (var item in data)
@@ -673,7 +668,7 @@ namespace SDApplication
             {
                 return;
             }
-            Equipment eq = mainList.Find(c => c.Address == Convert.ToInt64(comboBoxEdit_ID.Text));
+            Equipment eq = MainProcess.mainList.Find(c => c.Address == Convert.ToInt64(comboBoxEdit_ID.Text));
 
             int total = EquipmentDataDal.DeleteByTime(eq.ID, dateEdit_Start.DateTime, dateEdit_End.DateTime);
             gridControl_History.DataSource = null;
@@ -683,7 +678,7 @@ namespace SDApplication
 
         private void comboBoxEdit_ID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Equipment ee = mainList.Find(c => c.Address == Convert.ToInt64(comboBoxEdit_ID.Text));
+            Equipment ee = MainProcess.mainList.Find(c => c.Address == Convert.ToInt64(comboBoxEdit_ID.Text));
             textEdit_GasName.Text = ee.EName;
             textEdit_Place.Text = ee.Place;
         }
@@ -737,7 +732,7 @@ namespace SDApplication
                     return;
                 }
                 Equipment eee1 = EquipmentDal.AddOneR(eee);
-                mainList.Add(eee1);
+                MainProcess.mainList.Add(eee1);
                 RefreshenAdd();
             }
             catch (Exception ex)
@@ -788,7 +783,7 @@ namespace SDApplication
             {
                 Equipment eee = gridView_Add.GetFocusedRow() as Equipment;
                 EquipmentDal.DeleteOne(eee);
-                mainList.Remove(eee);
+                MainProcess.mainList.Remove(eee);
                 RefreshenAdd();
             }
             catch (Exception ex)
@@ -857,14 +852,17 @@ namespace SDApplication
         private void btn_Back_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             xtraTabControl1.SelectedTabPage = xtraTabPage1;
+            MainProcess.chromeBrower.GetBrowser().MainFrame.ExecuteJavaScriptAsync(string.Format(@"window.setPageType('{0}');", "details"));
         }
 
         private void btn_History_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            xtraTabControl1.SelectedTabPage = xtraTabPage2;
-            DateTime time = DateTime.Now;
-            dateEdit_Start.DateTime = time.AddDays(-7);
-            dateEdit_End.DateTime = time;
+            //xtraTabControl1.SelectedTabPage = xtraTabPage2;
+            //DateTime time = DateTime.Now;
+            //dateEdit_Start.DateTime = time.AddDays(-7);
+            //dateEdit_End.DateTime = time;
+            xtraTabControl1.SelectedTabPage = xtraTabPage1;
+            MainProcess.chromeBrower.GetBrowser().MainFrame.ExecuteJavaScriptAsync(string.Format(@"window.setPageType('{0}');", "average"));
         }
 
         private void btn_ParamSet_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
