@@ -291,7 +291,7 @@ namespace SDApplication
             comboBoxEdit_UnitAdd.Properties.Items.Clear();
             comboBoxEdit_UnitAdd.Properties.Items.AddRange(systemConfig.Units);
 
-            initializeChromium();
+            //initializeChromium();
         }
 
         // 设置历史曲线
@@ -496,7 +496,27 @@ namespace SDApplication
         public MainForm()
         {
             InitializeComponent();
+            webView21.CoreWebView2InitializationCompleted += webView21_CoreWebView2InitializationCompleted;
+        }
 
+        void webView21_CoreWebView2InitializationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs e)
+        {
+            Trace.WriteLine("webView21_CoreWebView2InitializationCompleted"+e.IsSuccess);
+            if (e.IsSuccess) {
+                string str = MainProcess.getRoomList();
+                webView21.CoreWebView2.PostWebMessageAsString(str);
+                webView21.CoreWebView2.WebMessageReceived += CoreWebView2_WebMessageReceived;
+            }
+        }
+
+        void CoreWebView2_WebMessageReceived(object sender, Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs e)
+        {
+            string message = e.TryGetWebMessageAsString();
+            Trace.WriteLine(message);
+            if (message == "getRoomList") { 
+                string str = MainProcess.getRoomList();
+                webView21.CoreWebView2.PostWebMessageAsString(str);
+            }
         }
 
         private void btn_Start_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -537,6 +557,9 @@ namespace SDApplication
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            String page = string.Format(@"{0}\html\index.html", Application.StartupPath);
+            webView21.Source = new Uri(@"file:///" + page);
+            Trace.WriteLine(webView21.Source);
 
             if (!InitializeForm())
             {
@@ -1093,6 +1116,11 @@ namespace SDApplication
                 //string str = JsonConvert.SerializeObject(_state);
                 //args.Frame.ExecuteJavaScriptAsync(string.Format(@"window.setInitState('{0}');", "aa"));
             }
+        }
+
+        private void webView21_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

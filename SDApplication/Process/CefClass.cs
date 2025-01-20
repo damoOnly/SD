@@ -73,7 +73,7 @@ namespace SDApplication.Process
             return a + b;
         }
 
-        public string getRoomList()
+        public static string getRoomList()
         {
             List<RoomItem> list = new List<RoomItem>();
             MainProcess.mainList.ForEach(c => {

@@ -126,5 +126,56 @@ namespace SDApplication.Process
 
             MainProcess.chromeBrower.GetBrowser().MainFrame.ExecuteJavaScriptAsync(string.Format(@"window.setOneData({0});", str));
         }
+
+        public static string getRoomList()
+        {
+            List<RoomItem> list = new List<RoomItem>();
+            MainProcess.mainList.ForEach(c =>
+            {
+                // id号，偶数是湿度，奇数是温度,统一用温度的id
+                int id = (int)(c.Address % 2 == 0 ? c.Address - 1 : c.Address);
+                //房间号
+                int roomId = (int)Math.Ceiling((double)(c.Address / 12.00));
+                int roomIndex = list.FindIndex(r =>
+                {
+                    return r.roomId == roomId;
+                });
+
+                if (roomIndex < 0)
+                {
+                    RoomItem item = new RoomItem();
+                    item.roomId = roomId;
+                    item.roomName = c.Place;
+                    item.dataList = new List<EquipmentItem>();
+                    // 新房间第一个肯定要新建
+                    EquipmentItem eq = new EquipmentItem();
+                    eq.eqName = c.EName;
+                    eq.id = id;
+
+                    item.dataList.Add(eq);
+                    list.Add(item);
+                }
+                else
+                {
+                    RoomItem item = list[roomIndex];
+
+                    int eqIndex = item.dataList.FindIndex(e => { return e.id == id; });
+
+                    // 没有找到设备需要新建,找到了，暂时不用管，看看后面是否需要初始化数据
+                    if (eqIndex < 0)
+                    {
+                        EquipmentItem eq = new EquipmentItem();
+                        eq.id = id;
+                        eq.eqName = c.EName;
+
+                        item.dataList.Add(eq);
+                    }
+                }
+            });
+
+            string str = JsonConvert.SerializeObject(list);
+            Trace.WriteLine(str);
+            return str;
+        }
     }
 }
