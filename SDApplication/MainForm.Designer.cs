@@ -366,7 +366,7 @@
             // 
             // btn_History
             // 
-            this.btn_History.Caption = "查看历史数据";
+            this.btn_History.Caption = "查看平局值";
             this.btn_History.Glyph = ((System.Drawing.Image)(resources.GetObject("btn_History.Glyph")));
             this.btn_History.Id = 18;
             this.btn_History.Name = "btn_History";
@@ -622,6 +622,7 @@
             // 
             // webView21
             // 
+            this.webView21.AllowExternalDrop = true;
             this.webView21.CreationProperties = null;
             this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
             this.webView21.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -2001,7 +2002,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CTS60有毒有害气体在线监测系统";
+            this.Text = "温湿度在线监测系统";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Shown += new System.EventHandler(this.MainForm_Shown);

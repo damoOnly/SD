@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Login));
             this.btn_OK = new DevExpress.XtraEditors.SimpleButton();
             this.textEdit_pwd = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -41,51 +40,51 @@
             // 
             // btn_OK
             // 
-            this.btn_OK.Location = new System.Drawing.Point(93, 181);
+            this.btn_OK.Location = new System.Drawing.Point(80, 168);
             this.btn_OK.Name = "btn_OK";
-            this.btn_OK.Size = new System.Drawing.Size(75, 23);
+            this.btn_OK.Size = new System.Drawing.Size(64, 21);
             this.btn_OK.TabIndex = 2;
             this.btn_OK.Text = "确定";
             this.btn_OK.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // textEdit_pwd
             // 
-            this.textEdit_pwd.Location = new System.Drawing.Point(208, 135);
+            this.textEdit_pwd.Location = new System.Drawing.Point(178, 125);
             this.textEdit_pwd.Name = "textEdit_pwd";
             this.textEdit_pwd.Properties.PasswordChar = '*';
-            this.textEdit_pwd.Size = new System.Drawing.Size(100, 20);
+            this.textEdit_pwd.Size = new System.Drawing.Size(86, 20);
             this.textEdit_pwd.TabIndex = 1;
             this.textEdit_pwd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit1_KeyPress);
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(93, 138);
+            this.labelControl1.Location = new System.Drawing.Point(80, 128);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(28, 14);
+            this.labelControl1.Size = new System.Drawing.Size(28, 13);
             this.labelControl1.TabIndex = 6;
             this.labelControl1.Text = "密码:";
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(233, 181);
+            this.btn_cancel.Location = new System.Drawing.Point(200, 168);
             this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancel.Size = new System.Drawing.Size(64, 21);
             this.btn_cancel.TabIndex = 3;
             this.btn_cancel.Text = "取消";
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(93, 98);
+            this.labelControl2.Location = new System.Drawing.Point(80, 91);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(40, 14);
+            this.labelControl2.Size = new System.Drawing.Size(40, 13);
             this.labelControl2.TabIndex = 5;
             this.labelControl2.Text = "用户名:";
             // 
             // comboBoxEdit_user
             // 
             this.comboBoxEdit_user.EditValue = "user";
-            this.comboBoxEdit_user.Location = new System.Drawing.Point(208, 95);
+            this.comboBoxEdit_user.Location = new System.Drawing.Point(178, 88);
             this.comboBoxEdit_user.Name = "comboBoxEdit_user";
             this.comboBoxEdit_user.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -93,16 +92,14 @@
             "user",
             "admin"});
             this.comboBoxEdit_user.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEdit_user.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxEdit_user.Size = new System.Drawing.Size(86, 20);
             this.comboBoxEdit_user.TabIndex = 0;
             // 
             // Form_Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
-            this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
-            this.ClientSize = new System.Drawing.Size(417, 258);
+            this.ClientSize = new System.Drawing.Size(357, 240);
             this.Controls.Add(this.comboBoxEdit_user);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.btn_cancel);

@@ -44,7 +44,7 @@ SetCompressor lzma
 
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
 OutFile "SDSetup.exe"
-InstallDir "$PROGRAMFILES\山盾气体检测软件安装程序"
+InstallDir "$PROGRAMFILES\温湿度在线监测系统"
 InstallDirRegKey HKLM "${PRODUCT_UNINST_KEY}" "UninstallString"
 ShowInstDetails show
 ShowUnInstDetails show
@@ -57,10 +57,18 @@ Section "MainSection" SEC01
   File "Build\Debug\Dal.dll"
   File "Build\Debug\Entity.dll"
   File "Build\Debug\log4net.dll"
+  File "Build\Debug\Newtonsoft.Json.dll"
   File "Build\Debug\LogLib.dll"
   File "Build\Debug\LogLib.dll.config"
   File "Build\Debug\SDApplication.exe"
   File "Build\Debug\SDApplication.exe.config"
+  File /r "Build\Debug\html"
+  File /r "Build\Debug\runtimes"
+  File /r "Build\Debug\SDApplication.vshost.exe.WebView2"
+  File "Build\Debug\Microsoft.Web.WebView2.Core.dll"
+  File "Build\Debug\Microsoft.Web.WebView2.WinForms.dll"
+  File "Build\Debug\Microsoft.Web.WebView2.Wpf.dll"
+  File "Build\Debug\SDData.db3"
   
   File "Libs\DevExpress.XtraRichEdit.v14.2.dll"
   File "Libs\DevExpress.XtraPrinting.v14.2.dll"
@@ -79,7 +87,6 @@ Section "MainSection" SEC01
   File "Libs\DevExpress.Charts.v14.2.Core.dll"
   File "Libs\DevExpress.BonusSkins.v14.2.dll"
   File "Libs\ALARM1.WAV"
-  File "Libs\SDData.db3"
   File "SDApplication\SystemConfig.xml"
   File "Libs\System.Data.SQLite.dll"
   File "Libs\CTS60有毒有害气体在线监测系统用户使用手册V1.0.1（简化版）.pdf"
@@ -90,15 +97,15 @@ Section "MainSection" SEC01
   SetOverwrite ifnewer
   File "Libs\x86\SQLite.Interop.dll"
   
-  CreateDirectory "$SMPROGRAMS\山盾气体检测软件"
-  CreateShortCut "$SMPROGRAMS\山盾气体检测软件\气体浓度监测软件.lnk" "$INSTDIR\SDApplication.exe"
-  CreateShortCut "$DESKTOP\气体浓度监测软件.lnk" "$INSTDIR\SDApplication.exe"
+  CreateDirectory "$SMPROGRAMS\温湿度在线监测系统"
+  CreateShortCut "$SMPROGRAMS\温湿度在线监测系统\温湿度在线监测系统.lnk" "$INSTDIR\SDApplication.exe"
+  CreateShortCut "$DESKTOP\温湿度在线监测系统.lnk" "$INSTDIR\SDApplication.exe"
 SectionEnd
 
 Section -AdditionalIcons
   WriteIniStr "$INSTDIR\${PRODUCT_NAME}.url" "InternetShortcut" "URL" "${PRODUCT_WEB_SITE}"
-  CreateShortCut "$SMPROGRAMS\山盾气体检测软件\Website.lnk" "$INSTDIR\${PRODUCT_NAME}.url"
-  CreateShortCut "$SMPROGRAMS\山盾气体检测软件\Uninstall.lnk" "$INSTDIR\uninst.exe"
+  CreateShortCut "$SMPROGRAMS\温湿度在线监测系统\Website.lnk" "$INSTDIR\${PRODUCT_NAME}.url"
+  CreateShortCut "$SMPROGRAMS\温湿度在线监测系统\Uninstall.lnk" "$INSTDIR\uninst.exe"
 SectionEnd
 
 Section -Post
@@ -206,12 +213,12 @@ Section Uninstall
   Delete "$INSTDIR\SystemConfig.xml"
   Delete "$INSTDIR\Log\*.*"
 
-  Delete "$SMPROGRAMS\山盾气体检测软件\Uninstall.lnk"
-  Delete "$SMPROGRAMS\山盾气体检测软件\Website.lnk"
-  Delete "$DESKTOP\气体浓度监测软件.lnk"
-  Delete "$SMPROGRAMS\山盾气体检测软件\气体浓度监测软件.lnk"
+  Delete "$SMPROGRAMS\温湿度在线监测系统\Uninstall.lnk"
+  Delete "$SMPROGRAMS\温湿度在线监测系统\Website.lnk"
+  Delete "$DESKTOP\温湿度在线监测系统.lnk"
+  Delete "$SMPROGRAMS\温湿度在线监测系统\温湿度在线监测系统.lnk"
 
-  RMDir "$SMPROGRAMS\山盾气体检测软件"
+  RMDir "$SMPROGRAMS\温湿度在线监测系统"
 
   RMDir "$INSTDIR"
 

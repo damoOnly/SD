@@ -1,7 +1,7 @@
-﻿using CefSharp.WinForms;
-using CommandManager;
+﻿using CommandManager;
 using Dal;
 using Entity;
+using Microsoft.Web.WebView2.WinForms;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,8 @@ namespace SDApplication.Process
 {
     class MainProcess
     {
-        public static ChromiumWebBrowser chromeBrower;
+        public static MainForm mainForm;
+        public static WebView2 webView;
         public static List<Equipment> mainList = new List<Equipment>();
 
         public static void readMain(Equipment eq)
@@ -40,7 +41,7 @@ namespace SDApplication.Process
             }
 
             EquipmentData data = Parse.GetRealData(cd.ResultByte, eq);
-            data.EquipmentID = eq.ID;            
+            data.EquipmentID = eq.ID;
 
             eq.Chroma = data.Chroma;
 
@@ -54,7 +55,8 @@ namespace SDApplication.Process
             renderOne(data, eq.Address);
         }
 
-        private static void addAlertData(Equipment eq,  EquipmentData data) {
+        private static void addAlertData(Equipment eq, EquipmentData data)
+        {
             if (eq.AlertType == 0)
             {
                 eq.ChromaAlertStr = Gloabl.NormalStr;
@@ -116,15 +118,15 @@ namespace SDApplication.Process
                 item.humidity = data.Chroma;
                 item.isAlertHumidity = data.ChromaAlertStr != string.Empty && data.ChromaAlertStr != EM_AlertType.正常.ToString();
             }
-            else {
+            else
+            {
                 item.temperature = data.Chroma;
                 item.isAlertTemperature = data.ChromaAlertStr != string.Empty && data.ChromaAlertStr != EM_AlertType.正常.ToString();
             }
             item.eqName = data.EName;
 
-            string str = JsonConvert.SerializeObject(item);
-
-            MainProcess.chromeBrower.GetBrowser().MainFrame.ExecuteJavaScriptAsync(string.Format(@"window.setOneData({0});", str));
+            string dataStr = JsonConvert.SerializeObject(item);
+            MainProcess.postMessage("setOneData", dataStr);
         }
 
         public static string getRoomList()
@@ -173,9 +175,33 @@ namespace SDApplication.Process
                 }
             });
 
-            string str = JsonConvert.SerializeObject(list);
-            Trace.WriteLine(str);
+            string dataStr = JsonConvert.SerializeObject(list);
+
+            return dataStr;
+        }
+
+        public static string getMessageStr(string type, string data)
+        {
+            MessageData message = new MessageData(type, data);
+            string str = JsonConvert.SerializeObject(message);
+
             return str;
+        }
+
+        public static void postMessage(string type, string data)
+        {
+            string str = getMessageStr(type, data);
+
+            MainProcess.mainForm.Invoke(new Action(() =>
+            {
+                if (MainProcess.webView != null && MainProcess.webView.CoreWebView2 != null)
+                {
+                    Trace.WriteLine(str);
+                    MainProcess.webView.CoreWebView2.PostWebMessageAsJson(str);
+                }
+            }));
+
+
         }
     }
 }

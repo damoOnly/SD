@@ -15,11 +15,9 @@ using System.Diagnostics;
 using System.Media;
 using System.Linq;
 using SDApplication.Properties;
-using CefSharp;
-using CefSharp.WinForms;
-using CefSharp.SchemeHandler;
 using System.IO;
 using SDApplication.Process;
+using Microsoft.Web.WebView2.Core;
 
 namespace SDApplication
 {
@@ -496,17 +494,33 @@ namespace SDApplication
         public MainForm()
         {
             InitializeComponent();
+            MainProcess.mainForm = this;
+            MainProcess.webView = webView21;
             webView21.CoreWebView2InitializationCompleted += webView21_CoreWebView2InitializationCompleted;
+            string userDataFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "webView2", "userData");
+            Directory.CreateDirectory(userDataFolder);
+            var ee = CoreWebView2Environment.CreateAsync(null, userDataFolder);
         }
 
         void webView21_CoreWebView2InitializationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs e)
         {
             Trace.WriteLine("webView21_CoreWebView2InitializationCompleted"+e.IsSuccess);
             if (e.IsSuccess) {
-                string str = MainProcess.getRoomList();
-                webView21.CoreWebView2.PostWebMessageAsString(str);
+                
                 webView21.CoreWebView2.WebMessageReceived += CoreWebView2_WebMessageReceived;
+
+                webView21.CoreWebView2.AddWebResourceRequestedFilter("https://html/*",
+                                                CoreWebView2WebResourceContext.All);
+                webView21.CoreWebView2.WebResourceRequested += CoreWebView2_WebResourceRequested;
+
+                webView21.CoreWebView2.DOMContentLoaded += CoreWebView2_DOMContentLoaded;
             }
+        }
+
+        void CoreWebView2_DOMContentLoaded(object sender, CoreWebView2DOMContentLoadedEventArgs e)
+        {
+            string str = MainProcess.getRoomList();
+            MainProcess.postMessage("setRoomList", str);
         }
 
         void CoreWebView2_WebMessageReceived(object sender, Microsoft.Web.WebView2.Core.CoreWebView2WebMessageReceivedEventArgs e)
@@ -515,7 +529,7 @@ namespace SDApplication
             Trace.WriteLine(message);
             if (message == "getRoomList") { 
                 string str = MainProcess.getRoomList();
-                webView21.CoreWebView2.PostWebMessageAsString(str);
+                //webView21.CoreWebView2.PostWebMessageAsString(str);
             }
         }
 
@@ -558,7 +572,9 @@ namespace SDApplication
         private void MainForm_Load(object sender, EventArgs e)
         {
             String page = string.Format(@"{0}\html\index.html", Application.StartupPath);
-            webView21.Source = new Uri(@"file:///" + page);
+            //webView21.Source = new Uri(@"file:///" + page);
+            webView21.Source = new Uri("https://html/index.html");
+            
             Trace.WriteLine(webView21.Source);
 
             if (!InitializeForm())
@@ -566,6 +582,52 @@ namespace SDApplication
                 XtraMessageBox.Show("初始化失败");
             }
 
+        }
+
+        void CoreWebView2_WebResourceRequested(object sender, CoreWebView2WebResourceRequestedEventArgs args)
+        {
+            String page = string.Format(@"{0}\html\", Application.StartupPath);
+
+            string assetsFilePath = page +
+                            args.Request.Uri.Substring("https://html/*".Length - 1);
+            try
+            {
+                FileStream fs = File.OpenRead(assetsFilePath);
+                ManagedStream ms = new ManagedStream(fs);
+                string headers = "";
+                if (assetsFilePath.EndsWith(".html"))
+                {
+                    headers = "Content-Type: text/html";
+                }
+                else if (assetsFilePath.EndsWith(".jpg"))
+                {
+                    headers = "Content-Type: image/jpeg";
+                }
+                else if (assetsFilePath.EndsWith(".png"))
+                {
+                    headers = "Content-Type: image/png";
+                }
+                else if (assetsFilePath.EndsWith(".css"))
+                {
+                    headers = "Content-Type: text/css";
+                }
+                else if (assetsFilePath.EndsWith(".js"))
+                {
+                    headers = "Content-Type: application/javascript";
+                }
+                else if (assetsFilePath.EndsWith(".json"))
+                {
+                    headers = "Content-Type: application/json";
+                }
+
+                args.Response = webView21.CoreWebView2.Environment.CreateWebResourceResponse(
+                                                                    ms, 200, "OK", headers);
+            }
+            catch (Exception)
+            {
+                args.Response = webView21.CoreWebView2.Environment.CreateWebResourceResponse(
+                                                                null, 404, "Not found", "");
+            }
         }
 
         private void btn_Stop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -875,7 +937,7 @@ namespace SDApplication
         private void btn_Back_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             xtraTabControl1.SelectedTabPage = xtraTabPage1;
-            MainProcess.chromeBrower.GetBrowser().MainFrame.ExecuteJavaScriptAsync(string.Format(@"window.setPageType('{0}');", "details"));
+            MainProcess.postMessage("setPageType", "details");
         }
 
         private void btn_History_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -885,7 +947,7 @@ namespace SDApplication
             //dateEdit_Start.DateTime = time.AddDays(-7);
             //dateEdit_End.DateTime = time;
             xtraTabControl1.SelectedTabPage = xtraTabPage1;
-            MainProcess.chromeBrower.GetBrowser().MainFrame.ExecuteJavaScriptAsync(string.Format(@"window.setPageType('{0}');", "average"));
+            MainProcess.postMessage("setPageType", "average");
         }
 
         private void btn_ParamSet_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1053,71 +1115,7 @@ namespace SDApplication
 
         private List<List<double>> areaPre = new List<List<double>>();
 
-
-        private void initializeChromium()
-        {
-            Cef.EnableHighDPISupport();
-            CefSettings settings = new CefSettings();
-            settings.Locale = "zh-CN";
-            settings.RemoteDebuggingPort = 8089;
-            settings.RegisterScheme(new CefCustomScheme
-            {
-                SchemeName = "localfolder",
-                DomainName = "cefsharp",
-                SchemeHandlerFactory = new FolderSchemeHandlerFactory(
-                    rootFolder: string.Format(@"{0}\html\", Application.StartupPath),
-                    hostName: "cefsharp",
-                    defaultPage: "index.html" // will default to index.html
-                )
-            });
-            settings.LogSeverity = LogSeverity.Disable;
-            Cef.Initialize(settings);
-            String page = string.Format(@"{0}\html\index.html", Application.StartupPath);
-
-            if (!File.Exists(page))
-            {
-                MessageBox.Show("Error The html file doesn't exists : " + page);
-            }
-            MainProcess.chromeBrower = new ChromiumWebBrowser("localfolder://cefsharp/");
-            //chromeBrower.ShowDevTools();
-            MainProcess.chromeBrower.MenuHandler = new MenuHandler();
-
-            var obj = new BoundObject(this);
-            //For async object registration (equivalent to the old RegisterAsyncJsObject)
-            MainProcess.chromeBrower.JavascriptObjectRepository.Register("boundAsync", obj, true, BindingOptions.DefaultBinder);
-
-            MainProcess.chromeBrower.FrameLoadEnd += chromeBrower_FrameLoadEnd;
-
-
-            MainProcess.chromeBrower.Dock = DockStyle.Fill;
-            this.xtraTabPage1.Controls.Add(MainProcess.chromeBrower);
-
-
-            // Allow the use of local resources in the browser
-            //BrowserSettings browserSettings = new BrowserSettings();
-            //browserSettings.FileAccessFromFileUrls = CefState.Enabled;
-            //browserSettings.UniversalAccessFromFileUrls = CefState.Enabled;
-            //chromeBrower.BrowserSettings = browserSettings;
-        }
-
-        void chromeBrower_FrameLoadEnd(object sender, FrameLoadEndEventArgs args)
-        {
-            Console.WriteLine("chromeBrower_FrameLoadEnd");
-            //Wait for the MainFrame to finish loading
-            if (args.Frame.IsMain)
-            {
-                //InitState _state = new InitState();
-                //foreach (string port in System.IO.Ports.SerialPort.GetPortNames())
-                //{
-                //    _state.portList.Add(port);
-                //}
-                //_state.sysConfig = CommonMemory.SysConfig;
-                //_state.mainList = MainProcess.mainList;
-                //string str = JsonConvert.SerializeObject(_state);
-                //args.Frame.ExecuteJavaScriptAsync(string.Format(@"window.setInitState('{0}');", "aa"));
-            }
-        }
-
+       
         private void webView21_Click(object sender, EventArgs e)
         {
 
