@@ -52,6 +52,13 @@ namespace SDApplication.Process
         public string data { get; set; }
     }
 
+    public class HistoryQuery
+    {
+        public string year { get; set; }
+        public string month { get; set; }
+        public string fileId { get; set; }
+    }
+
     //public class InitState
     //{
     //    public InitState()

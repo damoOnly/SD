@@ -30,22 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            DevExpress.XtraCharts.SwiftPlotDiagram swiftPlotDiagram1 = new DevExpress.XtraCharts.SwiftPlotDiagram();
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView1 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
-            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView2 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
+            DevExpress.XtraCharts.SwiftPlotDiagram swiftPlotDiagram3 = new DevExpress.XtraCharts.SwiftPlotDiagram();
+            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView5 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
+            DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView6 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btn_Start = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btn_Stop = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btn_Back = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btn_History = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ParamSet = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btn_Alert = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btn_Add = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btn_Help = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btn_mute = new DevExpress.XtraBars.BarButtonItem();
             this.btn_ModifPass = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.btnm_Start = new DevExpress.XtraBars.BarButtonItem();
@@ -212,10 +214,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl_History)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -311,9 +313,11 @@
             this.btn_Help,
             this.btn_Back,
             this.btn_mute,
-            this.btn_ModifPass});
+            this.btn_ModifPass,
+            this.barButtonItem1,
+            this.barButtonItem2});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 28;
+            this.barManager1.MaxItemId = 30;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar1
@@ -328,6 +332,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Stop),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Back),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_History),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_ParamSet),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Alert),
             new DevExpress.XtraBars.LinkPersistInfo(this.btn_Add),
@@ -371,6 +377,14 @@
             this.btn_History.Id = 18;
             this.btn_History.Name = "btn_History";
             this.btn_History.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_History_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "历史记录";
+            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
+            this.barButtonItem1.Id = 28;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // btn_ParamSet
             // 
@@ -421,6 +435,14 @@
             this.btn_ModifPass.Name = "btn_ModifPass";
             this.btn_ModifPass.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btn_ModifPass.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_ModifPass_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "平局历史记录";
+            this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
+            this.barButtonItem2.Id = 29;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // bar2
             // 
@@ -565,28 +587,28 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(825, 71);
+            this.barDockControlTop.Size = new System.Drawing.Size(857, 71);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 620);
-            this.barDockControlBottom.Size = new System.Drawing.Size(825, 23);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 633);
+            this.barDockControlBottom.Size = new System.Drawing.Size(857, 23);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 71);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 549);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 562);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(825, 71);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 549);
+            this.barDockControlRight.Location = new System.Drawing.Point(857, 71);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 562);
             // 
             // applicationMenu1
             // 
@@ -604,7 +626,7 @@
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
             this.xtraTabControl1.ShowTabHeader = DevExpress.Utils.DefaultBoolean.False;
-            this.xtraTabControl1.Size = new System.Drawing.Size(825, 549);
+            this.xtraTabControl1.Size = new System.Drawing.Size(857, 562);
             this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -617,7 +639,7 @@
             // 
             this.xtraTabPage1.Controls.Add(this.webView21);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(819, 543);
+            this.xtraTabPage1.Size = new System.Drawing.Size(851, 556);
             this.xtraTabPage1.Text = "xtraTabPage1";
             // 
             // webView21
@@ -628,7 +650,7 @@
             this.webView21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webView21.Location = new System.Drawing.Point(0, 0);
             this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(819, 543);
+            this.webView21.Size = new System.Drawing.Size(851, 556);
             this.webView21.Source = new System.Uri("https://www.microsoft.com", System.UriKind.Absolute);
             this.webView21.TabIndex = 0;
             this.webView21.ZoomFactor = 1D;
@@ -638,7 +660,7 @@
             // 
             this.xtraTabPage2.Controls.Add(this.splitContainerControl_His);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(819, 543);
+            this.xtraTabPage2.Size = new System.Drawing.Size(851, 527);
             this.xtraTabPage2.Text = "历史记录";
             // 
             // splitContainerControl_His
@@ -651,7 +673,7 @@
             this.splitContainerControl_His.Panel1.Text = "Panel1";
             this.splitContainerControl_His.Panel2.Controls.Add(this.splitContainerControl1);
             this.splitContainerControl_His.Panel2.Text = "Panel2";
-            this.splitContainerControl_His.Size = new System.Drawing.Size(819, 543);
+            this.splitContainerControl_His.Size = new System.Drawing.Size(851, 527);
             this.splitContainerControl_His.SplitterPosition = 68;
             this.splitContainerControl_His.TabIndex = 0;
             this.splitContainerControl_His.Text = "splitContainerControl1";
@@ -672,7 +694,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(819, 68);
+            this.groupControl1.Size = new System.Drawing.Size(851, 68);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "数据查询条件";
             // 
@@ -806,7 +828,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(819, 470);
+            this.splitContainerControl1.Size = new System.Drawing.Size(851, 454);
             this.splitContainerControl1.SplitterPosition = 305;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -817,43 +839,43 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(509, 470);
+            this.groupControl2.Size = new System.Drawing.Size(541, 454);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "历史数据曲线";
             // 
             // chartControl_History
             // 
             this.chartControl_History.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            swiftPlotDiagram1.AxisX.Label.TextPattern = "{A:yyyy.MM.dd}";
-            swiftPlotDiagram1.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
-            swiftPlotDiagram1.AxisX.Title.Antialiasing = false;
-            swiftPlotDiagram1.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            swiftPlotDiagram1.AxisX.Title.Text = "时间";
-            swiftPlotDiagram1.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            swiftPlotDiagram1.AxisX.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram1.AxisX.WholeRange.AutoSideMargins = true;
-            swiftPlotDiagram1.AxisY.Title.Alignment = System.Drawing.StringAlignment.Far;
-            swiftPlotDiagram1.AxisY.Title.Antialiasing = false;
-            swiftPlotDiagram1.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            swiftPlotDiagram1.AxisY.Title.Text = "浓度";
-            swiftPlotDiagram1.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            swiftPlotDiagram1.AxisY.VisibleInPanesSerializable = "-1";
-            swiftPlotDiagram1.AxisY.WholeRange.AutoSideMargins = true;
-            swiftPlotDiagram1.DefaultPane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
-            swiftPlotDiagram1.EnableAxisXScrolling = true;
-            this.chartControl_History.Diagram = swiftPlotDiagram1;
+            swiftPlotDiagram3.AxisX.Label.TextPattern = "{A:yyyy.MM.dd}";
+            swiftPlotDiagram3.AxisX.Title.Alignment = System.Drawing.StringAlignment.Far;
+            swiftPlotDiagram3.AxisX.Title.Antialiasing = false;
+            swiftPlotDiagram3.AxisX.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            swiftPlotDiagram3.AxisX.Title.Text = "时间";
+            swiftPlotDiagram3.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            swiftPlotDiagram3.AxisX.VisibleInPanesSerializable = "-1";
+            swiftPlotDiagram3.AxisX.WholeRange.AutoSideMargins = true;
+            swiftPlotDiagram3.AxisY.Title.Alignment = System.Drawing.StringAlignment.Far;
+            swiftPlotDiagram3.AxisY.Title.Antialiasing = false;
+            swiftPlotDiagram3.AxisY.Title.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            swiftPlotDiagram3.AxisY.Title.Text = "浓度";
+            swiftPlotDiagram3.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            swiftPlotDiagram3.AxisY.VisibleInPanesSerializable = "-1";
+            swiftPlotDiagram3.AxisY.WholeRange.AutoSideMargins = true;
+            swiftPlotDiagram3.DefaultPane.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
+            swiftPlotDiagram3.EnableAxisXScrolling = true;
+            this.chartControl_History.Diagram = swiftPlotDiagram3;
             this.chartControl_History.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartControl_History.Legend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(238)))), ((int)(((byte)(247)))));
             this.chartControl_History.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControl_History.Location = new System.Drawing.Point(2, 21);
             this.chartControl_History.Name = "chartControl_History";
-            series1.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
-            series1.Name = "Series 1";
-            series1.View = swiftPlotSeriesView1;
+            series3.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.DateTime;
+            series3.Name = "Series 1";
+            series3.View = swiftPlotSeriesView5;
             this.chartControl_History.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            this.chartControl_History.SeriesTemplate.View = swiftPlotSeriesView2;
-            this.chartControl_History.Size = new System.Drawing.Size(505, 447);
+        series3};
+            this.chartControl_History.SeriesTemplate.View = swiftPlotSeriesView6;
+            this.chartControl_History.Size = new System.Drawing.Size(537, 431);
             this.chartControl_History.TabIndex = 0;
             // 
             // splitContainerControl2
@@ -867,7 +889,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl4);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(305, 470);
+            this.splitContainerControl2.Size = new System.Drawing.Size(305, 454);
             this.splitContainerControl2.SplitterPosition = 16;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -878,7 +900,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(305, 449);
+            this.groupControl3.Size = new System.Drawing.Size(305, 433);
             this.groupControl3.TabIndex = 0;
             this.groupControl3.Text = "历史数据列表";
             // 
@@ -889,7 +911,7 @@
             this.gridControl_History.MainView = this.gridView_History;
             this.gridControl_History.MenuManager = this.barManager1;
             this.gridControl_History.Name = "gridControl_History";
-            this.gridControl_History.Size = new System.Drawing.Size(301, 426);
+            this.gridControl_History.Size = new System.Drawing.Size(301, 410);
             this.gridControl_History.TabIndex = 0;
             this.gridControl_History.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_History});
@@ -1015,7 +1037,7 @@
             // 
             this.xtraTabPage3.Controls.Add(this.panelControl1);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(819, 543);
+            this.xtraTabPage3.Size = new System.Drawing.Size(851, 527);
             this.xtraTabPage3.Text = "系统参数设置";
             // 
             // panelControl1
@@ -1026,7 +1048,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(819, 543);
+            this.panelControl1.Size = new System.Drawing.Size(851, 527);
             this.panelControl1.TabIndex = 6;
             // 
             // groupControl7
@@ -1398,7 +1420,7 @@
             this.xtraTabPage4.Controls.Add(this.groupControl9);
             this.xtraTabPage4.Controls.Add(this.groupControl8);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(819, 543);
+            this.xtraTabPage4.Size = new System.Drawing.Size(851, 527);
             this.xtraTabPage4.Text = "添加设备";
             // 
             // groupControl10
@@ -1421,7 +1443,7 @@
             this.groupControl10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl10.Location = new System.Drawing.Point(309, 181);
             this.groupControl10.Name = "groupControl10";
-            this.groupControl10.Size = new System.Drawing.Size(510, 362);
+            this.groupControl10.Size = new System.Drawing.Size(542, 346);
             this.groupControl10.TabIndex = 2;
             this.groupControl10.Text = "测量参数";
             // 
@@ -1597,7 +1619,7 @@
             this.groupControl9.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl9.Location = new System.Drawing.Point(309, 0);
             this.groupControl9.Name = "groupControl9";
-            this.groupControl9.Size = new System.Drawing.Size(510, 181);
+            this.groupControl9.Size = new System.Drawing.Size(542, 181);
             this.groupControl9.TabIndex = 1;
             this.groupControl9.Text = "仪器设备信息";
             // 
@@ -1691,7 +1713,7 @@
             this.groupControl8.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl8.Location = new System.Drawing.Point(0, 0);
             this.groupControl8.Name = "groupControl8";
-            this.groupControl8.Size = new System.Drawing.Size(309, 543);
+            this.groupControl8.Size = new System.Drawing.Size(309, 527);
             this.groupControl8.TabIndex = 0;
             this.groupControl8.Text = "已添加的设备";
             // 
@@ -1702,7 +1724,7 @@
             this.gridControl_Add.MainView = this.gridView_Add;
             this.gridControl_Add.MenuManager = this.barManager1;
             this.gridControl_Add.Name = "gridControl_Add";
-            this.gridControl_Add.Size = new System.Drawing.Size(305, 520);
+            this.gridControl_Add.Size = new System.Drawing.Size(305, 504);
             this.gridControl_Add.TabIndex = 0;
             this.gridControl_Add.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Add});
@@ -1772,7 +1794,7 @@
             this.xtraTabPage5.Controls.Add(this.gridControl_Alert);
             this.xtraTabPage5.Controls.Add(this.groupControl11);
             this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(819, 543);
+            this.xtraTabPage5.Size = new System.Drawing.Size(851, 527);
             this.xtraTabPage5.Text = "报警记录";
             // 
             // gridControl_Alert
@@ -1782,7 +1804,7 @@
             this.gridControl_Alert.MainView = this.gridView_Alert;
             this.gridControl_Alert.MenuManager = this.barManager1;
             this.gridControl_Alert.Name = "gridControl_Alert";
-            this.gridControl_Alert.Size = new System.Drawing.Size(819, 450);
+            this.gridControl_Alert.Size = new System.Drawing.Size(851, 434);
             this.gridControl_Alert.TabIndex = 1;
             this.gridControl_Alert.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_Alert});
@@ -1901,7 +1923,7 @@
             this.groupControl11.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl11.Location = new System.Drawing.Point(0, 0);
             this.groupControl11.Name = "groupControl11";
-            this.groupControl11.Size = new System.Drawing.Size(819, 93);
+            this.groupControl11.Size = new System.Drawing.Size(851, 93);
             this.groupControl11.TabIndex = 0;
             this.groupControl11.Text = "查询时间";
             // 
@@ -1993,7 +2015,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 643);
+            this.ClientSize = new System.Drawing.Size(857, 656);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -2031,10 +2053,10 @@
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(swiftPlotSeriesView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl_History)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);
@@ -2262,5 +2284,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl36;
         private DevExpress.XtraEditors.CheckEdit checkEdit1;
         private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }

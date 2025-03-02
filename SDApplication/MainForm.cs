@@ -18,6 +18,7 @@ using SDApplication.Properties;
 using System.IO;
 using SDApplication.Process;
 using Microsoft.Web.WebView2.Core;
+using Newtonsoft.Json;
 
 namespace SDApplication
 {
@@ -85,11 +86,17 @@ namespace SDApplication
                     continue;
                 }
 
+                DateTime nowTemp = Utility.CutOffMillisecond(DateTime.Now);
+
+                List<EquipmentData> tempList = new List<EquipmentData>();
+
                 foreach (Equipment eq in MainProcess.mainList)
                 {
                     // 从串口读取数据,并处理数据
-                    MainProcess.readMain(eq);
+                    MainProcess.readMain(eq, nowTemp, tempList);
                 }
+
+                MainProcess.addWrapList(tempList, nowTemp);
 
                 // 播放报警数据
                 PlaySound();
@@ -237,7 +244,7 @@ namespace SDApplication
             }
             return true;
         }
-        
+
         // 读取系统配置文件
         private bool ReadSystemConfig()
         {
@@ -504,9 +511,10 @@ namespace SDApplication
 
         void webView21_CoreWebView2InitializationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2InitializationCompletedEventArgs e)
         {
-            Trace.WriteLine("webView21_CoreWebView2InitializationCompleted"+e.IsSuccess);
-            if (e.IsSuccess) {
-                
+            Trace.WriteLine("webView21_CoreWebView2InitializationCompleted" + e.IsSuccess);
+            if (e.IsSuccess)
+            {
+
                 webView21.CoreWebView2.WebMessageReceived += CoreWebView2_WebMessageReceived;
 
                 webView21.CoreWebView2.AddWebResourceRequestedFilter("https://html/*",
@@ -527,9 +535,22 @@ namespace SDApplication
         {
             string message = e.TryGetWebMessageAsString();
             Trace.WriteLine(message);
-            if (message == "getRoomList") { 
-                string str = MainProcess.getRoomList();
-                //webView21.CoreWebView2.PostWebMessageAsString(str);
+            MessageData msg = JsonConvert.DeserializeObject<MessageData>(message);
+            if (msg.type == "getHistoryData")
+            {
+                HistoryQuery query = JsonConvert.DeserializeObject<HistoryQuery>(msg.data);
+
+                List<EquipmentData> list = EquipmentDataDal.GetListByMonth(query.year, query.month, query.fileId);
+                string str = JsonConvert.SerializeObject(list);
+                MainProcess.postMessage("setHistoryData", str);
+            }
+            else if (msg.type == "getHistoryDataAverage")
+            {
+                HistoryQuery query = JsonConvert.DeserializeObject<HistoryQuery>(msg.data);
+
+                List<EquipmentData> list = EquipmentDataDalAverage.GetListByMonth(query.year, query.month, query.fileId);
+                string str = JsonConvert.SerializeObject(list);
+                MainProcess.postMessage("setHistoryDataAverage", str);
             }
         }
 
@@ -574,13 +595,15 @@ namespace SDApplication
             String page = string.Format(@"{0}\html\index.html", Application.StartupPath);
             //webView21.Source = new Uri(@"file:///" + page);
             webView21.Source = new Uri("https://html/index.html");
-            
-            Trace.WriteLine(webView21.Source);
+
 
             if (!InitializeForm())
             {
                 XtraMessageBox.Show("初始化失败");
             }
+
+            EquipmentDataDal.InitDbFile();
+            EquipmentDataDalAverage.InitDbFile();
 
         }
 
@@ -655,53 +678,53 @@ namespace SDApplication
 
         private void btn_SearchHistory_Click(object sender, EventArgs e)
         {
-            gridControl_History.DataSource = null;
-            chartControl_History.Series[0].Points.Clear();
+            //gridControl_History.DataSource = null;
+            //chartControl_History.Series[0].Points.Clear();
 
 
-            if (comboBoxEdit_ID.Text.Trim() == string.Empty)
-            {
-                XtraMessageBox.Show("请选择设备名称");
-                return;
-            }
-            TimeSpan ts = dateEdit_End.DateTime - dateEdit_Start.DateTime;
-            TimeSpan ts1 = new TimeSpan(0, 0, 0, 1);
-            if (ts < ts1)
-            {
-                XtraMessageBox.Show("截止时间必须大于起始时间");
-                return;
-            }
-            Equipment eq = MainProcess.mainList.Find(c => c.Address == Convert.ToInt64(comboBoxEdit_ID.Text));
-
-            List<EquipmentData> data = EquipmentDataDal.GetListByTime(eq.ID, dateEdit_Start.DateTime, dateEdit_End.DateTime);
-            foreach (var item in data)
-            {
-                item.IsAnemoscope = eq.IsAnemoscope;
-            }
-            if (data == null || data.Count < 1)
-            {
-                LogLib.Log.GetLogger(this).Warn("数据库中没有记录");
-                return;
-            }
-            gridControl_History.DataSource = data;
-            gridView_History.BestFitColumns();
-            data.ForEach(c =>
-            {
-                chartControl_History.Series[0].Points.Add(new SeriesPoint(c.AddTime, c.Chroma));
-            });
-
-            float max = data.Max(c => c.Chroma);
-            float min = data.Min(c => c.Chroma);
-
-            // 更改曲线纵坐标描述
-            SwiftPlotDiagram diagram_Tem = chartControl_History.Diagram as SwiftPlotDiagram;
-            diagram_Tem.AxisY.Title.Text = eq.EName + ":" + eq.Unit;
-            //if (eq.Range > 0)
+            //if (comboBoxEdit_ID.Text.Trim() == string.Empty)
             //{
-            //    diagram_Tem.AxisY.Range.SetMinMaxValues(0, eq.Range);
+            //    XtraMessageBox.Show("请选择设备名称");
+            //    return;
             //}
+            //TimeSpan ts = dateEdit_End.DateTime - dateEdit_Start.DateTime;
+            //TimeSpan ts1 = new TimeSpan(0, 0, 0, 1);
+            //if (ts < ts1)
+            //{
+            //    XtraMessageBox.Show("截止时间必须大于起始时间");
+            //    return;
+            //}
+            //Equipment eq = MainProcess.mainList.Find(c => c.Address == Convert.ToInt64(comboBoxEdit_ID.Text));
 
-            setX(data);
+            //List<EquipmentData> data = EquipmentDataDal.GetListByTime(eq.ID, dateEdit_Start.DateTime, dateEdit_End.DateTime);
+            //foreach (var item in data)
+            //{
+            //    item.IsAnemoscope = eq.IsAnemoscope;
+            //}
+            //if (data == null || data.Count < 1)
+            //{
+            //    LogLib.Log.GetLogger(this).Warn("数据库中没有记录");
+            //    return;
+            //}
+            //gridControl_History.DataSource = data;
+            //gridView_History.BestFitColumns();
+            //data.ForEach(c =>
+            //{
+            //    chartControl_History.Series[0].Points.Add(new SeriesPoint(c.AddTime, c.Chroma));
+            //});
+
+            //float max = data.Max(c => c.Chroma);
+            //float min = data.Min(c => c.Chroma);
+
+            //// 更改曲线纵坐标描述
+            //SwiftPlotDiagram diagram_Tem = chartControl_History.Diagram as SwiftPlotDiagram;
+            //diagram_Tem.AxisY.Title.Text = eq.EName + ":" + eq.Unit;
+            ////if (eq.Range > 0)
+            ////{
+            ////    diagram_Tem.AxisY.Range.SetMinMaxValues(0, eq.Range);
+            ////}
+
+            //setX(data);
         }
 
         private void btn_Export_Click(object sender, EventArgs e)
@@ -737,28 +760,28 @@ namespace SDApplication
             //    return;
             //}
 
-            if (comboBoxEdit_ID.Text.Trim() == string.Empty)
-            {
-                XtraMessageBox.Show("请先查询数据");
-                return;
-            }
-            TimeSpan ts = dateEdit_End.DateTime - dateEdit_Start.DateTime;
-            TimeSpan ts1 = new TimeSpan(0, 0, 0, 1);
-            if (ts < ts1)
-            {
-                XtraMessageBox.Show("请先查询数据");
-                return;
-            }
-            if (XtraMessageBox.Show("数据将要被删除，是否继续", "注意", MessageBoxButtons.YesNo) != System.Windows.Forms.DialogResult.Yes)
-            {
-                return;
-            }
-            Equipment eq = MainProcess.mainList.Find(c => c.Address == Convert.ToInt64(comboBoxEdit_ID.Text));
+            //if (comboBoxEdit_ID.Text.Trim() == string.Empty)
+            //{
+            //    XtraMessageBox.Show("请先查询数据");
+            //    return;
+            //}
+            //TimeSpan ts = dateEdit_End.DateTime - dateEdit_Start.DateTime;
+            //TimeSpan ts1 = new TimeSpan(0, 0, 0, 1);
+            //if (ts < ts1)
+            //{
+            //    XtraMessageBox.Show("请先查询数据");
+            //    return;
+            //}
+            //if (XtraMessageBox.Show("数据将要被删除，是否继续", "注意", MessageBoxButtons.YesNo) != System.Windows.Forms.DialogResult.Yes)
+            //{
+            //    return;
+            //}
+            //Equipment eq = MainProcess.mainList.Find(c => c.Address == Convert.ToInt64(comboBoxEdit_ID.Text));
 
-            int total = EquipmentDataDal.DeleteByTime(eq.ID, dateEdit_Start.DateTime, dateEdit_End.DateTime);
-            gridControl_History.DataSource = null;
-            chartControl_History.Series[0].Points.Clear();
-            XtraMessageBox.Show(string.Format("本次删除{0}条数据", total));
+            //int total = EquipmentDataDal.DeleteByTime(eq.ID, dateEdit_Start.DateTime, dateEdit_End.DateTime);
+            //gridControl_History.DataSource = null;
+            //chartControl_History.Series[0].Points.Clear();
+            //XtraMessageBox.Show(string.Format("本次删除{0}条数据", total));
         }
 
         private void comboBoxEdit_ID_SelectedIndexChanged(object sender, EventArgs e)
@@ -1115,10 +1138,22 @@ namespace SDApplication
 
         private List<List<double>> areaPre = new List<List<double>>();
 
-       
+
         private void webView21_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            xtraTabControl1.SelectedTabPage = xtraTabPage1;
+            MainProcess.postMessage("setPageType", "history");
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            xtraTabControl1.SelectedTabPage = xtraTabPage1;
+            MainProcess.postMessage("setPageType", "history-average");
         }
 
     }

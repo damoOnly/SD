@@ -302,7 +302,7 @@ namespace Dal
                 LogLib.Log.GetLogger("EquipmentDal").Warn("删除失败");
                 return false;
             }
-            EquipmentDataDal.DeleteByEqID(one.ID);
+
             AlertDal.DeleteByEqID(one.ID);
             return true;
         }

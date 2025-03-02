@@ -62,5 +62,18 @@ namespace Entity
         /// </summary>
         public string ChromaAlertStr { get; set; }
         public bool IsAnemoscope { get; set; }
+
+        public float temperature { get; set; }
+        public float humidity { get; set; }
+    }
+
+    public class EquipmentDataWrap
+    {
+        public EquipmentDataWrap()
+        {
+            this.list = new List<EquipmentData>();
+        }
+        public int fileId { get; set; }
+        public List<EquipmentData> list { get; set; }
     }
 }
