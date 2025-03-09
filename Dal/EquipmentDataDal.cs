@@ -93,6 +93,14 @@ namespace Dal
             }
         }
 
+        public static bool IsFileExist(string date, string fileId)
+        {
+            string dbPath = string.Format(dbPathTemp, date);
+            string fileName = dbPath + string.Format(fileNameTemp, fileId);
+
+            return File.Exists(fileName);
+        }
+
         public static bool Add(EquipmentData ed, SQLiteConnection conn, SQLiteTransaction trans)
         {
             string sql = string.Format("insert into [tb_EquipmentData] (Temperature,Humidity,AddTime) values (@Temperature,@Humidity, @addTime)");
@@ -151,20 +159,22 @@ namespace Dal
             }
         }
 
-        public static List<EquipmentData> GetList(SQLiteConnection conn)
+        public static List<EquipmentData> GetList(SQLiteConnection conn, DateTime start, DateTime end)
         {
-            string sql = string.Format("select a.Temperature,a.Humidity, a.AddTime from tb_EquipmentData a");
+            string sql = string.Format("select a.Temperature,a.Humidity, a.AddTime from tb_EquipmentData a where a.AddTime >= @start and a.AddTime <= @end");
 
             List<EquipmentData> list = new List<EquipmentData>();
             using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
             {
+                cmd.Parameters.AddWithValue("@start", start);
+                cmd.Parameters.AddWithValue("@end", end);
                 using (SQLiteDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         EquipmentData eq = new EquipmentData();
-                        eq.temperature = Convert.ToSingle(Math.Round(reader.GetFloat(0), 0));
-                        eq.humidity = Convert.ToSingle(Math.Round(reader.GetFloat(1), 1));
+                        eq.temperature = Convert.ToSingle(Math.Round(reader.GetFloat(0), 1));
+                        eq.humidity = Convert.ToSingle(Math.Round(reader.GetFloat(1), 0));
                         eq.AddTime = Utility.CutOffMillisecond(reader.GetDateTime(2));
                         list.Add(eq);
                     }
@@ -179,11 +189,46 @@ namespace Dal
         {
             string connStr = GetConnStr(fileId, year + month);
             List<EquipmentData> list = new List<EquipmentData>();
+            DateTime end = new DateTime(int.Parse(year), int.Parse(month), 1);
+            DateTime start = end.AddMonths(-1);
             using (SQLiteConnection conn = new SQLiteConnection(connStr))
             {
                 conn.Open();
-                list = EquipmentDataDal.GetList(conn);
+                list = EquipmentDataDal.GetList(conn, start, end);
             }
+
+            return list;
+        }
+
+        public static List<EquipmentData> GetListByTime(string start, string end, string fileId)
+        {
+            DateTime startTime = DateTime.Parse(start);
+            DateTime endTime = DateTime.Parse(end);
+
+            List<DateTime> dateList = new List<DateTime>();
+            dateList.Add(endTime.AddMonths(-2));
+            dateList.Add(endTime.AddMonths(-1));
+            dateList.Add(endTime);
+
+            List<EquipmentData> list = new List<EquipmentData>();
+
+            foreach (var item in dateList)
+            {
+                string ym = item.ToString("yyyyMM");
+                if (!IsFileExist(ym, fileId))
+                {
+                    continue;
+                }
+                string connStr = GetConnStr(fileId, ym);
+                using (SQLiteConnection conn = new SQLiteConnection(connStr))
+                {
+                    conn.Open();
+                    var ll = EquipmentDataDal.GetList(conn, startTime, endTime);
+                    list.AddRange(ll);
+                }
+            }
+
+            
 
             return list;
         }

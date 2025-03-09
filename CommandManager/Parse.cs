@@ -33,6 +33,7 @@ namespace CommandManager
             {
                 ed.ChromaAlertStr = EM_AlertType.低浓度报警.ToString();
             }
+
             return ed;
         }
 

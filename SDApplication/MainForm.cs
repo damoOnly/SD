@@ -129,36 +129,19 @@ namespace SDApplication
         /// <param name="isp"></param>
         private void PlaySound()
         {
-            Equipment eqqq = MainProcess.mainList.Find(c => !c.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase));
-            bool isp = eqqq != null;
-
-            if (IsClosePlay)
+            bool isPlay = MainProcess.alertList.Any(c => !c.isMute && c.hasAlert);
+            // 播放报警
+            if (isPlay && !IsSoundPlayed)
             {
-                LogLib.Log.GetLogger(this).Warn("IsClosePlay");
-                if (IsSoundPlayed)
-                {
-                    LogLib.Log.GetLogger(this).Warn("IsSoundPlayed");
-                    player.Stop();
-                    IsSoundPlayed = false;
-                }
-                return;
+                player.PlayLooping();
+                IsSoundPlayed = true;
             }
 
-            if (isp)
+            // 自动停止
+            if (!isPlay)
             {
-                if (!IsSoundPlayed)
-                {
-                    player.PlayLooping();
-                    IsSoundPlayed = true;
-                }
-            }
-            else
-            {
-                if (IsSoundPlayed)
-                {
-                    player.Stop();
-                    IsSoundPlayed = false;
-                }
+                player.Stop();
+                IsSoundPlayed = false;
             }
         }
 
@@ -540,7 +523,7 @@ namespace SDApplication
             {
                 HistoryQuery query = JsonConvert.DeserializeObject<HistoryQuery>(msg.data);
 
-                List<EquipmentData> list = EquipmentDataDal.GetListByMonth(query.year, query.month, query.fileId);
+                List<EquipmentData> list = EquipmentDataDal.GetListByTime(query.startTime, query.endTime, query.fileId);
                 string str = JsonConvert.SerializeObject(list);
                 MainProcess.postMessage("setHistoryData", str);
             }
@@ -548,10 +531,15 @@ namespace SDApplication
             {
                 HistoryQuery query = JsonConvert.DeserializeObject<HistoryQuery>(msg.data);
 
-                List<EquipmentData> list = EquipmentDataDalAverage.GetListByMonth(query.year, query.month, query.fileId);
+                List<EquipmentData> list = EquipmentDataDalAverage.GetListByTime(query.startTime, query.endTime, query.fileId);
                 string str = JsonConvert.SerializeObject(list);
                 MainProcess.postMessage("setHistoryDataAverage", str);
             }
+            else if (msg.type == "exportData")
+            {
+                MainProcess.historyExport(msg.data);
+            }
+
         }
 
         private void btn_Start_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -1056,17 +1044,18 @@ namespace SDApplication
 
         private void ntn_mute_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (btn_mute.Caption == "关闭报警声音")
+            foreach (var item in MainProcess.alertList)
             {
-                IsClosePlay = true;
-                btn_mute.Glyph = Resources.mute_32x32;
-                btn_mute.Caption = "打开报警声音";
+                // 没有被静音 & 正在报警
+                if (item.hasAlert && !item.isMute) {
+                    item.isMute = true;
+                }
             }
-            else if (btn_mute.Caption == "打开报警声音")
+
+            if (IsSoundPlayed)
             {
-                IsClosePlay = false;
-                btn_mute.Glyph = Resources.mute_off_32x32;
-                btn_mute.Caption = "关闭报警声音";
+                player.Stop();
+                IsSoundPlayed = false;
             }
         }
 

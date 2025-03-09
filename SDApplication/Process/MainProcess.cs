@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SDApplication.Process
 {
@@ -18,6 +19,7 @@ namespace SDApplication.Process
         public static MainForm mainForm;
         public static WebView2 webView;
         public static List<Equipment> mainList = new List<Equipment>();
+        public static List<AlertItem> alertList = new List<AlertItem>();
 
         public static DateTime lastRemoteTime = Utility.CutOffMillisecond(DateTime.Now);
 
@@ -52,9 +54,6 @@ namespace SDApplication.Process
             data.AddTime = dt;
             eq.Chroma = data.Chroma;
 
-            // 添加报警到数据库
-            //addAlertData(eq, data);
-
             // 准备用于存库的数据
             addDataOne(data, tempList);
 
@@ -62,52 +61,30 @@ namespace SDApplication.Process
             renderOne(data);
         }
 
-        private static void addAlertData(Equipment eq, EquipmentData data)
+        private static void addAlertData(List<EquipmentData> tempList)
         {
-            if (eq.AlertType == 0)
+            // 用房间号分组
+            var list = tempList.GroupBy(c => (int)Math.Ceiling((double)(c.EquipmentID / 12.00)));
+            foreach (var item in list)
             {
-                eq.ChromaAlertStr = Gloabl.NormalStr;
-            }
-            else
-            {
-                // 报警记录
-                if (eq.ChromaAlertStr != data.ChromaAlertStr)
-                {
+                bool hasAlert = item.Any(c => c.ChromaAlertStr == EM_AlertType.超量程报警.ToString() || c.ChromaAlertStr == EM_AlertType.低浓度报警.ToString() || c.ChromaAlertStr == EM_AlertType.高浓度报警.ToString());
 
-                    if (eq.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase))
-                    {
-                        Alert art = new Alert();
-                        art.AlertName = data.ChromaAlertStr;
-                        art.EquipmentID = eq.ID;
-                        eq.AlertObject = AlertDal.AddOneR(art);
-                    }
-                    else
-                    {
-                        eq.AlertObject.EndTime = DateTime.Now;
-                        AlertDal.UpdateOne(eq.AlertObject);
-                        if (!eq.ChromaAlertStr.Equals(data.ChromaAlertStr, StringComparison.OrdinalIgnoreCase))
-                        {
-                            Alert art = new Alert();
-                            art.AlertName = data.ChromaAlertStr;
-                            art.EquipmentID = eq.ID;
-                            eq.AlertObject = AlertDal.AddOneR(art);
-                        }
-                    }
-                    eq.ChromaAlertStr = data.ChromaAlertStr;
+                var alert = MainProcess.alertList.FirstOrDefault(c => c.roomId == item.Key);
+                if (null == alert)
+                {
+                    alert = new AlertItem();
+                    alert.roomId = item.Key;
+                    MainProcess.alertList.Add(alert);
+                }
+
+                if (hasAlert)
+                {
+                    alert.hasAlert = true;
                 }
                 else
                 {
-                    if (!eq.ChromaAlertStr.Equals(Gloabl.NormalStr, StringComparison.OrdinalIgnoreCase))
-                    {
-                        eq.AlertObject.EndTime = DateTime.Now;
-                        if (!AlertDal.UpdateOne(eq.AlertObject))
-                        {
-                            Alert art = new Alert();
-                            art.AlertName = data.ChromaAlertStr;
-                            art.EquipmentID = eq.ID;
-                            eq.AlertObject = AlertDal.AddOneR(art);
-                        }
-                    }
+                    alert.hasAlert = false;
+                    alert.isMute = false;
                 }
             }
         }
@@ -140,6 +117,13 @@ namespace SDApplication.Process
             {
                 originData.temperature = data.Chroma;
             }
+
+            // 用于处理报警数据
+            if (data.ChromaAlertStr != EM_AlertType.正常.ToString())
+            {
+                originData.ChromaAlertStr = data.ChromaAlertStr;
+            }
+            
         }
 
         // 显示数据到界面
@@ -160,7 +144,6 @@ namespace SDApplication.Process
                 item.temperature = data.Chroma;
                 item.isAlertTemperature = data.ChromaAlertStr != string.Empty && data.ChromaAlertStr != EM_AlertType.正常.ToString();
             }
-            item.eqName = data.EName;
 
             string dataStr = JsonConvert.SerializeObject(item);
             MainProcess.postMessage("setOneData", dataStr);
@@ -260,10 +243,13 @@ namespace SDApplication.Process
 
             }
 
+            // 处理报警
+            MainProcess.addAlertData(tempList);
+
             addWrapListAverage(tempList, nowTemp);
 
             // 一定间隔存储数据
-            if (nowTemp.AddSeconds(-10) > MainProcess.lastRemoteTime)
+            if (nowTemp.AddMinutes(-2) > MainProcess.lastRemoteTime)
             {
                 ThreadPool.QueueUserWorkItem(MainProcess.saveData);
                 MainProcess.lastRemoteTime = Utility.CutOffMillisecond(DateTime.Now);
@@ -341,6 +327,50 @@ namespace SDApplication.Process
                 }
 
                 wrap.list.Add(item);
+            }
+        }
+
+        public static void historyExport(string queryStr)
+        {
+            Thread thread = new Thread(new ThreadStart(() =>
+            {
+                MainProcess.mainForm.Invoke(new Action<string>(historyExportThead), queryStr);
+            }));
+            thread.SetApartmentState(ApartmentState.STA); //重点
+            thread.Start();
+        }
+
+        public static void historyExportThead(string queryStr)
+        {
+            try
+            {
+                HistoryQuery query = JsonConvert.DeserializeObject<HistoryQuery>(queryStr);
+
+                Equipment eq = MainProcess.mainList.FirstOrDefault(cc => cc.Address == byte.Parse(query.fileId));
+                List<EquipmentData> list = new List<EquipmentData>();
+                if (query.type == "details")
+                {
+                    list = EquipmentDataDal.GetListByTime(query.startTime,query.endTime,query.fileId);
+                }
+                else
+                {
+                    list = EquipmentDataDalAverage.GetListByTime(query.startTime, query.endTime, query.fileId);
+                }
+
+                string filename = string.Format("{0}-{1}-{2}-{3}-{4}", query.type == "details" ? "详细" : "平均", eq.Place, eq.EName, DateTime.Now.ToString("yyyyMMdd"), DateTime.Now.ToString("HHmmss"));
+                SaveFileDialog mTempSaveDialog = new SaveFileDialog();
+                mTempSaveDialog.Filter = "csv files (*csv)|*.csv";
+                mTempSaveDialog.RestoreDirectory = true;
+                mTempSaveDialog.FileName = filename;
+                if (DialogResult.OK == mTempSaveDialog.ShowDialog(MainProcess.mainForm) && null != mTempSaveDialog.FileName.Trim())
+                {
+                    string mTempSavePath = mTempSaveDialog.FileName;
+                    Utility.ExportListToCSV(list, mTempSavePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                //log.Error(ex.Message, ex);
             }
         }
     }

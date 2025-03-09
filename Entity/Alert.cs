@@ -89,4 +89,11 @@ namespace Entity
             return obj.AlertName.GetHashCode();
         }
     }
+
+    public class AlertItem
+    {
+        public int roomId { get; set; }
+        public bool hasAlert { get;set; }
+        public bool isMute { get; set; }
+    }
 }
